@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Admin\Demo;
+namespace App\View\Components\Admin;
 
 use Illuminate\View\Component;
 
@@ -14,7 +14,7 @@ class Info extends Component
     public $demo;
     public function __construct()
     {
-        $this->demo = "Vivek";
+        $this->demo = "hi vivek";
     }
 
     /**
@@ -24,6 +24,6 @@ class Info extends Component
      */
     public function render()
     {
-        return view('components.admin.demo.info');
+        return view('components.admin.info');
     }
 }
