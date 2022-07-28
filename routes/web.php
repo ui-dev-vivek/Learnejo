@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('go');
 });
-Route::get('/Hi', [Home::class, 'index']);
+Route::get('/Hii', [Home::class, 'index']);
