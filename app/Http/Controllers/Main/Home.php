@@ -10,6 +10,6 @@ class Home extends Controller
 {
     function index()
     {
-        return DB::table('courses')->limit(10)->get();
+        return DB::table('courses')->limit(20)->get();
     }
 }
