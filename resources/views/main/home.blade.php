@@ -4,11 +4,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 pt-2 pt-lg-0  d-flex flex-column justify-content-center">
-                        <h1 class="h1" data-aos="fade-up">Learn<span>ejo</span></h1>
+                        <h1 class="h1" data-aos="fade-up">Learn<span style="color:rgb(31, 215, 31);">ejo</span></h1>
                         <small data-aos="fade-right" data-aos-delay="200">Learn Awesome!</small><br>
-                        <h1 data-aos="fade-up" data-aos-delay="400">
-                            Learn & <span>E</span>nhance <span>J</span>ob
-                            <span>O</span>pportunity !
+                        <h1 style="font-size-adjust: 60px;" data-aos="fade-up" data-aos-delay="400">
+                            Learn & <span style="color:rgb(31, 215, 31);">E</span>nhance <span
+                                style="color:rgb(31, 215, 31);">J</span>ob
+                            <span style="color:rgb(31, 215, 31);">O</span>pportunity !
                         </h1><br>
                     </div>
                     <div class="col-lg-4  ">
@@ -57,7 +58,5 @@
 
 
         </section><!-- End Hero -->
-
-
     </x-slot>
 </x-layout.main.base>
