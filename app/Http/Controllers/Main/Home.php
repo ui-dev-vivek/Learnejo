@@ -10,6 +10,12 @@ class Home extends Controller
 {
     function Index()
     {
-        return DB::table('courses')->limit(30)->get();
+        $getTopRankers = $this->getTopRanker();
+        return view('main.home')->with(compact('getTopRankers'));
+    }
+
+    function getTopRanker()
+    {
+        return DB::table('rank_list')->limit(2)->orderByDesc('points')->get();
     }
 }
