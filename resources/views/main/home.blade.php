@@ -1,5 +1,5 @@
 <x-layout.main.base>
-    < name='hero'> <br> <br>
+    <x-slot name='hero'> <br> <br>
         <section id="hero" class="d-flex align-items-center">
             <div class="container">
                 <div class="row">
@@ -59,5 +59,5 @@
         </section><!-- End Hero -->
 
 
-        </x-slot>
+    </x-slot>
 </x-layout.main.base>
