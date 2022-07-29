@@ -55,8 +55,172 @@
                 </div>
 
             </div>
-
-
-        </section><!-- End Hero -->
+        </section>
     </x-slot>
+
+    <section class="inner-page">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preaper For</h2>
+                <p></p>
+                <span>Preaper For</span>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" data-aos="fade-right">
+                    <div class="shadow z-depth-3 border border-success p-2 m-1" style="border-radius: 10px;">
+                        <img class="" width="100"
+                            src="https://rntracoc.sirv.com/MockTest/wipro-primary-logo-color-rbg.png?w=300&h=300"
+                            alt=""> <span class="h2"><a href="{{ url('/Mock-Test') }}/Wipro-NLTH"> Wipro
+                                Limited</a></span>
+                        <hr style="border:2px solid lightgreen;">
+                        <div class="row">
+                            <div class="col-4">
+                                Mock Test: 40+
+                            </div>
+                            <div class="col-4">
+                                Quiz: 10+
+                            </div>
+                            <div class="col-4">
+                                Solution:10+
+                            </div>
+                            <div class="col-4">
+                                Coading:15+
+                            </div>
+                            <div class="col-4">
+                                Attemped:400+
+                            </div>
+                            <div class="col-4">
+                                Mcqs:50+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-left">
+                    <div class="shadow z-depth-3 border border-success p-2 m-1" style="border-radius: 10px;">
+                        <img class="" width="100"
+                            src="https://rntracoc.sirv.com/MockTest/images.jpg?w=300&h=300" alt=""> <span
+                            class="h2"><a href="{{ url('/Mock-Test') }}/Tcs-Ninja"> Tcs Ninja</a></span>
+                        <hr style="border:2px solid lightgreen;">
+                        <div class="row">
+                            <div class="col-4">
+                                Mock Test: 50+
+                            </div>
+                            <div class="col-4">
+                                Quiz: 20+
+                            </div>
+                            <div class="col-4">
+                                Solution:10+
+                            </div>
+                            <div class="col-4">
+                                Coading: 9+
+                            </div>
+                            <div class="col-4">
+                                Attemped:700+
+                            </div>
+                            <div class="col-4">
+                                Mcqs:30+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <span class="h5 mb-4" style="border-bottom:2px solid lightgreen;"> Explor Others: </span><br><br>
+            <div class="row">
+                @forelse ($getTMockTest as $mockTest)
+                    <div class="col-sm-3" data-aos="fade-in">
+                        <a href="{{ url('/Mock-Test') }}/{{ $mockTest->prama_link }}">
+                            <div class="shadow border border-info px-2  p-1 m-1">
+                                <img width="30" class="rounded-circle" src="{{ $mockTest->image }}"
+                                    alt="">
+                                &nbsp;&nbsp; {{ $mockTest->name }}
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <h2>No Any Mock Test!</h2>
+                @endforelse
+
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-sm-6" data-aos="fade-right">
+                    <div class="shadow z-depth-3 border border-success p-2 m-1" style="border-radius: 10px;">
+                        <img class="" width="100"
+                            src="https://rntracoc.sirv.com/MockTest/1648834624.png?w=300&h=300" alt=""> <span
+                            class="h2"><a href="{{ url('/Mock-Test') }}/SSC"> &nbsp; &nbsp; SSC</a></span>
+                        <hr style="border:2px solid lightgreen;">
+                        <div class="row">
+                            <div class="col-4">
+                                Mock Test: 70+
+                            </div>
+                            <div class="col-4">
+                                Quiz: 100+
+                            </div>
+                            <div class="col-4">
+                                Solution:20
+                            </div>
+                            <div class="col-4">
+                                Coading:0
+                            </div>
+                            <div class="col-4">
+                                Attemped:1000+
+                            </div>
+                            <div class="col-4">
+                                Mcqs:60+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-left">
+                    <div class="shadow z-depth-3 border border-success p-2 m-1" style="border-radius: 10px;">
+                        <img class="" width="100"
+                            src="https://mocktest.freshersnow.com//uploads/exams/categories/31-catimage.png"
+                            alt=""> <span class="h2"><a href="{{ url('/Mock-Test') }}/RRB-NTPC">
+                                RRB-NTPC </a></span>
+                        <hr style="border:2px solid lightgreen;">
+                        <div class="row">
+                            <div class="col-4">
+                                Mock Test: 120+
+                            </div>
+                            <div class="col-4">
+                                Quiz: 12+
+                            </div>
+                            <div class="col-4">
+                                Solution:12+
+                            </div>
+                            <div class="col-4">
+                                Coading:0
+                            </div>
+                            <div class="col-4">
+                                Attemped:231
+                            </div>
+                            <div class="col-4">
+                                Mcqs:23+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <span class="h5 mb-4" style="border-bottom:2px solid lightgreen;"> Explor Others: </span><br><br>
+            <div class="row">
+
+                @forelse ($getNTMockTest as $mockTest)
+                    <div class="col-sm-3" data-aos="fade-in">
+                        <a href="{{ url('/Mock-Test') }}/{{ $mockTest->prama_link }}">
+                            <div class="shadow border border-info px-2  p-1 m-1">
+                                <img width="30" class="rounded-circle" src="{{ $mockTest->image }}"
+                                    alt="">
+                                &nbsp;&nbsp; {{ $mockTest->name }}
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <h2>No Any Mock Test!</h2>
+                @endforelse
+            </div>
+        </div>
+    </section>
 </x-layout.main.base>
