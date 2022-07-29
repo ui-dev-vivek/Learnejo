@@ -37,8 +37,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- Template Main CSS File -->
-
-    {{-- <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 
 
