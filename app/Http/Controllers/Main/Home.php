@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class Home extends Controller
 {
-    function index()
+    function Index()
     {
-        return DB::table('courses')->limit(20)->get();
+        return DB::table('courses')->limit(30)->get();
     }
 }
