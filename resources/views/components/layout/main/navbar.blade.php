@@ -38,9 +38,10 @@
             </a> --}}
                <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                    data-bs-target="#navbarTogglerDemo01">
-                   <!-- <i class="bi bi-person"></i> --> <img width="25"
+                   {{-- <!-- <i class="bi bi-person"></i> --> <img width="25"
                        src="https://lh3.googleusercontent.com/ogw/ADea4I7Mo74MBPhuoUUFAjaM1_pkhT4U0DHiXjYc99hbcQ=s32-c-mo"
-                       class="rounded-circle border border-success "> <b>Vivek</b>
+                       class="rounded-circle border border-success "> --}}
+                   <b class="text-success">Login </b>
                </a>
            </div>
        </div>
