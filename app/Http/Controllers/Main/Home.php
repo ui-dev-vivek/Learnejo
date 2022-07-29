@@ -13,7 +13,11 @@ class Home extends Controller
         $getTopRankers = $this->getTopRanker();
         $getTMockTest = $this->getTMockTest();
         $getNTMockTest = $this->getNTMockTest();
-        return view('main.home')->with(compact('getTopRankers', 'getTMockTest', 'getNTMockTest'));
+        $getCourses = $this->getCourses();
+        $getCJobs = $this->getCorpJobs();
+        $getGJobs = $this->getGovtJobs();
+        $ranker = $this->ranker();
+        return view('main.home')->with(compact('getTopRankers', 'getTMockTest', 'getNTMockTest', 'getCourses', 'getCJobs', 'getGJobs', 'ranker'));
     }
 
     function getTopRanker()
@@ -27,5 +31,34 @@ class Home extends Controller
     function getNTMockTest()
     {
         return DB::table('mock_test_topic')->where('type', "NT")->get();
+    }
+    function getCourses()
+    {
+        return DB::table('courses')->where('status', 1)->limit(4)->orderByDesc('id')->get();
+    }
+    function getCorpJobs()
+    {
+        return DB::table('jobs')->where('status', 1)->where('type', 'corp')->limit(3)->orderByDesc('id')->get();
+    }
+    function getGovtJobs()
+    {
+        return DB::table('jobs')->where('status', 1)->where('type', 'govt')->limit(3)->orderByDesc('id')->get();
+    }
+    function ranker()
+    {
+        return DB::table('rank_list')->limit(6)->orderByDesc('points')->get();
+    }
+
+
+
+    function contactUs(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+        return 1;
     }
 }

@@ -1,0 +1,110 @@
+<x-layout.main.base>
+    <x-slot name='hero'>
+        <!-- ======= Intro Single ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <h1 class="text-center">Free Courses</h1>
+
+            </div>
+        </section><!-- End Intro Single-->
+    </x-slot>
+    <div class=" mt-1">
+        <div class="row">
+            <div class="col-1 pt-2 bg-success text-white p-1 text-center">Letest:</div>
+            <div class="col-11 p-1 border border-success pt-2">
+                <marquee class="GeneratedMarquee" direction="right" scrollamount="8" behavior="scroll">
+                    @foreach ($getCourses as $course)
+                        <a href="{{ url('/Courses') }}/{{ $course->prama_link }}"><i class="fa fa-hand-o-right"
+                                aria-hidden="true"></i> {{ $course->title }}</a> &nbsp;&nbsp;
+                    @endforeach
+                </marquee>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-9">
+            <section class="trending-courses container">
+                <div class="row">
+                    @foreach ($getCourses as $course)
+                        <div class="item col-xl-3 col-lg-3 col-12" data-aos="zoom-in" data-aos-delay="30">
+                            <div data-tilt class="course-tile mb-4">
+                                <a href="/Courses/{{ $course->prama_link }}" target="_blank"
+                                    class="trending-course-link" data-course-title="{{ $course->title }}">
+                                    <div data-tilt class="course-featured-image">
+                                        <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
+                                    </div>
+                                    <article class="course-info">
+                                        <h2 class="color-4a m-0"><b>{{ $course->title }}</b></h2>
+
+                                        <div class="p-2">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <i class="fa fa-eye"></i> {{ $course->view }}
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-user-plus"></i> {{ $course->enroll }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="reviewtext font-italic">Reviews</span>
+                                        <div class="reviewstars">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span class="color-4a rating">3</span> <span
+                                                class="totalreviews color-4a"></span>
+                                        </div>
+                                    </article>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
+                <x-main.pagination :data="$getCourses" />
+            </section>
+        </div>
+        <div class="col-sm-3"><br><br>
+            <div class="shadow p-1 pt-3 border">
+                <p><strong>Recent Mock Test</strong></p>
+                @forelse ($getMock as  $mock)
+                    <a href="{{ url('/Mock-Test') }}/{{ $mock->prama_link }}">
+                        <div class="p-1  border-bottom">
+                            <img width="50" src="{{ $mock->image }}" alt=""> &nbsp; &nbsp;
+                            {{ $mock->name }}
+                        </div>
+                    </a>
+                @empty
+                    <h4>No Mock Test Found!</h4>
+                @endforelse
+                <br>
+                <p><strong>Recent Jobs</strong></p>
+                @forelse ($getJobs as  $job)
+                    <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                        <div class="p-1  border-bottom">
+                            <div class="row">
+                                <div class="col-2"> <img width="50" src="{{ $job->image }}" alt="">
+                                </div>
+                                <div class="col-10"><small>{{ $job->title }}</small></div>
+                            </div>
+
+
+                        </div>
+                    </a>
+                @empty
+                    <h4>No Jobs Found!</h4>
+                @endforelse
+
+            </div>
+        </div>
+    </div>
+
+
+    {{-- <x-mocktest.listing /> --}}
+</x-layout.main.base>

@@ -223,4 +223,137 @@
             </div>
         </div>
     </section>
+
+    <section class="inner-page">
+        <div class="container">
+            <div class="section-title">
+                <h2>Free Courses</h2>
+                <p>To Improve Your <b>Resume</b>.</p>
+                <span>Free Courses</span>
+            </div>
+
+
+            <section class="trending-courses">
+                <div class="row">
+                    @foreach ($getCourses as $course)
+                        <div class="item col-xl-3 col-lg-3 col-12" data-aos="zoom-in" data-aos-delay="30">
+                            <div data-tilt class="course-tile mb-4">
+                                <a href="https://learnejo.com/Courses/{{ $course->prama_link }}" target="_blank"
+                                    class="trending-course-link" data-course-title="{{ $course->title }}">
+                                    <div data-tilt class="course-featured-image">
+                                        <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
+                                    </div>
+                                    <article class="course-info">
+                                        <h2 class="color-4a m-0"><b>{{ $course->title }}</b></h2>
+
+                                        <div class="p-2">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <i class="fa fa-eye"></i> {{ $course->view }}
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fa fa-user-plus"></i> {{ $course->enroll }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="reviewtext font-italic">Reviews</span>
+                                        <div class="reviewstars">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span class="color-4a rating">3</span> <span
+                                                class="totalreviews color-4a"></span>
+                                        </div>
+                                    </article>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+                <p class="text-end"><a class="btn btn-md btn-success" href="{{ url('/Courses') }}">More Courses
+                        <i class="fa fa-arrow-right" aria-hidden="true"> </i> </a></p>
+
+            </section>
+        </div>
+
+    </section>
+    <div class="row">
+        <div class="col-sm-6">
+            <section class="inner-page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Top Rankers</h2>
+                        {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
+                        <span>Top Rankers</span>
+                    </div>
+
+                    @forelse ($ranker as $ranker)
+                        <div class=" border p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <img width="50" class="rounded-circle border border-success"
+                                        src="{{ $ranker->profile_image }}" alt=""> &nbsp;
+                                    {{ $ranker->student_name }}
+                                </div>
+                                <div class="col-4 text-center border-start">Point
+                                    <br>{{ $ranker->points }}
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                    @endforelse
+                </div>
+            </section>
+        </div>
+
+        <div class="col-sm-6">
+            <section class="inner-page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Job Updates</h2>
+                        {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
+                        <span>JOb Updates</span>
+                    </div>
+                    @forelse ($getCJobs as $job)
+                        <div class="p-1 border-bottom">
+                            <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img width="50" src="{{ $job->image }}" alt="">
+                                    </div>
+                                    <div class="col-10 pt-2">{{ $job->title }}</div>
+                                </div>
+                            </a>
+
+                        </div>
+                    @empty
+                        <p>No any Jobs.</p>
+                    @endforelse
+                    @forelse ($getGJobs as $job)
+                        <div class="p-1 border-bottom">
+                            <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img width="70" src="{{ $job->image }}" alt="">
+                                    </div>
+                                    <div class="col-10 pt-2">{{ $job->title }}</div>
+                                </div>
+                            </a>
+
+                        </div>
+                    @empty
+                        <p>No any Jobs.</p>
+                    @endforelse
+                    <p class="text-end"><a class="btn btn-md btn-success" href="{{ url('/Job-Internships') }}">More
+                            Jobs
+                            <i class="fa fa-arrow-right" aria-hidden="true"> </i> </a></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
 </x-layout.main.base>
