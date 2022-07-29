@@ -555,70 +555,11 @@ a:hover {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
-  /* font-family: "Raleway", sans-serif; */
-  font-family: 'Roboto Slab', serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 30px 10px 30px;
-  border-radius: 4px;
-  transition: 0.5s;
-  color: #fff;
-  background: #32C888;
-  box-shadow: 0 8px 28px rgba(22, 223, 126, 0.45);
-}
-
-#hero .btn-get-started:hover {
-  background: #206bfb;
-  box-shadow: 0 8px 28px rgba(32, 107, 251, 0.45);
-}
-
-#hero .btn-watch-video {
-  font-size: 16px;
-  display: inline-block;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: #5f687b;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#hero .btn-watch-video i {
-  color: #949cac;
-  font-size: 32px;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-#hero .btn-watch-video:hover i {
-  color: #32C888;
-}
-
-#hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
 
 @media (max-width: 991px) {
   #hero {
     height: 100vh;
-  }
-
-  #hero .animated {
-    -webkit-animation: none;
-    animation: none;
-  }
-
-  #hero .hero-img {
-    text-align: center;
-    display: none;
-  }
-
-  #hero .hero-img img {
-    width: 50%;
-  }
+  } 
 }
 
 @media (max-width: 768px) {
@@ -638,16 +579,7 @@ a:hover {
     margin-bottom: 30px;
   }
 
-  #hero .hero-img img {
-    width: 70%;
-  }
-}
 
-@media (max-width: 575px) {
-  #hero .hero-img img {
-    width: 80%;
-  }
-}
 
 @-webkit-keyframes up-down {
   0% {
