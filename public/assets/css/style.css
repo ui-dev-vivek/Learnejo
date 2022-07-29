@@ -567,6 +567,7 @@ a:hover {
     height: auto;
   }
 
+
   #hero h1 {
     align-items: center;
     font-size: 48px;
@@ -578,6 +579,8 @@ a:hover {
     line-height: 24px;
     margin-bottom: 30px;
   }
+
+}
 
 
 
@@ -2499,10 +2502,3 @@ section {
   color: #aaaaaa;
   font-size: 14px;
 }
-
-
-
-
-
-
-
