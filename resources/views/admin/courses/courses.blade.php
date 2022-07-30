@@ -1,6 +1,6 @@
-<x-Layout.Admin.Base>
+<x-layout.admin.base>
 
-    <x-Admin.Maincard : title="Courses">
+    <x-admin.maincard : title="Courses">
         <div class="card-block table-border-style">
             <div class="table-responsive">
                 <table class="table">
@@ -53,5 +53,5 @@
                 </table>
             </div>
         </div>
-    </x-Admin.Maincard>
+    </x-admin.maincard>
 </x-layout.Admin.base>

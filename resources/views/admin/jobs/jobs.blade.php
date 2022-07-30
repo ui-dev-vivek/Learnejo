@@ -1,6 +1,6 @@
-<x-Layout.Admin.Base>
+<x-layout.admin.base>
 
-    <x-Admin.Maincard : title="Corporet Jobs">
+    <x-admin.maincard : title="Corporet Jobs">
         <div class="card-block table-border-style">
             <div class="table-responsive">
                 <table class="table">
@@ -63,7 +63,7 @@
                 </table>
             </div>
         </div>
-    </x-Admin.Maincard>
+    </x-admin.maincard>
 
     <x-admin.maincard : title="Government Jobs">
         <div class="card-block table-border-style">
@@ -129,4 +129,4 @@
             </div>
         </div>
     </x-admin.maincard>
-</x-Layout.Admin.Base>
+</x-layout.admin.base>

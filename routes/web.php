@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\Adminauth;
+use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
+use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
@@ -29,6 +31,10 @@ Route::post('/Apply', [Jobs::class, 'apply']);
 // Admin Login
 Route::get('/Admin-Login', [Adminauth::class, 'adminLogin']);
 Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
+
+// Cron Job Urls
+Route::get('/Admin/Load-Courses', [Admincourses::class, 'loadCourses']);
+Route::get('/Admin/Load-Jobs', [Adminjobs::class, 'loadJobs']);
 
 
 //Admin
