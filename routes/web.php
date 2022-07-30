@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Adminauth;
+use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
@@ -23,3 +25,23 @@ Route::post('/Enroll', [Courses::class, 'enroll']);
 Route::get('/Job-Internships', [Jobs::class, 'index']);
 Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
+
+// Admin Login
+Route::get('/Admin-Login', [Adminauth::class, 'adminLogin']);
+Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
+
+
+//Admin
+Route::group(['middleware' => ['AdminLogin']], function () {
+    // DashBoard
+    Route::get('/Admin', [Admindashboard::class, 'dashboard']);
+    Route::post('Admin/Delete-Item', [Admindashboard::class, 'deleteItem']);
+
+    // Courses
+    Route::get('/Admin/Courses', [Admincourses::class, 'courses']);
+    Route::post('/Admin/updateCourses', [Admincourses::class, 'updateCourses']);
+
+    // Jobs
+    Route::get('/Admin/Jobs', [Adminjobs::class, 'jobsView']);
+    Route::post('/Admin/Update-Jobs', [Adminjobs::class, 'updateJobs']);
+});
