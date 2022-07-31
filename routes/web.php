@@ -7,12 +7,13 @@ use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
+use App\Http\Controllers\Seo;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [Home::class, 'Index']);
 Route::view('/About-Us', 'main.about');
-Route::view('Term-and-Conditions', 'main.terms_conditions');
+Route::view('/Term-and-Conditions', 'main.terms_conditions');
 Route::view('/Privacy-Policy', 'main.privacy_policy');
 Route::view('/Refund-Cancellations', 'main.refunds_cancellations');
 Route::view('/Contact-Us', 'main.contact');

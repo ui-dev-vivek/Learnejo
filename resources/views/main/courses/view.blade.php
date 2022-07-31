@@ -1,4 +1,4 @@
-<x-Layout.Main.Base>
+<x-layout.main.base :title="$course->title" :image="$course->image" :description="$course->title">
     <x-slot name='hero'>
         <!-- ======= Intro Single ======= -->
         <section class="intro-single">

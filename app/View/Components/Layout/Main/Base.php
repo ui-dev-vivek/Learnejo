@@ -11,9 +11,12 @@ class Base extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $title, $image, $description;
+    public function __construct($title, $image, $description)
     {
-        //
+        $this->title = $title;
+        $this->image = $image;
+        $this->description = $description;
     }
 
     /**

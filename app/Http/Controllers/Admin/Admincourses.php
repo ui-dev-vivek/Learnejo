@@ -102,6 +102,7 @@ class Admincourses extends Controller
         $data['content'] = "<h3>Description" . $des[0];
         $data['status'] = 1;
         $update = DB::table('courses')->where('prama_link', $req->post('prama_link'))->update($data);
+
         return $result = ($update) ? $req->post('prama_link') : 0;
     }
 }

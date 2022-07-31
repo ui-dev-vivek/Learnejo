@@ -5,13 +5,30 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Home: Learnejo</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}" />
+    <link rel="canonical" href="https://learnejo.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:url" content="https://learnejo.com/" />
+    <meta property="og:site_name" content="Learnejo" />
+    <meta property="article:published_time" content="" />
+    <meta property="article:modified_time" content="" />
+    <meta property="og:image" content="{{ $image }}" />
+    <meta property="og:image:width" content="480" />
+    <meta property="og:image:height" content="270" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Team Learnejo">
+    <meta name="twitter:label2" content="Est. reading time">
+    <meta name="twitter:data2" content="1 minute">
+    <meta name="theme-color" content="#999999" />
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/image/icon.JPG') }}" rel="icon">
+    <link href="{{ asset('assets/image/icon.JPG') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link

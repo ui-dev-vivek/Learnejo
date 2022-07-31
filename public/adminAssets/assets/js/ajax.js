@@ -48,11 +48,11 @@ function updateJobs(id, pramaLink, subType, type, _token) {
             if (result == 'del') {
                 deleteItem(id, _token, 'jobs');
             } else {
-                // whatsappShare('https://learnejo.com/Job-Internships/' + pramaLink);
+                whatsappShare('https://learnejo.com/Job-Internships/' + pramaLink);
                 $('.tr' + id).removeClass('bg-success');
                 $('.view' + id).removeClass('d-none');
                 $('.sid' + id).removeClass('fa-spin');
-                // telegremCourse(id, pramaLink, _token, 'Job-Internships');
+                telegremCourse(id, pramaLink, _token, 'Job-Internships');
             }
 
 
