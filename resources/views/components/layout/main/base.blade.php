@@ -27,8 +27,8 @@
     <meta name="theme-color" content="#999999" />
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/image/icon.JPG') }}" rel="icon">
-    <link href="{{ asset('assets/image/icon.JPG') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/image/icon.jpg') }}" rel="icon">
+    <link href="{{ asset('assets/image/icon.jpg') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
