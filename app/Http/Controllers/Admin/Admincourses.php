@@ -11,7 +11,7 @@ class Admincourses extends Controller
 {
     function courses()
     {
-        $getCourses = DB::table('courses')->where('created_at', '>=', Carbon::now()->subDays(3)->toDateTimeString())->orderByDesc('id')->get();
+        $getCourses = DB::table('courses')->where('created_at', '>=', Carbon::now()->subDays(1)->toDateTimeString())->orderByDesc('id')->get();
         return view('admin.courses.courses')->with(compact('getCourses'));
     }
 
