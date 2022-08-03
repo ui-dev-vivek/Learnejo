@@ -11,6 +11,7 @@ use App\Http\Controllers\Seo;
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', [Home::class, 'Index']);
 Route::view('/About-Us', 'main.about');
 Route::view('/Term-and-Conditions', 'main.terms_conditions');
@@ -36,7 +37,7 @@ Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
 // Cron Job Urls
 Route::get('/Admin/Load-Courses', [Admincourses::class, 'loadCourses']);
 Route::get('/Admin/Load-Jobs', [Adminjobs::class, 'loadJobs']);
-
+Route::get('/Admin/updateCourses/{pramaLink}', [Admincourses::class, 'getupdateCourses']);
 
 //Admin
 Route::group(['middleware' => ['AdminLogin']], function () {

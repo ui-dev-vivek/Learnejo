@@ -15,7 +15,7 @@ function updateCourses(id, prama_link, _token) {
             if (result == 'del') {
                 deleteItem(id, _token, 'courses');
             } else {
-                whatsappShare('https://learnejo.com/Courses/' + prama_link);
+                // whatsappShare('https://learnejo.com/Courses/' + prama_link);
                 $('.tr' + id).removeClass('bg-success');
                 $('.view' + id).removeClass('d-none');
                 $('.sid' + id).removeClass('fa-spin');
