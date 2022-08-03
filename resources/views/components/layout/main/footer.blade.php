@@ -5,8 +5,8 @@
             <div class="row gy-4">
                 <div class="col-lg-5 col-md-12 footer-info">
                     <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-                        <img src="{{ asset('assets/img/logo.png') }}" alt="">
-                        <span>Learnejo</span>
+                        <img src="{{ asset('assets/image/logo-dark.png') }}" alt="">
+
                     </a>
                     <p>'Learnejo' is an E-learning platform, for every student interested and wishes to prepare for Tech
                         and non-Tech. This platform contains all the important topics and articles related to Tech and

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Adminauth;
 use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Admin\Adminjobs;
+use App\Http\Controllers\Admin\Whatsapp;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
@@ -18,7 +19,10 @@ Route::view('/Term-and-Conditions', 'main.terms_conditions');
 Route::view('/Privacy-Policy', 'main.privacy_policy');
 Route::view('/Refund-Cancellations', 'main.refunds_cancellations');
 Route::view('/Contact-Us', 'main.contact');
+Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
+Route::post('//Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
+
 
 Route::get('/Courses', [Courses::class, 'index']);
 Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
@@ -52,4 +56,10 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     // Jobs
     Route::get('/Admin/Jobs', [Adminjobs::class, 'jobsView']);
     Route::post('/Admin/Update-Jobs', [Adminjobs::class, 'updateJobs']);
+
+    //Whatsapp Groups
+    Route::post('/Admin/changeGroupStatus/', [Whatsapp::class, 'changeGroupStatus']);
+    Route::post('/Admin/updateMembers/',  [Whatsapp::class, 'updateMembers']);
+    Route::get('/Admin/Whatsapp',  [Whatsapp::class, 'whatsapp']);
+    Route::post('/Admin/Add-Whatsapp-Group', [Whatsapp::class, 'addWhatsappGroup']);
 });

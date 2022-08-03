@@ -100,3 +100,52 @@ function deleteItem(id, _token, tbname) {
     });
 }
 
+
+
+
+function changeGroupStatus(url, _token, id) {
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: {
+            "_token": _token,
+            'id': id
+        },
+        beforeSend: function () {
+
+        },
+        success: function (result) {
+            if (result) {
+                window.location.href = "/Admin/Whatsapp";
+            }
+        }
+
+    });
+
+}
+
+function updateMembers(url, _token, id) {
+    var member = $('#memberField' + id).val();
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: {
+            "_token": _token,
+            'id': id,
+            'members': member
+        },
+        beforeSend: function () {
+
+        },
+        success: function (result) {
+
+            if (result) {
+                window.location.href = "/Admin/Whatsapp";
+            }
+        }
+
+    });
+
+}

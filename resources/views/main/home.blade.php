@@ -10,8 +10,10 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 pt-2 pt-lg-0  d-flex flex-column justify-content-center">
-                        <h1 class="h1" data-aos="fade-up">Learn<span style="color:rgb(31, 215, 31);">ejo</span></h1>
-                        <small data-aos="fade-right" data-aos-delay="200">Learn Awesome!</small><br>
+                        {{-- <h1 class="h1" data-aos="fade-up">Learn<span style="color:rgb(31, 215, 31);">ejo</span></h1> --}}
+                        <img data-aos="fade-up" width="300" src="{{ asset('assets/image/logo-dark.png') }}"
+                            alt="">
+                        <br> {{-- <small data-aos="fade-right" data-aos-delay="200">Learn Awesome!</small><br> --}}
                         <h1 style="font-size-adjust: 60px;" data-aos="fade-up" data-aos-delay="400">
                             Learn & <span style="color:rgb(31, 215, 31);">E</span>nhance <span
                                 style="color:rgb(31, 215, 31);">J</span>ob

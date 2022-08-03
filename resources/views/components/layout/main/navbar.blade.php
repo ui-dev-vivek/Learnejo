@@ -2,8 +2,9 @@
    <header id="header" class="fixed-top">
        <div class="container d-flex align-items-center">
 
-           <h1 class="logo me-auto"><a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="">
-                   <span class="name text-primary"></span></a></h1>
+           <h1 class="logo me-auto"><a href="/"><img src="{{ asset('assets/image/logo-dark.png') }}"
+                       alt=""></a></h1>
+           {{-- <span class="name text-primary"></span></a></h1> --}}
            <!-- Uncomment below if you prefer to use an image logo -->
            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -32,17 +33,17 @@
            </nav><!-- .navbar -->
 
            <div class="header-social-links d-flex">
-               {{-- <a type="button" class="btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
-                data-bs-target="#navbarTogglerDemo01">
-                <i class="bi bi-person text-success"></i><b> Login</b>
-            </a> --}}
-               <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
-                   data-bs-target="#navbarTogglerDemo01">
-                   {{-- <!-- <i class="bi bi-person"></i> --> <img width="25"
-                       src="https://lh3.googleusercontent.com/ogw/ADea4I7Mo74MBPhuoUUFAjaM1_pkhT4U0DHiXjYc99hbcQ=s32-c-mo"
-                       class="rounded-circle border border-success "> --}}
-                   <b class="text-success">Login </b>
+               <a type="button" class=" navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
+                   data-bs-target="#navbarTogglerDemo01"> <span class="loginbtn bg-success text-white">
+                       <i class="fa fa-user text-white"></i><b> Login</b></span>
                </a>
+               {{-- <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
+                   data-bs-target="#navbarTogglerDemo01">
+                   <i class="bi bi-person"></i> <img width="25"
+                       src="https://lh3.googleusercontent.com/ogw/ADea4I7Mo74MBPhuoUUFAjaM1_pkhT4U0DHiXjYc99hbcQ=s32-c-mo"
+                       class="rounded-circle border border-success ">
+
+               </a> --}}
            </div>
        </div>
    </header>

@@ -61,4 +61,27 @@ class Home extends Controller
         ]);
         return 1;
     }
+
+    function whatsappJoin()
+    {
+        $getWhatsapp = DB::table('whatsapps')->where('status', 1)->first();
+        return view('main.whatsapp')->with('whatsapp', $getWhatsapp);
+    }
+
+    function joinWhatsapp(Request $req)
+    {
+
+        $get = DB::table('whatsapps')->where('status', 1)->get();
+        $datax['members'] = $get[0]->members + 1;
+        if ($get[0]->members >= 500) {
+            $data['status'] = 0;
+            $datax['members'] = $get[1]->members + 1;
+            $x = DB::table('whatsapps')->where('id', $get[0]->id)->update($data);
+            $y = DB::table('whatsapps')->where('id', $get[1]->id)->update($datax);
+            echo $get[1]->link;
+        } else {
+            $y = DB::table('whatsapps')->where('id', $get[0]->id)->update($datax);
+            echo $get[0]->link;
+        }
+    }
 }
