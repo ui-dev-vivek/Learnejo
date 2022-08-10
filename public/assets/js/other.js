@@ -85,3 +85,4 @@ function telegramShare(pramalink) {
     var url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage?chat_id=-1001687470466&text=https://learnejo.com/Courses/" + pramalink;
     window.location.href = url;
 }
+

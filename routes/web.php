@@ -5,14 +5,19 @@ use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Whatsapp;
+use App\Http\Controllers\Examination\Login;
+use App\Http\Controllers\Examination\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
 use App\Http\Controllers\Seo;
+use App\Http\Controllers\Social\GoogleController;
+use App\Http\Controllers\Student\Studentauth;
+use App\Http\Controllers\Student\Stusidedashboard;
 use Illuminate\Support\Facades\Route;
 
 
-
+//Main
 Route::get('/', [Home::class, 'Index']);
 Route::view('/About-Us', 'main.about');
 Route::view('/Term-and-Conditions', 'main.terms_conditions');
@@ -23,7 +28,7 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('//Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 
-
+//Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
 Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
@@ -34,9 +39,19 @@ Route::get('/Job-Internships', [Jobs::class, 'index']);
 Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
 
+// Main Mock Test
+Route::get('/{pramalink}', [Mocktest::class, 'mockTestAbout']);
+
 // Admin Login
 Route::get('/Admin-Login', [Adminauth::class, 'adminLogin']);
 Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
+
+// Student Login
+Route::get('/Student-Login', [Studentauth::class, 'studentLogin']);
+Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
+
+
+
 
 // Cron Job Urls
 Route::get('/Admin/Load-Courses', [Admincourses::class, 'loadCourses']);
@@ -63,3 +78,12 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     Route::get('/Admin/Whatsapp',  [Whatsapp::class, 'whatsapp']);
     Route::post('/Admin/Add-Whatsapp-Group', [Whatsapp::class, 'addWhatsappGroup']);
 });
+
+
+// Google Login
+Route::controller(GoogleController::class)->group(function () {
+    Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+    Route::get('auth/google/callback', 'handleGoogleCallback');
+});
+
+Route::get('/Student-Side-Dashboard', [Stusidedashboard::class, 'index']);

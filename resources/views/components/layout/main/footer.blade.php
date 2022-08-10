@@ -66,7 +66,7 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Learnejo</span></strong>. All Rights Reserved
+            Copyright &copy; 2021 - {{ date('Y') }}<strong> <span>Learnejo</span></strong>. All Rights Reserved.
         </div>
     </div>
 </footer>

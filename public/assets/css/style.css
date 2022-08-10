@@ -5,7 +5,9 @@ body {
   color: #060237;
 
 }
-
+.rounded-8{
+  border-radius: 8px !important;
+}
 a {
   color: #180558;
   text-decoration: none;
