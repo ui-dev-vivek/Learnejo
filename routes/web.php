@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Adminauth;
 use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Admin\Adminjobs;
+use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Whatsapp;
 use App\Http\Controllers\Examination\Login;
 use App\Http\Controllers\Examination\Mocktest;
@@ -40,7 +41,7 @@ Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
 
 // Main Mock Test
-Route::get('/{pramalink}', [Mocktest::class, 'mockTestAbout']);
+Route::get('/Prepare/{pramalink}', [Mocktest::class, 'mockTestAbout']);
 
 // Admin Login
 Route::get('/Admin-Login', [Adminauth::class, 'adminLogin']);
@@ -71,6 +72,11 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     // Jobs
     Route::get('/Admin/Jobs', [Adminjobs::class, 'jobsView']);
     Route::post('/Admin/Update-Jobs', [Adminjobs::class, 'updateJobs']);
+
+    // Mock Test
+    Route::get('/Admin/About-Mock-Test/{pramaLink}', [Adminmocktest::class, 'addAboutMocktest']);
+    Route::post('/Admin/About-Mock-Test', [Adminmocktest::class, 'postAddAboutMocktest']);
+
 
     //Whatsapp Groups
     Route::post('/Admin/changeGroupStatus/', [Whatsapp::class, 'changeGroupStatus']);

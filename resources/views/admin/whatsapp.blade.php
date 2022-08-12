@@ -65,4 +65,5 @@
             </div>
         </div>
     </x-admin.maincard>
+
 </x-layout.admin.base>

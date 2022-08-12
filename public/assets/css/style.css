@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -9,12 +9,15 @@ body {
   border-radius: 8px !important;
 }
 a {
-  color: #180558;
+  color: #075c37;
   text-decoration: none;
+}
+.h-success{
+  color:darkgreen;
 }
 
 a:hover {
-  color: #057729;
+  color:blue;
   text-decoration: none;
 }
 

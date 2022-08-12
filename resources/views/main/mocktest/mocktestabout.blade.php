@@ -8,15 +8,25 @@ $description = 'Get Free Mock Test For Prepretion';
     <x-slot name='hero'>
         <br><br><br> <br>
         <div class="container">
-            <h2 class="text-success">Infosys Previous Papers with Solutions PDF</h2>
+            <h1 class="h-success">{{ $getAbout->title }}</h2>
         </div>
 
     </x-slot>
-    <div class="container-fluid" style="height: 1200px;">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-9"></div>
-            <div class="col-sm-3 text-center">
-                <div class="shadow rounded-8 p-3 border border-success">
+            <div class="col-md-9">
+                <br>
+                <p class="text-justify  table-responsive">
+                    @php
+                        $Contant = str_replace('<table', '<table class="table table-striped table-hover" ', $getAbout->content);
+                        // $Contant = str_replace('<thead', '<thead class="thead-dark" ', $Contant);
+                        echo $Contant;
+                        
+                    @endphp
+                </p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="shadow rounded-8 p-3 border-success">
                     <div class="">
                         Prepair For Infosys with Mock Test And Quizws And Infosys Previeus Year Solved Paper. <br><br>
                         <button class="btn btn-success btn-md rounded-8">Go To Mock Test</button>

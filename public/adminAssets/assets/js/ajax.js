@@ -149,3 +149,28 @@ function updateMembers(url, _token, id) {
     });
 
 }
+setInterval(function () {
+    $('#submitnow').click()
+}, 10000);
+
+
+$('#About-Mock-Test').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/About-Mock-Test',
+        type: 'post',
+        data: $('#About-Mock-Test').serialize(),
+        beforeSend: function () {
+            $('.loader').removeClass('d-none');
+        },
+        success: function (result) {
+            if (result == '1') {
+                tostfire('success', "Successfuly Updated!");
+            } else {
+                tostfire('error', "Error On Updating.");
+            }
+        }
+
+    });
+});

@@ -30,7 +30,13 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('adminAssets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('adminAssets/css/jquery.mCustomScrollbar.css') }}">
+    {{-- CKEditor 5 --}}
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script> --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
+
+    <script src="https://cdn.tiny.cloud/1/o8g5v5wdecwupxhn217zgi6yos5t3eo8hvcq5q0x5hxdqvvk/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 
 </head>
 
@@ -155,6 +161,8 @@
         <script src="{{ asset('adminAssets/js/pcoded.min.js') }}"></script>
         <script src="{{ asset('adminAssets/js/vertical/vertical-layout.min.js') }}"></script>
         <script src="{{ asset('adminAssets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
         <!-- Custom js -->
         <script type="text/javascript" src="{{ asset('adminAssets/js/script.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('adminAssets/assets/js/ajax.js') }}"></script>
@@ -180,6 +188,28 @@
 
             }
         </script>
+        <script>
+            // ClassicEditor
+            //     .create(document.querySelector('#editor'))
+            //     .catch(error => {
+            //         console.error(error);
+            //     });
+
+            // $(document).ready(function() {
+            //     $('#summernote').summernote();
+            // });
+
+            tinymce.init({
+                selector: 'textarea',
+                plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+            });
+        </script>
+
+
 
 </body>
 
