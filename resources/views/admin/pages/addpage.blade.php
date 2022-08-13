@@ -1,6 +1,4 @@
 <x-layout.admin.base>
-
-
     <x-admin.maincard : title="Add Pages">
         <p class="loader text-right d-none"><i class="fa fa-spinner text-success fa-pulse fa-fw"></i></p>
         <form action="" id="addPages" method="POST">
