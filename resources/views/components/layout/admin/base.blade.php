@@ -201,16 +201,26 @@
 
             tinymce.init({
                 selector: 'textarea',
-                plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
-                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
-                toolbar_mode: 'floating',
+                plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export',
+                toolbar: 'a11ycheck |addcomment |showcomments| casechange| checklist| code| export| formatpainter| image| editimage pageembed| permanentpen| table |tableofcontents| undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+                height: 600,
+                // toolbar_mode: 'floating',
+                inycomments_mode: 'embedded',
+                menubar: false,
+                image_caption: true,
+                quickbars_selection_toolbar: 'bold italic | quicklink | h1 h2 h3 | blockquote |alignjustify| quickimage quicktable',
+                // quickbars_selection_toolbar: 'bold italic | quicklink | h1 h2 h3 | blockquote |alignjustify| quickimage quicktable',
+                noneditable_noneditable_class: 'mceNonEditable',
+                toolbar_mode: 'sliding',
+                spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
                 tinycomments_mode: 'embedded',
-                tinycomments_author: 'Author name',
+                content_style: '.mymention{ color: gray; }',
+                contextmenu: 'link image imagetools table configurepermanentpen',
+                a11y_advanced_options: true,
+                skin: 'outside',
+                toolbar_sticky: true,
             });
         </script>
-
-
-
 </body>
 
 </html>

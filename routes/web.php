@@ -5,12 +5,14 @@ use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
+use App\Http\Controllers\Admin\Adminpages;
 use App\Http\Controllers\Admin\Whatsapp;
 use App\Http\Controllers\Examination\Login;
 use App\Http\Controllers\Examination\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
+use App\Http\Controllers\Main\Pages;
 use App\Http\Controllers\Seo;
 use App\Http\Controllers\Social\GoogleController;
 use App\Http\Controllers\Student\Studentauth;
@@ -28,6 +30,7 @@ Route::view('/Contact-Us', 'main.contact');
 Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('//Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
+Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
 
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
@@ -74,9 +77,18 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     Route::post('/Admin/Update-Jobs', [Adminjobs::class, 'updateJobs']);
 
     // Mock Test
+    Route::get('/Admin/Mock-Test', [Adminmocktest::class, 'index']);
     Route::get('/Admin/About-Mock-Test/{pramaLink}', [Adminmocktest::class, 'addAboutMocktest']);
     Route::post('/Admin/About-Mock-Test', [Adminmocktest::class, 'postAddAboutMocktest']);
+    Route::post('/Admin/Update-Mock-Test', [Adminmocktest::class, 'updateMockTest']);
+    Route::get('/Admin/Add-Mock-Test', [Adminmocktest::class, 'addMockTest']);
+    Route::post('/Admin/Add-Mock-Test', [Adminmocktest::class, 'postAddMockTest']);
 
+    //Pages
+    Route::get('/Admin/Pages', [Adminpages::class, 'index']);
+    Route::get('/Admin/Add-Pages', [Adminpages::class, 'addPages']);
+    Route::post('/Admin/Add-Pages', [Adminpages::class, 'postAddPages']);
+    Route::get('/Admin/Edit-Pages/{pramaLink}', [Adminpages::class, 'editPages']);
 
     //Whatsapp Groups
     Route::post('/Admin/changeGroupStatus/', [Whatsapp::class, 'changeGroupStatus']);

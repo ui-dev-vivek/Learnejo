@@ -149,9 +149,9 @@ function updateMembers(url, _token, id) {
     });
 
 }
-setInterval(function () {
-    $('#submitnow').click()
-}, 10000);
+// setInterval(function () {
+//     $('#submitnow').click()
+// }, 10000);
 
 
 $('#About-Mock-Test').on('submit', function (e) {
@@ -169,6 +169,60 @@ $('#About-Mock-Test').on('submit', function (e) {
                 tostfire('success', "Successfuly Updated!");
             } else {
                 tostfire('error', "Error On Updating.");
+            }
+        }
+
+    });
+});
+
+$('#updatemockTest').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Update-Mock-Test',
+        type: 'post',
+        data: $('#updatemockTest').serialize(),
+        success: function (result) {
+            if (result == '1') {
+                tostfire('success', "Mock Test Successfuly Updated!");
+            } else {
+                tostfire('error', " Error On Updating Mock Test.");
+            }
+        }
+
+    });
+});
+$('#addmockTest').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Add-Mock-Test',
+        type: 'post',
+        data: $('#addmockTest').serialize(),
+        success: function (result) {
+            if (result == '1') {
+                tostfire('success', "Mock Test Successful Added!");
+            } else {
+                tostfire('error', " Error On Adding Mock Test.");
+            }
+        }
+
+    });
+});
+
+
+$('#addPages').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Add-Pages',
+        type: 'post',
+        data: $('#addPages').serialize(),
+        success: function (result) {
+            if (result != '0') {
+                tostfire('success', "Page Successful Added!");
+            } else {
+                tostfire('error', " Error On Adding Page.");
             }
         }
 

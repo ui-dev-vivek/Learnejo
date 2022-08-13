@@ -31,157 +31,120 @@
         <div class="pcoded-navigation-label">Navigation</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="">
-                <a href="index.html" class="waves-effect waves-dark">
+                <a href="{{ url('/Admin') }}" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                     <span class="pcoded-mtext">Dashboard</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigation-label">UI Element</div>
+        <div class="pcoded-navigation-label">Preparation</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="pcoded-hasmenu">
                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                    <span class="pcoded-mtext">Basic</span>
+                    <span class="pcoded-micon"><i class="fa fa-laptop"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Mock Test</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a href="breadcrumb.html" class="waves-effect waves-dark">
+                        <a href="{{ url('Admin/Mock-Test') }}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Breadcrumbs</span>
+                            <span class="pcoded-mtext">Mock Test List</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="button.html" class="waves-effect waves-dark">
+                        <a href="{{ url('Admin/Add-Mock-Test') }}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Button</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="accordion.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Accordion</span>
+                            <span class="pcoded-mtext">Add Mock Test</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="tabs.html" class="waves-effect waves-dark">
+                        <a href="{{ url('Admin/Add-Mock-Test-Question') }}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Tabs</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="color.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Color</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="label-badge.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Label Badge</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="tooltip.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Tooltip And Popover</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="typography.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Typography</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="notification.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Notifications</span>
+                            <span class="pcoded-mtext">Add Question</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                 </ul>
             </li>
         </ul>
-        <div class="pcoded-navigation-label">Forms</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="">
-                <a href="form-elements-component.html" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                    <span class="pcoded-mtext">Form</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-        </ul>
-        <div class="pcoded-navigation-label">Tables</div>
-        <ul class="pcoded-item pcoded-left-item">
-            <li class="">
-                <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
-                    <span class="pcoded-mtext">Table</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-        </ul>
-        <div class="pcoded-navigation-label">Chart And Maps</div>
-        <ul class="pcoded-item pcoded-left-item">
-            <li class="">
-                <a href="chart-morris.html" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
-                    <span class="pcoded-mtext">Charts</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-            <li class="">
-                <a href="map-google.html" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-map-alt"></i><b>M</b></span>
-                    <span class="pcoded-mtext">Maps</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-        </ul>
-        <div class="pcoded-navigation-label">Pages</div>
-        <ul class="pcoded-item pcoded-left-item">
-            <li class="pcoded-hasmenu active pcoded-trigger">
+            <li class="pcoded-hasmenu">
                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
+                    <span class="pcoded-micon"><i class="fa fa-list"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">MCQs</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{ url('Admin/MCQs') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">MCQs List</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{ url('Admin/Add-MCQs') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add MCQs</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{ url('Admin/Add-MCQs-Question') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add Question</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="pcoded-navigation-label">Other</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="">
+                <a href="{{ url('/Admin/Courses') }}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
+                    <span class="pcoded-mtext">Courses</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ url('/Admin/Jobs') }}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
+                    <span class="pcoded-mtext">Jobs-Internships</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-copy"></i><b>BC</b></span>
                     <span class="pcoded-mtext">Pages</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <li class="">
-                        <a href="auth-normal-sign-in.html" class="waves-effect waves-dark">
+                    <li class=" ">
+                        <a href="{{ url('Admin/Pages') }}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Login</span>
+                            <span class="pcoded-mtext">All Pages</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
-                    <li class="">
-                        <a href="auth-sign-up.html" class="waves-effect waves-dark">
+                    <li class=" ">
+                        <a href="{{ url('Admin/Add-Pages') }}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext">Registration</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="sample-page.html" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                            <span class="pcoded-mtext">Sample Page</span>
+                            <span class="pcoded-mtext">Add Pages</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                 </ul>
             </li>
         </ul>
+
     </div>
 </nav>
