@@ -5,9 +5,9 @@
 RewriteEngine On
 #RewriteBase /
 # NOT needed unless you're using mod_alias to redirect
+#RewriteCond %{HTTPS} !=on
 RewriteCond %{REQUEST_URI} !/public
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule ^(.*)$ https://%{REQUEST_URI}/public/$1 [L]
 # Direct all requests to /public folder
 
 </IfModule>
