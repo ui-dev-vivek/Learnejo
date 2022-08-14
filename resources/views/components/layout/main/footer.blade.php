@@ -54,7 +54,7 @@
                         <b>Learnejo</b><br>
                         <strong>Platform:</strong> E-Learning (Online)<br>
                         <strong>Phone:</strong> +91-9795033028<br>
-                        <strong>Email:</strong> learnejo@gmail.com<br>
+                        <strong>Email:</strong> learnejo@gmail.com gogo<br>
 
                     </p>
 
