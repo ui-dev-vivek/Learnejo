@@ -6,7 +6,7 @@ RewriteEngine On
 #RewriteBase /
 # NOT needed unless you're using mod_alias to redirect
 RewriteCond %{REQUEST_URI} !/public
-RewriteRule https://%{REQUEST_URI} ^(.*)$ public/$1 [L]
+RewriteRule ^(.*)$ public/$1 [L]
 # Direct all requests to /public folder
 
 </IfModule>
