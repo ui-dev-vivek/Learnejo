@@ -198,8 +198,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
                 </div>
 
-                <p class="text-end"><a class="btn btn-md btn-success" href="{{ url('/Courses') }}">More Courses
-                        <i class="fa fa-arrow-right" aria-hidden="true"> </i> </a></p>
+                <p class="text-end"><a class="btn btn-md btn-success hvr-icon-wobble-horizontal"
+                        href="{{ url('/Courses') }}">More Courses
+                        <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a></p>
 
             </section>
         </div>
@@ -272,9 +273,10 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                     @empty
                         <p>No any Jobs.</p>
                     @endforelse
-                    <p class="text-end"><a class="btn btn-md btn-success" href="{{ url('/Job-Internships') }}">More
+                    <p class="text-end"><a class="btn btn-md btn-success hvr-icon-wobble-horizontal"
+                            href="{{ url('/Job-Internships') }}">More
                             Jobs
-                            <i class="fa fa-arrow-right" aria-hidden="true"> </i> </a></p>
+                            <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a></p>
                 </div>
             </section>
         </div>

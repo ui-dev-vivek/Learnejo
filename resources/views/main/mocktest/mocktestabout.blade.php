@@ -25,11 +25,16 @@ $description = 'Get Free Mock Test For Prepretion';
                     @endphp
                 </p>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3 ">
                 <div class="shadow rounded-8 p-3 border-success">
                     <div class="">
-                        Prepair For Infosys with Mock Test And Quizws And Infosys Previeus Year Solved Paper. <br><br>
-                        <button class="btn btn-success btn-md rounded-8">Go To Mock Test</button>
+                        {{ $getAbout->title }}. <br><br>
+                        <div class="text-center">
+                            <a href="#"
+                                class="btn btn-info p-2 hvr-sweep-to-right hvr-icon-wobble-horizontal border border-success">Go
+                                To
+                                Mock Test <i class="fa fa-arrow-right hvr-icon"> </i></a>
+                        </div>
                         <hr>
                         <div class="row">
                             <div class="col border-end"><a href="">Coding</a></div>

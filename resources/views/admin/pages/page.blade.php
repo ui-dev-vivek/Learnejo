@@ -21,10 +21,10 @@
                                 <td class="h6"><strong>{{ $page->title }}</strong></td>
                                 <td class="text-end">
                                     <a class="btn btn-sm btn-my-sm  btn-info"
-                                        href="{{ url('/Pages') }}/{{ $page->prama_link }}">
+                                        href="{{ url('/Pages') }}/{{ $page->prama_link }}" target="_blank">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <a class="btn btn-sm btn-my-sm  btn-warning" target="_blank"
+                                    <a class="btn btn-sm btn-my-sm  btn-warning"
                                         href="{{ url('/Admin/Edit-Pages') }}/{{ $page->prama_link }}">
                                         <i class="fa fa-edit"></i>
                                     </a>
