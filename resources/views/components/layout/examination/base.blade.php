@@ -38,7 +38,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/timercircle.css') }}" rel="stylesheet">
-
     {{-- Google Adseens --}}
     {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
         crossorigin="anonymous"></script> --}}
@@ -86,6 +85,7 @@
     <script type="text/javascript" src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
 
     <!-- Template Main JS File -->
+    <script src="{{ asset('faceapi/face-api.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/other.js') }}"></script>
     <script src="{{ asset('assets/js/mock_test.js') }}"></script>

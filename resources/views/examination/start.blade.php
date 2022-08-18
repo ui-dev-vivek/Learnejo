@@ -1,4 +1,9 @@
 <x-layout.examination.base>
+    <style>
+        canvas {
+            position: absolute;
+        }
+    </style>
     <div class="row ">
         <div class="col-md-4 ">
             <section class="bg-success p-4 " style="height:100vh; ">
@@ -18,27 +23,19 @@
 
             </section>
         </div>
-        <div class="col-md-8">
-            <div class="display-cover">
-                <video autoplay></video>
-                <canvas class="d-none"></canvas>
-
-                <div class="video-options">
-                    <select name="" id="" class=" form-control">
-                        <option value="">Select camera</option>
-                    </select>
+        <div class="col-md-8"><br><br>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="shadow  rounded-8 bg-success p-1">
+                        <video class="rounded-8" id="video" height="280" width="180" autoplay muted></video>
+                    </div>
                 </div>
-
-                <img class="screenshot-image d-none" alt="">
-
-                <div class="controls">
-                    <button class="btn btn-danger play" title="Play"><i data-feather="play-circle"></i></button>
-                    <button class="btn btn-info pause d-none" title="Pause"><i data-feather="pause"></i></button>
-                    <button class="btn btn-outline-success screenshot d-none" title="ScreenShot"><i
-                            data-feather="image"></i></button>
-
+                <div class="col-md-3">
+                    <div id="prediction"></div>
                 </div>
             </div>
+
         </div>
     </div>
     </section>

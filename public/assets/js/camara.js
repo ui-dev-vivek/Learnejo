@@ -1,98 +1,159 @@
-feather.replace();
+// const video = document.getElementById("video");
+// let predictedAges = [];
 
-const controls = document.querySelector('.controls');
-const cameraOptions = document.querySelector('.video-options>select');
-const video = document.querySelector('video');
-const canvas = document.querySelector('canvas');
-const screenshotImage = document.querySelector('img');
-const buttons = [...controls.querySelectorAll('button')];
-let streamStarted = false;
+// Promise.all([
+//     faceapi.nets.tinyFaceDetector.loadFromUri("http://localhost:8000/faceapi/models"),
+//     faceapi.nets.faceLandmark68Net.loadFromUri("http://localhost:8000/faceapi/models"),
+//     faceapi.nets.faceRecognitionNet.loadFromUri("http://localhost:8000/faceapi/models"),
+//     faceapi.nets.faceExpressionNet.loadFromUri("http://localhost:8000/faceapi/models"),
+//     faceapi.nets.ageGenderNet.loadFromUri("http://localhost:8000/faceapi/models")
+// ]).then(startVideo);
 
-const [play, pause, screenshot] = buttons;
+// function startVideo() {
+//     navigator.getUserMedia(
+//         {
+//             video: {
+//                 mandatory: {
+//                     minWidth: 480,
+//                     minHeight: 480
+//                 },
+//                 optional: [{ maxFrameRate: 10 }]
+//             },
+//             audio: false
+//         },
+//         stream => (video.srcObject = stream),
+//         err => console.error(err)
+//     );
+// }
 
-const constraints = {
-    video: {
-        width: {
-            min: 1280,
-            ideal: 1920,
-            max: 2560,
-        },
-        height: {
-            min: 720,
-            ideal: 1080,
-            max: 1440
-        },
-    }
-};
+// video.addEventListener("playing", () => {
+//     const canvas = faceapi.createCanvasFromMedia(video);
+//     document.body.append(canvas);
 
-cameraOptions.onchange = () => {
-    const updatedConstraints = {
-        ...constraints,
-        deviceId: {
-            exact: cameraOptions.value
-        }
-    };
+//     const displaySize = { width: video.width, height: video.height };
+//     faceapi.matchDimensions(canvas, displaySize);
 
-    startStream(updatedConstraints);
-};
+//     setInterval(async () => {
+//         const detections = await faceapi
+//             .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+//             .withFaceLandmarks()
+//             .withFaceExpressions()
+//             .withAgeAndGender();
+//         const resizedDetections = faceapi.resizeResults(detections, displaySize);
 
-play.onclick = () => {
-    if (streamStarted) {
-        video.play();
-        play.classList.add('d-none');
-        pause.classList.remove('d-none');
-        return;
-    }
-    if ('mediaDevices' in navigator && navigator.mediaDevices.getUserMedia) {
-        const updatedConstraints = {
-            ...constraints,
-            deviceId: {
-                exact: cameraOptions.value
+//         canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+
+//         faceapi.draw.drawDetections(canvas, resizedDetections);
+//         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+//         faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+
+//         const age = resizedDetections[0].age;
+//         const interpolatedAge = interpolateAgePredictions(age);
+//         const bottomRight = {
+//             x: resizedDetections[0].detection.box.bottomRight.x - 50,
+//             y: resizedDetections[0].detection.box.bottomRight.y
+//         };
+
+//         new faceapi.draw.DrawTextField(
+//             [`${faceapi.utils.round(interpolatedAge, 0)} years`],
+//             bottomRight
+//         ).draw(canvas);
+
+//         console.log(detections.length);
+
+//     }, 100);
+// });
+
+// function interpolateAgePredictions(age) {
+//     predictedAges = [age].concat(predictedAges).slice(0, 30);
+//     const avgPredictedAge =
+//         predictedAges.reduce((total, a) => total + a) / predictedAges.length;
+//     return avgPredictedAge;
+// }
+
+
+
+
+const video = document.getElementById('video');
+
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/faceapi/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/faceapi/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/faceapi/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/faceapi/models'),
+    faceapi.nets.ageGenderNet.loadFromUri('/faceapi/models')
+]).then(startVideo);
+
+function startVideo() {
+
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+    if (navigator.getUserMedia) {
+        navigator.getUserMedia({ video: true },
+            function (stream) {
+                var video = document.querySelector('video');
+                video.srcObject = stream;
+                video.onloadedmetadata = function (e) {
+                    video.play();
+                };
+            },
+            function (err) {
+                console.log(err.name);
             }
-        };
-        startStream(updatedConstraints);
+        );
+    } else {
+        document.body.innerText = "getUserMedia not supported";
+        console.log("getUserMedia not supported");
     }
-};
+}
+var no = 0;
+video.addEventListener('play', () => {
+    const canvas = faceapi.createCanvasFromMedia(video);
+    document.body.append(canvas);
+    const displaySize = { width: video.width, height: video.height };
+    faceapi.matchDimensions(canvas, displaySize);
+    setInterval(async () => {
+        const predictions = await faceapi
+            .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+            .withFaceLandmarks()
+            .withFaceExpressions()
+            .withAgeAndGender();
 
-const pauseStream = () => {
-    video.pause();
-    play.classList.remove('d-none');
-    pause.classList.add('d-none');
-};
+        const resizedDetections = faceapi.resizeResults(predictions, displaySize);
+        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+        faceapi.draw.drawDetections(canvas, resizedDetections);
+        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+        faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+        resizedDetections.forEach(result => {
+            const { age, gender, genderProbability } = result;
+            new faceapi.draw.DrawTextField(
+                [
+                    `${faceapi.round(age, 0)} years`,
+                    `${gender} (${faceapi.round(genderProbability)})`
+                ],
+                result.detection.box.bottomRight
+            ).draw(canvas);
+        });
+        console.log(predictions.length)
+        if (predictions.length > 1) {
+            $('#prediction').append("<small><span class='text-dabger'>Other Face Ditected." + new Date($.now()) + "</small><hr>");
+        }
+        if (predictions.length == 1) {
+            no = 0;
+        }
 
-const doScreenshot = () => {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext('2d').drawImage(video, 0, 0);
-    screenshotImage.src = canvas.toDataURL('image/webp');
-    screenshotImage.classList.remove('d-none');
-};
+        if (predictions.length == 0) {
+            if (no == 100) {
+                $('#prediction').html("<small><span class='text-dabger'>No Face Ditected." + new Date($.now()) + " count:" + no + "</small><hr>");
 
-pause.onclick = pauseStream;
-screenshot.onclick = doScreenshot;
+            }
 
-const startStream = async (constraints) => {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
-    handleStream(stream);
-};
+            if (no == 500) {
+                $('#prediction').html("<small><span class='text-dabger'>Out Of Camara Last Worning." + new Date($.now()) + " count:" + no + "</small><hr>");
+            }
+            no = no + 1;
+        }
 
-
-const handleStream = (stream) => {
-    video.srcObject = stream;
-    play.classList.add('d-none');
-    pause.classList.remove('d-none');
-    screenshot.classList.remove('d-none');
-
-};
-
-
-const getCameraSelection = async () => {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-    const videoDevices = devices.filter(device => device.kind === 'videoinput');
-    const options = videoDevices.map(videoDevice => {
-        return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
-    });
-    cameraOptions.innerHTML = options.join('');
-};
-
-getCameraSelection();
+    }, 500);
+});
+console.log(no);

@@ -2530,9 +2530,9 @@ section {
 .v-center {
   margin: 0;
   position: absolute;
-  top: 35vh;
+  top: 40vh;
   -ms-transform: translateY(-50%);
-  transform: translateY(-40%);
+  transform: translateY(-50%);
 }
 
 .v-c-center {   
