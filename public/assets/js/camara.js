@@ -143,17 +143,17 @@ video.addEventListener('play', () => {
         }
 
         if (predictions.length == 0) {
-            if (no == 100) {
+            if (no == 50) {
                 $('#prediction').html("<small><span class='text-dabger'>No Face Ditected." + new Date($.now()) + " count:" + no + "</small><hr>");
 
             }
 
-            if (no == 500) {
+            if (no == 200) {
                 $('#prediction').html("<small><span class='text-dabger'>Out Of Camara Last Worning." + new Date($.now()) + " count:" + no + "</small><hr>");
             }
             no = no + 1;
         }
 
-    }, 500);
+    }, 100);
 });
 console.log(no);
