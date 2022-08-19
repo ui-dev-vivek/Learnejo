@@ -1,5 +1,14 @@
 <x-layout.examination.base>
     <style>
+        .facex {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
         canvas {
             position: absolute;
         }
@@ -27,16 +36,17 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <div class="shadow  rounded-8 bg-success p-1">
-                        <video class="rounded-8" id="video" height="280" width="180" autoplay muted></video>
+                    <div class="shadow  facex  rounded-8 bg-success p-1">
+                        <video class="rounded-8" id="video" height="300" width="400" autoplay muted></video>
                     </div>
+                    <div class="p-2 rounded" id="action"></div>
                 </div>
                 <div class="col-md-3">
-                    <div id="prediction"></div>
+                    <div></div>
                 </div>
             </div>
-
         </div>
     </div>
     </section>
+
 </x-layout.examination.base>

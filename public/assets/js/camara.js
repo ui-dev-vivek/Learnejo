@@ -109,8 +109,10 @@ function startVideo() {
 var no = 0;
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video);
-    document.body.append(canvas);
+    $('.facex').append(canvas);
+    // document.body.append(canvas);
     const displaySize = { width: video.width, height: video.height };
+    // const displaySize = { width: 400, height: 300 };
     faceapi.matchDimensions(canvas, displaySize);
     setInterval(async () => {
         const predictions = await faceapi
@@ -139,16 +141,18 @@ video.addEventListener('play', () => {
             $('#prediction').append("<small><span class='text-dabger'>Other Face Ditected." + new Date($.now()) + "</small><hr>");
         }
         if (predictions.length == 1) {
+            $('#action').html("<span class='text-success h4'>Please Wait..</span>");
             no = 0;
         }
 
         if (predictions.length == 0) {
-            if (no == 50) {
+            $('#action').html("<span class='text-danger h4'>Focus on camera!</span>");
+            if (no == 100) {
                 $('#prediction').html("<small><span class='text-dabger'>No Face Ditected." + new Date($.now()) + " count:" + no + "</small><hr>");
 
             }
 
-            if (no == 200) {
+            if (no == 300) {
                 $('#prediction').html("<small><span class='text-dabger'>Out Of Camara Last Worning." + new Date($.now()) + " count:" + no + "</small><hr>");
             }
             no = no + 1;
@@ -156,4 +160,3 @@ video.addEventListener('play', () => {
 
     }, 100);
 });
-console.log(no);
