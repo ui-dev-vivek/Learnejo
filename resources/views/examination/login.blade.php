@@ -6,7 +6,7 @@
                 <div class="text-center p-5 shadow border m-2 rounded-8">
                     <h1 class="h1">Students Login</h1> <small>For Online Assessment.</small>
                     <hr><br>
-                    {{ session('fromLoginRequest') }}
+                    {{-- {{ session('fromLoginRequest') }} --}}
                     <form id="examination-login">
                         <input class="form-control border border-success mb-3 p-3 h1" type="email"
                             placeholder="Emain id:" required>
