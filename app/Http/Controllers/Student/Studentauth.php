@@ -21,7 +21,7 @@ class Studentauth extends Controller
                     return "Student Dashboard Under Maintenance";
                 } else {
                     $stu = DB::table('students')->where('email', $stuid)->where('status', 1)->first();
-                    $req->session()->put('studentId', $stu->stuid);
+                    $req->session()->put('StudentId', $stu->stuid);
                     return "Welcome " . $stu->stuid;
                 }
             } else {

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class studentauth
 {
@@ -16,8 +17,10 @@ class studentauth
      */
     public function handle(Request $request, Closure $next)
     {
+        $request->session()->put('fromLoginRequest', URL::current());
+
         if (!$request->session()->has('StudentId')) {
-            return redirect('/Student-Login');
+            return redirect('/Examination-Login');
         }
         return $next($request);
     }

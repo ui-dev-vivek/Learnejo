@@ -108,6 +108,9 @@ Route::get('/Student-Side-Dashboard', [Stusidedashboard::class, 'index']);
 
 // Examination 
 Route::view('/Examination-Login', 'examination.login');
-Route::view('/Examination-Rules/{pramaLink}', 'examination.rules');
-Route::view('/Start-Examination/{pramaLink}', 'examination.start');
-Route::view('/Examination/{pramaLink}', 'examination.exam');
+
+Route::group(['middleware' => ['StudentLogin']], function () {
+    Route::view('/Examination-Rules/{pramaLink}', 'examination.rules');
+    Route::view('/Start-Examination/{pramaLink}', 'examination.start');
+    Route::view('/Examination/{pramaLink}', 'examination.exam');
+});

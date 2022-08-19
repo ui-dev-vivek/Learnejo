@@ -25,7 +25,7 @@ class Adminauth extends Controller
                     return redirect('/Admin-Login')->with('error', 'Admin panel Is Under Maintenance!');
                 } else {
                     $req->session()->put('MyLAdminId', $adid[0]);
-                    return redirect('/Admin');
+                    return redirect(session('fromLoginRequestAdmin'));
                 }
             } else {
                 return redirect('/Admin-Login')->with('error', 'Your Account Is disabled! ');

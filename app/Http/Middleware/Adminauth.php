@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class Adminauth
 {
@@ -16,6 +17,7 @@ class Adminauth
      */
     public function handle(Request $request, Closure $next)
     {
+        $request->session()->put('fromLoginRequestAdmin', URL::current());
         if (!$request->session()->has('MyLAdminId')) {
             return redirect('/Admin-Login');
         }
