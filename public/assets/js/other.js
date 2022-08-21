@@ -86,3 +86,5 @@ function telegramShare(pramalink) {
     window.location.href = url;
 }
 
+
+

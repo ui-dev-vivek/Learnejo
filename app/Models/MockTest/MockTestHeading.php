@@ -2,10 +2,12 @@
 
 namespace App\Models\MockTest;
 
+use App\Models\Question;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class MockTestHeading extends Model
 {

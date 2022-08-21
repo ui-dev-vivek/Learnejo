@@ -1,6 +1,5 @@
 // const video = document.getElementById("video");
 // let predictedAges = [];
-
 // Promise.all([
 //     faceapi.nets.tinyFaceDetector.loadFromUri("http://localhost:8000/faceapi/models"),
 //     faceapi.nets.faceLandmark68Net.loadFromUri("http://localhost:8000/faceapi/models"),
@@ -72,8 +71,6 @@
 // }
 
 
-
-
 const video = document.getElementById('video');
 
 Promise.all([
@@ -123,15 +120,15 @@ video.addEventListener('play', () => {
 
         const resizedDetections = faceapi.resizeResults(predictions, displaySize);
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-        faceapi.draw.drawDetections(canvas, resizedDetections);
+        // faceapi.draw.drawDetections(canvas, resizedDetections);
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+        // faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
         resizedDetections.forEach(result => {
             const { age, gender, genderProbability } = result;
             new faceapi.draw.DrawTextField(
                 [
-                    `${faceapi.round(age, 0)} years`,
-                    `${gender} (${faceapi.round(genderProbability)})`
+                    // `${faceapi.round(age, 0)} years`,
+                    // `${gender} (${faceapi.round(genderProbability)})`
                 ],
                 result.detection.box.bottomRight
             ).draw(canvas);

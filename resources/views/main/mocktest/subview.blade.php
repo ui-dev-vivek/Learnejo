@@ -1,417 +1,245 @@
-<x-Layout.Main.Base>
+@php
+$title = 'Learnejo:Courses';
+$image = asset('assets/image/icon.jpg');
+$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+
+@endphp
+<x-layout.main.base :title="$title" :image="$image" :description="$description">
     <style>
-        .ls-box {
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #cac7c7;
-            box-shadow: 0px 0px 20px 1px #cac7c7;
-            background-color: #FFF;
-        }
 
-        /*new analytics page progress bar*/
-        .preparations-section-bar .progress {
-            height: 6px;
-        }
-
-        .preparations-section-bar .progress-bar {
-            background: #3CB371;
-        }
-
-        .new-analytics-completion {
-            line-height: 10px !important;
-            text-align: center;
-            float: right;
-            margin-left: auto;
-            order: 2;
-            margin-bottom: 8px;
-            margin-top: auto;
-        }
-
-        .new-analytics-completion span {
-            font-size: 9px;
-        }
-
-        .new-analytics-completion small {
-            font-size: 8px;
-        }
     </style>
     <x-slot name='hero'>
-
-        <section class="p-2 shadow ">
-            <br><br><br>
-            <div class=" container text-center p-2">
-
-                <p style="font-size:70px; color:rgb(20, 16, 231);"><strong>{{ $getMockTest[0]->name }}</strong></p>
+        <section class="intro-single">
+            <div class="container">
                 <div class="row">
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-users rounded-circle p-2 bg-success text-white"></i>
-                        <span class=""> Attempts : 34543</span>
+                    <div class="col-md-12 col-lg-12">
+                        <h2 class="h1 h-success">{{ $getMockTest[0]->name }} Mock Test</h2>
+                        <hr><br>
                     </div>
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-list-alt rounded-circle border border-success p-2 bg-success text-white"></i>
-                        Mock Tests : 34543</div>
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-code rounded-circle border border-success p-2 bg-success text-white"></i>
-                        Coding : 34543</div>
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-book rounded-circle border border-success p-2 bg-success text-white"></i>
-                        Solutions : 34543</div>
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-gg rounded-circle border border-success p-2 bg-success text-white"></i>
-                        Quizs : 34543</div>
-                    <div class="col-2 border-bottom p-1 border-success"> <i
-                            class="fa fa-list-ul rounded-circle border border-success p-2 bg-success text-white"></i>
-                        Mcqs : 34543</div>
-
-
                 </div>
-
             </div>
-
         </section>
     </x-slot>
-    <hr style="background:rgb(8, 219, 8);">
-    <div class="text-center">
-        <a class="btn btn-primary btn-block btn-md m-1" href="javascript:void(0)"
-            onclick="syllabusShow();">{{ $getMockTest[0]->name }}
-            Syllabus</a>
-        <a class="btn btn-outline-primary btn-block btn-md m-1" href="javascript:void(0)">{{ $getMockTest[0]->name }}
-            Mock Tests</a>
+    <div class="container">
+        <article class="tabs content--flow">
 
-        <a class="btn btn-primary btn-block btn-md m-1" href="javascript:void(0)">{{ $getMockTest[0]->name }}
-            Coading Test</a>
+            <aside class="sidebar">
+                <nav role="tablist" class="tab__navigation">
+                    @php
+                        $id = 1;
+                    @endphp
 
-        <a class="btn btn-outline-primary btn-block btn-md m-1" href="javascript:void(0)"><i class="fa fa-gg"></i>
-            &nbsp;{{ $getMockTest[0]->name }}
-            Quiz</a>
-        <a class="btn btn-primary btn-block btn-md m-1" href="javascript:void(0)"><i class="fa fa-list-ul"></i>
-            &nbsp;{{ $getMockTest[0]->name }}
-            Mcqs</a>
-        <a class="btn btn-outline-primary btn-block m-1 btn-md" href="javascript:void(0)"><i class="fa fa-book"></i>
-            &nbsp;{{ $getMockTest[0]->name }}
-            Solution</a>
+                    @forelse ($getMockTest[0]->mockTestSubTopic as $topic)
+                        @if ($id == 1)
+                            <button role="tab" aria-selected="true" class="tab__button" id="{{ $id++ }}">
+                                <span class="icon__for--tab">
+                                    <i class="fa fa-eercast"></i>
+                                </span>
+                                <span class="text__for--tab text-center h2">{{ $topic->name }} </span>
+                            </button>
+                        @else
+                            <button role="tab" aria-selected="false" class="tab__button" id="{{ $id++ }}">
+                                <span class="icon__for--tab">
+                                    <i class="fa fa-eercast"></i>
+                                </span>
+                                <span class="text__for--tab text-center h2">{{ $topic->name }} </span>
+                            </button>
+                        @endif
 
+                    @empty
+                        <div class="h5">There Are No Any Mock Test.</div>
+                    @endforelse
+                </nav>
+            </aside>
+            <main class="content__area">
+                <div class="tab__content">
+                    @php
+                        $idx = 1;
+                    @endphp
+
+                    @forelse ($getMockTest[0]->mockTestSubTopic as $topic)
+                        @if ($idx == 1)
+                            <div role="tabpanel" aria-labelledby="{{ $idx++ }}">
+                                <h1 class="title border-bottom mb-1 ">{{ $getMockTest[0]->name }}
+                                    {{ $topic->name }}
+                                    Mock Test
+                                </h1>
+                                <span class="span-tag"></span>
+                                <p class="text">
+                                <div class="p-2" style="width: 100vh;">
+                                    @forelse ($topic->mockTestHeading as $heading)
+                                        <div class="ls-box z-depth-5" data-aos="zoom-in" data-aos-delay="30">
+
+                                            <div class="row">
+                                                <div class="col-1 ps-2 text-center">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('assets/image/mocklogo.jpg') }}" alt="">
+                                                </div>
+                                                <div class="col-md-9">
+
+                                                    <div class="preparations-section-bar">
+                                                        <div class="row">
+                                                            <div class="col-9 ps-4"> <a
+                                                                    href="{{ url('/Examination-Rules') }}/{{ $getMockTest[0]->prama_link }}/{{ $heading->prama_link }}"
+                                                                    target="_blank">
+
+                                                                    <h4> <strong class="text-start">
+                                                                            {{ $heading->name }}</strong>
+                                                                    </h4>
+                                                                </a> </div>
+                                                            <div class="col-3">
+                                                                <div class="flex">
+                                                                    <p class="new-analytics-completion"><span
+                                                                            class="mont-bold">30 Points
+                                                                            {{-- </span><br><small>Points</small> --}}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            {{-- <div class="col-1 text-center">
+
+                                                            </div> --}}
+                                                            <div class="col-12 text-end  ">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 30%;" aria-valuenow="25"
+                                                                        aria-valuemin="0" aria-valuemax="100"></div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 pt-1 text-center">
+                                                    <a class="p-1 rounded border border-success hvr-sweep-to-right ps-2 pe-2 hvr-icon-wobble-horizontal"
+                                                        href="{{ url('/Examination-Rules') }}/{{ $getMockTest[0]->prama_link }}/{{ $heading->prama_link }}"
+                                                        target="_blank">Start <i
+                                                            class="fa fa-angle-double-right hvr-icon"
+                                                            aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    @empty
+                                        <h4>Comming Soon.....</h4>
+                                    @endforelse
+
+                                </div>
+
+                                </p>
+                            </div>
+                        @else
+                            <div role="tabpanel" aria-labelledby="{{ $idx++ }}" hidden>
+                                <h1 class="title border-bottom mb-1 ">{{ $getMockTest[0]->name }}
+                                    {{ $topic->name }}
+                                    Mock Test</h1>
+
+                                <span class="span-tag"></span>
+
+                                <p class="text">
+                                <div class="p-1" style="width: 100vh;">
+                                    @forelse ($topic->mockTestHeading as $heading)
+                                        <div class="ls-box z-depth-5" data-aos="zoom-in" data-aos-delay="30">
+
+                                            <div class="row">
+                                                <div class="col-1 ps-2 text-center">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('assets/image/mocklogo.jpg') }}" alt="">
+                                                </div>
+                                                <div class="col-md-9">
+
+                                                    <div class="preparations-section-bar">
+                                                        <div class="row">
+                                                            <div class="col-9 ps-4"> <a
+                                                                    href="{{ url('/Examination-Rules') }}/{{ $getMockTest[0]->prama_link }}/{{ $heading->prama_link }}"
+                                                                    target="_blank">
+
+                                                                    <h4> <strong class="text-start">
+                                                                            {{ $heading->name }}</strong>
+                                                                    </h4>
+                                                                </a> </div>
+                                                            <div class="col-3">
+                                                                <div class="flex">
+                                                                    <p class="new-analytics-completion"><span
+                                                                            class="mont-bold">30 Points
+                                                                            {{-- </span><br><small>Points</small> --}}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            {{-- <div class="col-1 text-center">
+
+                                                        </div> --}}
+                                                            <div class="col-12 text-end  ">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 30%;" aria-valuenow="25"
+                                                                        aria-valuemin="0" aria-valuemax="100"></div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 pt-1 text-center">
+                                                    <a class="p-1 rounded border border-success hvr-sweep-to-right ps-2 pe-2 hvr-icon-wobble-horizontal"
+                                                        href="{{ url('/Examination-Rules') }}/{{ $getMockTest[0]->prama_link }}/{{ $heading->prama_link }}"
+                                                        target="_blank">Start <i
+                                                            class="fa fa-angle-double-right hvr-icon"
+                                                            aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    @empty
+                                        <h4>Comming Soon.....</h4>
+                                    @endforelse
+
+                                </div>
+                                </p>
+                            </div>
+                        @endif
+
+                    @empty
+                        <div class="h5">There Are No Any Mock Test.</div>
+                    @endforelse
+
+
+
+                </div>
+            </main>
+        </article>
     </div>
 
-    <div id="syllabus" class="p-1 d-none">
-        <hr>
-        <h4>TCS NQT:</h4>
-        <p><strong>This year TCS NQT Pattern is completely changed.</strong> TCS NQT Written Test Questions
-            pattern-based practice problems are available on the PrepInsta website. You may want to go through all the
-            sections before you start writing the exam.<strong>Test Pattern</strong> has been changed for the TCS NQT
-            Test as some sections have been replaced with the new sections.</p>
-        <p>We have done every bit of research and analysis for TCS NQT Placement papers and Questions 2022 here. TCS NQT
-            Previous Papers and Sample Papers show us that the exam is of high difficulty for all branches.</p>
-        <p><strong>TCS NQT will use TCS iON platform for the 1st round of the exam, below are the syllabus
-                details</strong>:</p>
-        <div class="table-grey">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>Sections</td>
-                        <td>Questions</td>
-                    </tr>
-                    <tr>
-                        <td>Numerical Ability</td>
-                        <td>26 Qs , 40 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Verbal Ability</td>
-                        <td>24 Qs, 30 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Reasoning Ability</td>
-                        <td>30 Qs, 50 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Programming MCQ</td>
-                        <td> 10 Qs, 15 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Coding Test</td>
-                        <td>2 Qs, 45 mins</td>
-                    </tr>
-                </tbody>
-            </table>
+    <br><br>
 
-        </div>
-    </div>
+    <script>
+        const buttons = document.querySelectorAll('[role="tab"]');
+        const tabPanel = Array.from(document.querySelectorAll('[role="tabpanel"]'));
 
+        function hideTabContent(e) {
+            tabPanel.forEach((panels) => {
+                panels.hidden = true;
+            });
+            buttons.forEach((tab) => {
+                tab.setAttribute("aria-selected", false);
+            });
+            e.currentTarget.setAttribute("aria-selected", true);
 
-
-    <section class="container">
-        <h2>Mock Test:</h2> <br>
-        <div class="row">
-            @forelse ($getMockTest[0]->mockTestSubTopic as $topic)
-                <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="30">
-                    <a href="{{ url('/Mock-Test') }}/{{ $getMockTest[0]->prama_link }}/{{ $topic->prama_link }}">
-                        <div class="ls-box  " style="border-radius:10px;">
-
-                            <div class="preparations-section-bar mb-2">
-                                <div class="row">
-                                    <div class="col-10 ps-4"> <a
-                                            href="{{ url('/Mock-Test') }}/{{ $getMockTest[0]->prama_link }}/{{ $topic->prama_link }}">
-
-                                            <h4> <strong>{{ $topic->name }}</strong></h4>
-                                        </a> </div>
-                                    <div class="col-2">
-                                        <div class="flex">
-                                            <p class="new-analytics-completion"><span
-                                                    class="mont-bold">0/100%</span><br><small>Completed</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1 text-center">
-                                        <i class="fa text-success fa-3x fa-bolt" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-11 text-end mt-3 ">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 23%;"
-                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <small>
-                                <div class="row">
-                                    <div class="col-3 text-center"><strong>Total:</strong></div>
-                                    <div class="col-3 text-center">10 Test</div>
-                                    <div class="col-3 text-center">20 Min</div>
-                                    <div class="col-3 text-center">700 point</div>
-                                </div>
-                            </small>
-
-                        </div>
-                    </a>
-                </div>
-
-
-            @empty
-                <div>
-                    <h3>There are no any Mock Test</h3>
-                </div>
-            @endforelse
-        </div>
-    </section>
-
-    <section class="container">
-        <h2>Coding Questions:</h2> <br>
-        <div class="row">
-            @forelse ($getMockTest[0]->mockTestSubTopic as $topic)
-                <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="30">
-                    <a href="{{ url('/Mock-Test') }}/{{ $getMockTest[0]->prama_link }}/{{ $topic->prama_link }}">
-                        <div class="ls-box  " style="border-radius:10px;">
-
-                            <div class="preparations-section-bar mb-2">
-                                <div class="row">
-                                    <div class="col-10 ps-4"> <a data-bs-toggle="modal"
-                                            data-bs-target="#modelId{{ $topic->id }}" href="javascript:void(0);">
-
-                                            <h4> <strong>{{ $topic->name }}</strong></h4>
-                                        </a> </div>
-                                    <div class="col-2">
-                                        <div class="flex">
-                                            <p class="new-analytics-completion"><span
-                                                    class="mont-bold">0/100%</span><br><small>Completed</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1 text-center">
-                                        <i class="fa text-success fa-3x fa-bolt" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-11 text-end mt-3 ">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 23%;"
-                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <small>
-                                <div class="row">
-                                    <div class="col-3 text-center"><strong>Total:</strong></div>
-                                    <div class="col-3 text-center">10 Test</div>
-                                    <div class="col-3 text-center">20 Min</div>
-                                    <div class="col-3 text-center">700 point</div>
-                                </div>
-                            </small>
-
-                        </div>
-                    </a>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="modelId{{ $topic->id }}" tabindex="-1" role="dialog"
-                    aria-labelledby="modelTitleId{{ $topic->id }}" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                        role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">
-                                    <h2>{{ $topic->name }}</h2>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                                <div class="shadow m-1 ps-3 p-2 border border-success rounded">
-                                    <div class="row">
-                                        <div class="col-9">
-
-                                            Aptitude Set 1. <span></span>
-
-                                        </div>
-                                        <div class="col-3 text-center"><a href=""
-                                                class="btn btn-sm btn-my-sm btn-primary">Start</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            @empty
-                <div>
-                    <h3>There are no any Mock Test</h3>
-                </div>
-            @endforelse
-        </div>
-    </section>
-
-
-
-
-
-</x-Layout.Main.Base>
+            const {
+                id
+            } = event.currentTarget;
+            const tabPanels = tabPanel.find(
+                (tabContent) => tabContent.getAttribute("aria-labelledby") === id
+            );
+            tabPanels.hidden = false;
+        }
+        buttons.forEach((button) => button.addEventListener("click", hideTabContent));
+    </script>
+</x-layout.main.base>

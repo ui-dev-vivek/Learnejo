@@ -40,6 +40,8 @@
                         <video class="rounded-8" id="video" height="300" width="400" autoplay muted></video>
                     </div>
                     <div class="p-2 rounded" id="action"></div>
+
+                    <div id="prediction"></div>
                 </div>
                 <div class="col-md-3">
                     <div></div>

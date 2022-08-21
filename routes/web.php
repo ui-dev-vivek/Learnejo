@@ -7,8 +7,9 @@ use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
 use App\Http\Controllers\Admin\Whatsapp;
+use App\Http\Controllers\Examination\Examinationauth;
 use App\Http\Controllers\Examination\Login;
-use App\Http\Controllers\Examination\Mocktest;
+use App\Http\Controllers\Main\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
@@ -45,6 +46,13 @@ Route::post('/Apply', [Jobs::class, 'apply']);
 
 // Main Mock Test
 Route::get('/Prepare/{pramalink}', [Mocktest::class, 'mockTestAbout']);
+// Mock-Test
+Route::get('Mock-Test', [MockTest::class, 'index']);
+Route::get('Mock-Test/{pramaLink}', [MockTest::class, 'subView']);
+Route::get('Mock-Test/{subPramaLink}/{pramaLink}', [MockTest::class, 'view']);
+
+Route::get('Mock-Test/{subPramaLink}/{pramaLink}/{testId}', [MockTest::class, 'start']);
+
 
 // Admin Login
 Route::get('/Admin-Login', [Adminauth::class, 'adminLogin']);
@@ -108,9 +116,10 @@ Route::get('/Student-Side-Dashboard', [Stusidedashboard::class, 'index']);
 
 // Examination 
 Route::view('/Examination-Login', 'examination.login');
+Route::post('/Examination-Login', [Examinationauth::class, 'login']);
 
 Route::group(['middleware' => ['StudentLogin']], function () {
-    Route::view('/Examination-Rules/{pramaLink}', 'examination.rules');
-    Route::view('/Start-Examination/{pramaLink}', 'examination.start');
-    Route::view('/Examination/{pramaLink}', 'examination.exam');
+    Route::view('/Examination-Rules/{pramaLink}/{subPramaLink}', 'examination.rules');
+    Route::view('/Start-Examination/{pramaLink}/{subPramaLink}', 'examination.start');
+    Route::view('/Examination/{pramaLink}/{subPramaLink}', 'examination.exam');
 });

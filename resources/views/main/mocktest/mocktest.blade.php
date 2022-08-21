@@ -1,11 +1,25 @@
-<x-Layout.Main.Base>
+@php
+$title = 'Learnejo:Mock Test';
+$image = asset('assets/image/icon.jpg');
+$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 
+@endphp
+<x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
         <!-- ======= Intro Single ======= -->
-        <section class="breadcrumbs">
+        <section class="intro-single">
             <div class="container">
-                <h1 class="text-center">Mock Test</h1>
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="title-single-box">
+                            <div class="section-title ">
+                                <p class="title-single">Mock Test</p>
 
+                                <span>Mock Test</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section><!-- End Intro Single-->
     </x-slot>
@@ -68,4 +82,4 @@
         @endforelse
     </div>
 
-</x-Layout.Main.Base>
+</x-layout.main.base>

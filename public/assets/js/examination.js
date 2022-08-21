@@ -83,12 +83,6 @@ var intervalx = setInterval(function () {
         $('.progress-left .progress-bar').css('transform', 'rotate(' + (180 - (3.6 * counterxx)) + 'deg)');
     }
 
-    // $('.ss').attr("data-percentage", counterxx);
-    // $('.timer').html(120-counter);            
-    // if(counter > 2 ){
-    //     $('.timer').removeClass(text-success);
-    //     $('.timer').addClass(text-danger);
-    // }
 
 
     if (counter == endcounter) {

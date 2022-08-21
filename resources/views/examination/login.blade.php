@@ -8,19 +8,24 @@
                     <hr><br>
                     {{-- {{ session('fromLoginRequest') }} --}}
                     <form id="examination-login">
-                        <input class="form-control border border-success mb-3 p-3 h1" type="email"
+                        @csrf
+                        <input name="email" class="form-control border border-success mb-3 p-3 h1" type="email"
                             placeholder="Emain id:" required>
-                        <input class="form-control border border-success mb-2 p-3 h1" type="password"
+                        <input name="password" class="form-control border border-success mb-2 p-3 h1" type="password"
                             placeholder="Password:" required>
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-7 pt-3">
                                 <div class="massage"></div>
                             </div>
                             <div class="col-5">
                                 <p class="text-end">
                                     <button type="submit"
-                                        class="btn btn-info hvr-sweep-to-right hvr-icon-wobble-horizontal">Login &nbsp;
-                                        <i class="fa fa-sign-in hvr-icon" aria-hidden="true"></i></button>
+                                        class="btn btn-info hvr-sweep-to-right hvr-icon-wobble-horizontal"><span
+                                            class="login-btn">Login
+                                            &nbsp;
+                                            <i class="fa fa-sign-in hvr-icon" aria-hidden="true"></i></span> <span
+                                            class="login-loader d-none"><i
+                                                class="fa fa-spinner fa-pluse fa-1x"></i></span></button>
                                 </p>
                             </div>
                         </div>

@@ -1,5 +1,18 @@
 <x-layout.examination.base><br>
+    <style>
+        .facex {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
+        canvas {
+            position: absolute;
+        }
+    </style>
     <section class="p-1 shadow border">
         <div class="row">
             <div class="col-md-9">
@@ -82,6 +95,10 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="facex">
+                    <video id="video" class="rounded-8" width="324" height="216" autoplay muted></video>
                 </div>
             </div>
         </div>
