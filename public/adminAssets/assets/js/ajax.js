@@ -228,3 +228,60 @@ $('#addPages').on('submit', function (e) {
 
     });
 });
+
+$('#addmockTestSubTopic').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Add-Mock-Test-Sub-Topic',
+        type: 'post',
+        data: $('#addmockTestSubTopic').serialize(),
+        success: function (result) {
+            if (result != '0') {
+                tostfire('success', "Page Successful Added!");
+            } else {
+                tostfire('error', " Error On Adding Page.");
+            }
+        }
+
+    });
+});
+
+function getSubTopic(_token) {
+    var id = $('#mockTestId').val();
+    $.ajax({
+        url: '/Admin/Get-Sub-Topic',
+        type: 'post',
+        data: {
+            "_token": _token,
+            'id': id
+        },
+        beforeSend: function () {
+            $('.subTopic').html('Plaser Wait ...');
+        },
+        success: function (result) {
+            $('.subTopic').html(result);
+        }
+
+    });
+
+}
+
+
+$('#addmockTestHeading').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Add-Mock-Test-Heading',
+        type: 'post',
+        data: $('#addmockTestHeading').serialize(),
+        success: function (result) {
+            if (result != '0') {
+                tostfire('success', "Heading Successful Added!");
+            } else {
+                tostfire('error', " Error On Adding Heading.");
+            }
+        }
+
+    });
+});

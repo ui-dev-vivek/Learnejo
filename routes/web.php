@@ -91,6 +91,9 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     Route::post('/Admin/Update-Mock-Test', [Adminmocktest::class, 'updateMockTest']);
     Route::get('/Admin/Add-Mock-Test', [Adminmocktest::class, 'addMockTest']);
     Route::post('/Admin/Add-Mock-Test', [Adminmocktest::class, 'postAddMockTest']);
+    Route::post('/Admin/Add-Mock-Test-Sub-Topic', [Adminmocktest::class, 'addMockTestSubTopic']);
+    Route::post('/Admin/Get-Sub-Topic', [Adminmocktest::class, 'getSubTopic']);
+    Route::post('/Admin/Add-Mock-Test-Heading', [Adminmocktest::class, 'addMockTestHeading']);
 
     //Pages
     Route::get('/Admin/Pages', [Adminpages::class, 'index']);
