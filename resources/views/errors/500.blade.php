@@ -40,7 +40,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 
             </div>
-            <div class="col-sm">
+            <div class="col-sm"><br><br><br>
                 <div class="text-center rounded">
                     <video class="rounded-8 img-fluid" src="{{ asset('video/intro.mp4') }}" autoplay muted loop></video>
                 </div>
