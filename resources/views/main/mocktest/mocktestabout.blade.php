@@ -45,7 +45,7 @@ $description = 'Get Free Mock Test For Prepretion';
                 </div>
                 <br>
                 <div class="shadow p-1">
-                    <video controls loop class="rounded-8" width="100%" id="video">
+                    <video loop autoplay muted class="rounded-8" width="100%" id="video">
                         <source src="{{ asset('video/intro.mp4') }}" type="video/mp4">
                     </video>
 
