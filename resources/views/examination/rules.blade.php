@@ -1,7 +1,8 @@
 <x-layout.examination.base>
     <section class="container">
-        <h1>TCS Ninja Aptitude Assment set 1</h1>
-        <small>Date: {{ date('d-m-Y A') }}</small>
+        <h1>{{ $topic->name }} {{ $heading->name }}</h1>
+        <small>Date: {{ date('d-m-Y A') }} | Questions: {{ $heading->number_of_question }} | Time:
+            {{ $heading->timing }}</small>
         <hr>
         <div class="row">
             <div class="col-md p-3">
@@ -42,12 +43,21 @@
         </div>
         <hr>
 
-        <div class="text-center startBtn d-none">
+        <div class="text-center startBtn ">
             <p>Please read all rules and <a href="javascript:void(0)"> Privacy Policy.</a></p>
-            <a class="btn btn-info " href="{{ url('Start-Examination/hi') }}">Start Test</a>
-
-
+            <a class="hvr-sweep-to-right bg-info text-white p-2 ps-4 pe-4 border border-info me-3"
+                href="{{ url('/Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}">Start
+                Test
+                <br><small>Without Camera</small></a>
+            @if (date('H') >= '00' && date('H') < '6')
+                <a class="hvr-sweep-to-right ms-3 p-2 ps-4 pe-4 border border-success"
+                    href="{{ url('/Start-Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}"> <i
+                        class="fa fa-camera"> </i>
+                    Start With Camera <br> <small>AI proctored</small>
+                </a>
+            @endif
         </div>
+
 
     </section>
 </x-layout.examination.base>

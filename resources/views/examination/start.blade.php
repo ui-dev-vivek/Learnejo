@@ -18,14 +18,14 @@
             <section class="bg-success p-4 " style="height:100vh; ">
                 <div class="v-c-center">
                     <div class="v-center text-white">
-                        <h2 class="h2 text-white">Welcome <br>Vivek Kumar Yadav</h2>
-                        <p><b>vivek3193736@gmail.com</b></p>
+                        <h2 class="h2 text-white">Welcome <br>{{ $student->Name }}</h2>
+                        <p><b>{{ $student->collage }}</b></p>
                         <hr>
                         <h3 class="h4">Mock Test</h3>
-                        <h2 class="h3">TCS Ninja Aptitude Test Set 1</h2>
+                        <h2 class="h3">{{ $topic->name }} {{ $heading->name }}</h2>
                         <div class="row">
-                            <div class="col-6">Time : 15 Min</div>
-                            <div class="col-6">Question : 12 </div>
+                            <div class="col-6">Time : {{ $heading->timing }} Min</div>
+                            <div class="col-6">Question : {{ $heading->number_of_question }} </div>
                         </div>
                     </div>
                 </div>

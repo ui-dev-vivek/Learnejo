@@ -9,10 +9,23 @@
                     {{-- {{ session('fromLoginRequest') }} --}}
                     <form id="examination-login">
                         @csrf
-                        <input name="email" class="form-control border border-success mb-3 p-3 h1" type="email"
-                            placeholder="Emain id:" required>
-                        <input name="password" class="form-control border border-success mb-2 p-3 h1" type="password"
-                            placeholder="Password:" required>
+                        <div class="input-group">
+                            <span class="input-group-text mb-3 p-3 h1" id="basic-addon1"><i class="fa fa-envelope-o"
+                                    aria-hidden="true"></i></span>
+                            <input name="email" class="form-control border border-success mb-3 p-3 h1" type="email"
+                                placeholder="Emain id:" required>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text mb-3 p-3 h1" id="basic-addon1"><i class="fa fa-key"
+                                    aria-hidden="true"></i></span>
+                            <input name="password" class="form-control border border-success mb-3 p-3 h1"
+                                type="password" placeholder="Password:" required>
+                        </div>
+
+
+
+
+
                         <div class="row">
                             <div class="col-7 pt-3">
                                 <div class="massage"></div>

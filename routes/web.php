@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
 use App\Http\Controllers\Admin\Whatsapp;
+use App\Http\Controllers\Examination\Examinationaction;
 use App\Http\Controllers\Examination\Examinationauth;
 use App\Http\Controllers\Examination\Login;
 use App\Http\Controllers\Main\Mocktest;
@@ -106,6 +107,7 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     Route::post('/Admin/updateMembers/',  [Whatsapp::class, 'updateMembers']);
     Route::get('/Admin/Whatsapp',  [Whatsapp::class, 'whatsapp']);
     Route::post('/Admin/Add-Whatsapp-Group', [Whatsapp::class, 'addWhatsappGroup']);
+    Route::get('/Admin/Send-Courses', [Whatsapp::class, 'shareCourses']);
 });
 
 
@@ -122,7 +124,7 @@ Route::view('/Examination-Login', 'examination.login');
 Route::post('/Examination-Login', [Examinationauth::class, 'login']);
 
 Route::group(['middleware' => ['StudentLogin']], function () {
-    Route::view('/Examination-Rules/{pramaLink}/{subPramaLink}', 'examination.rules');
-    Route::view('/Start-Examination/{pramaLink}/{subPramaLink}', 'examination.start');
+    Route::get('/Examination-Rules/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'rules']);
+    Route::get('/Start-Examination/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'start']);
     Route::view('/Examination/{pramaLink}/{subPramaLink}', 'examination.exam');
 });

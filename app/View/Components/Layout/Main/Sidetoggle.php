@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Layout\Main;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class Sidetoggle extends Component
@@ -13,7 +14,6 @@ class Sidetoggle extends Component
      */
     public function __construct()
     {
-        //
     }
 
     /**

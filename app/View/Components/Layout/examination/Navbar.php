@@ -2,6 +2,8 @@
 
 namespace App\View\Components\layout\examination;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\Component;
 
 class Navbar extends Component
@@ -11,9 +13,13 @@ class Navbar extends Component
      *
      * @return void
      */
+    public $student;
     public function __construct()
     {
-        //
+        if (!Session::has('StudentId')) {
+            Session::put('StudentId', 'Guest-Students');
+        }
+        $this->student = DB::table('student_profile')->where('students_id', session('StudentId'))->first();
     }
 
     /**
