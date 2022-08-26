@@ -183,8 +183,8 @@ class Admincourses extends Controller
         $data['content'] = $req->post('desc');
         $data['image'] = $req->post('img');
         $data['link'] = $req->post('link');
-        $data['enroll'] = 0;
-        $data['view'] = 0;
+        $data['enroll'] = $req->post('enroll');
+        $data['view'] = $req->post('view');
         $data['status'] = 1;
         $data['catg'] = $req->post('cat');
         $data['sort_desc'] = $req->post('sortDesc');

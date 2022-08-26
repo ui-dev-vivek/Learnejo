@@ -34,7 +34,7 @@
                             </li>
                             <li class="list-inline-item mr-2">
                                 <b>Category: </b>
-                                <span class="color-text-a">Travel</span>
+                                <span class="color-text-a">{{ $course->catg }}</span>
                             </li>
                             <li class="list-inline-item mr-2">
                                 <b>Views: </b>
