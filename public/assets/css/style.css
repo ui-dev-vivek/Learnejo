@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@800&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Open Sans', sans-serif; */
   /* font-family: 'Roboto', sans-serif; */
   color: #060237;
@@ -1725,7 +1727,8 @@ section {
   margin-bottom: 0;
   /* font-family: "Nunito", sans-serif;
    */
-  font-family: 'Roboto Slab', serif;
+  /* font-family: 'Roboto Slab', serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer .footer-top .social-links a {
@@ -2550,4 +2553,45 @@ section {
 
 .v-c-center {   
   position: relative;  
+}
+
+
+
+
+.img-div {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: white;
+  background: #32c552;
+  padding: 5px;
+
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
 }

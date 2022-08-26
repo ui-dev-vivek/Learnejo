@@ -20,14 +20,14 @@ class Admincourses extends Controller
         dispatch(function () {
             $pramaLinks = [];
             for ($z = 2; $z > 0; $z--) {
-                $link = "https://www.real.discount/filter/?category=All&subcategory=All&store=Udemy&duration=All&price=0&rating=All&language=All&search=&submit=Filter&page=" . $z;
+                $link = "https://www.real.discount/filter/?category=All&subcategory=All&store=All&duration=All&price=All&rating=All&language=All&search=&submit=Filter&page=" . $z;
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $link);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $result = curl_exec($ch);
                 curl_close($ch);
                 $ex = explode('<a href="/offer/', $result);
-                for ($x = 13; $x >= 2; $x--) {
+                for ($x = 12; $x >= 2; $x--) {
                     $c_link = explode('/"', $ex[$x]);
 
 
@@ -45,7 +45,7 @@ class Admincourses extends Controller
                         if (strpos($c_link[0], '%') !== false) {
                         } else {
 
-                            echo $pramalink = $data['prama_link'] = $c_link[0];
+                            $pramalink = $data['prama_link'] = $c_link[0];
                             #$data['postDate']= $currentTime;
                             #$data['expiryDate'] = $e_date;
                             $data['type'] = "Udemy";
@@ -53,12 +53,14 @@ class Admincourses extends Controller
                             $data['view'] = 0;
                             $data['enroll'] = 0;
                             $insertCourseId = DB::table('courses')->insert($data);
+                            if ($insertCourseId) {
+                                echo $this->getupdateCourses($pramalink);
+                            }
                         }
                     }
                 }
             }
         })->delay(now()->addSeconds(value: 5));
-        echo "done under 5 second";
     }
 
     public function updateCourses(Request $req)
@@ -146,7 +148,7 @@ class Admincourses extends Controller
         $des = explode("</div>", $ex3[1]);
         $data['content'] = "<h3>Description" . $des[0];
         $data['status'] = 1;
-        DB::table('courses')->where('prama_link',  $pramaLink)->update($data);
+        return DB::table('courses')->where('prama_link',  $pramaLink)->update($data);
     }
 
     function uploadCourses($pramaLink)
@@ -168,5 +170,24 @@ class Admincourses extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_exec($ch);
         curl_close($ch);
+    }
+    function postCourses(Request $req)
+    {
+        $isIn = DB::table('courses')->where('prama_link', $req->post('pramaLink'))->exists();
+        if ($isIn) {
+            return 0;
+        }
+        $data['title'] = $req->post('title');
+        $data['prama_link'] = $req->post('pramaLink');
+        $data['type'] = "Udemy";
+        $data['content'] = $req->post('desc');
+        $data['image'] = $req->post('img');
+        $data['link'] = $req->post('link');
+        $data['enroll'] = 0;
+        $data['view'] = 0;
+        $data['status'] = 1;
+        $data['catg'] = $req->post('cat');
+        $data['sort_desc'] = $req->post('sortDesc');
+        return DB::table('courses')->insert($data);
     }
 }

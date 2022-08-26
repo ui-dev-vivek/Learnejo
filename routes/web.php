@@ -70,6 +70,7 @@ Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
 Route::get('/Admin/Load-Courses', [Admincourses::class, 'loadCourses']);
 Route::get('/Admin/Load-Jobs', [Adminjobs::class, 'loadJobs']);
 Route::get('/Admin/updateCourses/{pramaLink}', [Admincourses::class, 'getupdateCourses']);
+Route::post('/Post-Coursesx', [Admincourses::class, 'postCourses']);
 
 //Admin
 Route::group(['middleware' => ['AdminLogin']], function () {

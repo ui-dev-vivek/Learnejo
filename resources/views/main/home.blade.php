@@ -160,14 +160,18 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             <section class="trending-courses">
                 <div class="row">
                     @foreach ($getCourses as $course)
-                        <div class="item col-xl-3 col-lg-3 col-12" data-aos="zoom-in" data-aos-delay="30">
-                            <div data-tilt class="course-tile mb-4">
-                                <a href="https://learnejo.com/Courses/{{ $course->prama_link }}" target="_blank"
+                        <div class="item col-xl-3 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
+                            <div data-tilt class="course-tile mb-4 border">
+                                <a href="/Courses/{{ $course->prama_link }}" target="_blank"
                                     class="trending-course-link" data-course-title="{{ $course->title }}">
-                                    <div data-tilt class="course-featured-image">
+                                    <div data-tilt class="course-featured-image img-div">
+                                        <p class="top-right bg-primary p-1">{{ $course->type }}</p>
+                                        <p class="bottom-left"> {{ $course->catg }}</p>
+                                        <p class="bottom-right"><span class="bg-danger p-1">Free</span>
+                                        </p>
                                         <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
                                     </div>
-                                    <article class="course-info">
+                                    <article class="course-info" style="height:200px;">
                                         <h2 class="color-4a m-0"><b>{{ $course->title }}</b></h2>
 
                                         <div class="p-2">
@@ -180,16 +184,17 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                                 </div>
                                             </div>
                                         </div>
-                                        <span class="reviewtext font-italic">Reviews</span>
-                                        <div class="reviewstars">
-                                            <i class="fa fa-star text-warning"></i>
-                                            <i class="fa fa-star text-warning"></i>
-                                            <i class="fa fa-star text-warning"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <span class="color-4a rating">3</span> <span
-                                                class="totalreviews color-4a"></span>
-                                        </div>
+                                        <small style="font-size: 12px;">{{ $course->sort_desc }}</small>
+                                        {{-- <span class="reviewtext font-italic">Reviews</span>
+                                    <div class="reviewstars">
+                                        <i class="fa fa-star text-warning"></i>
+                                        <i class="fa fa-star text-warning"></i>
+                                        <i class="fa fa-star text-warning"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span class="color-4a rating">3</span> <span
+                                            class="totalreviews color-4a"></span>
+                                    </div> --}}
                                     </article>
                                 </a>
                             </div>
@@ -215,7 +220,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
                         <span>Top Rankers</span>
                     </div>
-
+                    {{ csrf_token() }}
                     @forelse ($ranker as $ranker)
                         <div class=" border p-1 m-1">
                             <div class="row">

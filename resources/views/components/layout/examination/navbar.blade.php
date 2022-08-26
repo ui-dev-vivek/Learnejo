@@ -1,5 +1,5 @@
    <!-- ======= Header ======= -->
-   <header id="header" class="">
+   <header id="header" class="" style="height: 7v">
        <div class="container d-flex align-items-center">
 
            <h1 class="logo me-auto"><a href="/"><img src="{{ asset('assets/image/logo-dark.png') }}"

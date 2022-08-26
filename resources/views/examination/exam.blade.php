@@ -1,5 +1,10 @@
 <x-layout.examination.base><br>
     <style>
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         .facex {
             margin: 0;
             padding: 0;
@@ -9,11 +14,41 @@
             position: relative;
         }
 
+        div.fixedx {
+            position: fixed;
+            top: 10vh;
+            right: 0;
+            width: 300px;
+        }
+
+        .fixedxx {
+            position: fixed;
+            width: 40vh;
+            bottom: 0;
+            margin-left: 5vh;
+        }
+
+        .mainx {
+            width: calc(100% - 50vh);
+            top: 10vh;
+            left: 0;
+            position: absolute;
+
+        }
+
         canvas {
             position: absolute;
         }
+
+        .sidexx {
+            position: absolute;
+            right: 0;
+            width: 50vh;
+            height: 10vh;
+
+        }
     </style>
-    <section class="p-1 shadow border">
+    {{-- <section class="p-1 shadow border">
         <div class="row">
             <div class="col-md-9">
                 <div class="scroll-v" style="font-size: 1.2rem;">
@@ -72,7 +107,7 @@
 
 
             </div>
-            <div class="col-md-3 border-start border-success">
+            <div class="col-md-3 border-start border-success" style="position: fixed">
                 <h3 class="text-center h3">TCS Ninja Aptitude Mock Test Set 1.</h3>
                 <hr>
                 <div class="row">
@@ -97,12 +132,24 @@
                     </div>
 
                 </div>
-                <div class="facex">
-                    <video id="video" class="rounded-8" width="324" height="216" autoplay muted></video>
+                <div class="facex fixedx rounded-8">
+                    <video class="rounded-8" id="video" class="rounded-8" width="300" height="200" autoplay
+                        muted></video>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+
+
+    </div>
+
+    <div class=" mainx p-2" style="height:90vh; ">main</div>
+    <div style="width: 50vh; height:90vh;" class=" fixedx">
+        <div class="facex fixedxx rounded-8 ">
+            <video class="" id="video" class="rounded-8" width="300" height="200" autoplay muted></video>
+        </div>
+    </div>
 
     <script>
         var time = '12:00';

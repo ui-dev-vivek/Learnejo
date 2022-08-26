@@ -5,6 +5,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
+    <style>
+
+    </style>
     <x-slot name='hero'>
         <!-- ======= Intro Single ======= -->
         <section class="breadcrumbs">
@@ -21,7 +24,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <marquee class="GeneratedMarquee" direction="right" scrollamount="8" behavior="scroll">
                     @foreach ($getCourses as $course)
                         <a href="{{ url('/Courses') }}/{{ $course->prama_link }}"><i class="fa fa-hand-o-right"
-                                aria-hidden="true"></i> {{ $course->title }}</a> &nbsp;&nbsp;
+                                aria-hidden="true"></i><strong> {{ $course->title }}</strong></a> &nbsp;&nbsp;
                     @endforeach
                 </marquee>
 
@@ -30,19 +33,24 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     </div>
 
 
+
     <div class="row">
         <div class="col-sm-9">
             <section class="trending-courses container">
                 <div class="row">
                     @foreach ($getCourses as $course)
-                        <div class="item col-xl-3 col-lg-3 col-12" data-aos="zoom-in" data-aos-delay="30">
-                            <div data-tilt class="course-tile mb-4">
+                        <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
+                            <div data-tilt class="course-tile mb-4 border">
                                 <a href="/Courses/{{ $course->prama_link }}" target="_blank"
                                     class="trending-course-link" data-course-title="{{ $course->title }}">
-                                    <div data-tilt class="course-featured-image">
+                                    <div data-tilt class="course-featured-image img-div">
+                                        <p class="top-right bg-primary p-1">{{ $course->type }}</p>
+                                        <p class="bottom-left"> {{ $course->catg }}</p>
+                                        <p class="bottom-right"><span class="bg-danger p-1">Free</span>
+                                        </p>
                                         <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
                                     </div>
-                                    <article class="course-info">
+                                    <article class="course-info" style="height:180px;">
                                         <h2 class="color-4a m-0"><b>{{ $course->title }}</b></h2>
 
                                         <div class="p-2">
@@ -55,7 +63,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                                 </div>
                                             </div>
                                         </div>
-                                        <span class="reviewtext font-italic">Reviews</span>
+                                        <small style="font-size: 12px;">{{ $course->sort_desc }}</small>
+                                        {{-- <span class="reviewtext font-italic">Reviews</span>
                                         <div class="reviewstars">
                                             <i class="fa fa-star text-warning"></i>
                                             <i class="fa fa-star text-warning"></i>
@@ -64,7 +73,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                             <i class="fa fa-star"></i>
                                             <span class="color-4a rating">3</span> <span
                                                 class="totalreviews color-4a"></span>
-                                        </div>
+                                        </div> --}}
                                     </article>
                                 </a>
                             </div>
