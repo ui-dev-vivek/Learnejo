@@ -39,7 +39,7 @@ class Whatsapp extends Controller
         $data['link'] = $request->post('link');
         $data['members'] = 0;
         $data['status'] = 1;
-        DB::table('Whatsapps')->insert($data);
+        DB::table('whatsapps')->insert($data);
         return redirect('/Admin/Whatsapp')->with('success', 'Group Added Successfully!.');
     }
 }
