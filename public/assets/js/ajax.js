@@ -78,7 +78,6 @@ $('#contact-form').on('submit', function (e) {
 
 
 function joinWhatsapp(_token) {
-    alert(_token);
     $.ajax({
         url: '/Join-Whatsapp',
         type: 'post',
