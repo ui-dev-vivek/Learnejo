@@ -24,7 +24,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <marquee class="GeneratedMarquee" direction="right" scrollamount="8" behavior="scroll">
                     @foreach ($getCourses as $course)
                         <a href="{{ url('/Courses') }}/{{ $course->prama_link }}"><i class="fa fa-hand-o-right"
-                                aria-hidden="true"></i><strong> {{ $course->title }}</strong></a> &nbsp;&nbsp;
+                                aria-hidden="true"></i><strong class="h5"> {{ $course->title }}</strong></a>
+                        &nbsp;&nbsp;
                     @endforeach
                 </marquee>
 
