@@ -129,7 +129,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     class="trending-course-link" data-course-title="{{ $course->title }}">
                                     <div data-tiltx class="course-featured-image img-div">
                                         <p class="top-right bg-primary p-1">{{ $course->type }}</p>
-                                        <p class="bottom-left"> {{ $course->catg }}</p>
+                                        <p class="bottom-left" style="font-size:12px;"> {{ $course->catg }}</p>
                                         <p class="bottom-right"><span class="bg-danger p-1">Free</span>
                                         </p>
                                         <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
@@ -147,7 +147,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                                 </div>
                                             </div>
                                         </div>
-                                        <small style="font-size: 12px;">{{ $course->sort_desc }}</small>
+                                        <small class="text-justify"
+                                            style="font-size: 12px;">{{ $course->sort_desc }}</small>
                                         {{-- <span class="reviewtext font-italic">Reviews</span>
                                     <div class="reviewstars">
                                         <i class="fa fa-star text-warning"></i>
@@ -183,7 +184,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
                         <span>Top Rankers</span>
                     </div>
-                    {{ csrf_token() }}
+
                     @forelse ($ranker as $ranker)
                         <div class=" border p-1 m-1">
                             <div class="row">

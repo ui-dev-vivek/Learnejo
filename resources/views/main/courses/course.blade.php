@@ -64,7 +64,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                                 </div>
                                             </div>
                                         </div>
-                                        <small style="font-size: 12px;">{{ $course->sort_desc }}</small>
+                                        <small class="text-justify"
+                                            style="font-size: 12px;">{{ $course->sort_desc }}</small>
                                         {{-- <span class="reviewtext font-italic">Reviews</span>
                                 <div class="reviewstars">
                                     <i class="fa fa-star text-warning"></i>
