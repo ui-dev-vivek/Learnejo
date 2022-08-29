@@ -43,7 +43,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <h2>Top Ranker:</h2>
                 <div class="row text-centre">
                     <div class="col-sm-6">
-                        <div class=" shadow p-2 m-1 rounded">
+                        <div class=" shadow p-2 m-2 me-2 rounded zoom">
                             <img width="70" class="rounded-circle" style="border: 5px solid gold;"
                                 src="{{ $getTopRankers[0]->profile_image }}" alt=""> <span
                                 class="h4"><strong> {{ $getTopRankers[0]->student_name }} |
@@ -52,7 +52,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class=" shadow p-2 m-1 rounded">
+                        <div class=" shadow p-2 m-2 ms-2 rounded zoom">
                             <img width="70" class="rounded-circle " style="border: 5px solid silver;"
                                 src="{{ $getTopRankers[1]->profile_image }}" alt=""> <span
                                 class="h4"><strong> {{ $getTopRankers[1]->student_name }}|
@@ -73,33 +73,16 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <p></p>
                 <span>Preaper For</span>
             </div>
-            <div class="row">
-                <div class="col-sm-6" data-aos="fade-right">
-                    <div class="shadow z-depth-3 border border-success p-1 m-1" style="border-radius: 10px;">
-                        <img class="" width="100"
-                            src="https://rntracoc.sirv.com/MockTest/wipro-primary-logo-color-rbg.png?w=300&h=300"
-                            alt=""> <span class="h2"><a href="{{ url('/Prepare') }}/Wipro-NLTH"> Wipro
-                                Limited</a></span>
 
-                    </div>
-                </div>
-                <div class="col-sm-6" data-aos="fade-left">
-                    <div class="shadow z-depth-3 border border-success p-1 m-1" style="border-radius: 10px;">
-                        <img class="" width="100"
-                            src="https://rntracoc.sirv.com/MockTest/images.jpg?w=300&h=300" alt=""> <span
-                            class="h2"><a href="{{ url('/Prepare') }}/Tcs-Ninja"> Tcs Ninja</a></span>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <span class="h5 mb-4" style="border-bottom:2px solid lightgreen;"> Explor Others: </span><br><br>
+            <span class="h5 mb-5" style="border-bottom:5px solid lightgreen;"><b>Top IT Companies</b></span><br><br>
             <div class="row">
                 @forelse ($getTMockTest as $mockTest)
-                    <div class="col-sm-3" data-aos="fade-in">
+                    <div class="col-sm-3" data-aos="fade-up">
                         <a href="{{ url('/Prepare') }}/{{ $mockTest->prama_link }}">
-                            <div class="shadow border border-info px-2  p-1 m-1">
-                                <img width="30" class="rounded-circle" src="{{ $mockTest->image }}" alt="">
-                                &nbsp;&nbsp; {{ $mockTest->name }}
+                            <div style="height: 50px; overflow:hidden;"
+                                class="hvr-grow-shadow rounded-8 shadow px-2  p-1 m-2 ">
+                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}" alt="">
+                                &nbsp;&nbsp; <span class="h5">{{ $mockTest->name }}</span>
                             </div>
                         </a>
                     </div>
@@ -110,34 +93,14 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </div>
 
             <br>
+            <span class="h5 mb-5" style="border-bottom:5px solid lightgreen;"><b> Non-Tech (Govt.)</b> </span><br><br>
             <div class="row">
-                <div class="col-sm-6" data-aos="fade-right">
-                    <div class="shadow z-depth-3 border border-success p-1 m-1" style="border-radius: 10px;">
-                        <img class="" width="100"
-                            src="https://rntracoc.sirv.com/MockTest/1648834624.png?w=300&h=300" alt=""> <span
-                            class="h2"><a href="{{ url('/Prepare') }}/SSC"> &nbsp; &nbsp; SSC</a></span>
-                    </div>
-                </div>
-                <div class="col-sm-6" data-aos="fade-left">
-                    <div class="shadow z-depth-3 border border-success p-1 m-1" style="border-radius: 10px;">
-                        <img class="" width="100"
-                            src="https://mocktest.freshersnow.com//uploads/exams/categories/31-catimage.png"
-                            alt=""> <span class="h2"><a href="{{ url('/Prepare') }}/RRB-NTPC">
-                                RRB-NTPC </a></span>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <span class="h5 mb-4" style="border-bottom:2px solid lightgreen;"> Explor Others: </span><br><br>
-            <div class="row">
-
                 @forelse ($getNTMockTest as $mockTest)
-                    <div class="col-sm-3" data-aos="fade-in">
+                    <div class="col-sm-3" data-aos="fade-up">
                         <a href="{{ url('/Prepare') }}/{{ $mockTest->prama_link }}">
-                            <div class="shadow border border-info px-2  p-1 m-1">
-                                <img width="30" class="rounded-circle" src="{{ $mockTest->image }}"
-                                    alt="">
-                                &nbsp;&nbsp; {{ $mockTest->name }}
+                            <div style="height: 50px; overflow:hidden;" class="zoom rounded-8 shadow  px-2  p-1 m-2">
+                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}" alt="">
+                                &nbsp;&nbsp; <span class="h5">{{ $mockTest->name }}</span>
                             </div>
                         </a>
                     </div>
@@ -158,13 +121,13 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 
             <section class="trending-courses">
-                <div class="row">
+                <div class="row ms-2 me-2">
                     @foreach ($getCourses as $course)
                         <div class="item col-xl-3 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
-                            <div data-tilt class="course-tile mb-4 border">
+                            <div data-tiltx class="course-tile mb-4 border zoom ">
                                 <a href="/Courses/{{ $course->prama_link }}" target="_blank"
                                     class="trending-course-link" data-course-title="{{ $course->title }}">
-                                    <div data-tilt class="course-featured-image img-div">
+                                    <div data-tiltx class="course-featured-image img-div">
                                         <p class="top-right bg-primary p-1">{{ $course->type }}</p>
                                         <p class="bottom-left"> {{ $course->catg }}</p>
                                         <p class="bottom-right"><span class="bg-danger p-1">Free</span>
@@ -286,5 +249,4 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </section>
         </div>
     </div>
-
 </x-layout.main.base>
