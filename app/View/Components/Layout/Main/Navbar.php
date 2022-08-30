@@ -16,6 +16,7 @@ class Navbar extends Component
      */
     public $student;
     public $coursesCatg;
+    public $topic;
     public function __construct()
     {
 
@@ -23,7 +24,9 @@ class Navbar extends Component
             $this->student = DB::table('student_profile')->where('students_id', session('StudentId'))->first();
         }
         $this->coursesCatg = DB::table('courses')->select('catg')->groupBy('catg')->Where('status', 1)->get();
+        $this->topic = DB::table('mock_test_topic')->get();
     }
+
 
     /**
      * Get the view / contents that represent the component.

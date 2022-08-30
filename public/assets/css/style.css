@@ -383,7 +383,12 @@ a:hover {
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
-  border-top: 2px solid #35B54E;
+  border-top: 4px solid #35B54E;
+  border-bottom: 4px solid #35B54E;
+}
+.navbar .dropdown-prepare ul {
+  width: 400px;
+  left: -150px;
 }
 
 .navbar .dropdown ul li {

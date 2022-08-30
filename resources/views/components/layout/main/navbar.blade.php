@@ -12,6 +12,28 @@
                <ul>
                    <li><a href="{{ url('/') }}" class="">Home</a></li>
 
+                   <li class="dropdown dropdown-prepare"><a href="{{ url('/Courses') }}"><span>Prepare</span> <i
+                               class="bi bi-chevron-down"></i></a>
+                       <ul>
+                           <div class="row">
+
+
+                               @forelse ($topic as $itam)
+                                   <div class="col-sm-6">
+                                       <li><a class="text-start"
+                                               href="{{ url('Prepare') }}/{{ $itam->prama_link }}"><img width="20"
+                                                   class="rounded" src="{{ $itam->image }}" alt="">
+                                               {{ $itam->name }}</a>
+                                       </li>
+                                   </div>
+                               @empty
+                                   <li><a href="javascript:void(0);">Free Udemy Free Courses</a></li>
+                               @endforelse
+                           </div>
+                       </ul>
+                   </li>
+
+
                    <li class="dropdown"><a href="{{ url('/Courses') }}"><span>Courses</span> <i
                                class="bi bi-chevron-down"></i></a>
                        <ul>
@@ -21,24 +43,25 @@
                            @empty
                                <li><a href="javascript:void(0);">Free Udemy Free Courses</a></li>
                            @endforelse
+                       </ul>
                    </li>
-               </ul>
 
 
-               </li>
 
-               <li><a href="{{ url('/Mock-Test') }}"><span>Mock Test</span> <i class="bi bi-chevron-down"></i></a>
-               </li>
+                   </li>
 
-               <li><a href="{{ url('/Job-Internships') }}"><span>Job-Interbships</span> <i
-                           class="bi bi-chevron-down"></i></a>
+                   <li><a href="{{ url('/Mock-Test') }}"><span>Mock Test</span> <i class="bi bi-chevron-down"></i></a>
+                   </li>
 
-               </li>
+                   <li><a href="{{ url('/Job-Internships') }}"><span>Job-Interbships</span> <i
+                               class="bi bi-chevron-down"></i></a>
+
+                   </li>
 
 
-               <li><a href="{{ url('/About-Us') }}">About</a></li>
+                   {{-- <li><a href="{{ url('/About-Us') }}">About</a></li> --}}
 
-               <li><a href="{{ url('/Contact-Us') }}">Contact</a></li>
+                   {{-- <li><a href="{{ url('/Contact-Us') }}">Contact</a></li> --}}
                </ul>
                <i class="bi bi-list mobile-nav-toggle"></i>
            </nav><!-- .navbar -->
