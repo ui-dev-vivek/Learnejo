@@ -31,31 +31,39 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     </div>
 
     <br>
-    <div style="width:100%; border-bottom:5px solid #32c552;" class="ps-4 pb-2 h2">
-        <b>Popular Jobs</b>
-    </div> <br>
+
     <div class="ps-2 pe-2">
         <div class="row">
             <div class="col-sm-9">
+                <div style="width:100%; border-bottom:5px solid #32c552;" class="ps-4 pb-2 h2">
+                    <b>Popular Jobs</b>
+                </div> <br>
                 <h4 class="m-2"><b>Technical Jobs:</b></h4>
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
                         <div class="col-sm-6 mb-2">
-                            <div class="shadow rounded-8 p-2 m-1 zoom-x">
-                                <div class="mb-2" style="height:50px; overflow:hidden;">
-                                    <img width="50" class="border shadow rounded"
-                                        src="https://assets.baillieogrady.com/images/facebook.svg"
-                                        alt="">&nbsp;&nbsp;
-                                    <span class="h6">Ingram
-                                        Micro
-                                        Is Hiring Software Engineer | Entry Level</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">Experience: 0 – 2 years</div>
-                                    <div class="col-6">Salary: Best In Industry</div>
-                                </div>
+                            <a href="">
+                                <div class="shadow rounded-8 p-2 m-1 zoom-x">
+                                    <div class="mb-2" style="height:50px; overflow:hidden;">
+                                        <img width="50" class="border shadow rounded"
+                                            src="https://assets.baillieogrady.com/images/facebook.svg"
+                                            alt="">&nbsp;&nbsp;
+                                        <span class="h6">Ingram
+                                            Micro
+                                            Is Hiring Software Engineer | Entry Level</span>
+                                    </div>
+                                    <div class="row text-dark">
+                                        <div class="col-6">Experience: 0 – 2 years</div>
+                                        <div class="col-6">Salary: Best In Industry</div>
+                                    </div>
+                                    <small class="mt-1 text-dark" style="font-size: 12px;">Reliance Jio India is hiring
+                                        freshers
+                                        as
+                                        Junior Software
+                                        Engineer. </small>
 
-                            </div>
+                                </div>
+                            </a>
                         </div>
                     @empty
                         <h3>No Data Found!</h3>
@@ -80,6 +88,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     <div class="col-6">Experience: 0 – 2 years</div>
                                     <div class="col-6">Salary: Best In Industry</div>
                                 </div>
+                                <small style="font-size: 12px;">Reliance Jio India is hiring freshers as Junior Software
+                                    Engineer. </small>
 
                             </div>
                         </div>

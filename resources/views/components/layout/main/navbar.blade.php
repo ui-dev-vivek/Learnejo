@@ -12,22 +12,33 @@
                <ul>
                    <li><a href="{{ url('/') }}" class="">Home</a></li>
 
-                   <li><a href="{{ url('/Courses') }}"><span>Courses</span> <i class="bi bi-chevron-down"></i></a>
-
-                   </li>
-
-                   <li><a href="{{ url('/Mock-Test') }}"><span>Mock Test</span> <i class="bi bi-chevron-down"></i></a>
-                   </li>
-
-                   <li><a href="{{ url('/Job-Internships') }}"><span>Job-Interbships</span> <i
+                   <li class="dropdown"><a href="{{ url('/Courses') }}"><span>Courses</span> <i
                                class="bi bi-chevron-down"></i></a>
-
+                       <ul>
+                           @forelse ($coursesCatg as $itam)
+                               <li><a href="{{ url('Courses/Category') }}/{{ $itam->catg }}">{{ $itam->catg }}</a>
+                               </li>
+                           @empty
+                               <li><a href="javascript:void(0);">Free Udemy Free Courses</a></li>
+                           @endforelse
                    </li>
+               </ul>
 
 
-                   <li><a href="{{ url('/About-Us') }}">About</a></li>
+               </li>
 
-                   <li><a href="{{ url('/Contact-Us') }}">Contact</a></li>
+               <li><a href="{{ url('/Mock-Test') }}"><span>Mock Test</span> <i class="bi bi-chevron-down"></i></a>
+               </li>
+
+               <li><a href="{{ url('/Job-Internships') }}"><span>Job-Interbships</span> <i
+                           class="bi bi-chevron-down"></i></a>
+
+               </li>
+
+
+               <li><a href="{{ url('/About-Us') }}">About</a></li>
+
+               <li><a href="{{ url('/Contact-Us') }}">Contact</a></li>
                </ul>
                <i class="bi bi-list mobile-nav-toggle"></i>
            </nav><!-- .navbar -->

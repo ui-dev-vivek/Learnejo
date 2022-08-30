@@ -37,6 +37,7 @@ Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
 Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
+Route::get('/Courses/Category/{catg}', [Courses::class, 'byCatg']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
 
 

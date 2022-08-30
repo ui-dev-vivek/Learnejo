@@ -16,6 +16,13 @@ class Courses extends Controller
         $getJobs = $this->getJobs();
         return view('main.courses.course')->with(compact('getCourses', 'getMock', 'getJobs'));
     }
+    function byCatg($catg)
+    {
+        $getCourses = DB::table('courses')->where('catg', $catg)->where('status', 1)->orderByDesc('id')->paginate(12);
+        $getMock = $this->getMock();
+        $getJobs = $this->getJobs();
+        return view('main.courses.course')->with(compact('getCourses', 'getMock', 'getJobs'));
+    }
 
     function getCourses()
     {

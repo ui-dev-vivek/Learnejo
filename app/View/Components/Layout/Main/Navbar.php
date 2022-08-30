@@ -15,12 +15,14 @@ class Navbar extends Component
      * @return void
      */
     public $student;
+    public $coursesCatg;
     public function __construct()
     {
 
         if (Session::has('StudentId')) {
             $this->student = DB::table('student_profile')->where('students_id', session('StudentId'))->first();
         }
+        $this->coursesCatg = DB::table('courses')->select('catg')->groupBy('catg')->Where('status', 1)->get();
     }
 
     /**
