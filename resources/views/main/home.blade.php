@@ -184,9 +184,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
                         <span>Top Rankers</span>
                     </div>
-
                     @forelse ($ranker as $ranker)
-                        <div class=" border p-1 m-1">
+                        <div class=" rounded-8 shadow z-depth-3 zoom p-2 m-2" data-aos="zoom-in" data-aos-delay="30">
                             <div class="row">
                                 <div class="col-8">
                                     <img width="50" class="rounded-circle border border-success"
@@ -194,7 +193,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     {{ $ranker->student_name }}
                                 </div>
                                 <div class="col-4 text-center border-start">Point
-                                    <br>{{ $ranker->points }}
+                                    <br>{{ $ranker->points }} {{ exec('getmac') }}
                                 </div>
                             </div>
                         </div>

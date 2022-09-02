@@ -15,6 +15,7 @@ use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
 use App\Http\Controllers\Main\Pages;
+use App\Http\Controllers\Scripts\Python;
 use App\Http\Controllers\Seo;
 use App\Http\Controllers\Social\GoogleController;
 use App\Http\Controllers\Student\Studentauth;
