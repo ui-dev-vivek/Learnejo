@@ -6,7 +6,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
-        <section class="breadcrumbs">
+        <section class="breadcrumbs" data-aos="fade-up">
             <div class="container">
                 <h1 class="text-center">Refund and Cancellations</h1>
 
@@ -14,12 +14,12 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         </section><!-- End Breadcrumbs -->
     </x-slot>
     <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
             <p>Learnejo renders services including but not limited to counseling, assessment tests etc, which act as a
                 bonafide guide to the user and the services are rendered as soon as availed, therefore there is no
                 provision for refund of fee paid by the User/s. The user/s is therefore deemed to have understood and
-                accepted that once any amount is paid to The Inseparable as per the services availed, there shall be no
-                refund of the said amount.But surely you can contact <b>learnejo@gmail.com</b> we will hear you</p>
+                accepted that once any amount is paid to Learnejo as per the services availed, there shall be no
+                refund of the said amount.But surely you can contact <b>info@learnejo.com</b> we will hear you</p>
         </div>
     </section>
 

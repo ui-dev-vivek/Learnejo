@@ -15,8 +15,6 @@ use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
 use App\Http\Controllers\Main\Pages;
-use App\Http\Controllers\Scripts\Python;
-use App\Http\Controllers\Seo;
 use App\Http\Controllers\Social\GoogleController;
 use App\Http\Controllers\Student\Studentauth;
 use App\Http\Controllers\Student\Stusidedashboard;
@@ -31,7 +29,7 @@ Route::view('/Privacy-Policy', 'main.privacy_policy');
 Route::view('/Refund-Cancellations', 'main.refunds_cancellations');
 Route::view('/Contact-Us', 'main.contact');
 Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
-Route::post('//Join-Whatsapp', [Home::class, 'joinWhatsapp']);
+Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
 

@@ -43,15 +43,12 @@ class Courses extends Controller
             ->where('prama_link', $pramaLink)
             ->Where('status', 1)
             ->limit(1)
-            ->get();
+            ->first();
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('courses')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-
-        foreach ($course as $onecourse) {
-            return view('main.courses.view')->with('course', $onecourse);
-        }
+        return view('main.courses.view')->with('course', $course);
     }
     function enroll(Request $request)
     {

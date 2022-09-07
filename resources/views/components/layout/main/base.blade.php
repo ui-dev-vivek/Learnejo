@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}" />
     <link rel="canonical" href="https://learnejo.com/" />
@@ -26,6 +27,17 @@
     <meta name="twitter:data2" content="1 minute">
     <meta name="theme-color" content="#999999" />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9B3E55GBMC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9B3E55GBMC');
+    </script>
     <!-- Favicons -->
     <link href="{{ asset('assets/image/icon.png') }}" rel="icon">
     <link href="{{ asset('assets/image/icon.png') }}" rel="apple-touch-icon">
@@ -54,27 +66,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/mocktest.css') }}" rel="stylesheet">
-
-    {{-- Google Adseens --}}
-    {{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-        crossorigin="anonymous"></script> --}}
-    {{-- Google Analitic
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9B3E55GBMC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9B3E55GBMC');
-    </script> --}}
-    <link href="{{ asset('assets/css/hover.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/mycss.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body>
@@ -102,14 +96,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
-
-    <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script src="{{ asset('assets/js/other.js') }}"></script>
-    <script src="{{ asset('assets/js/mock_test.js') }}"></script>
-    <script src="{{ asset('assets/js/ajax.js') }}"></script>
-
-
+    @yield('script')
 </body>
 
 </html>

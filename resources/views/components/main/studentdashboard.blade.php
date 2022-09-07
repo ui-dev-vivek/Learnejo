@@ -1,4 +1,3 @@
- <!-- ======= Property Search Section ======= -->
  <div class="click-closed"></div>
  <!--/ Form Search Star /-->
  <div class="box-collapse">
@@ -11,7 +10,6 @@
      <section class="box-collapse-wrap container-fluid">
 
          <main id="sideDashboard">
-
              <form action="{{ url('/Student-Login') }}" method="post" id="studentLogin" class="">
                  <div class="shadow rounded border p-3 text-center">
                      <h2 class="h2 text-centre">Students Login</h2>

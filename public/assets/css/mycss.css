@@ -1,0 +1,75 @@
+
+.navebarx {
+    padding: 0;
+}
+.rounded-8{ 
+    border-radius: 8px;
+}
+.h-success{
+    color:darkgreen;
+}
+
+.loginbtn{
+    padding: 5px 15px 5px 15px;
+    border-radius:3px;   
+}
+
+
+.img-div {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: white;
+    background: #32c552;
+    padding: 5px;
+  
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+
+ 
+.scroll-v{
+    padding: 20px 20px 20px 50px;   
+    height: 79vh;
+    overflow: auto;
+    text-align:justify;
+  }
+  
+  
+  .v-c-center {   
+    position: relative;  
+  }
+  .v-center {
+    margin: 0;
+    position: absolute;
+    top: 40vh;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+   

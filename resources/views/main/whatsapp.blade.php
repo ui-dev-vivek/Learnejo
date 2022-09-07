@@ -21,4 +21,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         </section>
 
     </x-slot>
+    @section('script')
+        <script src="{{ asset('assets/ajax/join-with-whatsapp.js') }}"></script>
+    @stop
 </x-layout.main.base>

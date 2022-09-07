@@ -6,9 +6,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
-        <section class="breadcrumbs">
+        <section class="breadcrumbs" data-aos="fade-up">
             <div class="container">
-                <h1 class="text-center">Contect Us</h1>
+                <h1 class="text-center">Contact Us</h1>
 
             </div>
         </section><!-- End Breadcrumbs -->
@@ -16,9 +16,6 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     <br>
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-        <!--div data-aos="fade-up">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-      </div-->
 
         <div class="container" data-aos="fade-up">
 
@@ -35,7 +32,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         <div class="email">
                             <i class="fa fa-envelope"></i>
                             <h4>Email:</h4>
-                            <p>learnejo@gmail.com</p>
+                            <p>info@learnejo.com</p>
                         </div>
 
                         <div class="phone">
@@ -84,5 +81,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
         </div>
     </section><!-- End Contact Section -->
-
+    @section('script')
+        <script src="{{ asset('assets/ajax/contact-form.js') }}"></script>
+    @stop
 </x-layout.main.base>

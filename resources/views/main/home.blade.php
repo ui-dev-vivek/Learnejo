@@ -1,19 +1,22 @@
 @php
 $title = 'Learnejo:Home';
-$image = asset('assets/image/icon.jpg');
+$image = asset('assets/image/home.jpg');
 $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 
 @endphp
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+@stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
         <section id="hero" class="d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 pt-2 pt-lg-0  d-flex flex-column justify-content-center">
-                        {{-- <h1 class="h1" data-aos="fade-up">Learn<span style="color:rgb(31, 215, 31);">ejo</span></h1> --}}
                         <img data-aos="fade-up" width="300" src="{{ asset('assets/image/logo-dark.png') }}"
                             alt="">
-                        <br> {{-- <small data-aos="fade-right" data-aos-delay="200">Learn Awesome!</small><br> --}}
+                        <br>
                         <h1 style="font-size-adjust: 60px;" data-aos="fade-up" data-aos-delay="400">
                             Learn & <span style="color:rgb(31, 215, 31);">E</span>nhance <span
                                 style="color:rgb(31, 215, 31);">J</span>ob
@@ -21,11 +24,10 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         </h1><br>
                     </div>
                     <div class="col-lg-4  ">
-                        {{-- <img src="assets/img/hero-img.png" class="img-fluid animated" alt=""> --}}
                         <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4" data-aos="fade-right"
                             data-aos-delay="100" data-tilt style="border-radius:10px;">
                             <h3>Free M<i class="fa fa-eercast text-success" aria-hidden="true"></i>CK Test</h3>
-                            <small>Proper online Assments to Prepare yourself for Placement.</small>
+                            <small>Proper online Assessments to Prepare yourself for Placement.</small>
                         </div>
                         <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4 " data-aos="fade-right"
                             data-aos-delay="200" data-tilt style="border-radius:10px;">
@@ -69,11 +71,10 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     <section class="inner-page">
         <div class="container">
             <div class="section-title">
-                <h2>Preaper For</h2>
-                <p></p>
-                <span>Preaper For</span>
+                <h2>Prepare For</h2>
+                <p>Prepare For Your Dream Company.</p>
+                <span>Prepare For</span>
             </div>
-
             <span class="h5 mb-5" style="border-bottom:5px solid lightgreen;"><b>Top IT Companies</b></span><br><br>
             <div class="row">
                 @forelse ($getTMockTest as $mockTest)
@@ -87,7 +88,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         </a>
                     </div>
                 @empty
-                    <h2>No Any Mock Test!</h2>
+                    <h2>Please Contact Us <a href="{{ url('/Contact-Us') }}">Click</a></h2>
                 @endforelse
 
             </div>
@@ -105,7 +106,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         </a>
                     </div>
                 @empty
-                    <h2>No Any Mock Test!</h2>
+                    <h2>Please Contact Us <a href="{{ url('/Contact-Us') }}">Click</a></h2>
                 @endforelse
             </div>
         </div>
@@ -118,11 +119,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <p>To Improve Your <b>Resume</b>.</p>
                 <span>Free Courses</span>
             </div>
-
-
             <section class="trending-courses">
                 <div class="row ms-2 me-2">
-                    @foreach ($getCourses as $course)
+                    @forelse ($getCourses as $course)
                         <div class="item col-xl-3 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
                             <div data-tiltx class="course-tile mb-4 border zoom ">
                                 <a href="/Courses/{{ $course->prama_link }}" target="_blank"
@@ -163,7 +162,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <h2>Courses Not Found! Please Contact Us <a href="{{ url('/Contact-Us') }}">Click</a></h2>
+                    @endforelse
 
                 </div>
 
@@ -181,7 +182,6 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <div class="container">
                     <div class="section-title">
                         <h2>Top Rankers</h2>
-                        {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
                         <span>Top Rankers</span>
                     </div>
                     @forelse ($ranker as $ranker)
@@ -193,7 +193,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     {{ $ranker->student_name }}
                                 </div>
                                 <div class="col-4 text-center border-start">Point
-                                    <br>{{ $ranker->points }} {{ exec('getmac') }}
+                                    <br>{{ $ranker->points }}
                                 </div>
                             </div>
                         </div>
@@ -208,7 +208,6 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <div class="container">
                     <div class="section-title">
                         <h2>Job Updates</h2>
-                        {{-- <p>To Improve Your <b>Resume</b>.</p> --}}
                         <span>JOb Updates</span>
                     </div>
                     @forelse ($getCJobs as $job)
@@ -224,7 +223,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
                         </div>
                     @empty
-                        <p>No any Jobs.</p>
+                        <p>Jobs Not Found! <a href="{{ url('/Contact-Us') }}">Click To Contact Us</a></p>
                     @endforelse
                     @forelse ($getGJobs as $job)
                         <div class="p-1 border-bottom">
@@ -239,7 +238,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
                         </div>
                     @empty
-                        <p>No any Jobs.</p>
+                        <p>Jobs Not Found! <a href="{{ url('/Contact-Us') }}">Click To Contact Us</a></p>
                     @endforelse
                     <p class="text-end"><a class="btn btn-md btn-success hvr-icon-wobble-horizontal"
                             href="{{ url('/Job-Internships') }}">More

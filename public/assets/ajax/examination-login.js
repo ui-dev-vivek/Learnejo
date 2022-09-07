@@ -1,4 +1,3 @@
-
 $('#examination-login').on('submit', function (e) {
     e.preventDefault();
     e.stopPropagation();

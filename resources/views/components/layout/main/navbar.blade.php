@@ -12,11 +12,13 @@
                <ul>
                    <li><a href="{{ url('/') }}" class="">Home</a></li>
 
-                   <li class="dropdown dropdown-prepare"><a href="{{ url('/Courses') }}"><span>Prepare</span> <i
+                   <li class="dropdown dropdown-prepare"><a href="javascript:void(0)"><span>Prepare</span> <i
                                class="bi bi-chevron-down"></i></a>
                        <ul>
+                           <li class="text-center"><a href="javascript:void(0);" onclick="alert('Comming Soon!');"
+                                   class=""><strong>'O' Level Python 21 Days
+                                       Course.</strong></a></li>
                            <div class="row">
-
 
                                @forelse ($topic as $itam)
                                    <div class="col-sm-6">
@@ -27,7 +29,7 @@
                                        </li>
                                    </div>
                                @empty
-                                   <li><a href="javascript:void(0);">Free Udemy Free Courses</a></li>
+                                   <li><a href="javascript:void(0);">Not Found!</a></li>
                                @endforelse
                            </div>
                        </ul>
@@ -41,7 +43,7 @@
                                <li><a href="{{ url('Courses/Category') }}/{{ $itam->catg }}">{{ $itam->catg }}</a>
                                </li>
                            @empty
-                               <li><a href="javascript:void(0);">Free Udemy Free Courses</a></li>
+                               <li><a href="javascript:void(0);">Not Found!</a></li>c
                            @endforelse
                        </ul>
                    </li>
@@ -52,10 +54,17 @@
 
                    <li><a href="{{ url('/Mock-Test') }}"><span>Mock Test</span> <i class="bi bi-chevron-down"></i></a>
                    </li>
-
-                   <li><a href="{{ url('/Job-Internships') }}"><span>Job-Interbships</span> <i
+                   <li class="dropdown"><a href="javascript:void(0);"><span>Job-Internships</span> <i
                                class="bi bi-chevron-down"></i></a>
-
+                       <ul>
+                           <li><a href="{{ url('/Internships') }}">Internships</a> </li>
+                           <li><a href="{{ url('/Jobs/IT') }}">IT Jobs</a>
+                           </li>
+                           <li><a href="{{ url('/Jobs/Non-IT') }}">Non-IT Jobs</a>
+                           </li>
+                           <li><a href="{{ url('/Jobs/Govt') }}">Governments Jobs</a>
+                           </li>
+                       </ul>
                    </li>
 
 
@@ -80,7 +89,7 @@
                @else
                    <a type="button" class=" navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                        data-bs-target="#navbarTogglerDemo01"> <span class="loginbtn bg-success text-white">
-                           <i class="fa fa-user text-white"></i><b>Login</b></span>
+                           <i class="fa fa-user text-white"> </i><b> Login</b></span>
                    </a>
                @endif
 

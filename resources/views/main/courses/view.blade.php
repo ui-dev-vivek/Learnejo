@@ -1,6 +1,5 @@
 <x-layout.main.base :title="$course->title" :image="$course->image" :description="$course->title">
     <x-slot name='hero'>
-        <!-- ======= Intro Single ======= -->
         <section class="intro-single">
             <div class="container">
                 <div class="row">
@@ -107,5 +106,7 @@
             </div>
         </div>
     </section><!-- End Blog Single-->
-
+    @section('script')
+        <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
+    @stop
 </x-Layout.Main.Base>

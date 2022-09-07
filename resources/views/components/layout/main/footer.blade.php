@@ -8,11 +8,10 @@
                         <img src="{{ asset('assets/image/logo-dark.png') }}" alt="">
 
                     </a>
-                    <p>'Learnejo' is an E-learning platform, for every student interested and wishes to prepare for Tech
-                        and non-Tech. This platform contains all the important topics and articles related to Tech and
-                        Non-Tech.
-                        With the help of which you can enhance your skills and knowledge as well as enhance your career.
-                    </p>
+                    <p>'Learnejo' is an E-learning platform, for every student interested and wishing to prepare for
+                        Tech and non-Tech. This platform contains all the important topics and articles related to Tech
+                        and Non-Tech. With the help of this, you can enhance your skills and knowledge as well as
+                        enhance your career.</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -54,7 +53,7 @@
                         <b>Learnejo</b><br>
                         <strong>Platform:</strong> E-Learning (Online)<br>
                         <strong>Phone:</strong> +91-9795033028<br>
-                        <strong>Email:</strong> learnejo@gmail.com gogo<br>
+                        <strong>Email:</strong> info@learnejo.com<br>
 
                     </p>
 

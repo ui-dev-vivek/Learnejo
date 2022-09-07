@@ -6,7 +6,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
-        <section class="breadcrumbs">
+        <section class="breadcrumbs" data-aos="fade-up">
             <div class="container">
                 <h1 class="text-center">Terms and Conditions</h1>
 
@@ -16,7 +16,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     <br>
 
     <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
             <p>Welcome to Learnejo</p>
             <small>learnejo.com</small>
 

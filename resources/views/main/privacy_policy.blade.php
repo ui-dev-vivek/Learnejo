@@ -6,7 +6,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
-        <section class="breadcrumbs">
+        <section class="breadcrumbs" data-aos="fade-up">
             <div class="container">
                 <h1 class="text-center">Privacy policy</h1>
 
@@ -52,8 +52,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 </li>
                 <li>
                     <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;,
-                        &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Learnejo, VRINDAVAN YOJNA 1
-                        TELIBAGH LUCKNOW.</p>
+                        &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Learnejo.</p>
                 </li>
                 <li>
                     <p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any
