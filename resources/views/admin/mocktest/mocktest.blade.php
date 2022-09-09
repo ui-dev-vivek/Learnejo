@@ -58,7 +58,7 @@
                         @php
                             $i = 1;
                         @endphp
-                        @forelse ($getTechMockTest as $mockTest)
+                        @forelse ($getNonTechMockTest as $mockTest)
                             <tr class="tr{{ $mockTest->id }}">
                                 <td scope="row">{{ $i++ }}</td>
                                 <td class="h6">

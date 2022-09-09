@@ -21,10 +21,10 @@
                      <div class="studentForm">
 
                          @csrf
-                         <input onclick="onClickhide();" name="email" class="form-control border border-success mt-2"
-                             type="text" placeholder="Email id:">
-                         <input onclick="onClickhide();" name="password" class="form-control border border-success mt-2"
-                             type="password" placeholder="Password:">
+                         <input onclick="onClickhide();" name="email" class="my-input" type="text"
+                             placeholder="Email id:">
+                         <input onclick="onClickhide();" name="password" class="my-input" type="password"
+                             placeholder="Password:">
                          <br>
                          <div class="row">
                              <div class="col-8 pt-2">
