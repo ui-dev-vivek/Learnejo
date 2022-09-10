@@ -33,8 +33,8 @@
                                     </a>
 
 
-                                    <a class="btn btn-sm btn-my-sm  btn-success" href="javascript:void(0)"
-                                        onclick="whatsappShare("{{ $course->prama_link }}")">
+                                    <a class="btn btn-sm btn-my-sm  btn-success"
+                                        href="whatsapp://send?text=https://learnejo.com/Courses/{{ $course->prama_link }}">
                                         <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i>
                                     </a>
 
