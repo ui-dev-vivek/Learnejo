@@ -34,7 +34,7 @@
 
 
                                     <a class="btn btn-sm btn-my-sm  btn-success" href="javascript:void(0)"
-                                        onclick="updateCourses('{{ $course->id }}','{{ $course->prama_link }}','{{ csrf_token() }}')">
+                                        onclick="whatsappShare("{{ $course->prama_link }}")">
                                         <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i>
                                     </a>
 

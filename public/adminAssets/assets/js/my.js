@@ -1,4 +1,4 @@
 function whatsappShare(massage) {
-    var url = "whatsapp://send?phone=+917619876249&text=" + massage;
+    var url = "whatsapp://send?text=" + massage;
     window.location.href = url;
 }
