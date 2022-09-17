@@ -33,11 +33,11 @@
                             </li>
                             <li class="list-inline-item mr-2">
                                 <b>Category: </b>
-                                <span class="color-text-a">Travel</span>
+                                <span class="color-text-a">{{ $job->type }}</span>
                             </li>
                             <li class="list-inline-item mr-2">
                                 <b>Views: </b>
-                                <span class="color-text-a"></span>
+                                <span class="color-text-a">{{ $job->view }}</span>
                             </li>
                             <li class="list-inline-item">
                                 <strong>Date: </strong>
@@ -106,6 +106,8 @@
         </div>
         </div>
     </section><!-- End Blog Single-->
-
+    @section('script')
+        <script src="{{ asset('assets/ajax/apply-now.js') }}"></script>
+    @stop
 
 </x-Layout.Main.Base>

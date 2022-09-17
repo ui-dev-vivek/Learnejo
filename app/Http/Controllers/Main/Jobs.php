@@ -39,15 +39,13 @@ class Jobs extends Controller
         $job = DB::table('jobs')
             ->where('prama_link', $pramaLink)
             ->Where('status', 1)
-            ->limit(1)
-            ->get();
+            ->first();
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('jobs')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        foreach ($job as $onejob) {
-            return view('main.jobs.view')->with('job', $onejob);
-        }
+
+        return view('main.jobs.view')->with('job', $job);
     }
 
 

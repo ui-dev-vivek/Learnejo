@@ -49,7 +49,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
                         <div class="col-md-6 mb-2">
-                            <a href="{{ url('/Job-Internshis') }}/{{ $job->prama_link }}">
+                            <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
                                 <div class="shadow rounded-8 p-2  m-1 zoom-x" style="width: 100%">
                                     <div class="" style="max-height:70px; overflow: hidden;">
                                         <img class="text-center shadow z-depth-1 p-1 rounded" width="70"
