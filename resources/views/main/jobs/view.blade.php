@@ -27,7 +27,6 @@
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <div class="post-content color-text-a">
                         <p class="post-intro">
-                            <img src="{{ $job->image }}" alt="" class="img-fluid">
                             <span class="h2">{{ $job->title }}</span>
                         </p>
                         <div class="post-information">
