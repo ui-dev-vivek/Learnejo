@@ -57,13 +57,14 @@
                    <li class="dropdown"><a href="javascript:void(0);"><span>Job-Internships</span> <i
                                class="bi bi-chevron-down"></i></a>
                        <ul>
-                           <li><a href="{{ url('/Internships') }}">Internships</a> </li>
-                           <li><a href="{{ url('/Jobs/IT') }}">IT Jobs</a>
+
+                           <li><a href="{{ url('/Job-Internships') }}">Jobs</a>
                            </li>
-                           <li><a href="{{ url('/Jobs/Non-IT') }}">Non-IT Jobs</a>
+                           <li><a href="{{ url('/Internships') }}">Internships</a> </li>
+                           {{-- <li><a href="{{ url('/Jobs/Non-IT') }}">Non-IT Jobs</a>
                            </li>
                            <li><a href="{{ url('/Jobs/Govt') }}">Governments Jobs</a>
-                           </li>
+                           </li> --}}
                        </ul>
                    </li>
 
