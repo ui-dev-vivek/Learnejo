@@ -58,20 +58,20 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     </div>
                                     <div class="row pt-1 text-dark">
                                         <div class="col-6 overflow-hidden">
-                                            <small class="overflow-hidden"><i class="fa fa-building-o"
-                                                    aria-hidden="true"></i>&nbsp;
-                                                &nbsp;{{ $job->company }}</small><br>
-                                            <small class="overflow-hidden"><i class="fa fa-user-plus"
-                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                {{ $job->role }}</small>
+                                            <span class="overflow-hidden"> <small><i class="fa fa-building-o"
+                                                        aria-hidden="true"></i>&nbsp;
+                                                    &nbsp;{{ $job->company }}</small></span><br>
+                                            <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                        aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    {{ $job->role }}</small></span>
                                         </div>
                                         <div class="col-6 ">
-                                            <small class="overflow-hidden"><i class="fa fa-briefcase"
-                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                {{ $job->experience }}</small><br>
-                                            <small class="overflow-hidden"><i class="fa fa-money"
-                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                {{ $job->salary }}</small>
+                                            <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                        aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    {{ $job->experience }}</small></span><br>
+                                            <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                        aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    {{ $job->salary }}</small></span>
                                         </div>
                                     </div>
                                 </div>
