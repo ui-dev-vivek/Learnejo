@@ -34,7 +34,7 @@
 
 
                                     <a class="btn btn-sm btn-my-sm  btn-success"
-                                        href="whatsapp://send?text=https://learnejo.com/Courses/{{ $course->prama_link }}">
+                                        href="whatsapp://send?text=https://learnejo.com/Courses/{{ $course->prama_link1 }}">
                                         <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i>
                                     </a>
 

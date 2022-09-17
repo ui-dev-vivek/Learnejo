@@ -15,58 +15,30 @@ class Adminjobs extends Controller
         $getGovtJobs = DB::table('jobs')->where('type', 'Govt')->where('created_at', '>=', Carbon::now()->subDays(2)->toDateTimeString())->orderByDesc('id')->get();
         return view('admin.jobs.jobs')->with(compact('getCorpJobs', 'getGovtJobs'));
     }
-    function  loadJobs()
+    function  loadJobs(Request $request)
     {
-        $link = "https://www.sarkariresult.com/latestjob/";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $link);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        $mid = explode('<div id="post">', $result);
-        $mid[1];
-        $main = explode("<li>", $mid[1]);
-
-
-        for ($i = 1; $i < 50; $i++) {
-            $subType = explode('/', $main[$i]);
-            $data['sub_type'] = $subType[3];
-            $data['type'] = "Govt";
-            $pramaLink = $data['prama_link'] = $subType[4];
-            $title =  str_replace('" target=_blank>', "", $subType[5]);
-            $data['title'] =  str_replace('<', "", $title);
-            $data['status'] = 0;
-            $data['view'] = 0;
-            $data['apply'] = 0;
-            $isIn = DB::table('jobs')->where('prama_link', $pramaLink)->count();
-            if ($isIn == 0) {
-                $insert = DB::table('jobs')->insert($data);
-            }
+        $isIn = DB::table('jobs')->where('prama_link', $request->post('pramaLink'))->exists();
+        if ($isIn) {
+            return 2;
         }
-        $link = "https://www.freshercooker.in/";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $link);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        $action = explode('entry-title td-module-title', $result);
-        $imgAction = explode('data-img-url="', $result);
-
-        for ($i = 6; $i < 20; $i++) {
-            $subAction1 = explode('"', $action[$i]);
-            $subAction2 = explode('/', $subAction1[2]);
-            $datax['title'] = $datax['prama_link'] = $subAction2[3];
-            $subImgAction = explode("?resize", $imgAction[$i - 5]);
-            $datax['image'] = $subImgAction[0];
-            $datax['status'] = 0;
-            $datax['type'] = 'Corp';
-            $datax['view'] = 0;
-            $datax['apply'] = 0;
-            $datax['sub_type'] = date('Y');
-            $isIn = DB::table('jobs')->where('prama_link', $subAction2[3])->count();
-            if ($isIn == 0) {
-                $insJob = DB::table('jobs')->insert($datax);
-            }
+        $data['title'] =  $request->post('title');
+        $data['prama_link'] = $request->post('pramaLink');
+        $data['type'] = $request->post('type');
+        $data['sub_type'] = $request->post('sub_type');
+        $data['content'] = $request->post('content');
+        $data['image'] = $request->post('image');
+        $data['link'] = $request->post('link');
+        $data['role'] = $request->post('role');
+        $data['experience'] = $request->post('experience');
+        $data['salary'] = $request->post('salary');
+        $data['company'] = $request->post('company');
+        $data['status'] = 1;
+        $data['website'] = $request->post('website');
+        $ins = DB::table("jobs")->insert($data);
+        if ($ins) {
+            return 1;
+        } else {
+            return 0;
         }
     }
 

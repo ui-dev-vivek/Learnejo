@@ -4,6 +4,9 @@ $image = asset('assets/image/icon.jpg');
 $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 
 @endphp
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+@stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
         <!-- ======= Intro Single ======= -->
@@ -32,36 +35,45 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
     <br>
 
+
+
+
+
     <div class="ps-2 pe-2">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-md-9">
                 <div style="width:100%; border-bottom:5px solid #32c552;" class="ps-4 pb-2 h2">
                     <b>Popular Jobs</b>
                 </div> <br>
                 <h4 class="m-2"><b>Technical Jobs:</b></h4>
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
-                        <div class="col-sm-6 mb-2">
-                            <a href="">
-                                <div class="shadow rounded-8 p-2 m-1 zoom-x">
-                                    <div class="mb-2" style="height:50px; overflow:hidden;">
-                                        <img width="50" class="border shadow rounded"
-                                            src="https://assets.baillieogrady.com/images/facebook.svg"
-                                            alt="">&nbsp;&nbsp;
-                                        <span class="h6">Ingram
-                                            Micro
-                                            Is Hiring Software Engineer | Entry Level</span>
+                        <div class="col-md-6 mb-2">
+                            <a href="{{ url('/Job-Internshis') }}/{{ $job->prama_link }}">
+                                <div class="shadow rounded-8 p-2  m-1 zoom-x" style="width: 100%">
+                                    <div class="" style="max-height:70px; overflow: hidden;">
+                                        <img class="text-center shadow z-depth-1 p-1 rounded" width="70"
+                                            src="{{ $job->image }}" alt="">
+                                        &nbsp;&nbsp; <span class="h6"> {{ $job->title }}</span>
                                     </div>
-                                    <div class="row text-dark">
-                                        <div class="col-6">Experience: 0 – 2 years</div>
-                                        <div class="col-6">Salary: Best In Industry</div>
+                                    <div class="row pt-1 text-dark">
+                                        <div class="col-6 overflow-hidden">
+                                            <small class="overflow-hidden"><i class="fa fa-building-o"
+                                                    aria-hidden="true"></i>&nbsp;
+                                                &nbsp;{{ $job->company }}</small><br>
+                                            <small class="overflow-hidden"><i class="fa fa-user-plus"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->role }}</small>
+                                        </div>
+                                        <div class="col-6 ">
+                                            <small class="overflow-hidden"><i class="fa fa-briefcase"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->experience }}</small><br>
+                                            <small class="overflow-hidden"><i class="fa fa-money"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->salary }}</small>
+                                        </div>
                                     </div>
-                                    <small class="mt-1 text-dark" style="font-size: 12px;">Reliance Jio India is hiring
-                                        freshers
-                                        as
-                                        Junior Software
-                                        Engineer. </small>
-
                                 </div>
                             </a>
                         </div>
@@ -74,7 +86,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <h4 class="m-2"><b>Governments Jobs:</b></h4>
                 <div class="row">
                     @forelse ($getGovtJobs as $job)
-                        <div class="col-sm-6 mb-2">
+                        <div class="col-md-6 mb-2">
                             <div class="shadow rounded-8 p-2 m-1 zoom-x">
                                 <div class="mb-2" style="height:50px; overflow:hidden;">
                                     <img width="50" class="border shadow rounded"
@@ -102,7 +114,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <x-main.pagination :data="$getGovtJobs" />
 
             </div>
-            <div class="col-sm-3"><br><br>
+            <div class="col-md-3"><br><br>
                 <div class="shadow p-1 pt-3 border">
                     <p><strong>Recent Mock Test</strong></p>
                     @forelse ($getMock as  $mock)

@@ -69,6 +69,7 @@ Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
 // Cron Job Urls
 Route::get('/Admin/Load-Courses', [Admincourses::class, 'loadCourses']);
 Route::get('/Admin/Load-Jobs', [Adminjobs::class, 'loadJobs']);
+Route::post('/Post-Jobs', [Adminjobs::class, 'loadJobs']);
 Route::get('/Admin/updateCourses/{pramaLink}', [Admincourses::class, 'getupdateCourses']);
 Route::post('/Post-Coursesx', [Admincourses::class, 'postCourses']);
 
