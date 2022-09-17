@@ -21,34 +21,35 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="news-img-box text-center">
-                        <img src="{{ $job->image }}" alt="" class="img-fluid">
+                        {{-- <img src="{{ $job->image }}" alt="" class="img-fluid"> --}}
                     </div>
                 </div>
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                    <div class="post-information">
-                        <ul class="list-inline text-center color-a">
-                            <li class="list-inline-item mr-2">
-                                <b>Author: </b>
-                                <span class="color-text-a">Team Learnejo</span>
-                            </li>
-                            <li class="list-inline-item mr-2">
-                                <b>Category: </b>
-                                <span class="color-text-a">{{ $job->type }}</span>
-                            </li>
-                            <li class="list-inline-item mr-2">
-                                <b>Views: </b>
-                                <span class="color-text-a">{{ $job->view }}</span>
-                            </li>
-                            <li class="list-inline-item">
-                                <strong>Date: </strong>
-                                <span class="color-text-a">{{ $job->created_at }}</span>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="post-content color-text-a">
                         <p class="post-intro">
-                        <h2 class="h2">{{ $job->title }}</h2>
+                            <img src="{{ $job->image }}" alt="" class="img-fluid">
+                            <span class="h2">{{ $job->title }}</span>
                         </p>
+                        <div class="post-information">
+                            <ul class="list-inline text-center color-a">
+                                <li class="list-inline-item mr-2">
+                                    <b>Author: </b>
+                                    <span class="color-text-a">Team Learnejo</span>
+                                </li>
+                                <li class="list-inline-item mr-2">
+                                    <b>Category: </b>
+                                    <span class="color-text-a">{{ $job->type }}</span>
+                                </li>
+                                <li class="list-inline-item mr-2">
+                                    <b>Views: </b>
+                                    <span class="color-text-a">{{ $job->view }}</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <strong>Date: </strong>
+                                    <span class="color-text-a">{{ $job->created_at }}</span>
+                                </li>
+                            </ul>
+                        </div>
 
                         <p>
                             <?php
