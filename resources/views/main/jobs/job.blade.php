@@ -1,6 +1,6 @@
 @php
 $title = 'Learnejo:Job Internships';
-$image = asset('assets/image/icon.jpg');
+$image = asset('assets/image/job.jpg');
 $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 
 @endphp
@@ -22,11 +22,15 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         <div class="row">
             <div class="col-1 pt-2 bg-success text-white p-1 text-center">Letest:</div>
             <div class="col-11 p-1 border border-success pt-2">
-                <marquee class="GeneratedMarquee" direction="right" scrollamount="8" behavior="scroll">
-                    @foreach ($getGovtJobs as $job)
+                <marquee class="GeneratedMarquee" direction="left" scrollamount="10" behavior="scroll"
+                    onmouseover="this.stop();" onmouseout="this.start();">
+                    @forelse ($getCorpJobs as $job)
                         <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}"><i class="fa fa-hand-o-right"
-                                aria-hidden="true"></i> {{ $job->title }}</a> &nbsp;&nbsp;
-                    @endforeach
+                                aria-hidden="true"></i><strong class="h5"> {{ $job->title }}</strong></a>
+                        &nbsp;&nbsp;
+                    @empty
+                        <p>No Jobs Found!</p>
+                    @endforelse
                 </marquee>
 
             </div>
@@ -48,13 +52,15 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <h4 class="m-2"><b>Technical Jobs:</b></h4>
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-9 mb-3">
                             <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
-                                <div class="shadow rounded-8 p-2  m-1 zoom-x" style="width: 100%">
+                                <div class="shadow rounded p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
+                                    data-aos-delay="30">
                                     <div class="" style="max-height:70px; overflow: hidden;">
-                                        <img class="text-center shadow z-depth-1 p-1 rounded" width="70"
+                                        <img class="text-center shadow z-depth-1 p-1 rounded" width="90"
                                             src="{{ $job->image }}" alt="">
-                                        &nbsp;&nbsp; <span class="h6"> {{ $job->title }}</span>
+                                        &nbsp;&nbsp; <span class="h5"> {{ $job->title }}</span>
                                     </div>
                                     <div class="row pt-1 text-dark">
                                         <div class="col-6 overflow-hidden">
@@ -77,8 +83,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                 </div>
                             </a>
                         </div>
+                        <div class="col-md-2"></div>
                     @empty
-                        <h3>No Data Found!</h3>
+                        <small>No Jobs Founde.</small>
                     @endforelse
                 </div><br>
                 <x-main.pagination :data="$getGovtJobs" />
@@ -86,27 +93,49 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <h4 class="m-2"><b>Governments Jobs:</b></h4>
                 <div class="row">
                     @forelse ($getGovtJobs as $job)
-                        <div class="col-md-6 mb-2">
-                            <div class="shadow rounded-8 p-2 m-1 zoom-x">
-                                <div class="mb-2" style="height:50px; overflow:hidden;">
-                                    <img width="50" class="border shadow rounded"
-                                        src="https://assets.baillieogrady.com/images/facebook.svg"
-                                        alt="">&nbsp;&nbsp;
-                                    <span class="h6">Ingram
-                                        Micro
-                                        Is Hiring Software Engineer | Entry Level</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">Experience: 0 – 2 years</div>
-                                    <div class="col-6">Salary: Best In Industry</div>
-                                </div>
-                                <small style="font-size: 12px;">Reliance Jio India is hiring freshers as Junior Software
-                                    Engineer. </small>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-9 ">
+                                <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                                    <div class="row p-2  mb-3 shadow ">
+                                        <div class="col-3 text-center">
+                                            <img width="130"
+                                                class="text-center shadow img-fluid z-depth-1 p-1 rounded"
+                                                src="{{ $job->image }}" alt="{ $job->title }}">
+                                        </div>
+                                        <div class="col-9">
+                                            <h5 class="h5">{{ $job->title }}</h6>
+                                                <div class="row pt-1 text-dark">
+                                                    <div class="col-6 overflow-hidden">
+                                                        <span class="overflow-hidden"> <small><i
+                                                                    class="fa fa-building-o"
+                                                                    aria-hidden="true"></i>&nbsp;
+                                                                &nbsp;{{ $job->company }}</small></span><br>
+                                                        <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                                {{ $job->role }}</small></span>
+                                                    </div>
+                                                    <div class="col-6 ">
+                                                        <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                                {{ $job->experience }}</small></span><br>
+                                                        <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                                {{ $job->salary }}</small></span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
 
+                                </a>
                             </div>
+
+
+                            <div class="col-md-2"></div>
                         </div>
+
                     @empty
-                        <h3>No Data Found!</h3>
+                        <small>No Courses Founde.</small>
                     @endforelse
                 </div>
 

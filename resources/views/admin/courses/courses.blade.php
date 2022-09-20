@@ -34,7 +34,7 @@
 
 
                                     <a class="btn btn-sm btn-my-sm  btn-success"
-                                        href="whatsapp://send?text=https://learnejo.com/Courses/{{ $course->prama_link1 }}">
+                                        href="whatsapp://send?text=https://learnejo.com/Courses/{{ $course->prama_link }}">
                                         <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i>
                                     </a>
 
@@ -46,7 +46,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <h2>No Courses Founde.</h2>
+                            <small>No Courses Founde.</small>
                         @endforelse
 
                     </tbody>
