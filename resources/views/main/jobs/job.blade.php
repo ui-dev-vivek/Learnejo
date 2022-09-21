@@ -41,7 +41,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 
     @php
-        count = 0;
+        $count = 0;
     @endphp
     <div class="ps-2 pe-2">
         <div class="row">
