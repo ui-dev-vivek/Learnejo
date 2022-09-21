@@ -14,5 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/Post-Coursesx',
         '/Post-Jobs',
+        '/send-data-to-offorbystudents',
     ];
 }

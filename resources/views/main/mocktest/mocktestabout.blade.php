@@ -18,7 +18,7 @@ $description = 'Get Free Mock Test For Prepretion';
                 <br>
                 <p class="text-justify  table-responsive">
                     @php
-                        $Contant = str_replace('<table', '<table class="table table-striped table-hover" ', $getAbout->content);
+                        $Contant = str_replace('<table', '<table class="table table-responsive table-striped table-hover" ', $getAbout->content);
                         // $Contant = str_replace('<thead', '<thead class="thead-dark" ', $Contant);
                         echo $Contant;
                         

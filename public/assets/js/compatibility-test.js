@@ -7,6 +7,7 @@ $(document).ready(function () {
         } else {
             $('#bcc').addClass('d-none');
             $('.bcc').addClass('text-danger');
+            $('.csbtn').addClass('d-none')
 
         }
 

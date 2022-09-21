@@ -32,13 +32,13 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
-
+Route::view('/ads.txt', 'main.ads');
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
 Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
 Route::get('/Courses/Category/{catg}', [Courses::class, 'byCatg']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
-
+Route::post('/send-data-to-offorbystudents', [Courses::class, 'sendData']);
 
 // Main Jobs
 Route::get('/Job-Internships', [Jobs::class, 'index']);

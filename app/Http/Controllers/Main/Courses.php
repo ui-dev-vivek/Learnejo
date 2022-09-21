@@ -56,4 +56,22 @@ class Courses extends Controller
         $link = $request->post('link');
         DB::table('courses')->where('prama_link', $pramaLink)->increment('enroll', 1);
     }
+
+    function sendData(Request $requests){
+       $authCode=$requests->post('AuthCode');
+       if ($authCode=='API-2022-OBS2356X8ZXSJHYT'){
+         $data['mainUrl']="https://www.real.discount/filter/?category=All&subcategory=All&store=All&duration=All&price=0&rating=All&language=All&search=&submit=Filter&page=";
+
+         $data['point1'] = ".card-title";
+         $data['point2']= ".card-cat";
+         $data['point3']=".card-text";
+         $data['point4']=".text-center";
+         $data['subUrl']="https://www.real.discount/";
+         $data['url']="https://learnejo.com/Post-Coursesx";
+        return json_encode($data);
+       }
+       else{
+        return 0;
+       }
+    }
 }

@@ -1,5 +1,4 @@
 const video = document.getElementById('video');
-
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/faceapi/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/faceapi/models'),
@@ -61,26 +60,27 @@ video.addEventListener('play', () => {
             ).draw(canvas);
         });
         console.log(predictions.length)
-        if (predictions.length > 1) {
-            $('#prediction').append("<small><span class='text-dabger'>Other Face Ditected." + new Date($.now()) + "</small><hr>");
-        }
+        // if (predictions.length > 1) {
+        //     $('#prediction').append("<small><span class='text-dabger'>Other Face Ditected." + new Date($.now()) + "</small><hr>");
+        // }
+
         if (predictions.length == 1) {
             $('#action').html("<span class='text-success h4'>Please Wait..</span>");
+            no++;
+        } else if (predictions.length == 0) {
+            $('#action').html("<span class='text-warning h4'>Focuse On Camara..</span>");
+            no = 0;
+        } else {
+            $('#action').html("<span class='text-danger h4'>Other Face Ditected..</span>");
             no = 0;
         }
 
-        if (predictions.length == 0) {
-            $('#action').html("<span class='text-danger h4'>Focus on camera!</span>");
-            if (no == 100) {
-                $('#prediction').html("<small><span class='text-dabger'>No Face Ditected." + new Date($.now()) + " count:" + no + "</small><hr>");
-
-            }
-
-            if (no == 300) {
-                $('#prediction').html("<small><span class='text-dabger'>Out Of Camara Last Worning." + new Date($.now()) + " count:" + no + "</small><hr>");
-            }
-            no = no + 1;
+        if (no == 12) {
+            video.pause();
+            clearInterval(refreshVideo);
+            $('#action').html("<span class='text-info h4'>Done!</span>");
         }
-
-    }, 100);
+    }, 200);
 });
+
+

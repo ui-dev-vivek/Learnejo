@@ -21,7 +21,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </div>
         </section>
     </x-slot>
-    <div class="container">
+    <div class="container d-none d-md-block ">
         <article class="tabs content--flow">
 
             <aside class="sidebar">
@@ -216,6 +216,25 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 </div>
             </main>
         </article>
+    </div>
+    <br>
+    <div class="container  d-xs-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <h4 class="h6">
+            Mock Test can be given in PC, Computer and Laptop only.
+            <br>
+            Please Check out related quizzes for Mobile or Tab.
+            <div class="p-4 m-2 rounded-8 shadow z-depth-3 border border-success">
+                <div class="row">
+                    <div class="col-8">Quizs on {{ $getMockTest[0]->name }}</div>
+                    <div class="col-4">
+                        <a class="ps-2 pe-2 p-1 rounded border border-info" href="">Go >></a>
+                    </div>
+                </div>
+            </div>
+
+            Thank you
+        </h4>
+
     </div>
 
     <br><br>

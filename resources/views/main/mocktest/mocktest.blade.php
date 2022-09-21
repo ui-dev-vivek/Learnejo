@@ -15,7 +15,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             Technical Mock Test</h2>
         <div class="row">
             @forelse ($getTechMockTest as $mockTest)
-                <div class="col-sm-4" data-aos="zoom-in" data-aos-delay="30">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="30">
                     <a href="{{ url('Mock-Test') }}/{{ $mockTest->prama_link }}" class="">
                         <div class="p-2 " data-tilt>
                             <div class="row shadow rounded winter-neva-gradient " style="min-height: 70px;">
@@ -44,7 +44,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             Non-Technical Mock Test</h3>
         <div class="row">
             @forelse ($getNonTechMockTest as $mockTest)
-                <div class="col-sm-4" data-aos="zoom-in" data-aos-delay="30">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="30">
                     <a href="{{ url('Mock-Test') }}/{{ $mockTest->prama_link }}" class="">
                         <div class="p-2" data-tilt>
                             <div class="row shadow rounded deep-blue-gradient " style="min-height: 70px;">

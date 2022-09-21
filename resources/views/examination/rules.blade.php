@@ -1,9 +1,12 @@
 @php
-$title = 'Login : Mock Test';
+$title = 'Rules : Mock Test';
 $image = asset('assets/image/icon.jpg');
 $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 @endphp
 <x-layout.examination.base :title="$title" :image="$image" :description="$description">
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+    @stop
     <section class="container">
         <h1>{{ $topic->name }} {{ $heading->name }}</h1>
         <small>Date: {{ date('d-m-Y A') }} | Questions: {{ $heading->number_of_question }} | Time:
@@ -47,22 +50,30 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </div>
         </div>
         <hr>
-
-        <div class="text-center startBtn ">
+        @php
+            $urlx = url('/Start-Examination') . '/' . $topic->prama_link . '/' . $heading->prama_link;
+        @endphp
+        <div class="text-center startBtn d-none ">
             <p>Please read all rules and <a href="javascript:void(0)"> Privacy Policy.</a></p>
-            <a class="hvr-sweep-to-right bg-info text-white p-2 ps-4 pe-4 border border-info me-3"
-                href="{{ url('/Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}">Start
-                Test
-                <br><small>Without Camera</small></a>
-            @if (date('H') >= '00' && date('H') < '6')
-                <a class="hvr-sweep-to-right ms-3 p-2 ps-4 pe-4 border border-success"
-                    href="{{ url('/Start-Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}"> <i
+            @if (date('H') >= '08' && date('H') <= '18')
+                <a onclick='launchFullScreen(document.documentElement)'
+                    class="csbtn hvr-sweep-to-right  p-2 ps-4 pe-4 border border-success " href="javascript:void(0)"> <i
                         class="fa fa-camera"> </i>
                     Start With Camera <br> <small>AI proctored</small>
                 </a>
+                <a id="chanhe" href="{{ $urlx }}">{{ $urlx }} fg</a>
             @endif
+            <a onclick="launchFullScreen(document.documentElement)"
+                class=" hvr-sweep-to-right bg-info text-white ms-3 p-2 ps-4 pe-4 border border-info me-3"
+                href="{{ url('/Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}">Start
+                Test
+                <br><small>Without Camera</small></a>
+
         </div>
 
-
+        @section('script')
+            <script src="{{ asset('assets/js/compatibility-test.js') }}"></script>
+        @stop
     </section>
+
 </x-layout.examination.base>

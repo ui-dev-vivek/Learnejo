@@ -40,6 +40,7 @@ class Jobs extends Controller
             ->where('prama_link', $pramaLink)
             ->Where('status', 1)
             ->first();
+
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('jobs')->where('prama_link', $pramaLink)->increment('view', 1);
