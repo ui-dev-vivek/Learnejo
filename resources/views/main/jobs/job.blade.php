@@ -40,8 +40,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 
 
-
-
+    @php
+        count = 0;
+    @endphp
     <div class="ps-2 pe-2">
         <div class="row">
             <div class="col-md-9">
@@ -52,9 +53,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
                         <div class="col-md-1"></div>
-                        <div class="col-md-9 mb-3">
+                        <div class="col-md-9">
                             <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
-                                <div class="shadow rounded p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
+                                <div class="shadow rounded mb-3 p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
                                     data-aos-delay="30">
                                     <div class="" style="max-height:70px; overflow: hidden;">
                                         <img class="text-center shadow z-depth-1 p-1 rounded" width="90"
@@ -81,8 +82,27 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     </div>
                                 </div>
                             </a>
+
+                            @if ($count % 3 == 0)
+                                <div class="shadow rounded mb-3 p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
+                                    data-aos-delay="30">
+                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                                        crossorigin="anonymous"></script>
+                                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                                        data-ad-layout-key="-gr-l+21-ab+j5" data-ad-client="ca-pub-7119514135532896"
+                                        data-ad-slot="4299430672"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || [])
+                                        .push({});
+                                    </script>
+                                </div>
+                            @endif
+
                         </div>
                         <div class="col-md-2"></div>
+                        @php
+                            $count++;
+                        @endphp
                     @empty
                         <small>No Jobs Founde.</small>
                     @endforelse
@@ -161,7 +181,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         <a href="{{ url('/Courses') }}/{{ $job->prama_link }}">
                             <div class="p-1  border-bottom">
                                 <div class="row">
-                                    <div class="col-2"> <img width="50" src="{{ $job->image }}" alt="">
+                                    <div class="col-2"> <img width="50" src="{{ $job->image }}"
+                                            alt="">
                                     </div>
                                     <div class="col-10"><small>{{ $job->title }}</small></div>
                                 </div>
