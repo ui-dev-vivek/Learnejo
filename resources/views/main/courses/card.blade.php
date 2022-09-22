@@ -39,6 +39,11 @@
                         </div>
                     </div>
                 </div>
+                </a> <br><a href="https://learnejo.com/Join-Us-With-Whatsapp" target="_blank">
+                    <h5 class="h5 text-success"> <i class="fa fa-whatsapp " aria-hidden="true"></i> For Latest
+                        Updates
+                        Join Our Whatsapp Group, For letest Courses.</h5>
+                </a>
             </div> <br>
             <div class="rounded-8 p-3 shadow z-depth-3">
                 <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-7119514135532896"
