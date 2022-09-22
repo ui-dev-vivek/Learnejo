@@ -40,7 +40,8 @@
                     </div>
                 </div>
                 </a> <br><a href="https://learnejo.com/Join-Us-With-Whatsapp" target="_blank">
-                    <h5 class="h5 text-success"> <i class="fa fa-whatsapp " aria-hidden="true"></i> For Latest
+                    <h5 class="h5 text-succes text-center"> <i class="fa fa-whatsapp " aria-hidden="true"></i> For
+                        Latest
                         Updates
                         Join Our Whatsapp Group, For letest Courses.</h5>
                 </a>
