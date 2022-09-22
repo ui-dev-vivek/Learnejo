@@ -87,6 +87,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                     </script>
                                 </div>
                             </div>
+                            @php
+                                $count++;
+                            @endphp
                         @endif
                     @endforeach
                 </div>
