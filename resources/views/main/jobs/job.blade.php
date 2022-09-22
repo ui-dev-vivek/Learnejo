@@ -12,12 +12,10 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         <section class="breadcrumbs">
             <div class="container">
                 <h1 class="text-center">Job Internships</h1>
-
             </div>
         </section>
     </x-slot>
-    <div class=" mt-1">
-
+    {{-- <div class=" mt-1">
         <div class="row">
             <div class="col-1 pt-2 bg-success text-white p-1 text-center">Letest:</div>
             <div class="col-11 p-1 border border-success pt-2">
@@ -31,172 +29,133 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         <p>No Jobs Found!</p>
                     @endforelse
                 </marquee>
-
             </div>
         </div>
-    </div>
-
+    </div> --}}
     <br>
 
+    <div class="row ">
 
-
-    @php
-        $count = 0;
-    @endphp
-    <div class="ps-2 pe-2">
-        <div class="row">
-            <div class="col-md-9">
-                <div style="width:100%; border-bottom:5px solid #32c552;" class="ps-4 pb-2 h2">
-                    <b>Popular Jobs</b>
-                </div> <br>
-                <h4 class="m-2"><b>Technical Jobs:</b></h4>
+        <div class="col-md-12">
+            <section class="p-3 ms-5 me-5 rounded-8 shadow z-depth-2  d-none d-lg-block">
                 <div class="row">
                     @forelse ($getCorpJobs as $job)
-                        <div class="col-md-1"></div>
-                        <div class="col-md-9">
-                            <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
-                                <div class="shadow rounded mb-3 p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
-                                    data-aos-delay="30">
-                                    <div class="" style="max-height:70px; overflow: hidden;">
-                                        <img class="text-center shadow z-depth-1 p-1 rounded" width="90"
-                                            src="{{ $job->image }}" alt="">
-                                        &nbsp;&nbsp; <span class="h5"> {{ $job->title }}</span>
-                                    </div>
-                                    <div class="row pt-1 text-dark">
-                                        <div class="col-6 overflow-hidden">
-                                            <span class="overflow-hidden"> <small><i class="fa fa-building-o"
-                                                        aria-hidden="true"></i>&nbsp;
-                                                    &nbsp;{{ $job->company }}</small></span><br>
-                                            <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
-                                                        aria-hidden="true"></i>&nbsp;&nbsp;
-                                                    {{ $job->role }}</small></span>
-                                        </div>
-                                        <div class="col-6 ">
-                                            <span class="overflow-hidden"><small><i class="fa fa-briefcase"
-                                                        aria-hidden="true"></i>&nbsp;&nbsp;
-                                                    {{ $job->experience }}</small></span><br>
-                                            <span class="overflow-hidden"> <small><i class="fa fa-money"
-                                                        aria-hidden="true"></i>&nbsp;&nbsp;
-                                                    {{ $job->salary }}</small></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            @if ($count % 3 == 0)
-                                <div class="shadow rounded mb-3 p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in"
-                                    data-aos-delay="30">
-                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-                                        crossorigin="anonymous"></script>
-                                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
-                                        data-ad-layout-key="-gr-l+21-ab+j5" data-ad-client="ca-pub-7119514135532896"
-                                        data-ad-slot="4299430672"></ins>
-                                    <script>
-                                        (adsbygoogle = window.adsbygoogle || [])
-                                        .push({});
-                                    </script>
-                                </div>
-                            @endif
-
+                        <div class="col-md-3 ">
+                            <div class="p-2 pt-4 mb-3 text-dark tempting-azure-gradient rounded-8 text-center"
+                                style="min-height:120px; overflow: hidden;">
+                                <a href="">
+                                    <h4 class="h5 text-dark">{{ $job->title }}</h4>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-md-2"></div>
-                        @php
-                            $count++;
-                        @endphp
                     @empty
                         <small>No Jobs Founde.</small>
                     @endforelse
-                </div><br>
-                <x-main.pagination :data="$getGovtJobs" />
-                <br>
-                <h4 class="m-2"><b>Governments Jobs:</b></h4>
-                <div class="row">
-                    @forelse ($getGovtJobs as $job)
-                        <div class="row">
-                            <div class="col-md-1"></div>
-                            <div class="col-md-9 ">
-                                <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
-                                    <div class="row p-2  mb-3 shadow ">
-                                        <div class="col-3 text-center">
-                                            <img width="130"
-                                                class="text-center shadow img-fluid z-depth-1 p-1 rounded"
-                                                src="{{ $job->image }}" alt="{ $job->title }}">
-                                        </div>
-                                        <div class="col-9">
-                                            <h5 class="h5">{{ $job->title }}</h6>
-                                                <div class="row pt-1 text-dark">
-                                                    <div class="col-6 overflow-hidden">
-                                                        <span class="overflow-hidden"> <small><i
-                                                                    class="fa fa-building-o"
-                                                                    aria-hidden="true"></i>&nbsp;
-                                                                &nbsp;{{ $job->company }}</small></span><br>
-                                                        <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
-                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                                {{ $job->role }}</small></span>
-                                                    </div>
-                                                    <div class="col-6 ">
-                                                        <span class="overflow-hidden"><small><i class="fa fa-briefcase"
-                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                                {{ $job->experience }}</small></span><br>
-                                                        <span class="overflow-hidden"> <small><i class="fa fa-money"
-                                                                    aria-hidden="true"></i>&nbsp;&nbsp;
-                                                                {{ $job->salary }}</small></span>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
-
-
-                            <div class="col-md-2"></div>
-                        </div>
-
-                    @empty
-                        <small>No Courses Founde.</small>
-                    @endforelse
                 </div>
-
-                <br>
-                <x-main.pagination :data="$getGovtJobs" />
-
-            </div>
-            <div class="col-md-3"><br><br>
-                <div class="shadow p-1 pt-3 border">
-                    <p><strong>Recent Mock Test</strong></p>
-                    @forelse ($getMock as  $mock)
-                        <a href="{{ url('/Mock-Test') }}/{{ $mock->prama_link }}">
-                            <div class="p-1  border-bottom">
-                                <img width="50" src="{{ $mock->image }}" alt=""> &nbsp; &nbsp;
-                                {{ $mock->name }}
-                            </div>
-                        </a>
-                    @empty
-                        <h4>No Mock Test Found!</h4>
-                    @endforelse
-                    <br>
-                    <p><strong>Recent Courses</strong></p>
-                    @forelse ($getCourses as  $job)
-                        <a href="{{ url('/Courses') }}/{{ $job->prama_link }}">
-                            <div class="p-1  border-bottom">
-                                <div class="row">
-                                    <div class="col-2"> <img width="50" src="{{ $job->image }}"
-                                            alt="">
-                                    </div>
-                                    <div class="col-10"><small>{{ $job->title }}</small></div>
-                                </div>
-
-
-                            </div>
-                        </a>
-                    @empty
-                        <h4>No Jobs Found!</h4>
-                    @endforelse
-
-                </div>
+            </section>
+            <div class=" p-2 m-4 text-center">
+                <a href="https://telegram.me/job_learnejo" target="_blank">
+                    <h5 class="h5 text-info"> <i class="fa fa-telegram  text-info" aria-hidden="true"></i> For Latest
+                        Updates
+                        Join Our Telegram Group.</h5>
+                </a>
             </div>
         </div>
+
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rounded-8 shadow p-2">
+                    <h4 class="p-2 text-center bg-success rounded-8 h4">2022 Batch</h4>
+                    <hr>
+                    @forelse ($getCorpJobs as $job)
+                        <div class="shadow rounded p-2 ps-3 mb-3 border border-success zoom-x" style="width: 100%;">
+                            <p><strong>{{ $job->title }}</strong></p>
+                            <div class="row  text-dark">
+                                <div class="col-6 overflow-hidden">
+                                    <span class="overflow-hidden"> <small><i class="fa fa-building-o"
+                                                aria-hidden="true"></i>&nbsp;
+                                            &nbsp;{{ $job->company }}</small></span><br>
+                                    <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->role }}</small></span>
+                                </div>
+                                <div class="col-6 ">
+                                    <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->experience }}</small></span><br>
+                                    <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->salary }}</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                    @endforelse
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="rounded-8 shadow p-2">
+                    <h4 class="p-2 text-center bg-success rounded-8 h4">2022 Batch</h4>
+                    <hr>
+                    @forelse ($getCorpJobs as $job)
+                        <div class="shadow rounded p-2 ps-3 mb-3 border border-success zoom-x" style="width: 100%;">
+                            <p><strong>{{ $job->title }}</strong></p>
+                            <div class="row  text-dark">
+                                <div class="col-6 overflow-hidden">
+                                    <span class="overflow-hidden"> <small><i class="fa fa-building-o"
+                                                aria-hidden="true"></i>&nbsp;
+                                            &nbsp;{{ $job->company }}</small></span><br>
+                                    <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->role }}</small></span>
+                                </div>
+                                <div class="col-6 ">
+                                    <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->experience }}</small></span><br>
+                                    <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                aria-hidden="true"></i>&nbsp;&nbsp;
+                                            {{ $job->salary }}</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                    @endforelse
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class=" p-2 m-5 text-center shadow z-depth-3 rounded-8">
+        <h4 class="h4">Join Us On Social Networks</h4>
+        <hr>
+        <a href="https://telegram.me/job_learnejo" target="_blank">
+            <h5 class="h5 text-info"> <i class="fa fa-telegram  text-info" aria-hidden="true"></i> For Latest
+                Updates
+                Join Our Telegram Group.</h5>
+        </a> <br><a href="https://learnejo.com/Join-Us-With-Whatsapp" target="_blank">
+            <h5 class="h5 text-success"> <i class="fa fa-whatsapp " aria-hidden="true"></i> For Latest
+                Updates
+                Join Our Whatsapp Group.</h5>
+        </a>
+    </div>
 </x-layout.main.base>
+{{-- @if ($count % 3 == 0)
+    <div class="shadow rounded mb-3 p-2  m-1 zoom-x" style="width: 100%" data-aos="zoom-in" data-aos-delay="30">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gr-l+21-ab+j5"
+            data-ad-client="ca-pub-7119514135532896" data-ad-slot="4299430672"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || [])
+            .push({});
+        </script>
+    </div>
+@endif
+<x-main.pagination :data="$getGovtJobs" /> --}}

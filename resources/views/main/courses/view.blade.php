@@ -1,4 +1,8 @@
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+@stop
 <x-layout.main.base :title="$course->title" :image="$course->image" :description="$course->title">
+
     <x-slot name='hero'>
         <section class="intro-single">
             <div class="container">

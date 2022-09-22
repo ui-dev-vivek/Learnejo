@@ -27,7 +27,8 @@
     <meta name="twitter:data2" content="1 minute">
     <meta name="theme-color" content="#999999" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9B3E55GBMC"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225076556-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -36,7 +37,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-9B3E55GBMC');
+        gtag('config', 'UA-225076556-1');
     </script>
     <!-- Favicons -->
     <link href="{{ asset('assets/image/icon.png') }}" rel="icon">

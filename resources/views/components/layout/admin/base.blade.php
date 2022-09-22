@@ -34,10 +34,20 @@
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script> --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
-
     <script src="https://cdn.tiny.cloud/1/o8g5v5wdecwupxhn217zgi6yos5t3eo8hvcq5q0x5hxdqvvk/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-225076556-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-225076556-1');
+    </script>
 </head>
 
 <body>

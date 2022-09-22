@@ -19,7 +19,7 @@ class Jobs extends Controller
     }
     function getCorpjobs()
     {
-        return DB::table('jobs')->where('status', 1)->where('type', "Corp")->orderByDesc('id')->paginate(20);
+        return DB::table('jobs')->where('status', 1)->where('type', "Corp")->orderByDesc('id')->paginate(8);
     }
     function getGovtjobs()
     {
