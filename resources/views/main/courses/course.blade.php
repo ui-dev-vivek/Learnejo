@@ -35,7 +35,9 @@ $description = 'Learnejo is an E-learning platform, for every student interested
     </div>
 
 
-
+    @php
+        $count = 0;
+    @endphp
     <div class="row">
         <div class="col-sm-9">
             <section class="trending-courses container">
@@ -67,29 +69,40 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                         </div>
                                         <small class="text-justify"
                                             style="font-size: 12px;">{{ $course->sort_desc }}</small>
-                                        {{-- <span class="reviewtext font-italic">Reviews</span>
-                                <div class="reviewstars">
-                                    <i class="fa fa-star text-warning"></i>
-                                    <i class="fa fa-star text-warning"></i>
-                                    <i class="fa fa-star text-warning"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span class="color-4a rating">3</span> <span
-                                        class="totalreviews color-4a"></span>
-                                </div> --}}
                                     </article>
                                 </a>
                             </div>
                         </div>
+                        @if ($count % 4 == 0)
+                            <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
+                                <div data-tiltx class="course-tile mb-4 border zoom ">
+                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                                        crossorigin="anonymous"></script>
+                                    <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                                        data-ad-layout-key="-79+cw+2x-2h+5q" data-ad-client="ca-pub-7119514135532896"
+                                        data-ad-slot="3842768123"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || [])
+                                        .push({});
+                                    </script>
+                                </div>
+                            </div>
+                        @endif
                     @endforeach
-
-
                 </div>
                 <x-main.pagination :data="$getCourses" />
             </section>
         </div>
         <div class="col-sm-3"><br><br>
             <div class="shadow p-1 pt-3 border">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                    crossorigin="anonymous"></script>
+                <!-- Display 2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <p><strong>Recent Mock Test</strong></p>
                 @forelse ($getMock as  $mock)
                     <a href="{{ url('/Mock-Test') }}/{{ $mock->prama_link }}">
@@ -102,6 +115,14 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                     <h4>No Mock Test Found!</h4>
                 @endforelse
                 <br>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                    crossorigin="anonymous"></script>
+                <!-- Display 2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <p><strong>Recent Jobs</strong></p>
                 @forelse ($getJobs as  $job)
                     <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
@@ -118,7 +139,14 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 @empty
                     <h4>No Jobs Found!</h4>
                 @endforelse
-
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                    crossorigin="anonymous"></script>
+                <!-- Display 2 -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </div>

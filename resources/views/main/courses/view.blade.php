@@ -21,7 +21,7 @@
         </section><!-- End Intro Single-->
     </x-slot>
     <section class="news-single nav-arrow-b  text-justify">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="news-img-box text-center">
@@ -59,6 +59,13 @@
                             echo $course->content;
                             ?>
                         </p>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                            crossorigin="anonymous"></script>
+                        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                            data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script> <br>
                         <blockquote class="blockquote">
                             <p class="mb-4">{{ $course->title }} <br>
                                 <small>The above course description is taken from <a
@@ -109,7 +116,16 @@
                 {{-- <x-main.relatedcard /> --}}
             </div>
         </div>
-    </section><!-- End Blog Single-->
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+        crossorigin="anonymous"></script>
+    <!-- Display 2 -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896" data-ad-slot="8356744114"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- End Blog Single-->
     @section('script')
         <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
     @stop
