@@ -47,10 +47,14 @@
                 </a>
             </div> <br>
             <div class="rounded-8 p-3 shadow z-depth-3">
-                <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="4186975640" data-auto-format="rspv" data-full-width="">
-                    <div overflow=""></div>
-                </amp-ad>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                    data-ad-layout-key="-79+cw+2x-2h+5q" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="3842768123"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
 
         </div>
