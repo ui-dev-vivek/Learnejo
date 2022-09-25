@@ -25,9 +25,7 @@
                         <div class="p-3">
                             <h5 class="h5">{{ $job->title }}</h5>
                             <div class="row">
-                                <div class="col-6 p-1 bg-success text-white text-center">
-                                    <strong>{{ $job->catg }}</strong>
-                                </div>
+
                                 <div class="col-6 p-1 bg-danger text-white text-center"><strong>Free</strong></div>
                                 <div class="row  text-dark">
                                     <div class="col-6 overflow-hidden">
