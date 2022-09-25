@@ -46,6 +46,7 @@ Route::post('/send-data-to-offorbystudents', [Courses::class, 'sendData']);
 Route::get('/Job-Internships', [Jobs::class, 'index']);
 Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
+Route::get('Job-Internships/Card/{pramaLink}', [Jobs::class, 'card']);
 
 // Main Mock Test
 Route::get('/Prepare/{pramalink}', [Mocktest::class, 'mockTestAbout']);

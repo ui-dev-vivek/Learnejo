@@ -39,28 +39,29 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         <div class="col-md-12">
             <section class="p-3 ms-5 me-5 rounded-8 shadow z-depth-2  d-none d-lg-block">
                 <div class="row">
-                    @forelse ($getCorpJobs as $job)
+                    @forelse ($get8 as $job)
                         <div class="col-md-3 ">
-                            <div class="p-2 pt-4 mb-3 text-dark tempting-azure-gradient rounded-8 text-center"
-                                style="min-height:120px; overflow: hidden;">
-                                <a href="">
+                            <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                                <div class="zoom-x p-2 pt-4 mb-3 text-dark tempting-azure-gradient rounded-8 text-center"
+                                    style="min-height:120px; overflow: hidden;">
+
                                     <h4 class="h5 text-dark">{{ $job->title }}</h4>
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                    @empty
-                        <small>No Jobs Founde.</small>
-                    @endforelse
                 </div>
-            </section>
-            <div class=" p-2 m-4 text-center">
-                <a href="https://telegram.me/job_learnejo" target="_blank">
-                    <h5 class="h5 text-info"> <i class="fa fa-telegram  text-info" aria-hidden="true"></i> For Latest
-                        Updates
-                        Join Our Telegram Group.</h5>
-                </a>
-            </div>
+            @empty
+                <small>No Jobs Founde.</small>
+                @endforelse
         </div>
+        </section>
+        <div class=" p-2 m-4 text-center">
+            <a href="https://telegram.me/job_learnejo" target="_blank">
+                <h5 class="h5 text-info"> <i class="fa fa-telegram  text-info" aria-hidden="true"></i> For Latest
+                    Updates
+                    Join Our Telegram Group.</h5>
+            </a>
+        </div>
+    </div>
 
     </div>
 
@@ -68,68 +69,125 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         <div class="row">
             <div class="col-md-6">
                 <div class="rounded-8 shadow p-2">
-                    <h4 class="p-2 text-center bg-success rounded-8 h4">2022 Batch</h4>
+                    <h4 class="p-2 text-center bg-success rounded-8 h4">Jobs</h4>
                     <hr>
+                    @php
+                        $count = 0;
+                    @endphp
                     @forelse ($getCorpJobs as $job)
-                        <div class="shadow rounded p-2 ps-3 mb-3 border border-success zoom-x" style="width: 100%;">
-                            <p><strong>{{ $job->title }}</strong></p>
-                            <div class="row  text-dark">
-                                <div class="col-6 overflow-hidden">
-                                    <span class="overflow-hidden"> <small><i class="fa fa-building-o"
-                                                aria-hidden="true"></i>&nbsp;
-                                            &nbsp;{{ $job->company }}</small></span><br>
-                                    <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->role }}</small></span>
-                                </div>
-                                <div class="col-6 ">
-                                    <span class="overflow-hidden"><small><i class="fa fa-briefcase"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->experience }}</small></span><br>
-                                    <span class="overflow-hidden"> <small><i class="fa fa-money"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->salary }}</small></span>
+                        <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                            <div class="shadow rounded p-2 ps-1 mb-3 border border-success zoom-x" style="width: 100%;">
+                                <p><img class="p-1 rounded shadow z-depth-2" width="50" src="{{ $job->image }}"
+                                        alt="">&nbsp; <strong> {{ $job->title }}</strong>
+                                </p>
+                                <div class="row  text-dark">
+                                    <div class="col-6 overflow-hidden">
+                                        <span class="overflow-hidden"> <small><i class="fa fa-building-o"
+                                                    aria-hidden="true"></i>&nbsp;
+                                                &nbsp;{{ $job->company }}</small></span><br>
+                                        <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->role }}</small></span>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->experience }}</small></span><br>
+                                        <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->salary }}</small></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+
+                        @if ($count % 3 == 0)
+                            <div class="shadow rounded p-2 ps-1 mb-3 border border-success zoom-x" style="width: 100%;">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                                    crossorigin="anonymous"></script>
+                                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                                    data-ad-layout-key="-gr-l+21-ab+j5" data-ad-client="ca-pub-7119514135532896"
+                                    data-ad-slot="4299430672"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || [])
+                                    .push({});
+                                </script>
+
+                            </div>
+                            @php
+                                $count++;
+                            @endphp
+                        @endif
                     @empty
                     @endforelse
                 </div>
 
             </div>
-
             <div class="col-md-6">
                 <div class="rounded-8 shadow p-2">
-                    <h4 class="p-2 text-center bg-success rounded-8 h4">2022 Batch</h4>
+                    <h4 class="p-2 text-center bg-success rounded-8 h4">Internships</h4>
                     <hr>
-                    @forelse ($getCorpJobs as $job)
-                        <div class="shadow rounded p-2 ps-3 mb-3 border border-success zoom-x" style="width: 100%;">
-                            <p><strong>{{ $job->title }}</strong></p>
-                            <div class="row  text-dark">
-                                <div class="col-6 overflow-hidden">
-                                    <span class="overflow-hidden"> <small><i class="fa fa-building-o"
-                                                aria-hidden="true"></i>&nbsp;
-                                            &nbsp;{{ $job->company }}</small></span><br>
-                                    <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->role }}</small></span>
-                                </div>
-                                <div class="col-6 ">
-                                    <span class="overflow-hidden"><small><i class="fa fa-briefcase"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->experience }}</small></span><br>
-                                    <span class="overflow-hidden"> <small><i class="fa fa-money"
-                                                aria-hidden="true"></i>&nbsp;&nbsp;
-                                            {{ $job->salary }}</small></span>
+                    @php
+                        $count = 0;
+                    @endphp
+
+                    @forelse ($getInt as $job)
+                        <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                            <div class="shadow rounded p-2 ps-1 mb-3 border border-success zoom-x" style="width: 100%;">
+                                <p><img class="p-1 rounded shadow z-depth-2" width="50" src="{{ $job->image }}"
+                                        alt="">&nbsp; <strong> {{ $job->title }}</strong>
+                                </p>
+                                <div class="row  text-dark">
+                                    <div class="col-6 overflow-hidden">
+                                        <span class="overflow-hidden"> <small><i class="fa fa-building-o"
+                                                    aria-hidden="true"></i>&nbsp;
+                                                &nbsp;{{ $job->company }}</small></span><br>
+                                        <span class="overflow-hidden"> <small><i class="fa fa-user-plus"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->role }}</small></span>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <span class="overflow-hidden"><small><i class="fa fa-briefcase"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->experience }}</small></span><br>
+                                        <span class="overflow-hidden"> <small><i class="fa fa-money"
+                                                    aria-hidden="true"></i>&nbsp;&nbsp;
+                                                {{ $job->salary }} {{ $count }}</small></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+
+                        @if ($count % 3 == 0)
+                            <div class="shadow rounded p-2 ps-1 mb-3 border border-success zoom-x" style="width: 100%;">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                                    crossorigin="anonymous"></script>
+                                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
+                                    data-ad-layout-key="-gr-l+21-ab+j5" data-ad-client="ca-pub-7119514135532896"
+                                    data-ad-slot="4299430672"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || [])
+                                    .push({});
+                                </script>
+
+                            </div>
+                        @endif`
+
                     @empty
                     @endforelse
                 </div>
 
             </div>
 
+        </div>
+        <div class="text-center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
     <div class=" p-2 m-5 text-center shadow z-depth-3 rounded-8">
@@ -144,6 +202,16 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 Updates
                 Join Our Whatsapp Group.</h5>
         </a>
+    </div>
+    <div class="container text-center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+            crossorigin="anonymous"></script>
+        <!-- Display 2 -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+            data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </x-layout.main.base>
 {{-- @if ($count % 3 == 0)
