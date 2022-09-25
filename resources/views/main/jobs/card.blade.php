@@ -42,7 +42,7 @@
                                                 {{ $job->experience }}</small></span><br>
                                         <span class="overflow-hidden"> <small><i class="fa fa-money"
                                                     aria-hidden="true"></i>&nbsp;&nbsp;
-                                                {{ $job->salary }} {{ $count }}</small></span>
+                                                {{ $job->salary }}</small></span>
                                     </div>
                                 </div>
                                 <p class="text-end mt-2"><a
