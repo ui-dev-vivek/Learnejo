@@ -26,7 +26,7 @@
                             <h5 class="h5">{{ $job->title }}</h5>
                             <div class="row">
 
-                                <div class="col-6 p-1 bg-danger text-white text-center"><strong>Free</strong></div>
+                                <div class="col-6 p-1 text-white text-center"><strong>Jobs Update</strong></div>
                                 <div class="row  text-dark">
                                     <div class="col-6 overflow-hidden">
                                         <span class="overflow-hidden"> <small><i class="fa fa-building-o"
@@ -47,8 +47,8 @@
                                 </div>
                                 <p class="text-end mt-2"><a
                                         class="p-2 bg-primary rounded text-white hvr-icon-wobble-horizontal"
-                                        href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}"><strong>Get Free
-                                            Course</strong>
+                                        href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}"><strong>Apply Now
+                                        </strong>
                                         <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a></p>
                             </div>
                         </div>
