@@ -15,6 +15,16 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <div class="rounded-8 p-3 shadow z-depth-3">
+                <div style="max-height:150px;">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                        crossorigin="anonymous"></script>
+                    <!-- 160pxcode -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                        data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
                 <div class="row">
                     <div class="col-sm-6 text-center">
                         <div class="p-2">
@@ -30,6 +40,17 @@
                                 </div>
                                 <div class="col-6 p-1 bg-danger text-white text-center"><strong>Free</strong></div>
                                 <small class="p-2">{{ $course->sort_desc }}</small>
+                                <div style="max-height:150px;">
+                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+                                        crossorigin="anonymous"></script>
+                                    <!-- 160pxcode -->
+                                    <ins class="adsbygoogle" style="display:block"
+                                        data-ad-client="ca-pub-7119514135532896" data-ad-slot="2100620665"
+                                        data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
                                 <p class="text-end mt-2"><a
                                         class="p-2 bg-primary rounded text-white hvr-icon-wobble-horizontal"
                                         href="{{ url('/Courses') }}/{{ $course->prama_link }}"><strong>Get Free
