@@ -39,7 +39,6 @@
 
         gtag('config', 'UA-225076556-1');
     </script>
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <!-- Favicons -->
     <link href="{{ asset('assets/image/icon.png') }}" rel="icon">
     <link href="{{ asset('assets/image/icon.png') }}" rel="apple-touch-icon">
