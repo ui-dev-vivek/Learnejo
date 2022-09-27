@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{{ $title }}</title>
@@ -26,19 +24,6 @@
     <meta name="twitter:label2" content="Est. reading time">
     <meta name="twitter:data2" content="1 minute">
     <meta name="theme-color" content="#999999" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDB4MKYCQ8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-JDB4MKYCQ8');
-    </script>
     <!-- Favicons -->
     <link href="{{ asset('assets/image/icon.png') }}" rel="icon">
     <link href="{{ asset('assets/image/icon.png') }}" rel="apple-touch-icon">
@@ -70,6 +55,20 @@
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/mycss.css') }}" rel="stylesheet">
     @yield('css')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDB4MKYCQ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JDB4MKYCQ8');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
