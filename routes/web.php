@@ -133,3 +133,5 @@ Route::group(['middleware' => ['StudentLogin']], function () {
     Route::get('/Start-Examination/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'start']);
     Route::view('/Examination/{pramaLink}/{subPramaLink}', 'examination.exam');
 });
+
+Route::view('/Story/Marilyn-Monroe-Troubled-Mother', 'storys.story');
