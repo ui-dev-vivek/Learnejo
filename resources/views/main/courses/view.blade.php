@@ -14,6 +14,11 @@
                                 <span>Title</span>
                             </div>
                         </div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                            data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                 </div>
             </div>
@@ -29,8 +34,6 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="news-img-box text-center">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-                            crossorigin="anonymous"></script>
                         <!-- Display 2 -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -70,8 +73,7 @@
                             echo $course->content;
                             ?>
                         </p>
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-                            crossorigin="anonymous"></script>
+
                         <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
                             data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
                         <script>
@@ -128,8 +130,6 @@
             </div>
         </div>
     </section>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-        crossorigin="anonymous"></script>
     <!-- Display 2 -->
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896" data-ad-slot="8356744114"
         data-ad-format="auto" data-full-width-responsive="true"></ins>

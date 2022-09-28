@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
@@ -65,11 +66,17 @@ class Jobs extends Controller
             ->Where('status', 1)
             ->limit(1)
             ->first();
+        $jobx = DB::table('jobs')
+            ->whereDate('created_at', Carbon::today())
+            ->Where('status', 1)
+            ->limit(12)
+            ->orderByDesc('view')
+            ->get();
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
-            DB::table('courses')->where('prama_link', $pramaLink)->increment('view', 1);
+            DB::table('jobs')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        return view('main.jobs.card')->with('job', $jobs);
+        return view('main.jobs.card')->with(compact('jobx', 'jobs'));
     }
 
 
