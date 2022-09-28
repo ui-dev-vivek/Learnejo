@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
@@ -57,11 +58,17 @@ class Courses extends Controller
             ->Where('status', 1)
             ->limit(1)
             ->first();
+        $courses = DB::table('courses')
+            ->whereDate('created_at', Carbon::today())
+            ->Where('status', 1)
+            ->limit(12)
+            ->orderByDesc('view')
+            ->get();
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('courses')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        return view('main.courses.card')->with('course', $course);
+        return view('main.courses.card')->with(compact('courses', 'course'));
     }
     function enroll(Request $request)
     {
