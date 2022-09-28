@@ -64,11 +64,15 @@ class Courses extends Controller
             ->limit(12)
             ->orderByDesc('view')
             ->get();
+        $created = new Carbon($course->created_at);
+        $now = Carbon::now();
+        // $difference = $created->diff($now)->days; 
+        $difference = $created->diffForHumans($now);
         if (!Cookie::has($pramaLink)) {
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('courses')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        return view('main.courses.card')->with(compact('courses', 'course'));
+        return view('main.courses.card')->with(compact('courses', 'course', 'difference'));
     }
     function enroll(Request $request)
     {

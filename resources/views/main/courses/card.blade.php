@@ -36,6 +36,7 @@
                     <div class="col-sm-6">
                         <div class="p-3">
                             <h5 class="h5">{{ $course->title }}</h5>
+                            <b class="p-1">{{ $difference }}</b>
                             <div class="row">
                                 <div class="col-6 p-1 bg-success text-white text-center">
                                     <strong>{{ $course->catg }}</strong>
@@ -71,6 +72,7 @@
                     <div class="shadow mb-2 p-2 ps-3 shadow rounded z-depth-1 zoom-x" style="width: 100%;">
                         <a href="{{ url('Courses') }}/{{ $course->prama_link }}">
                             <h6 class="h6">{{ $course->title }}</h6>
+
                         </a>
                     </div>
                 @empty
