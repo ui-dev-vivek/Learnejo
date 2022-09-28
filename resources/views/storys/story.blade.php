@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Marilyn Monroe’s Troubled Mother</title>
-    <link rel="canonical" href="pets.html">
+    <link rel="canonical" href="Marilyn-Monroe-Troubled-Mother">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>
         body {
