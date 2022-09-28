@@ -91,9 +91,10 @@
                             </footer>
                         </blockquote>
                         <div class="text-center">
-                            <a class="btn btn-md btn-info" href="javascript:void(0);"
+                            {{-- <a class="btn btn-md btn-info" href="javascript:void(0);"
                                 onclick="enroll('{{ $course->prama_link }}','{{ $course->link }}','{{ csrf_token() }}');"><span
-                                    class="enroll">Enroll Now</span></a>
+                                    class="enroll">Enroll Now</span></a> --}}
+                            <a class="btn btn-md btn-info" href="{{ $course->link }}">Enroll Now </a>
                         </div>
                     </div>
                     <br>

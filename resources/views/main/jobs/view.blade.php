@@ -93,10 +93,11 @@
                         </footer>
                     </blockquote>
                     <div class="text-center">
-                        <a class="btn btn-md btn-info" href="javascript:void(0);"
+                        {{-- <a class="btn btn-md btn-info" href="javascript:void(0);"
                             onclick="apply('{{ $job->prama_link }}','{{ $job->link }}','{{ csrf_token() }}');"><span
                                 class="apply">Apply
-                                Now </span></a>
+                                Now </span></a> --}}
+                        <a class="btn btn-md btn-info" href="{{ $job->link }}">To Apply Click Here. </a>
                     </div>
                     <p class="text-center">
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"

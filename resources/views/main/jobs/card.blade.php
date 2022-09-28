@@ -4,7 +4,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
-
                     </div>
                 </div>
             </div>
@@ -84,7 +83,7 @@
                     </a>
                 </div>
             @empty
-                <p>No Courses Found!</p>
+                <p>No Jobs Found!</p>
             @endforelse
 
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -93,14 +92,13 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
-
-    </div>
-    <div class="col-md-2">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-            data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <div class="col-md-2">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </div>
     </div>
 
