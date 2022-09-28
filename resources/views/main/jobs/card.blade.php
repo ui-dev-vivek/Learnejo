@@ -77,7 +77,7 @@
         </div> <br>
         <div class="rounded-8 p-3 shadow z-depth-3">
             <h5 class="h5 mb-2">Other Jobs-Internships:</h5>
-            @forelse ($jobx as $job)
+            @forelse ($jobs as $job)
                 <div class="shadow mb-2 p-2 ps-3 shadow rounded z-depth-1 zoom-x" style="width: 100%;">
                     <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
                         <h6 class="h6">{{ $job->title }}</h6>

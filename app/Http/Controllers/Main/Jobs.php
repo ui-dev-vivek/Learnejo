@@ -61,12 +61,12 @@ class Jobs extends Controller
 
     function card($pramaLink)
     {
-        $jobs = DB::table('jobs')
+        $job = DB::table('jobs')
             ->where('prama_link', $pramaLink)
             ->Where('status', 1)
             ->limit(1)
             ->first();
-        $jobx = DB::table('jobs')
+        $jobs = DB::table('jobs')
             ->whereDate('created_at', Carbon::today())
             ->Where('status', 1)
             ->limit(12)
@@ -76,7 +76,7 @@ class Jobs extends Controller
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('jobs')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        return view('main.jobs.card')->with(compact('jobx', 'jobs'));
+        return view('main.jobs.card')->with(compact('job', 'jobs'));
     }
 
 
