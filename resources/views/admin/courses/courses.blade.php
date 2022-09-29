@@ -34,7 +34,7 @@
 
 
                                     <a class="btn btn-sm btn-my-sm  btn-success"
-                                        href="whatsapp://send?text=https://learnejo.com/Courses/Card/{{ $course->prama_link }}">
+                                        href="whatsapp://send?text=*Free Courses* %0aLink: https://learnejo.com/Courses/Card/{{ $course->prama_link }} %0a%0a ```Join Telegram For Quick Response:``` %0ahttps://telegram.me/learnejo %0a ```Expired Soon Enroll Fast```">
                                         <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i>
                                     </a>
 
