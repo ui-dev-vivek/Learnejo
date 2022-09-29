@@ -22,11 +22,11 @@
                                 <td class="h6"><strong>{{ $job->title }}</strong></td>
                                 <td class="text-end">
                                     @php
-                                        $massage="https://learnejo.com/Job-Internships/" . $job->prama_link;
+                                        $massage = '*Job Internships Update*%0a' . $job->title . '%0aRole:' . $job->role . '%0a*' . $job->experience . '* %0aSalary:' . $job->salary . '%0aApply Link: https://learnejo.com/Job-Internships/' . $job->prama_link . '%0aGet Free Courses Join our Group: https://telegram.me/Free_courses2_learnejo';
                                         if ($job->status == 0) {
-                                            $show="d-none";
+                                            $show = 'd-none';
                                         } else {
-                                            $show="";
+                                            $show = '';
                                         }
                                     @endphp
 
@@ -87,11 +87,11 @@
                                 <td class="h6"><strong>{{ $job->title }}</strong></td>
                                 <td class="text-end">
                                     @php
-                                        $massage="https://learnejo.com/Job-Internships/" . $job->prama_link;
+                                        $massage = '*Job Internships Update*%0aRole:' . $job->role . '%0a*' . $job->experience . '* %0aSalary:' . $job->salary . '%0aApply Link: https://learnejo.com/Job-Internships/' . $job->prama_link . '%0aGet Free Courses Join our Group: https://telegram.me/Free_courses2_learnejo';
                                         if ($job->status == 0) {
-                                            $show="d-none";
+                                            $show = 'd-none';
                                         } else {
-                                            $show="";
+                                            $show = '';
                                         }
                                     @endphp
 
