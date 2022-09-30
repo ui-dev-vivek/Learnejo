@@ -42,6 +42,11 @@ class Admincourses extends Controller
                 return 0;
             }
         }
+        $catarray = ['Teaching & Academics', 'Design', 'Music', 'Health & Fitness', 'Lifestyle', 'Personal Development', 'Photography & Video'];
+        $isTrue = array_search($req->post('cat'), $catarray);
+        if ($isTrue) {
+            return 0;
+        }
         $data['title'] = $req->post('title');
         $data['prama_link'] = $req->post('pramaLink');
         $data['type'] = "Udemy";
