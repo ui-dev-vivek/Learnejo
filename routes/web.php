@@ -32,7 +32,7 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
-Route::view('/ads.txt', 'main.ads');
+
 
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
@@ -134,4 +134,7 @@ Route::group(['middleware' => ['StudentLogin']], function () {
     Route::view('/Examination/{pramaLink}/{subPramaLink}', 'examination.exam');
 });
 
-Route::view('/Story/Marilyn-Monroe-Troubled-Mother', 'storys.story');
+
+//Google Traking Urls
+Route::view('/ads.txt', 'main.ads');
+Route::get('/sitemap.xml', [Home::class, 'siteMap']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -83,5 +84,13 @@ class Home extends Controller
             $y = DB::table('whatsapps')->where('id', $get[0]->id)->update($datax);
             echo $get[0]->link;
         }
+    }
+
+    function siteMap(Response $r)
+    {
+        $jobs = DB::table('jobs')->where('status', 1)->orderByDesc('id')->get();
+        $courses = DB::table('courses')->where('status', 1)->orderByDesc('id')->get();
+        return response()->view('main.sitemap', compact('courses', 'jobs'))
+            ->header('Content-Type', 'text/xml');;
     }
 }
