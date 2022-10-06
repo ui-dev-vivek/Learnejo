@@ -203,3 +203,45 @@ function launchFullScreen(element) {
     element.webkitRequestFullScreen();
   }
 }
+
+var typed = new Typed(".and", {
+  strings: ["", "", " & ", " & ", " & ", " & ", " & "],
+  typeSpeed: 20,
+  backSpeed: 60,
+  cursorChar: '',
+  loop: true
+});
+var typed = new Typed(".e", {
+  strings: ["", "", "", "", "nhance", "nhance", "nhance", "nhance", "nhance"],
+  typeSpeed: 40,
+  backSpeed: 40,
+  cursorChar: '',
+  loop: true
+});
+var typed = new Typed(".o", {
+  strings: ["", "", "", "", "", "pportunity !", "pportunity !", "pportunity !", "pportunity !", "pportunity !"],
+  typeSpeed: 80,
+  backSpeed: 20,
+  cursorChar: '',
+  loop: true
+
+});
+var typed = new Typed(".j", {
+  strings: ["", "", "", "", "ob", "ob", "ob", "ob", "ob"],
+  typeSpeed: 20,
+  backSpeed: 120,
+  cursorChar: '',
+
+  loop: true
+
+});
+
+var typed4 = new Typed('.clr', {
+  strings: ['#32c552', "#9c4712"],
+  typeSpeed: 0,
+  backSpeed: 0,
+  attr: 'class',
+  // bindInputFocusEvents: true,
+  loop: true
+});
+

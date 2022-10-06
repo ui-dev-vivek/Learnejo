@@ -36,7 +36,7 @@ class Admincourses extends Controller
             $created = new Carbon($get->created_at);
             $now = Carbon::now();
             $difference = $created->diff($now)->days;
-            if ($difference > 1) {
+            if ($difference > 2) {
                 DB::table('courses')->where('prama_link', $req->post('pramaLink'))->delete();
             } else {
                 return 0;

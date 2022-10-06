@@ -7,24 +7,203 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+    <style>
+        .cardsx .outer {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            min-height: 350px;
+        }
+
+        .cardsx .cardx {
+            background: #ffffff;
+            width: 430px;
+            display: flex;
+            align-items: center;
+            /* padding-right: 70px; */
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            justify-content: space-between;
+            border-radius: 50px 20px 20px 50px;
+            animation: animate 15s linear infinite;
+            animation-delay: calc(3s * var(--delay));
+        }
+
+        .outer:hover .cardx {
+            animation-play-state: paused;
+        }
+
+        .cardsx .cardx:last-child {
+            animation-delay: calc(-3s * var(--delay));
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: translateY(100%) scale(0.5);
+            }
+
+            5%,
+            20% {
+                opacity: 0.4;
+                transform: translateY(100%) scale(0.7);
+            }
+
+            25%,
+            40% {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0%) scale(1);
+            }
+
+            45%,
+            60% {
+                opacity: 0.4;
+                transform: translateY(-100%) scale(0.7);
+            }
+
+            65%,
+            100% {
+                opacity: 0;
+                transform: translateY(-100%) scale(0.5);
+            }
+        }
+
+        .cardx .content {
+            display: flex;
+            align-items: center;
+            /* margin: 30px; */
+
+        }
+
+        .cardsx .cardx .imgx {
+            height: 107px;
+            width: 107px;
+            position: absolute;
+            left: -5px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cardx .imgx img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cardx .details {
+            margin-left: 100px;
+            color: rgb(0, 0, 0);
+        }
+
+        .details span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .cardx a {
+            text-decoration: none;
+            /* padding: 7px 18px; */
+            /* border-radius: 25px; */
+            /* color: #fff; */
+            /* background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%); */
+            transition: all 0.3s ease;
+        }
+
+        .cardx a:hover {
+            transform: scale(0.94);
+        }
+    </style>
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
-        <section id="hero" class="d-flex align-items-center">
+        <section id="hero" class="d-flex align-items-center container-fluid">
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 pt-2 pt-lg-0  d-flex flex-column justify-content-center">
                         <img data-aos="fade-up" width="300" src="{{ asset('assets/image/logo-dark.png') }}"
                             alt="">
                         <br>
-                        <h1 style="font-size-adjust: 60px;" data-aos="fade-up" data-aos-delay="400">
-                            Learn & <span style="color:rgb(31, 215, 31);">E</span>nhance <span
-                                style="color:rgb(31, 215, 31);">J</span>ob
-                            <span style="color:rgb(31, 215, 31);">O</span>pportunity !
+                        <h1 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;"
+                            data-aos="fade-up" data-aos-delay="400">
+                            Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
+                            <span style="color:#32c552;">O</span>pportunity !
                         </h1><br>
+
                     </div>
                     <div class="col-lg-4  ">
-                        <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4" data-aos="fade-right"
+                        <h4 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; font-weight:40px;"
+                            class="h4">
+                            Top Rankers</h4>
+                        <div class="cardsx">
+                            <div class="outer">
+                                <div class="cardx" style="--delay:-1;">
+                                    <div class="content text-center">
+                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/suraj.jpeg') }}">
+                                        </div>
+                                        <div class="details">
+                                            <span class="name">Suraj Vishwakarma</span>
+                                            <p><small>Placed in Infosys, Fynd</small></p>
+                                        </div>
+                                    </div>
+                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                </div>
+                                <div class="cardx" style="--delay:0;">
+                                    <div class="content">
+                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/asg-ci.png') }}"
+                                                alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Anshika Singh</span>
+                                            <p><small>Placed in Wipro, Infosys</small></p>
+                                        </div>
+                                    </div>
+                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                </div>
+                                <div class="cardx" style="--delay:1;">
+                                    <div class="content">
+                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/gaurav.jpeg') }}"
+                                                alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Gaurav Singh</span>
+                                            <p><small>Placed in Wipro Velocity, TCS.</small></p>
+                                        </div>
+                                    </div>
+                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                </div>
+                                <div class="cardx" style="--delay:2;">
+                                    <div class="content">
+                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/abhinav.jpeg') }}"
+                                                alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Abhinav Yadav</span>
+                                            <p><small>Placed in Deloitte,TCS.</small></p>
+                                        </div>
+                                    </div>
+                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                </div>
+                                <div class="cardx" style="--delay:2;">
+                                    <div class="content">
+                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/Shivam.jpeg') }}"
+                                                alt=""></div>
+                                        <div class="details">
+                                            <span class="name">Shivam</span>
+                                            <p><small>Placed in American Express.</small></p>
+                                        </div>
+                                    </div>
+                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4" data-aos="fade-right"
                             data-aos-delay="100" data-tilt style="border-radius:10px;">
                             <h3>Free M<i class="fa fa-eercast text-success" aria-hidden="true"></i>CK Test</h3>
                             <small>Proper online Assessments to Prepare yourself for Placement.</small>
@@ -38,33 +217,32 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                             data-aos-delay="300" data-tilt style="border-radius:10px;">
                             <h3>Free S<i class="fa fa-eercast text-success" aria-hidden="true"></i>lutions</h3>
                             <small>Get previous Year's Question paper solutions</small>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 {{-- Do Some Thing Heat --}}
-                <h2>Top Ranker:</h2>
-                <div class="row text-centre">
-                    <div class="col-sm-6">
-                        <div class=" shadow p-2 m-2 me-2 rounded zoom">
-                            <img width="70" class="rounded-circle" style="border: 5px solid gold;"
-                                src="{{ $getTopRankers[0]->profile_image }}" alt=""> <span
-                                class="h4"><strong> {{ $getTopRankers[0]->student_name }} |
-                                </strong></span> <span class="text-primary"><strong> Points:
-                                    {{ $getTopRankers[0]->points }}</strong></span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class=" shadow p-2 m-2 ms-2 rounded zoom">
-                            <img width="70" class="rounded-circle " style="border: 5px solid silver;"
-                                src="{{ $getTopRankers[1]->profile_image }}" alt=""> <span
-                                class="h4"><strong> {{ $getTopRankers[1]->student_name }}|
-                                </strong></span> <span class="text-primary"><strong> Points:
-                                    {{ $getTopRankers[1]->points }}</strong></span>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+                {{-- <div class="ms-5 me-5"> <br>
+                    <h4 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; font-weight:40px;"
+                        class="h4 mb-3">
+                        Join Our Community:</h4>
+
+                    <a class="text-white p-2 rounded-8 bg-info ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
+                            class="fa fa-telegram"> </i> Telegram</a>&nbsp;&nbsp;
+                    <a class="text-white p-2 rounded-8 bg-success ps-3 pe-3 mb-3"
+                        href="https://learnejo.com/Join-Us-With-Whatsapp"> <i class="fa fa-whatsapp"></i>
+                        Whatsapp</a>&nbsp;&nbsp;
+                    <a class="text-white p-2 rounded-8 bg-primary ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
+                            class="fa fa-facebook"> </i> Facebook</a>&nbsp;&nbsp;
+                    <a class="text-white p-2 rounded-8 bg-danger ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
+                            class="fa fa-instagram"> </i> Instagram</a>&nbsp;&nbsp;
+                    <a class="text-white p-2 rounded-8 bg-info ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
+                            class="fa fa-twitter"> </i> Twitter</a>&nbsp;&nbsp;
+
+
+
+                </div> --}}
         </section>
     </x-slot>
 
@@ -78,7 +256,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             <span class="h5 mb-5" style="border-bottom:5px solid lightgreen;"><b>Top IT Companies</b></span><br><br>
             <div class="row">
                 @forelse ($getTMockTest as $mockTest)
-                    <div class="col-sm-3" data-aos="fade-up">
+                    <div class="col-md-3" data-aos="fade-up">
                         <a href="{{ url('/Prepare') }}/{{ $mockTest->prama_link }}">
                             <div style="height: 50px; overflow:hidden;"
                                 class="hvr-grow-shadow rounded-8 shadow px-2  p-1 m-2 ">
@@ -97,10 +275,11 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             <span class="h5 mb-5" style="border-bottom:5px solid lightgreen;"><b> Non-Tech (Govt.)</b> </span><br><br>
             <div class="row">
                 @forelse ($getNTMockTest as $mockTest)
-                    <div class="col-sm-3" data-aos="fade-up">
+                    <div class="col-md-3" data-aos="fade-up">
                         <a href="{{ url('/Prepare') }}/{{ $mockTest->prama_link }}">
                             <div style="height: 50px; overflow:hidden;" class="zoom rounded-8 shadow  px-2  p-1 m-2">
-                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}" alt="">
+                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}"
+                                    alt="">
                                 &nbsp;&nbsp; <span class="h5">{{ $mockTest->name }}</span>
                             </div>
                         </a>
@@ -177,7 +356,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
     </section>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6">
             <section class="inner-page">
                 <div class="container">
                     <div class="section-title">
@@ -203,7 +382,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </section>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-md-6">
             <section class="inner-page">
                 <div class="container">
                     <div class="section-title">

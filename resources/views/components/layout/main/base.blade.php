@@ -45,11 +45,11 @@
     {{-- mdb cdn --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     {{-- Other Cdns --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {{-- Google Fonts --}}
-    {{-- <link rel="preconnect" href="https://fonts.googleapis.com"> --}}
-    {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
@@ -75,13 +75,10 @@
     <x-main.studentdashboard />
     <x-layout.main.navbar />
     <div>{{ $hero }}</div>
-    <main id="main">
-        <div class="container-fluid">
-            {{ $slot }}
-        </div>
+    <main id="main" class="container-fluid">
+        {{ $slot }}
     </main>
     <div id="preloader">
-
     </div>
     <x-layout.main.footer />
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

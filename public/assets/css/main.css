@@ -1,7 +1,8 @@
 body {
   font-family: 'Poppins', sans-serif; 
-  color: #060237;
+  color: #000000;
 }
+
 a {
   color: #075c37;
   text-decoration: none;
@@ -528,9 +529,15 @@ a:hover {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background: #fff;
   padding-top: 82px;
+  /* background-color: #34ADFF; */
+  background-image: -webkit-linear-gradient(150deg, #32c552 28%, #ffffff 68%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-position: center bottom; */
+  
 }
 
 #hero h1 {
