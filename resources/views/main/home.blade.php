@@ -7,6 +7,118 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+    <style>
+        .cardsx .outer {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            min-height: 350px;
+        }
+
+        .cardsx .cardx {
+            background: #ffffff;
+            width: 430px;
+            display: flex;
+            align-items: center;
+            /* padding-right: 70px; */
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            justify-content: space-between;
+            border-radius: 50px 20px 20px 50px;
+            animation: animate 15s linear infinite;
+            animation-delay: calc(3s * var(--delay));
+        }
+
+        .outer:hover .cardx {
+            animation-play-state: paused;
+        }
+
+        .cardsx .cardx:last-child {
+            animation-delay: calc(-3s * var(--delay));
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: translateY(100%) scale(0.5);
+            }
+
+            5%,
+            20% {
+                opacity: 0.4;
+                transform: translateY(100%) scale(0.7);
+            }
+
+            25%,
+            40% {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0%) scale(1);
+            }
+
+            45%,
+            60% {
+                opacity: 0.4;
+                transform: translateY(-100%) scale(0.7);
+            }
+
+            65%,
+            100% {
+                opacity: 0;
+                transform: translateY(-100%) scale(0.5);
+            }
+        }
+
+        .cardx .content {
+            display: flex;
+            align-items: center;
+            /* margin: 30px; */
+
+        }
+
+        .cardsx .cardx .imgx {
+            height: 107px;
+            width: 107px;
+            position: absolute;
+            left: -5px;
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cardx .imgx img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cardx .details {
+            margin-left: 100px;
+            color: rgb(0, 0, 0);
+        }
+
+        .details span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .cardx a {
+            text-decoration: none;
+            /* padding: 7px 18px; */
+            /* border-radius: 25px; */
+            /* color: #fff; */
+            /* background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%); */
+            transition: all 0.3s ease;
+        }
+
+        .cardx a:hover {
+            transform: scale(0.94);
+        }
+    </style>
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
