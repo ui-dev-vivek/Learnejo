@@ -37,7 +37,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
 
 
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-md-9">
             <section class="trending-courses container">
                 <div class="row">
                     <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
@@ -98,63 +98,28 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 <x-main.pagination :data="$getCourses" />
             </section>
         </div>
-        <div class="col-sm-3"><br><br>
-            <div class="shadow p-1 pt-3 border">
-
-                <!-- Display 2 -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <p><strong>Recent Mock Test</strong></p>
-                @forelse ($getMock as  $mock)
-                    <a href="{{ url('/Mock-Test') }}/{{ $mock->prama_link }}">
-                        <div class="p-1  border-bottom">
-                            <img width="50" src="{{ $mock->image }}" alt=""> &nbsp; &nbsp;
-                            {{ $mock->name }}
-                        </div>
-                    </a>
-                @empty
-                    <h4>No Mock Test Found!</h4>
-                @endforelse
-                <br>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-                    crossorigin="anonymous"></script>
-                <!-- Display 2 -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <p><strong>Recent Jobs</strong></p>
-                @forelse ($getJobs as  $job)
-                    <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
-                        <div class="p-1  border-bottom">
-                            <div class="row">
-                                <div class="col-2"> <img width="50" src="{{ $job->image }}" alt="">
-                                </div>
-                                <div class="col-10"><small>{{ $job->title }}</small></div>
-                            </div>
-
-
-                        </div>
-                    </a>
-                @empty
-                    <h4>No Jobs Found!</h4>
-                @endforelse
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-                    crossorigin="anonymous"></script>
-                <!-- Display 2 -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+        <div class="col-md-3"><br><br>
+            <div class="ms-1">
+                <h6 class="h5 text-center">Give Mock-Test for MNC's <br>
+                    <p class=""> <a href="{{ url('/Mock-Test') }}">Try Now</a></p>
+                    </h4>
+                    <hr>
+                    <!-- Display-Vertical -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                        data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
             </div>
         </div>
     </div>
+    <div class="p-1">
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
 
-    {{-- <x-mocktest.listing /> --}}
 </x-layout.main.base>

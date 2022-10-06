@@ -13,13 +13,13 @@ class Courses extends Controller
     function index()
     {
         $getCourses = $this->getCourses();
-        $getMock = $this->getMock();
-        $getJobs = $this->getJobs();
+        $getMock = 1; # $this->getMock();
+        $getJobs = 1; # $this->getJobs();
         return view('main.courses.course')->with(compact('getCourses', 'getMock', 'getJobs'));
     }
     function byCatg($catg)
     {
-        $getCourses = DB::table('courses')->where('catg', $catg)->where('status', 1)->orderByDesc('id')->paginate(12);
+        $getCourses = DB::table('courses')->where('catg', $catg)->where('status', 1)->orderByDesc('id')->paginate(10);
         $getMock = $this->getMock();
         $getJobs = $this->getJobs();
         return view('main.courses.course')->with(compact('getCourses', 'getMock', 'getJobs'));
@@ -27,7 +27,7 @@ class Courses extends Controller
 
     function getCourses()
     {
-        return DB::table('courses')->where('status', 1)->orderByDesc('id')->paginate(12);
+        return DB::table('courses')->where('status', 1)->orderByDesc('id')->paginate(10);
     }
     function getMock()
     {

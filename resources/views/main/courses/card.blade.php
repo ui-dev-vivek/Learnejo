@@ -3,30 +3,19 @@
         <link rel="stylesheet" href="{{ asset('/assets/css/hover.css') }}">
     @stop
     <x-slot name='hero'>
-        <section class="intro-single">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-
-                    </div>
-                </div>
-            </div>
-        </section><!-- End Intro Single-->
+        <div style="min-height: 150px;">
+            <!-- Display-Horizontal -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </x-slot>
 
     <div class="row">
-        <div class="col-md-2">
-            <div class="rounded-8 p-3 shadow z-depth-3">
-                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
-                    data-ad-layout-key="-79+cw+2x-2h+5q" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="3842768123"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
         <div class="col-md-8">
-            <div class="rounded-8 p-3 shadow z-depth-3">
+            <div class="rounded-8 p-2 m-1 ">
                 <div class="row">
                     <div class="col-sm-6 text-center">
                         <div class="p-2">
@@ -43,62 +32,80 @@
                                 </div>
                                 <div class="col-6 p-1 bg-danger text-white text-center"><strong>Free</strong></div>
                                 <small class="p-2">{{ $course->sort_desc }}</small>
-                                <div style="max-height:150px;">
-                                    <!-- 160pxcode -->
+                                <div>
+                                    <!-- Display-Square -->
                                     <ins class="adsbygoogle" style="display:block"
-                                        data-ad-client="ca-pub-7119514135532896" data-ad-slot="2100620665"
+                                        data-ad-client="ca-pub-7119514135532896" data-ad-slot="7763649496"
                                         data-ad-format="auto" data-full-width-responsive="true"></ins>
                                     <script>
                                         (adsbygoogle = window.adsbygoogle || []).push({});
                                     </script>
                                 </div>
-                                <p class="text-end mt-2"><a
-                                        class="p-2 bg-primary rounded text-white hvr-icon-wobble-horizontal"
-                                        href="{{ url('/Courses') }}/{{ $course->prama_link }}"><strong>Get Free
-                                            Course</strong>
-                                        <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a></p>
+                                <p class="text-end "><a class="p-2  hvr-icon-wobble-horizontal"
+                                        href="{{ url('/Courses') }}/{{ $course->prama_link }}"><strong><small>Get Free
+                                                Course</small></strong>
+                                        <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+                                </p>
+                                <!-- 300x50 -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:328px;height:50px"
+                                    data-ad-client="ca-pub-7119514135532896" data-ad-slot="3353114276"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
                             </div>
                         </div>
                     </div>
                 </div>
-                </a> <br><a href="https://learnejo.com/Join-Us-With-Whatsapp" target="_blank">
-                    <h5 class="h5 text-succes text-center"> <i class="fa fa-whatsapp " aria-hidden="true"></i>Join Us On
-                        What''sapp</h5>
-                </a>
+                <p class="text-center">
+                    </a> <br><a href="https://learnejo.com/Join-Us-With-Whatsapp" target="_blank">
+                        <span class="h6 text-succes"> <i class="fa fa-whatsapp " aria-hidden="true"></i>Join Us
+                            On
+                            What'sapp</span>
+                    </a>&nbsp;
+                    <a href="https://telegram.me/free_courses2_learnejo" target="_blank">
+                        <span class="h6 text-info"> <i class="fa fa-telegram " aria-hidden="true"></i>Join Us
+                            On
+                            Telegram</span>
+                    </a>
+                </p>
             </div> <br>
-            <div class="rounded-8 p-3 shadow z-depth-3">
+            <div class="p-2">
                 <h5 class="h5 mb-2">Other Courses:</h5>
                 @forelse ($courses as $course)
-                    <div class="shadow mb-2 p-2 ps-3 shadow rounded z-depth-1 zoom-x" style="width: 100%;">
+                    <div class=" mb-2 p-2 ps-3 border-bottom   zoom-x" style="width: 100%;">
+                        <img width="40" src="{{ $course->image }}" alt="">&nbsp;&nbsp;
                         <a href="{{ url('Courses') }}/{{ $course->prama_link }}">
-                            <h6 class="h6">{{ $course->title }}</h6>
-
+                            <span class="h6">{{ $course->title }}</span>
                         </a>
                     </div>
                 @empty
                     <p>No Courses Found!</p>
                 @endforelse
-
-
-                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
-                    data-ad-layout-key="-79+cw+2x-2h+5q" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="3842768123"></ins>
+                <!-- Display-Square -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="7763649496" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
 
         </div>
-        <div class="col-md-2">
-            <div class="rounded-8 p-3 shadow z-depth-3">
-                <ins class="adsbygoogle" style="display:block" data-ad-format="fluid"
-                    data-ad-layout-key="-79+cw+2x-2h+5q" data-ad-client="ca-pub-7119514135532896"
-                    data-ad-slot="3842768123"></ins>
+        <div class="col-md-4">
+            <div class="ms-1">
+                <!-- Display-Vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
         </div>
-    </div>
-
+        <div class="p-1">
+            <!-- Display-Horizontal -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
 </x-layout.main.base>
