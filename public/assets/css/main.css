@@ -1761,6 +1761,12 @@ section {
   animation: hithere 1s ease infinite;
 }
 
+.logoanimate{
+  -webkit-animation: animate-preloader 1s linear infinite;
+  /* animation: animate-preloader 1s linear infinite; */
+  animation: hithere 1s ease infinite;
+}
+
 @keyframes hithere {
   30% { transform: scale(1.2); }
   40%, 60% { transform: rotate(-20deg) scale(1.2); }

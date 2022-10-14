@@ -15,5 +15,8 @@ class VerifyCsrfToken extends Middleware
         '/Post-Coursesx',
         '/Post-Jobs',
         '/send-data-to-offorbystudents',
+        '/Whatsapp-set-token',
+        '/Whatsapp-auth-token',
+        '/Whatsapp-update-auth',
     ];
 }

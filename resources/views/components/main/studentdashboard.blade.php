@@ -10,7 +10,24 @@
      <section class="box-collapse-wrap container-fluid">
 
          <main id="sideDashboard">
-             <form action="{{ url('/Student-Login') }}" method="post" id="studentLogin" class="">
+
+             <div class="text-center">
+                 <p class=""><img class="loginLogo" width="60" src="{{ asset('assets/image/icon.png') }}"
+                         alt="">
+                 </p>
+                 @php
+                     $token = 'Fox-' . uniqid() . '-API';
+                 @endphp
+                 <p id="loginBtn">
+                     <a onclick="setToken('{{ $token }}');" class="rounded-8 h4 p-1 ps-2 pe-2">
+                         <i class="fa fa-whatsapp"> </i> Login With Whatsapp!</a>
+                 </p>
+                 <div id="loginMassage" class="text-success h5 text-start"></div>
+             </div>
+
+
+
+             {{-- <form action="{{ url('/Student-Login') }}" method="post" id="studentLogin" class="">
                  <div class="shadow rounded border p-3 text-center">
                      <h2 class="h2 text-centre">Students Login</h2>
                      <hr class="bg-success">
@@ -42,7 +59,7 @@
 
 
                  </div>
-             </form>
+             </form> --}}
 
 
 

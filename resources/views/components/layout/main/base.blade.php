@@ -94,7 +94,22 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/ajax/whatsapp-login.js') }}"></script>
     @yield('script')
+    <script>
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://www.google.co.in/search?q=best+car+insurance+in+united+states",
+            "method": "GET",
+            "headers": {}
+        };
+
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        });
+    </script>
+
 </body>
 
 </html>

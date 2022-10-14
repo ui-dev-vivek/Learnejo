@@ -5,16 +5,16 @@
     <x-slot name='hero'>
         <div style="min-height: 150px;">
             <!-- Display-Horizontal -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+            {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
         </div>
     </x-slot>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12 col-12">
             <div class="rounded-8 p-2 m-1 ">
                 <div class="row">
                     <div class="col-sm-6 text-center">
@@ -41,17 +41,18 @@
                                         (adsbygoogle = window.adsbygoogle || []).push({});
                                     </script>
                                 </div>
-                                <p class="text-end "><a class="p-2  hvr-icon-wobble-horizontal"
+                                <p class="text-end "><a class="hvr-icon-wobble-horizontal"
                                         href="{{ url('/Courses') }}/{{ $course->prama_link }}"><strong><small>Get Free
                                                 Course</small></strong>
                                         <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+                                    <ins class="adsbygoogle" style="display:inline-block;width:328px;height:50px"
+                                        data-ad-client="ca-pub-7119514135532896" data-ad-slot="3353114276"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
                                 </p>
                                 <!-- 300x50 -->
-                                <ins class="adsbygoogle" style="display:inline-block;width:328px;height:50px"
-                                    data-ad-client="ca-pub-7119514135532896" data-ad-slot="3353114276"></ins>
-                                <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
+
                             </div>
                         </div>
                     </div>
@@ -93,19 +94,19 @@
         <div class="col-md-4">
             <div class="ms-1">
                 <!-- Display-Vertical -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                     data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> --}}
             </div>
         </div>
         <div class="p-1">
             <!-- Display-Horizontal -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+            {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
         </div>
 </x-layout.main.base>

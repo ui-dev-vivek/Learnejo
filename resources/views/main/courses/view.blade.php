@@ -16,6 +16,7 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+                <br>
                 <div class="post-information">
                     <ul class="list-inline text-center color-a">
                         <li class="list-inline-item mr-2">
@@ -47,11 +48,11 @@
                 ?>
             </p>
             <!-- Display-Horizontal -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+            {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
             <blockquote class="blockquote">
                 <p class="mb-4">{{ $course->title }} <br>
                     <small>The above course description is taken from <a href="https://udemy.com">Udemy</a>.</small>
@@ -70,7 +71,7 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                <a href="{{ $course->link }}">Click Here to Enroll</a>
+                <a class="p-1 rounded border border-success" href="{{ $course->link }}">Click Here to Enroll</a>
                 <!-- Display-Horizontal -->
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                     data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -84,26 +85,26 @@
         <div class="col-md-4">
             <div class="ms-1">
                 <p class=" h5">
-                    <a href="">
+                    {{-- <a href="">
                         Give Mock Test For TCS, Wipro, Infosys,IBM, Deloitte & More MNC's.<br><small>Like Real
-                            assment Test.</small></a>
+                            assment Test.</small></a> --}}
                 </p>
                 <hr>
                 <!-- Display-Vertical -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                     data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> --}}
             </div>
         </div>
 
     </div>
-    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-7119514135532896"
+    {{-- <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-7119514135532896"
         data-ad-slot="3004592505"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    </script> --}}
     @section('script')
         <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
     @stop

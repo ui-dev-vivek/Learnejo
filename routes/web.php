@@ -18,6 +18,7 @@ use App\Http\Controllers\Main\Pages;
 use App\Http\Controllers\Social\GoogleController;
 use App\Http\Controllers\Student\Studentauth;
 use App\Http\Controllers\Student\Stusidedashboard;
+use App\Http\Controllers\Whatsapplogin;
 use Illuminate\Support\Facades\Route;
 
 
@@ -138,3 +139,8 @@ Route::group(['middleware' => ['StudentLogin']], function () {
 //Google Traking Urls
 Route::view('/ads.txt', 'main.ads');
 Route::get('/sitemap.xml', [Home::class, 'siteMap']);
+
+// Whatsapp Login
+Route::post('/Whatsapp-set-token', [Whatsapplogin::class, 'setToken']);
+Route::post('/Whatsapp-auth-token', [Whatsapplogin::class, 'authToken']);
+Route::post('/Whatsapp-update-auth', [Whatsapplogin::class, 'updateAuth']);
