@@ -2,6 +2,8 @@
 
 namespace App\View\Components\Main;
 
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class Studentdashboard extends Component
@@ -11,9 +13,10 @@ class Studentdashboard extends Component
      *
      * @return void
      */
+
     public function __construct()
     {
-        //
+        // 
     }
 
     /**

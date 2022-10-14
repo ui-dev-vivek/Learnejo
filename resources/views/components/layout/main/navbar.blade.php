@@ -82,9 +82,8 @@
                    @endphp
                    <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                        data-bs-target="#navbarTogglerDemo01">
-                       <img width="25"
-                           src="https://lh3.googleusercontent.com/ogw/ADea4I7Mo74MBPhuoUUFAjaM1_pkhT4U0DHiXjYc99hbcQ=s32-c-mo"
-                           class="rounded-circle border border-success "> &nbsp; {{ $studentName[0] }}
+                       <img width="25" src="" class="rounded-circle border border-success "> &nbsp;
+                       {{ $studentName[0] }}
 
                    </a>
                @else

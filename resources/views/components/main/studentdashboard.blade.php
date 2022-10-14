@@ -11,21 +11,24 @@
 
          <main id="sideDashboard">
 
-             <div class="text-center">
-                 <p class=""><img class="loginLogo" width="60" src="{{ asset('assets/image/icon.png') }}"
-                         alt="">
-                 </p>
-                 @php
-                     $token = 'Fox-' . uniqid() . '-API';
-                 @endphp
-                 <p id="loginBtn">
-                     <a onclick="setToken('{{ $token }}');" class="rounded-8 h4 p-1 ps-2 pe-2">
-                         <i class="fa fa-whatsapp"> </i> Login With Whatsapp!</a>
-                 </p>
-                 <div id="loginMassage" class="text-success h5 text-start"></div>
-             </div>
-
-
+             @if (Session::has('StudentId'))
+                 <p class="h3">
+                     "Welcome " </p>
+             @else
+                 <div class="text-center">
+                     <p class=""><img class="loginLogo" width="60" src="{{ asset('assets/image/icon.png') }}"
+                             alt="">
+                     </p>
+                     @php
+                         $token = 'Fox-' . uniqid() . '-API';
+                     @endphp
+                     <p id="loginBtn">
+                         <a onclick="setToken('{{ $token }}');" class="rounded-8 h4 p-1 ps-2 pe-2">
+                             <i class="fa fa-whatsapp"> </i> Login With Whatsapp!</a>
+                     </p>
+                     <div id="loginMassage" class="text-success h5 text-start"></div>
+                 </div>
+             @endif
 
              {{-- <form action="{{ url('/Student-Login') }}" method="post" id="studentLogin" class="">
                  <div class="shadow rounded border p-3 text-center">

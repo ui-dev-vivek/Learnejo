@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +27,12 @@ class Whatsapplogin extends Controller
 
         $isIn = DB::table('whatsapplogintoken')->where('token', $token)->where('status', 1)->exists();
         if ($isIn) {
-            return 1;
+            $name = DB::table('whatsapplogintoken')->where('token', $token)->where('status', 1)->first();
+            if ($name->name == '-') {
+                return 0;
+            } else {
+                return "1@" . $name->name;
+            }
         }
     }
 
@@ -46,6 +52,8 @@ class Whatsapplogin extends Controller
                 if ($name->name == '-') {
                     return 0;
                 } else {
+                    $stu = DB::table('student_profile')->where('phone', $phone)->where('status', 1)->first();
+                    $req->session()->put('StudentId', $stu->students_id);
                     return 1;
                 }
             } else {
@@ -57,7 +65,19 @@ class Whatsapplogin extends Controller
             $data['name'] = $req->post('name');
             $data['status'] = 1;
             $upd = DB::table('whatsapplogintoken')->where('phone', $req->post('phone'))->update($data);
-            return $upd;
+            if ($upd) {
+                $datas['Name'] = $req->post('name');
+                $id = $datas['students_id'] = uniqid('ASG-');
+                $datas['phone'] = $req->post('phone');
+                $datas['status'] = 1;
+                $ins = DB::table('student_profile')->insert($datas);
+                $req->session()->put('StudentId', $id);
+                if ($ins) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
         }
     }
 }
