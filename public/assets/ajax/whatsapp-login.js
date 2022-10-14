@@ -17,7 +17,7 @@ function setToken(token) {
             if (result == 1) {
                 $('#loginMassage').append('Redirect To Whatsapp.<br>');
                 $('#loginMassage').append('<span class="text-primary text-end">Send Massage.</span><br>')
-                window.location.href = "whatsapp://send?phone=+919335773820&text=#*Welcome To Learnejo!* Login Token: " + token + " Don't Edit *Send Massage.*";
+                window.location.href = "whatsapp://send?phone=+919335773820&text=!*Welcome To Learnejo!* Login Token: " + token + " Don't Edit *Send Massage.*";
                 var intervalId = window.setInterval(function () {
                     $.ajax({
                         url: '/Whatsapp-auth-token',
