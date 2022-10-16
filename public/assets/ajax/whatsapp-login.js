@@ -27,11 +27,12 @@ function setToken(token) {
                         },
                         success: function (result) {
                             if (result == '2') {
-                                $('#nameMassage').html("Please Send Your like: <br> Name John Sam")
+                                $('#nameMassage').html("Please Send Your like: <br> Name John Sam");
                             }
                             s = result.split('@');
                             if (s[0] == '1') {
                                 clearInterval(intervalId)
+                                $('#nameMassage').html("");
                                 $('#loginMassage').append('Authenticated...<br>');
                                 $('.loginLogo').removeClass('logoanimate');
                                 $('#loginMassage').html("Welcome  " + s[1]);
