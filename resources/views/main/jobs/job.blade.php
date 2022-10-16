@@ -212,7 +212,7 @@
             </script>
         </div>
     </div> --}}
-    <div class=" p-2 m-5 text-center shadow z-depth-3 rounded-8">
+    <div class=" p-2 text-center shadow z-depth-3 rounded-8">
         <h4 class="h4">Join Us On Social Networks</h4>
         <hr>
         <a href="https://telegram.me/job_learnejo" target="_blank">
