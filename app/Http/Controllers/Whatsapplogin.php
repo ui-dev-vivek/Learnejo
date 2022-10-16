@@ -29,7 +29,7 @@ class Whatsapplogin extends Controller
         if ($isIn) {
             $name = DB::table('whatsapplogintoken')->where('token', $token)->where('status', 1)->first();
             if ($name->name == '-') {
-                return 2;
+                return '2';
             } else {
                 return "1@" . $name->name;
             }
@@ -78,6 +78,27 @@ class Whatsapplogin extends Controller
                     return 0;
                 }
             }
+        }
+    }
+
+    function shareCourse()
+    {
+        $massage = "*Free Courses* \n";
+        $data['share_whatsapp'] = 1;
+        // DB::table('courses')->where('share_whatsapp', 0)->limit(4)->orderByDesc('id')->update($data);
+        $get = DB::table('courses')->limit(10)->orderByDesc('id')->get();
+        $sr = 1;
+        foreach ($get as $course) {
+            if ($course->share_whatsapp == 0) {
+                $massage = $massage . $sr . ": " . $course->title . "\nhttps://learnejo.com/Courses/Card/" . $course->prama_link . "\n";
+                $get = DB::table('courses')->where('prama_link', $course->prama_link)->update($data);
+                $sr++;
+            }
+        }
+        if ($sr > 1) {
+            return $massage;
+        } else {
+            return 0;
         }
     }
 }

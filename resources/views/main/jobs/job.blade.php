@@ -1,7 +1,7 @@
 @php
-$title = 'Learnejo:Job Internships';
-$image = asset('assets/image/job.jpg');
-$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    $title = 'Learnejo:Job Internships';
+    $image = asset('assets/image/job.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 @endphp
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
@@ -15,7 +15,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             </div>
         </section>
     </x-slot>
-    {{-- <div class=" mt-1">
+    <div class=" mt-1">
         <div class="row">
             <div class="col-1 pt-2 bg-success text-white p-1 text-center">Letest:</div>
             <div class="col-11 p-1 border border-success pt-2">
@@ -31,7 +31,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 </marquee>
             </div>
         </div>
-    </div> --}}
+    </div>
     <br>
 
     <div class="row ">
@@ -63,9 +63,31 @@ $description = 'Learnejo is an E-learning platform, for every student interested
         </div>
     </div>
 
+    <div class="container-fluid">
+        <h5 class="h3">Jobs & Internships</h5>
+        <hr>
+        <div class="row">
+            @forelse ($getCorpJobs as $job)
+                <div class="col-md-6">
+                    <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">
+                        <div class="p-1 rounded-8 mb-2 border-bottom">
+                            <div class="row">
+                                <div class="col-3 text-end">
+                                    <img width="80" class="img-fluid" src="{{ $job->image }}" alt="">
+                                </div>
+                                <div class="col-9 h6 text-dark pt-2">
+                                    {{ $job->title }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @empty
+            @endforelse
+        </div>
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="rounded-8 shadow p-2">
@@ -189,7 +211,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
-    </div>
+    </div> --}}
     <div class=" p-2 m-5 text-center shadow z-depth-3 rounded-8">
         <h4 class="h4">Join Us On Social Networks</h4>
         <hr>

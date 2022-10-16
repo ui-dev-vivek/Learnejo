@@ -144,3 +144,5 @@ Route::get('/sitemap.xml', [Home::class, 'siteMap']);
 Route::post('/Whatsapp-set-token', [Whatsapplogin::class, 'setToken']);
 Route::post('/Whatsapp-auth-token', [Whatsapplogin::class, 'authToken']);
 Route::post('/Whatsapp-update-auth', [Whatsapplogin::class, 'updateAuth']);
+// Share On Whatsapp:
+Route::get('/Share-Courses-on-whatsapp', [Whatsapplogin::class, 'shareCourse']);
