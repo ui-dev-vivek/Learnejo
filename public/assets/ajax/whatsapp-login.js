@@ -26,6 +26,9 @@ function setToken(token) {
                             'token': token
                         },
                         success: function (result) {
+                            if (result == '2') {
+                                $('#nameMassage').html("Please Send Your like: <br> Name John Sam")
+                            }
                             s = result.split('@');
                             if (s[0] == '1') {
                                 clearInterval(intervalId)
@@ -34,9 +37,7 @@ function setToken(token) {
                                 $('#loginMassage').html("Welcome  " + s[1]);
                                 $('#loginBtn').html("<h4>Learnejo</4>");
                                 setTimeout(function () {
-                                }, 2000);
-
-
+                                }, 4000);
                             }
                         }
                     })

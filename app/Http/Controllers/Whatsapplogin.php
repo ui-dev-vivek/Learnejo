@@ -29,7 +29,7 @@ class Whatsapplogin extends Controller
         if ($isIn) {
             $name = DB::table('whatsapplogintoken')->where('token', $token)->where('status', 1)->first();
             if ($name->name == '-') {
-                return 0;
+                return 2;
             } else {
                 return "1@" . $name->name;
             }

@@ -27,6 +27,7 @@
                              <i class="fa fa-whatsapp"> </i> Login With Whatsapp!</a>
                      </p>
                      <div id="loginMassage" class="text-success h5 text-start"></div>
+                     <div id="nameMassage" class="text-primary h5 text-End"></div>
                  </div>
              @endif
 
