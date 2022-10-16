@@ -212,7 +212,7 @@
             </script>
         </div>
     </div> --}}
-    <div class=" p-2 text-center shadow z-depth-3 rounded-8">
+    <div class=" text-center shadow z-depth-3 rounded-8">
         <h4 class="h4">Join Us On Social Networks</h4>
         <hr>
         <a href="https://telegram.me/job_learnejo" target="_blank">
@@ -225,9 +225,8 @@
                 Join Our Whatsapp Group.</h5>
         </a>
     </div>
-    <div class="container text-center">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-            crossorigin="anonymous"></script>
+    <div class="container text-center p-1">
+
         <!-- Display 2 -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
             data-ad-slot="8356744114" data-ad-format="auto" data-full-width-responsive="true"></ins>
