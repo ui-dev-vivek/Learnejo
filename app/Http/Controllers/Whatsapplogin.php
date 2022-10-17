@@ -90,7 +90,7 @@ class Whatsapplogin extends Controller
         $sr = 1;
         foreach ($get as $course) {
             if ($course->share_whatsapp == 0) {
-                $massage = $massage . $sr . ": " . $course->title . "\nhttps://learnejo.com/Courses/Card/" . $course->prama_link . "\n";
+                $massage = $massage . $sr . ": " . $course->title . "\nhttps://learnejo.com/Courses/Card/" . $course->prama_link . "\n\n";
                 $get = DB::table('courses')->where('prama_link', $course->prama_link)->update($data);
                 $sr++;
             }
