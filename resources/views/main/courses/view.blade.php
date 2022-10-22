@@ -87,7 +87,7 @@
 
             </div>
             <div class="col-md-3">
-                <div class="ms-1">
+                <div class="">
                     <p class=" h5">
                         {{-- <a href="">
                         Give Mock Test For TCS, Wipro, Infosys,IBM, Deloitte & More MNC's.<br><small>Like Real
@@ -105,11 +105,13 @@
 
         </div>
     </div>
-    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-7119514135532896"
-        data-ad-slot="3004592505"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <p class="container">
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </p>
     @section('script')
         <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
     @stop
