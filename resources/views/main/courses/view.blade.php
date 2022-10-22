@@ -73,7 +73,7 @@
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                    <a class="p-1 rounded border border-success m-1 bg-success text-white"
+                    <a class="p-1 rounded border border-success m-2 bg-success text-white"
                         href="{{ $course->link }}">Click Here to
                         Enroll</a>
                     <!-- Display-Horizontal -->
