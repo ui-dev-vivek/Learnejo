@@ -95,7 +95,7 @@ class Whatsapplogin extends Controller
                 $sr++;
             }
         }
-        if ($sr > 1) {
+        if ($sr > 3) {
             return $massage;
         } else {
             return 0;
