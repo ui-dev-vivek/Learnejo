@@ -47,6 +47,12 @@
                     <p class="">
                         {{-- Horizontal Ads --}}
                     <h2 class="h3">Category : {{ $course->catg }}</h2>
+                    <!-- Display-Horizontal -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                        data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                     </p>
                     <p>
                         <?php
