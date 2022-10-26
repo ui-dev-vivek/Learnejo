@@ -9,7 +9,7 @@
 
      <section class="box-collapse-wrap container-fluid">
 
-         <main id="sideDashboard">
+         {{-- <main id="sideDashboard">
 
              @if (Session::has('StudentId'))
                  <p class="h3">
@@ -63,11 +63,11 @@
 
 
                  </div>
-             </form> --}}
+             </form> 
 
 
 
-         </main>
+         </main> --}}
      </section>
  </div>
  <script>
