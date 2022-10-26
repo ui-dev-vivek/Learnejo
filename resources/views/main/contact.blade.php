@@ -1,8 +1,8 @@
 @php
-$title = 'Learnejo:Contact Us';
-$image = asset('assets/image/icon.jpg');
-$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
-
+    $title = 'Learnejo:Contact Us';
+    $image = asset('assets/image/icon.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    
 @endphp
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
@@ -26,7 +26,12 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         <div class="address">
                             <i class="fa fa-globe"></i>
                             <h4>Location:</h4>
-                            <p>Learnejo: E-learning Platform (Online)</p>
+                            {{-- <p>Learnejo: E-learning Platform (Online)</p> --}}
+                            <p class="">
+                                Bharauli Kalan
+                                Bharauli Kalan Doyam
+                                Ghazipur,233228
+                            </p>
                         </div>
 
                         <div class="email">
@@ -38,7 +43,7 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                         <div class="phone">
                             <i class="fa fa-phone"></i>
                             <h4>Call:</h4>
-                            <p>+91 9795033028</p>
+                            <p>+91 9335773820</p>
                         </div>
 
                     </div>

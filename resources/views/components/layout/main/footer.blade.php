@@ -52,7 +52,8 @@
 
                         <b>Learnejo</b><br>
                         <strong>Platform:</strong> E-Learning (Online)<br>
-                        <strong>Phone:</strong> +91-9795033028<br>
+                        <strong>Address:</Address>:</strong> Bharauli Kalan<br>
+                        <strong>Phone:</strong> +91-9335773820<br>
                         <strong>Email:</strong> info@learnejo.com<br>
 
                     </p>
