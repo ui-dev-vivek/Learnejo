@@ -95,7 +95,11 @@
                 </div>
             </div>
             <div class="col-md-4 ps-2">
-
+                <div class="shadow p-2 text-center">
+                    <h3 class="h3">To Get Paid Udemy Courses For <strong class="text-danger">Free</strong> </h3>
+                    <a href="https://learnejo.com/Join-Us-With-Whatsapp" class="h4 mb-1"><i
+                            class="fa fa-whatsapp text-success"></i> Join Group</a>
+                </div><br>
                 <div class="shadow p-2 text-center">
                     {{-- Squir Ads --}}
                     <!-- Display-Square -->
