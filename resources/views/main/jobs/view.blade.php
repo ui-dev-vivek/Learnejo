@@ -26,7 +26,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="shadow p-2 text-center">
                     <!-- Display-Horizontal -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -94,7 +94,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-4 ps-2">
+            <div class="col-md-4 ps-2">
 
                 <div class="shadow p-2 text-center">
                     {{-- Squir Ads --}}
