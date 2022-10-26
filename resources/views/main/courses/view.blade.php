@@ -116,9 +116,9 @@
 
 
 
+    <br><br>
 
-
-    <p class="container">
+    <p class="container text-center">
         <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
             data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
         <script>
