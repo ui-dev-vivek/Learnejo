@@ -49,7 +49,9 @@ class Courses extends Controller
             Cookie::queue($pramaLink, $pramaLink, 120);
             DB::table('courses')->where('prama_link', $pramaLink)->increment('view', 1);
         }
-        return view('main.courses.view')->with('course', $course);
+
+        $getCourses = $this->getCourses();
+        return view('main.courses.view')->with(compact('course', 'getCourses'));
     }
     function card($pramaLink)
     {

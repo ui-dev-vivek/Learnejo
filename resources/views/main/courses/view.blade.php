@@ -5,9 +5,8 @@
 
     <x-slot name='hero'>
         <br><br><br>
-        {{-- <h1 class="container-fluid">{{ $course->title }}</h1> --}}
-    </x-slot>
 
+    </x-slot>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -71,9 +70,10 @@
                         </footer>
                     </blockquote>
                     <p class="text-center">
-                        <!-- Display-Horizontal -->
+                        {{-- Squir Ads --}}
+                        <!-- Display-Square -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                            data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            data-ad-slot="7763649496" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
@@ -81,11 +81,11 @@
                             href="{{ $course->link }}">Click Here to
                             Enroll</a>
                         <!-- Display-Horizontal -->
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                        {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        </script> --}}
                     </p>
                 </div>
             </div>
@@ -104,24 +104,41 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div><br>
-                <div class="shadow p-2 text-center">
-                    {{-- Virtical Ads --}}
-                    <!-- Display-Vertical -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                        data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                {{-- <div class="shadow p-2 text-center">
+                    
+                <!-- Display-Vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div> --}}
 
+                @forelse ($getCourses as $course)
+                    <div class="mb-2 p-2 shadow">
+                        <a href="{{ url('/Courses') }}/{{ $course->prama_link }}">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img width="100" class="img-fluid" src="{{ $course->image }}" alt="">
+
+                                </div>
+                                <div class="col-8"><strong>{{ $course->title }}</strong></div>
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <p>No Data Found!.</p>
+                @endforelse
+                <br>
+                <div class="shadow p-2 text-center">
+                    <h3 class="h3">To Get Jobs Update <strong class="text-danger"></strong></h3>
+                    <a href="https://telegram.me/job_learnejo" class="h4 mb-1"><i class="fa fa-telegram text-info"></i>
+                        Join Group</a>
+                </div>
             </div>
         </div>
 
     </div>
-
-
-
-
     <br><br>
 
     <p class="container text-center">
