@@ -1,8 +1,8 @@
 @php
-$title = 'Learnejo:Home';
-$image = asset('assets/image/home.jpg');
-$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
-
+    $title = 'Learnejo:Home';
+    $image = asset('assets/image/home.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    
 @endphp
 
 @section('css')
@@ -137,7 +137,6 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                             Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
                             <span style="color:#32c552;">O</span>pportunity !
                         </h1><br>
-
                     </div>
                     <div class="col-lg-4  ">
                         <h4 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -203,6 +202,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                                 </div>
                             </div>
                         </div>
+
+
                         {{-- <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4" data-aos="fade-right"
                             data-aos-delay="100" data-tilt style="border-radius:10px;">
                             <h3>Free M<i class="fa fa-eercast text-success" aria-hidden="true"></i>CK Test</h3>
@@ -245,6 +246,23 @@ $description = 'Learnejo is an E-learning platform, for every student interested
                 </div> --}}
         </section>
     </x-slot>
+    <div>
+        <div class="p-2">
+            <div
+                style="position: relative; width: 100%; height: 0; padding-top: 33.3333%;
+            padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+            border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy"
+                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFQzNFKre0&#x2F;view?embed"
+                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFQzNFKre0&#x2F;view?utm_content=DAFQzNFKre0&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                target="_blank" rel="noopener">Live Classes</a> by Learnejo
+
+        </div>
+    </div>
 
     <section class="inner-page">
         <div class="container">
