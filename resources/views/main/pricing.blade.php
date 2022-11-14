@@ -15,6 +15,9 @@
     </x-slot>
     <br><br>
     <div class="container text-justify">
+        <h1 class="h1 text-center"><span class="text-danger">Live</span> <span class="text-success">Online</span> Classes
+        </h1>
+        <hr>
         <div class="row">
             <div class="col-md-4" data-aos="fade-down">
                 <div class="shadow rounded-8 p-2 border">

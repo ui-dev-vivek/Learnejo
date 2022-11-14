@@ -67,6 +67,7 @@
                            </li> --}}
                        </ul>
                    </li>
+                   <li><a href="{{ url('/Pricing') }}" class="">Pricing</a></li>
 
 
                    {{-- <li><a href="{{ url('/About-Us') }}">About</a></li> --}}
