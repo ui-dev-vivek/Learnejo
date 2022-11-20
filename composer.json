@@ -11,6 +11,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
+        "razorpay/razorpay": "2.*",
         "symfony/process": "^6.1"
     },
     "require-dev": {

@@ -15,6 +15,8 @@ use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
 use App\Http\Controllers\Main\Pages;
+use App\Http\Controllers\Payment\Rozorpay;
+use App\Http\Controllers\Pdf\Pdf;
 use App\Http\Controllers\Social\GoogleController;
 use App\Http\Controllers\Student\Studentauth;
 use App\Http\Controllers\Student\Stusidedashboard;
@@ -34,7 +36,8 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
-
+Route::get('/PDF', [Pdf::class, 'index']);
+Route::get('/PDF/Check-Out', [Pdf::class, 'checkOut']);
 
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
@@ -147,3 +150,6 @@ Route::post('/Whatsapp-auth-token', [Whatsapplogin::class, 'authToken']);
 Route::post('/Whatsapp-update-auth', [Whatsapplogin::class, 'updateAuth']);
 // Share On Whatsapp:
 Route::get('/Share-Courses-on-whatsapp', [Whatsapplogin::class, 'shareCourse']);
+
+// Paymet
+Route::get("/Check-Out", [Rozorpay::class, 'checkOut']);

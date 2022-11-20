@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'be4ba43bc2a6c14e0260607ba6489a942fc3ed65',
+        'reference' => 'c86d580a14e15632c9b14095a85afe0183e87e6e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -376,7 +376,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'be4ba43bc2a6c14e0260607ba6489a942fc3ed65',
+            'reference' => 'c86d580a14e15632c9b14095a85afe0183e87e6e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -827,11 +827,29 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'razorpay/razorpay' => array(
+            'pretty_version' => '2.8.5',
+            'version' => '2.8.5.0',
+            'reference' => '31027cfb689b9480d67419dbec7c203097e9d9ac',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../razorpay/razorpay',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
                 0 => '4.3.1',
             ),
+        ),
+        'rmccue/requests' => array(
+            'pretty_version' => 'v2.0.5',
+            'version' => '2.0.5.0',
+            'reference' => 'b717f1d2f4ef7992ec0c127747ed8b7e170c2f49',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rmccue/requests',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.1',

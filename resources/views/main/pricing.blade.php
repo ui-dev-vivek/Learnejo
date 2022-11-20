@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-4" data-aos="fade-down">
                 <div class="shadow rounded-8 p-2 border">
-                    <div class="border-warning">
+                    <div class="border rounded border-warning">
                         <div>
                             <img class="img-fluid rounded-top" width="500"
                                 src="{{ asset('assets/image/python-pricing.png') }}">
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-4" data-aos="fade-down">
                 <div class="shadow rounded-8 p-2 border">
-                    <div class="border-info">
+                    <div class="border rounded border-info">
                         <div>
                             <img class="img-fluid rounded-top" width="500"
                                 src="{{ asset('assets/image/wd-pricing.png') }}">
@@ -106,7 +106,7 @@
             </div>
             <div class="col-md-4" data-aos="fade-down">
                 <div class="shadow rounded-8 p-2 border">
-                    <div class="border-success">
+                    <div class="border border-success rounded">
 
                         <div class="">
                             <img class="img-fluid rounded-top" width="500"
@@ -118,14 +118,14 @@
                                 Classes</ol>
                             <ol><i class="fa fa-check text-success"> </i> <span class="text-success">Interactive</span>
                                 classes</ol><br>
-                            <ol><i class="fa fa-eercast text-info"> </i> Bootstrap</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Laravel Inrtoduction</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Controller, View</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Layouts</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Components</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Model</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Migration</ol>
-                            <ol><i class="fa fa-eercast text-info"> </i> Deploy On c Panel</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Bootstrap</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Laravel Inrtoduction</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Controller, View</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Layouts</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Components</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Model</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Migration</ol>
+                            <ol><i class="fa fa-eercast text-success"> </i> Deploy On c Panel</ol>
                         </ul>
                         <br>
                         <div class="p-2 bg-success rounded-bottom">
@@ -136,8 +136,8 @@
                                     </h3>
                                 </div>
                                 <div class="col-4">
-                                    <button
-                                        class="p-1 ps-2 pe-2 shadow border border-success text-success rounded-8">Enroll
+                                    <button class="p-1 ps-2 pe-2 shadow border border-success text-success rounded-8"
+                                        onclick="pay_now()">Enroll
                                     </button>
                                 </div>
                             </div>
@@ -148,3 +148,39 @@
         </div>
     </div>
 </x-layout.main.base>
+
+<script>
+    function pay_now() {
+        var amt = 100;
+        var name = "Anish Yadav"
+        jQuery.ajax({
+            type: 'post',
+            url: 'payment_process.php',
+            data: "amt=" + amt + "&name=" + name,
+            success: function(result) {
+                var options = {
+                    "key": "KRDqJmwQ7rIhtrEDFMOaJrfO",
+                    "amount": amt * 100,
+                    "currency": "INR",
+                    "name": "Learnejo",
+                    "description": "Python For Biginers.",
+                    "image": "https://image.freepik.com/free-vector/logo-sample-text_355-558.jpg",
+                    "handler": function(response) {
+                        jQuery.ajax({
+                            type: 'post',
+                            url: 'payment_process.php',
+                            data: "payment_id=" + response.razorpay_payment_id,
+                            success: function(result) {
+                                window.location.href = "thank_you.php";
+                            }
+                        });
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+            }
+        });
+
+
+    }
+</script>
