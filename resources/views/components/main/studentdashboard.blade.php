@@ -23,44 +23,7 @@
                 <div class="mt-3">
                     <div class="shadow border border-success p-2 rounded-8">
                         <h5>My Activitys:</h5>
-                        <table class="table table-responsive">
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Enroll on courses Happy to You.
-                                </td>
-                            </tr>
-
-                        </table>
+                        <small>Not Found!</small>
                     </div>
                 </div>
             </div>

@@ -42,9 +42,9 @@ class Google extends Controller
                 Auth::login($finduser);
                 return redirect('/');
             } else {
-                $sid = "ASG" . Str::random(12);
+                // $sid = "ASG" . Str::random(12);
                 $newUser = User::create([
-                    'student_id' => "ASG" . Str::random(12),
+                    'student_id' => strtoupper("ASG" . Str::random(6) . "L"),
                     'name' => $user->name,
                     'email' => $user->email,
                     'social_id' => $user->id,
@@ -60,8 +60,9 @@ class Google extends Controller
                 }
             }
         } catch (Exception $e) {
-            dd($e->getMessage());
-            // return redirect('/auth/google');
+            // echo print_r($user);
+            // dd($e->getMessage());/
+            return redirect('/auth/google');
         }
     }
     function logout()
