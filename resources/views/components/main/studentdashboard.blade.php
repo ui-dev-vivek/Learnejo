@@ -17,7 +17,7 @@
                     <img class="rounded-circle border p-1 border-white" src="{{ $student->profile_pic }}"
                         alt="">
 
-                    <span class="h2">{{ $student->name }}</span>
+                    <h2 class="h2">{{ $student->name }}</h2>
 
                     <p class="text-end">
                         <a href="/Logout" class="btn btn-sm btn-danger rounded-8">Logout</a>
