@@ -21,8 +21,10 @@ class Navbar extends Component
     {
 
         if (Session::has('StudentId')) {
-            $this->student = DB::table('student_profile')->where('students_id', session('StudentId'))->first();
+            $this->student = DB::table('users')->where('student_id', session('StudentId'))->first();
+            // $this->student = DB::table('users')->where('student_id', 'ASG2Ub9HFdIBBBk')->first();
         }
+
         $this->coursesCatg = DB::table('courses')->select('catg')->groupBy('catg')->Where('status', 1)->get();
         $this->topic = DB::table('mock_test_topic')->get();
     }

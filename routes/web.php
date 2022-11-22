@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Whatsapp;
 use App\Http\Controllers\Examination\Examinationaction;
 use App\Http\Controllers\Examination\Examinationauth;
 use App\Http\Controllers\Examination\Login;
+use App\Http\Controllers\Google;
 use App\Http\Controllers\Main\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
@@ -153,3 +154,6 @@ Route::get('/Share-Courses-on-whatsapp', [Whatsapplogin::class, 'shareCourse']);
 
 // Paymet
 Route::get("/Check-Out", [Rozorpay::class, 'checkOut']);
+
+Route::get('auth/google', [Google::class, 'redirectToGoogle']);
+Route::get('callback', [Google::class, 'handleCallback']);

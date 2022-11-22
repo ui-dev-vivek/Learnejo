@@ -78,19 +78,19 @@
            </nav><!-- .navbar -->
            <div class="header-social-links d-flex">
                @if (Session::has('StudentId'))
-                   @php
-                       $studentName = explode(' ', $student->Name);
-                   @endphp
+                   {{-- {{ Session::get('StudentId') }} --}}
+
                    <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                        data-bs-target="#navbarTogglerDemo01">
-                       <img width="25" src="" class="rounded-circle border border-success "> &nbsp;
-                       {{ $studentName[0] }}
+                       <img width="25" src="{{ $student->profile_pic }}"
+                           class="rounded-circle border border-success ">
+                       &nbsp; {{ $student->name }}
 
                    </a>
                @else
                    <a type="button" class=" navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                        data-bs-target="#navbarTogglerDemo01"> <span class="loginbtn bg-success text-white">
-                           <i class="fa fa-user text-white"> </i><b> Login</b></span>
+                           <i class="fa fa-user text-white"></i><b>Login</b></span>
                    </a>
                @endif
 

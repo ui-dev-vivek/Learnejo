@@ -559,6 +559,7 @@ class ComposerStaticInit427e1210e994f4a534fe39fa12f054dd
         'App\\Http\\Controllers\\Main\\Jobs' => __DIR__ . '/../..' . '/app/Http/Controllers/Main/Jobs.php',
         'App\\Http\\Controllers\\Main\\Mocktest' => __DIR__ . '/../..' . '/app/Http/Controllers/Main/Mocktest.php',
         'App\\Http\\Controllers\\Main\\Pages' => __DIR__ . '/../..' . '/app/Http/Controllers/Main/Pages.php',
+        'App\\Http\\Controllers\\Payment\\Rozorpay' => __DIR__ . '/../..' . '/app/Http/Controllers/Payment/Rozorpay.php',
         'App\\Http\\Controllers\\Pdf\\Payment' => __DIR__ . '/../..' . '/app/Http/Controllers/Pdf/Payment.php',
         'App\\Http\\Controllers\\Pdf\\Pdf' => __DIR__ . '/../..' . '/app/Http/Controllers/Pdf/Pdf.php',
         'App\\Http\\Controllers\\Social\\GoogleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Social/GoogleController.php',

@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Main\\Jobs' => $baseDir . '/app/Http/Controllers/Main/Jobs.php',
     'App\\Http\\Controllers\\Main\\Mocktest' => $baseDir . '/app/Http/Controllers/Main/Mocktest.php',
     'App\\Http\\Controllers\\Main\\Pages' => $baseDir . '/app/Http/Controllers/Main/Pages.php',
+    'App\\Http\\Controllers\\Payment\\Rozorpay' => $baseDir . '/app/Http/Controllers/Payment/Rozorpay.php',
     'App\\Http\\Controllers\\Pdf\\Payment' => $baseDir . '/app/Http/Controllers/Pdf/Payment.php',
     'App\\Http\\Controllers\\Pdf\\Pdf' => $baseDir . '/app/Http/Controllers/Pdf/Pdf.php',
     'App\\Http\\Controllers\\Social\\GoogleController' => $baseDir . '/app/Http/Controllers/Social/GoogleController.php',
