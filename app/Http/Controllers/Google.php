@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use Exception;
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
@@ -34,15 +34,12 @@ class Google extends Controller
         try {
 
             $user = Socialite::driver('google')->user();
-
             $finduser = User::where('social_id', $user->id)->first();
-
             if ($finduser) {
                 Session::put('StudentId', $finduser->student_id);
                 Auth::login($finduser);
                 return redirect('/');
             } else {
-                // $sid = "ASG" . Str::random(12);
                 $newUser = User::create([
                     'student_id' => strtoupper("ASG" . Str::random(6) . "L"),
                     'name' => $user->name,
