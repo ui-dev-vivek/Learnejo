@@ -51,7 +51,6 @@ class Google extends Controller
                     'profile_pic' => $user->avatar,
                     'password' => encrypt('my-google')
                 ]);
-
                 Auth::login($newUser);
                 $finduser = User::where('social_id', $user->id)->first();
                 if ($finduser) {
@@ -67,6 +66,7 @@ class Google extends Controller
     }
     function logout()
     {
-        return 1;
+        Session::flush();
+        return redirect('/');
     }
 }

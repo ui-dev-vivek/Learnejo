@@ -157,3 +157,4 @@ Route::get("/Check-Out", [Rozorpay::class, 'checkOut']);
 
 Route::get('auth/google', [Google::class, 'redirectToGoogle']);
 Route::get('callback', [Google::class, 'handleCallback']);
+Route::get('Logout', [Google::class, 'logout']);

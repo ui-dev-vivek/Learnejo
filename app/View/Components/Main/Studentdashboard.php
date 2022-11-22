@@ -2,7 +2,7 @@
 
 namespace App\View\Components\Main;
 
-use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
@@ -13,10 +13,12 @@ class Studentdashboard extends Component
      *
      * @return void
      */
-
+    public $student;
     public function __construct()
     {
-        // 
+        if (Session::has('StudentId')) {
+            $this->student = DB::table('users')->where('student_id', session('StudentId'))->first();
+        }
     }
 
     /**
