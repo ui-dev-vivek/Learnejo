@@ -88,16 +88,10 @@
 
                    </a>
                @else
-                   <a type="button" class=" navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
-                       data-bs-target="#navbarTogglerDemo01"> <span class="loginbtn bg-success text-white">
-                           <i class="fa fa-user text-white"></i><b>Login</b></span>
-                   </a>
+                   <a href="/auth/google"><img class="img-fluid" width="17"
+                           src="https://cdn.pixabay.com/photo/2015/10/31/12/56/google-1015752_960_720.png"
+                           alt=""> <span class="text-primary pt-1"><strong>Login</strong></span></a>
                @endif
-
-
-
-
-
            </div>
        </div>
    </header>
