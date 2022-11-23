@@ -70,12 +70,14 @@
                         </footer>
                     </blockquote>
                     <p class="text-center">
+                    <div class="p-1">
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                    </div>
                     <div>
                         <a class="p-1 rounded border border-success m-2 bg-success text-white"
                             href="{{ $course->link }}">Click Here to
