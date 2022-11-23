@@ -69,7 +69,7 @@
                             <cite title="Source Title"></cite>
                         </footer>
                     </blockquote>
-                    <p class="text-center">
+
                     <div class="p-1">
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -89,7 +89,7 @@
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script> --}}
-                    </p>
+
                 </div>
             </div>
             <div class="col-md-4 ps-2">
