@@ -69,20 +69,27 @@
                             <cite title="Source Title"></cite>
                         </footer>
                     </blockquote>
+                    <p class="text-center">
+                        <!-- Display-Horizontal -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                            data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <a class="btn btn-md btn-success" href="{{ $course->link }}">Enroll Now</a>
+                        <!-- Display-Horizontal -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                            data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </p>
 
 
                 </div>
-                <div class="shadow p-2 text-center">
-                    <!-- Display-Horizontal -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                        data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                    <a class="p-1 rounded border border-success m-2 bg-success text-white"
-                        href="{{ $course->link }}">Click Here to
-                        Enroll</a>
-                </div>
+
+
+
 
             </div>
             <div class="col-md-4 ps-2">
