@@ -37,20 +37,21 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
-Route::get('/PDF', [Pdf::class, 'index']);
-Route::get('/PDF/Check-Out', [Pdf::class, 'checkOut']);
+
 
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
-Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
+// Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
 Route::get('Courses/Card/{pramaLink}', [Courses::class, 'card']);
 Route::get('/Courses/Category/{catg}', [Courses::class, 'byCatg']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
 Route::post('/send-data-to-offorbystudents', [Courses::class, 'sendData']);
 
+
+
 // Main Jobs
 Route::get('/Job-Internships', [Jobs::class, 'index']);
-Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
+// Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
 Route::get('Job-Internships/Card/{pramaLink}', [Jobs::class, 'card']);
 
@@ -58,10 +59,6 @@ Route::get('Job-Internships/Card/{pramaLink}', [Jobs::class, 'card']);
 Route::get('/Prepare/{pramalink}', [Mocktest::class, 'mockTestAbout']);
 // Mock-Test
 Route::get('Mock-Test', [MockTest::class, 'index']);
-Route::get('Mock-Test/{pramaLink}', [MockTest::class, 'subView']);
-Route::get('Mock-Test/{subPramaLink}/{pramaLink}', [MockTest::class, 'view']);
-
-Route::get('Mock-Test/{subPramaLink}/{pramaLink}/{testId}', [MockTest::class, 'start']);
 
 
 // Admin Login
@@ -72,7 +69,17 @@ Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
 Route::get('/Student-Login', [Studentauth::class, 'studentLogin']);
 Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
 
+Route::group(['middleware' => ['StudentLogin']], function () {
+    Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
+    Route::get('/PDF', [Pdf::class, 'index']);
+    Route::get('/PDF/Check-Out', [Pdf::class, 'checkOut']);
+    Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
+    // MockTest
+    Route::get('Mock-Test/{pramaLink}', [MockTest::class, 'subView']);
+    Route::get('Mock-Test/{subPramaLink}/{pramaLink}', [MockTest::class, 'view']);
 
+    Route::get('Mock-Test/{subPramaLink}/{pramaLink}/{testId}', [MockTest::class, 'start']);
+});
 
 
 // Cron Job Urls

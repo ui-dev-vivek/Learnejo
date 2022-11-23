@@ -19,15 +19,95 @@
 
                     <h2 class="h2">{{ $student->name }}</h2>
 
-                    <p class="text-end">
-                        <a href="/Logout" class="btn btn-sm btn-danger rounded-8">Logout</a>
-                    </p>
+                    <div class="row">
+                        <div class="col-8 text-center pt-1">
+                            {{ $student->email }}
+                        </div>
+                        <div class="col-4">
+                            <p class="text-center">
+                                <a href="/Logout" class="btn btn-sm btn-danger rounded-8">Logout</a>
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="mt-3">
+                    <div class="shadow   p-2 rounded-8 border border-success">
+                        <h5>My Subscriptions:</h5>
+                        <hr>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>Udemy Courses</strong>
+                                </div>
+                                <div class="col-4 text-succes"> Free</div>
+                            </div>
+                        </div>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>Jobs/Internships Updates</strong>
+                                </div>
+                                <div class="col-4 text-succes"> Free</div>
+                            </div>
+                        </div>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>Mock-Test</strong>
+                                </div>
+                                <div class="col-4 text-succes"> Free</div>
+                            </div>
+                        </div>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>MCQs</strong>
+                                </div>
+                                <div class="col-4 text-succes"> Free</div>
+                            </div>
+                        </div>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>PDF Downloads</strong>
+                                </div>
+                                <div class="col-4"><i class="fa fa-inr"> </i> 15 / PDF</div>
+                            </div>
+                        </div>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>Solutions Downloads</strong>
+                                </div>
+                                <div class="col-4"><i class="fa fa-inr"> </i> 20 / Solution</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="shadow   p-2 rounded-8 border border-success">
+                        <h5>My Downloads:</h5>
+                        <hr>
+                        <div class="border-bottom p-1 m-1">
+                            <div class="row">
+                                <div class="col-8">
+                                    <strong>Free Python Free Interview Question</strong>
+                                </div>
+                                <div class="col-4 text-succes"><a href="">Download <i
+                                            class="fa fa-download"></i></a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <div class="mt-3">
                     <div class="shadow border border-success p-2 rounded-8">
                         <h5 class="ps-1">My Payment Status</h5>
                         <hr>
-                        <div class="rounded p-1 m-1 border-bottom">
+                        {{-- <div class="rounded p-1 m-1 border-bottom">
                             <div class="row">
                                 <div class="col-7">
                                     <div class="row">
@@ -67,7 +147,8 @@
                                 <div class="col-2 text-center text-primary">
                                     <i class="fa fa-inr "> </i> 200
                                 </div>
-                                <div class="col-3 text-warning text-center"><i class="fa fa-clock-o text-warning"> </i>
+                                <div class="col-3 text-warning text-center"><i class="fa fa-clock-o text-warning">
+                                    </i>
                                     Panding.
                                 </div>
 
@@ -94,7 +175,7 @@
                                     Cancel</div>
                             </div>
 
-                        </div>
+                        </div> --}}
 
 
                     </div>
@@ -112,9 +193,11 @@
                 <div class="shadow border border-success p-2 rounded-8">
                     <h5>Notice:</h5>
                     <hr>
-                    <small>Not Found!</small>
+                    <p>Udemy Courses are expired with in 30 min. because it's limited enrollments. please enroll soon as
+                        possible.</p>
                 </div>
             </div>
+
             <div class="mt-3">
                 <div class="shadow text-center text-white bg-success p-2 rounded-8">
 
