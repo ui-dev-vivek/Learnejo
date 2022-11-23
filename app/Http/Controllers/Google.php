@@ -38,7 +38,11 @@ class Google extends Controller
             if ($finduser) {
                 Session::put('StudentId', $finduser->student_id);
                 Auth::login($finduser);
-                return redirect(session('fromLoginRequest'));
+                if (Session::has('fromLoginRequest')) {
+                    return redirect(session('fromLoginRequest'));
+                } else {
+                    return redirect('/');
+                }
             } else {
                 $newUser = User::create([
                     'student_id' => strtoupper("ASG" . Str::random(6) . "L"),
@@ -53,7 +57,11 @@ class Google extends Controller
                 if ($finduser) {
                     Session::put('StudentId', $finduser->student_id);
                     Auth::login($finduser);
-                    return redirect(session('fromLoginRequest'));
+                    if (Session::has('fromLoginRequest')) {
+                        return redirect(session('fromLoginRequest'));
+                    } else {
+                        return redirect('/');
+                    }
                 }
             }
         } catch (Exception $e) {
