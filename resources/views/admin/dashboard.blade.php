@@ -189,18 +189,18 @@
                 <div class="col-md-6">
                     <div class="card text-center order-visitor-card">
                         <div class="card-block">
-                            <h6 class="m-b-0">Total Subscription</h6>
-                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-down m-r-15 text-c-red"></i>7652</h4>
-                            <p class="m-b-0">48% From Last 24 Hours</p>
+                            <h6 class="m-b-0">PDF Downloads</h6>
+                            <h4 class="m-t-15 m-b-15"><i class="fa fa-copy m-r-15 text-c-red"></i>0</h4>
+                            <p class="m-b-0">0 Downloads in Last 24 Hours</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card text-center order-visitor-card">
                         <div class="card-block">
-                            <h6 class="m-b-0">Order Status</h6>
-                            <h4 class="m-t-15 m-b-15"><i class="fa fa-arrow-up m-r-15 text-c-green"></i>6325</h4>
-                            <p class="m-b-0">36% From Last 6 Months</p>
+                            <h6 class="m-b-0">Solutions Downloads</h6>
+                            <h4 class="m-t-15 m-b-15"><i class="fa fa-book m-r-15 text-c-green"></i>0</h4>
+                            <p class="m-b-0">0 Downloads in Last 24 Hours</p>
                         </div>
                     </div>
                 </div>
@@ -208,10 +208,10 @@
                     <div class="card bg-c-red total-card">
                         <div class="card-block">
                             <div class="text-left">
-                                <h4>489</h4>
-                                <p class="m-0">Total Comment</p>
+                                <h4><i class="fa fa-inr"> </i> 0</h4>
+                                <p class="m-0">Refund Amount</p>
                             </div>
-                            <span class="label bg-c-red value-badges">15%</span>
+                            <span class="label bg-c-red value-badges"><i class="fa fa-inr"></i> 0</span>
                         </div>
                     </div>
                 </div>
@@ -219,10 +219,10 @@
                     <div class="card bg-c-green total-card">
                         <div class="card-block">
                             <div class="text-left">
-                                <h4>$5782</h4>
-                                <p class="m-0">Income Status</p>
+                                <h4> <i class="fa fa-inr"> </i> 0</h4>
+                                <p class="m-0">Total Income</p>
                             </div>
-                            <span class="label bg-c-green value-badges">20%</span>
+                            <span class="label bg-c-green value-badges"> <i class="fa fa-inr"></i> 0</span>
                         </div>
                     </div>
                 </div>
