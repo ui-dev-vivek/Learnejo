@@ -27,7 +27,8 @@ class Admindashboard extends Controller
         $totalJobsApplyCount = DB::table('jobs')->where('status', 1)->sum('apply');
         $todayJobsApplyCount = DB::table('jobs')->where('status', 1)->where('created_at', '>=', Carbon::now()->subDays(1)
             ->toDateTimeString())->sum('apply');
-        return view('admin.dashboard')->with(compact('totalCourseCount', 'todayCourseCount', 'totalCourseViewCount', 'todayCourseViewCount', 'totalCourseEnrollCount', 'todayCourseEnrollCount'))->with(compact('totalJobsCount', 'todayJobsCount', 'totalJobsViewCount', 'todayJobsViewCount', 'totalJobsApplyCount', 'todayJobsApplyCount'));
+        $users = DB::table('users')->orderByDesc('id')->get();
+        return view('admin.dashboard')->with(compact('totalCourseCount', 'todayCourseCount', 'totalCourseViewCount', 'todayCourseViewCount', 'totalCourseEnrollCount', 'todayCourseEnrollCount'))->with(compact('totalJobsCount', 'todayJobsCount', 'totalJobsViewCount', 'todayJobsViewCount', 'totalJobsApplyCount', 'todayJobsApplyCount', 'users'));
     }
     public function deleteItem(Request $req)
     {

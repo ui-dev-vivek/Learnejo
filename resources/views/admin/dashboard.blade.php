@@ -139,7 +139,7 @@
         <div class="col-xl-6 col-md-12">
             <div class="card table-card">
                 <div class="card-header">
-                    <h5>Member’s performance</h5>
+                    <h5>Registered Students</h5>
                     <div class="card-header-right">
                         <ul class="list-unstyled card-option">
                             <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -150,74 +150,31 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-block">
+                <div class="card-block" style="max-height:600px;">
                     <div class="table-responsive">
                         <table class="table table-hover m-b-0 without-header">
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-inline-block align-middle">
-                                            <img src="assets/images/avatar-4.jpg" alt="user image"
-                                                class="img-radius img-40 align-top m-r-15">
-                                            <div class="d-inline-block">
-                                                <h6>Shirley Hoe</h6>
-                                                <p class="text-muted m-b-0">Sales executive , NY</p>
+                                @forelse ($users as $user)
+                                    <tr>
+                                        <td>
+                                            <div class="d-inline-block align-middle">
+                                                <img src="{{ $user->profile_pic }}" alt="user image"
+                                                    class="img-radius img-40 align-top m-r-15">
+                                                <div class="d-inline-block">
+                                                    <h6>{{ $user->name }}</h6>
+                                                    <p class="text-muted m-b-0">{{ $user->email }}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <h6 class="f-w-700">$78.001<i
-                                                class="fa fa-level-down-alt text-c-red m-l-10"></i></h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-inline-block align-middle">
-                                            <img src="assets/images/avatar-2.jpg" alt="user image"
-                                                class="img-radius img-40 align-top m-r-15">
-                                            <div class="d-inline-block">
-                                                <h6>James Alexander</h6>
-                                                <p class="text-muted m-b-0">Sales executive , EL</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <h6 class="f-w-700">$89.051<i
-                                                class="fa fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-inline-block align-middle">
-                                            <img src="assets/images/avatar-4.jpg" alt="user image"
-                                                class="img-radius img-40 align-top m-r-15">
-                                            <div class="d-inline-block">
-                                                <h6>Shirley Hoe</h6>
-                                                <p class="text-muted m-b-0">Sales executive , NY</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <h6 class="f-w-700">$89.051<i
-                                                class="fa fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-inline-block align-middle">
-                                            <img src="assets/images/avatar-2.jpg" alt="user image"
-                                                class="img-radius img-40 align-top m-r-15">
-                                            <div class="d-inline-block">
-                                                <h6>Nick Xander</h6>
-                                                <p class="text-muted m-b-0">Sales executive , EL</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <h6 class="f-w-700">$89.051<i
-                                                class="fa fa-level-up-alt text-c-green m-l-10"></i></h6>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td class="text-right">
+                                            <h6 class="f-w-700">{{ $user->student_id }}<i
+                                                    class="fa fa-level-down-alt text-c-red m-l-10"></i></h6>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <p>No User Found</p>
+                                @endforelse
+
                             </tbody>
                         </table>
 
