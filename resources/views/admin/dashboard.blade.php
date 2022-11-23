@@ -150,7 +150,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-block" style="max-height:600px;">
+                <div class="card-block" style="">
                     <div class="table-responsive">
                         <table class="table table-hover m-b-0 without-header">
                             <tbody>
