@@ -106,11 +106,11 @@
                 <div class="card-block">
                     <div class="row">
                         <div class="col-3 text-center bg-c-green">
-                            <i class="fa fa-star mat-icon f-24"></i>
+                            <i class="fa fa-users mat-icon f-24"></i>
                         </div>
                         <div class="col-9 cst-cont">
-                            <h5>4000+</h5>
-                            <p class="m-b-0">Ratings Received</p>
+                            <h5>{{ $userCount }}</h5>
+                            <p class="m-b-0">Students</p>
                         </div>
                     </div>
                 </div>
