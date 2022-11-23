@@ -12,12 +12,12 @@
 
     <div class="row">
         <div class="col-md-2">
-            <!-- 160pxcode -->
+            {{-- <!-- 160pxcode -->
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
         </div>
         <div class="col-md-8">
             <div class="rounded-8 p-3 shadow z-depth-3">
@@ -62,9 +62,15 @@
                             </div>
                             <p class="text-end mt-2"><a
                                     class="p-2 bg-primary rounded text-white hvr-icon-wobble-horizontal"
-                                    href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}"><strong>Apply Now
+                                    href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}"><strong>View & Apply Now
                                     </strong>
-                                    <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a></p>
+                                    <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+                                <ins class="adsbygoogle" style="display:inline-block;width:328px;height:50px"
+                                    data-ad-client="ca-pub-7119514135532896" data-ad-slot="3353114276"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -85,19 +91,19 @@
             @empty
                 <p>No Jobs Found!</p>
             @endforelse
-
+            {{-- 
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
         </div>
         <div class="col-md-2">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+            {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                 data-ad-slot="2100620665" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            </script> --}}
         </div>
     </div>
     </div>

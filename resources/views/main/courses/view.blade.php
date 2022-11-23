@@ -47,11 +47,11 @@
                         {{-- Horizontal Ads --}}
                     <h2 class="h3">Category : {{ $course->catg }}</h2>
                     <!-- Display-Horizontal -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> --}}
                     </p>
                     <p>
                         <?php
@@ -70,18 +70,19 @@
                         </footer>
                     </blockquote>
                     <p class="text-center">
-                        {{-- Squir Ads --}}
-                        <!-- Display-Square -->
+                        <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
-                            data-ad-slot="7763649496" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+                    <div>
                         <a class="p-1 rounded border border-success m-2 bg-success text-white"
                             href="{{ $course->link }}">Click Here to
                             Enroll</a>
-                        <!-- Display-Horizontal -->
-                        {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                    </div>
+                    <!-- Display-Horizontal -->
+                    {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -141,13 +142,13 @@
     </div>
     <br><br>
 
-    <p class="container text-center">
+    {{-- <p class="container text-center">
         <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
             data-ad-client="ca-pub-7119514135532896" data-ad-slot="3004592505"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </p>
+    </p> --}}
     @section('script')
         <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
     @stop

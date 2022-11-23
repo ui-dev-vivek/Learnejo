@@ -122,15 +122,14 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div><br>
-                <div class="shadow p-2 text-center">
-                    {{-- Virtical Ads --}}
-                    <!-- Display-Vertical -->
+                {{-- <div class="shadow p-2 text-center">
+                    
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                </div>
+                </div> --}}
 
             </div>
         </div>

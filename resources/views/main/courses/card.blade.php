@@ -41,7 +41,7 @@
                                         (adsbygoogle = window.adsbygoogle || []).push({});
                                     </script>
                                 </div>
-                                <p class="text-end "><a class="hvr-icon-wobble-horizontal"
+                                <p class="text-end m-1"><a class="hvr-icon-wobble-horizontal"
                                         href="{{ url('/Courses') }}/{{ $course->prama_link }}"><strong><small>Get Free
                                                 Course</small></strong>
                                         <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
@@ -83,11 +83,11 @@
                     <p>No Courses Found!</p>
                 @endforelse
                 <!-- Display-Square -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                     data-ad-slot="7763649496" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> --}}
             </div>
 
         </div>
