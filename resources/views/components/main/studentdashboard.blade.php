@@ -67,22 +67,22 @@
                                 <div class="col-4 text-succes"> Free</div>
                             </div>
                         </div>
-                        {{-- <div class="border-bottom p-1 m-1">
+                        <div class="border-bottom p-1 m-1">
                             <div class="row">
                                 <div class="col-8">
                                     <strong>PDF Downloads</strong>
                                 </div>
                                 <div class="col-4"><i class="fa fa-inr"> </i> 15 / PDF</div>
                             </div>
-                        </div> --}}
-                        {{-- <div class="border-bottom p-1 m-1">
+                        </div>
+                        <div class="border-bottom p-1 m-1">
                             <div class="row">
                                 <div class="col-8">
                                     <strong>Solutions Downloads</strong>
                                 </div>
                                 <div class="col-4"><i class="fa fa-inr"> </i> 20 / Solution</div>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
                 </div>
