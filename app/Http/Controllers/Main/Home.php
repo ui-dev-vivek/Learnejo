@@ -18,9 +18,13 @@ class Home extends Controller
         $getCJobs = $this->getCorpJobs();
         $getGJobs = $this->getGovtJobs();
         $ranker = $this->ranker();
-        return view('main.home')->with(compact('getTopRankers', 'getTMockTest', 'getNTMockTest', 'getCourses', 'getCJobs', 'getGJobs', 'ranker'));
+        $getUsers = $this->getUsers();
+        return view('main.home')->with(compact('getTopRankers', 'getTMockTest', 'getNTMockTest', 'getCourses', 'getCJobs', 'getGJobs', 'ranker', 'getUsers'));
     }
-
+    function getUsers()
+    {
+        return DB::table("users")->orderByDesc('id')->limit(5)->get();
+    }
     function getTopRanker()
     {
         return DB::table('rank_list')->limit(2)->orderByDesc('points')->get();

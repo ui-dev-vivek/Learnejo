@@ -145,7 +145,28 @@
                             Top Rankers</h4>
                         <div class="cardsx">
                             <div class="outer">
-                                <div class="cardx" style="--delay:-1;">
+                                @php
+                                    $count = -1;
+                                @endphp
+                                @foreach ($getUsers as $user)
+                                    <div class="cardx" style="--delay:{{ $count }};">
+                                        <div class="content text-center">
+                                            <div class="imgx"><img src="{{ $user->profile_pic }}">
+                                            </div>
+                                            <div class="details">
+                                                <span class="name">{{ $user->name }}</span>
+                                                <p><small>Placed in Infosys, Fynd</small></p>
+                                            </div>
+                                        </div>
+                                        <a class="text-center" href="#"><b>Points<br>870</b></a>
+                                    </div>
+                                    @php
+                                        if ($count != 2) {
+                                            $count++;
+                                        }
+                                    @endphp
+                                @endforeach
+                                {{-- <div class="cardx" style="--delay:-1;">
                                     <div class="content text-center">
                                         <div class="imgx"><img src="{{ asset('/assets/studentsimage/suraj.jpeg') }}">
                                         </div>
@@ -199,7 +220,7 @@
                                         </div>
                                     </div>
                                     <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
@@ -283,8 +304,7 @@
                     <div class="col-md-3" data-aos="fade-up">
                         <a href="{{ url('/Prepare') }}/{{ $mockTest->prama_link }}">
                             <div style="height: 50px; overflow:hidden;" class="zoom rounded-8 shadow  px-2  p-1 m-2">
-                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}"
-                                    alt="">
+                                <img width="40" class="rounded-circle" src="{{ $mockTest->image }}" alt="">
                                 &nbsp;&nbsp; <span class="h5">{{ $mockTest->name }}</span>
                             </div>
                         </a>
