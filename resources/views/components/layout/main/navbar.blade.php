@@ -83,8 +83,9 @@
                    <a class="navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse"
                        data-bs-target="#navbarTogglerDemo01">
                        <img width="25" src="{{ $student->profile_pic }}"
-                           class="rounded-circle border border-success ">
-                       &nbsp; {{ $student->name }}
+                           class="rounded-circle border border-success mt-2">
+                       &nbsp; {{ $student->name }} <p style="font-size:10px; padding-left:40px;"><strong>Student
+                               Dashboard</strong></p>
 
                    </a>
                @else
