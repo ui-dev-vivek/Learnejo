@@ -25,7 +25,7 @@
                         the courses. Please enroll as soon as possible.
                         If it has expired, it will be retrieved after some time. stay on the website</h6>
                 </div>
-                <div class="shadow mt-3 p-3">
+                <div class="shadow mt-3 pt-2">
                     <p class="text-center text-primary">
                     <h1 class="h2">{{ $course->title }}</h1>
                     <div class="post-information">
