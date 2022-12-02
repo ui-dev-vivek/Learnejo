@@ -10,6 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
+
                 <div class="shadow p-2 text-center">
                     <!-- Display-Horizontal -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -18,7 +19,9 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                    <h4><strong>Notice:</strong> Courses are Expired in 30 min or after Enroll Limit.</h4>
+                </div>
                 <div class="shadow mt-3 p-3">
                     <p class="text-center text-primary">
                     <h1 class="h2">{{ $course->title }}</h1>
@@ -69,6 +72,9 @@
                             <cite title="Source Title"></cite>
                         </footer>
                     </blockquote>
+                    <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                        <h5><strong>Notice:</strong> Courses are Expired in 30 min or after Enroll Limit.</h5>
+                    </div>
                     <p class="text-center">
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
