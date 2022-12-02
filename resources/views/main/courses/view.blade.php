@@ -19,13 +19,13 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-                <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
                     <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment limit
                         in
                         the courses. Please enroll as soon as possible.
                         If it has expired, it will be retrieved after some time. stay on the website</h6>
                 </div>
-                <div class="shadow mt-3 pt-2">
+                <div class="shadow mt-3 p-3">
                     <p class="text-center text-primary">
                     <h1 class="h2">{{ $course->title }}</h1>
                     <div class="post-information">
