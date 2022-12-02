@@ -27,7 +27,7 @@ def getinfo(text):
 for i in range(1, 2):
     try:
         mainUrl = "https://fresherjobinfo.in/"
-        
+
         mainReq = requests.get(mainUrl)
         mainSoup = BeautifulSoup(mainReq.content, 'html.parser')
         mainList = mainSoup.select('.inside-article')
@@ -81,7 +81,8 @@ for i in range(1, 2):
                         }
                         response = requests.request("POST", url, json=payload)
                         if(response.text == '1'):
-                            massage = subSoup.title.string + "\n Apply link: https://learnejo.com/Job-Internships/Card/"+pramaLink+"\n \nGet Free Courses: @Free_courses2_learnejo \n Please Share and Add Your Friends"
+                            massage = subSoup.title.string + "\n Apply link: https://learnejo.com/Job-Internships/Card/" + \
+                                pramaLink+"\n"
                             try:
                                 for i in ['-1001874716358']:
                                     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"

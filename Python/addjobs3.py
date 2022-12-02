@@ -85,7 +85,7 @@ for i in range(1, 2):
                         if(response.text == '1'):
                             print("Uploaded!")
                             massage = "Job Update.\n"+subSoup.title.string + " \n \n Apply here: https://learnejo.com/Job-Internships/Card/"+pramaLink + \
-                                "\n\n Join Freshers Commubity: @Freshers_Community \n For Free Courses @free_courses2_learnejo"
+                                "\n"
                             try:
                                 for i in ['-1001874716358']:
                                     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"

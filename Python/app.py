@@ -10,7 +10,7 @@ for i in range(1, 0, -1):
     elem = soup.select('.card-title')
     for i in range(len(elem)-1, -1, -1):
         title = soup.select('.card-title')[i].string
-        title=title+"  In English."
+        title = title+"  In English."
         cat = soup.select('.card-cat')[i].string
         sortDesc = soup.select('.card-text')[i].string
         rating = soup.select('.card-duration')[i]
@@ -18,9 +18,9 @@ for i in range(1, 0, -1):
         pramaLink = urlx.split('/')[2]
         img = soup.select('.card')[i].find('img').get('src')
         urlx = "https://www.real.discount/"+urlx
-        print(title,end=" >- ")       
+        print(title, end=" >- ")
         try:
-            print("Loding start",end=" >- ")
+            print("Loding start", end=" >- ")
             r = requests.get(urlx)
             soupx = BeautifulSoup(r.content, 'html.parser')
             courseLink = soupx.select('.text-center')[0].find('a').get('href')
@@ -38,25 +38,26 @@ for i in range(1, 0, -1):
                        "link": courseLink,
                        "cat": cat,
                        "sortDesc": sortDesc,
-                       "enroll": 0,
-                       "view": 0
+                       "enroll": enroll,
+                       "view": view
                        }
             response = requests.request("POST", url, data=payload)
             print(response.status_code)
             if(response.text == '1'):
-                print("Loaded!",end=" >- ")
-                massage ="Free Courses-100% Off \n **"+ title +":** \n https://learnejo.com/Courses/Card/"+pramaLink+"\n\nHow to Enroll Courses:\nhttps://youtu.be/Q_q8hcTcSLU \n\nCourses are Free For Limited Time Enroll Fast. \nFor Jobs-Internships Update join : @job_learnejo \nJoin Freshers Community: @Freshers_Community\n its is only Group that provied more & more Courses."
+                print("Loaded!", end=" >- ")
+                massage = title + ":\n https://learnejo.com/Courses/Card/"+pramaLink + \
+                    "\n\nHow to Enroll Courses:\nhttps://youtu.be/Q_q8hcTcSLU"
                 try:
-                    for i in ['-1001624994728','-1001198759775']:                    
-                        url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"                        
-                        querystring = {"chat_id":i,"text": massage}
-                        response = requests.request("GET", url, params=querystring)
-                        print("Share On Telegram!",i,end=" > ")
-                    print()    
+                    for i in ['-1001624994728', '-1001198759775']:
+                        url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
+                        querystring = {"chat_id": i, "text": massage}
+                        response = requests.request(
+                            "GET", url, params=querystring)
+                        print("Share On Telegram!", i, end=" > ")
+                    print()
                 except:
                     print("Falied on Sharing.")
             else:
-                print("Error Or Alredy Exist!")                
+                print("Error Or Alredy Exist!")
         except:
             print('Error On Loadin..')
-
