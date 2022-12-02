@@ -19,8 +19,11 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-                    <h4><strong>Notice:</strong> Courses are Expired in 30 min or after Enroll Limit.</h4>
+                <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                    <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment limit
+                        in
+                        the courses. Please enroll as soon as possible.
+                        If it has expired, it will be retrieved after some time. stay on the website</h6>
                 </div>
                 <div class="shadow mt-3 p-3">
                     <p class="text-center text-primary">
@@ -73,7 +76,10 @@
                         </footer>
                     </blockquote>
                     <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
-                        <h5><strong>Notice:</strong> Courses are Expired in 30 min or after Enroll Limit.</h5>
+                        <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment limit
+                            in
+                            the courses. Please enroll as soon as possible.
+                            If it has expired, it will be retrieved after some time. stay on the website</h6>
                     </div>
                     <p class="text-center">
                         <!-- Display-Horizontal -->
