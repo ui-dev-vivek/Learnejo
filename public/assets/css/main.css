@@ -570,12 +570,15 @@ a:hover {
     height: 100vh;
     /* flex-direction: row; */
     
+    
   } 
 }
 
 @media (max-width: 768px) {
   #hero {
     height: 100vh;
+    padding-top: 135px;
+
     /* flex-direction: row; */
   }
 
