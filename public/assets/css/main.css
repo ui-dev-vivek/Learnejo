@@ -3,15 +3,8 @@
 body {
   font-family: 'Poppins', sans-serif; 
   
-   /* font-family: 'Source Code Pro', monospace; */
-  color: #000000;
-  /* background-image: linear-gradient(to bottom, #ffffff, #cdeeff, #58e6ff, #00dbc1, #32c551); */
-  /* background-image: linear-gradient(to right bottom, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #f5f8ff, #e3f2ff, #cdeeff, #87e8f8, #26e1d8, #00d5a0, #32c552); */
-  background-image: linear-gradient(to bottom, #ffffff,  #c0f5f2);
 }
-/* main{
-  background-image: linear-gradient(to bottom, #ffffff,  #c0f5f2);
-} */
+
 a {
   color: #075c37;
   text-decoration: none;

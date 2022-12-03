@@ -56,8 +56,139 @@
         <div class="p-2">
         </div>
     </div>
-
     <section class="inner-page">
+        <div class="container">
+            <div class=" pb-3" style="border-left:10px solid #32c552" data-aos="fade-right" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="d-flex container-fluid justify-content-center align-items-center h-100">
+                            <div class="text-center">
+                                <h2 class="h1">Free Courses</h2>
+                                <h4 class="h4">Get Paid Courses For <strong>Free</strong></h4>
+                                <strong>Do Courses and skillup your self.</strong>
+                                <img class="img-fluid"
+                                    src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
+                                    alt="">
+                                <p class="text-start">
+                                    <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                                        href="/Courses">Check Courses
+                                        <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md text-center">
+                        <img width="300" class="img-fluid" src="{{ asset('assets/image/f-courses.png') }}"
+                            alt="">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="inner-page">
+        <div class="container">
+            <div class=" pb-3" style="border-right:10px solid #32c552" data-aos="fade-left" data-aos-delay="300">
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img width="300" class="img-fluid" src="{{ asset('assets/image/f-job.png') }}"
+                            alt="">
+
+
+                    </div>
+                    <div class="col-md">
+                        <div class="d-flex container-fluid justify-content-center align-items-center h-100">
+                            <div class="text-center">
+                                <h2 class="h1">Jobs / Internships</h2>
+                                <h4 class="h4">Get Jobs And Internships Update.</h4>
+                                <strong>Naver Miss any opportunity, Update With Us.</strong>
+                                <img class="img-fluid"
+                                    src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
+                                    alt="">
+                                <p class="text-end">
+                                    <a class="hvr-sweep-to-left   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                                        href="/Job-Internships"><i class="fa fa-arrow-left hvr-icon" aria-hidden="true">
+                                        </i>
+                                        Get Jobs Update
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="inner-page">
+        <div class="container">
+            <div class=" pb-3" style="border-left:10px solid #32c552" data-aos="fade-right" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="d-flex container-fluid justify-content-center align-items-center h-100">
+                            <div class="text-center">
+                                <h2 class="h1"> <span class="text-success">A</span><span
+                                        class="text-info">I</span>
+                                    Interview</h2>
+                                <h4 class="h4">End-to-End AI Video Interview Platform</h4>
+                                <strong>Practice for Interview with our AI Interviewer</strong>
+                                <img class="img-fluid"
+                                    src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
+                                    alt="">
+                                <p class="text-start">
+                                    <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                                        href="/Mock-Test">Try AI Interview
+                                        <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md text-center">
+                        <img width="300" class="img-fluid" src="{{ asset('assets/image/ai-inter.png') }}"
+                            alt="">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="inner-page">
+        <div class="container">
+            <div class=" pb-3" style="border-right:10px solid #32c552" data-aos="fade-left" data-aos-delay="300">
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img width="300" class="img-fluid" src="{{ asset('assets/image/mock-test.png') }}"
+                            alt="">
+
+
+                    </div>
+                    <div class="col-md">
+                        <div class="d-flex container-fluid justify-content-center align-items-center h-100">
+                            <div class="text-center">
+                                <h2 class="h1">Mock Test</h2>
+                                <h4 class="h4">End-to-End AI Video Interview Platform</h4>
+                                <strong>Practice for Interview with our AI Interviewer</strong>
+                                <img class="img-fluid"
+                                    src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
+                                    alt="">
+                                <p class="text-end">
+                                    <a class="hvr-sweep-to-left   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                                        href="/Mock-Test"><i class="fa fa-arrow-left hvr-icon" aria-hidden="true">
+                                        </i>
+                                        Try Mock Test
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section class="inner-page">
         <div class="container">
             <div class="section-title">
                 <h2>Prepare For</h2>
@@ -99,8 +230,8 @@
                 @endforelse
             </div>
         </div>
-    </section>
-
+    </section> --}}
+    {{-- 
     <section class="inner-page">
         <div class="container">
             <div class="section-title">
@@ -137,16 +268,7 @@
                                         </div>
                                         <small class="text-justify"
                                             style="font-size: 12px;">{{ $course->sort_desc }}</small>
-                                        {{-- <span class="reviewtext font-italic">Reviews</span>
-                                    <div class="reviewstars">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <span class="color-4a rating">3</span> <span
-                                            class="totalreviews color-4a"></span>
-                                    </div> --}}
+                                       
                                     </article>
                                 </a>
                             </div>
@@ -164,8 +286,8 @@
             </section>
         </div>
 
-    </section>
-    <div class="row">
+    </section> --}}
+    {{-- <div class="row">
         <div class="col-md-6">
             <section class="inner-page">
                 <div class="container">
@@ -236,5 +358,5 @@
                 </div>
             </section>
         </div>
-    </div>
+    </div> --}}
 </x-layout.main.base>
