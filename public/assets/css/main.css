@@ -566,21 +566,21 @@ a:hover {
 
 
 @media (max-width: 991px) {
-  #hero {
+  /* #hero {
     height: 100vh;
     /* flex-direction: row; */
     
     
-  } 
+  }  */
 }
 
 @media (max-width: 768px) {
-  #hero {
+  /* #hero {
     height: 100vh;
     padding-top: 135px;
 
     /* flex-direction: row; */
-  }
+  } */
 
 
   #hero h1 {
