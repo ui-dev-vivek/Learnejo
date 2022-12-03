@@ -16,21 +16,21 @@
             <h1 class="text-center"
                 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
         1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;"
-                data-aos="fade-up" data-aos-delay="200">
+                data-aos="fade-up" data-aos-delay="400">
                 Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
                 <br><span style="color:#32c552;">O</span>pportunity !
             </h1><br>
-            <h2 class="text-center text-dark" data-aos="fade-down" data-aos-delay="300">
+            <h2 class="text-center text-dark">
                 We Help Candidates Sharpen Their Technical Skills and Pursue Job
                 Opportunities. <br> All
                 Technical Skills are
                 Essential for a Company Placement.</h2><br>
-            <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal" href="#main"
-                data-aos="zoom-in" data-aos-delay="500">Get
+            <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal"
+                href="#main">Get
                 Start
                 <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a> <br><br> <br>
             <small class="pb-2"><strong>Crack Top Companies</strong></small>
-            <div class="client_logos border-top border-bottom" data-aos="fade-left" data-aos-delay="400">
+            <div class="client_logos border-top border-bottom">
                 <img src="https://www.hackerrank.com/wp-content/uploads/2022/10/peloton_black.png" alt=""
                     style="width:91px"> <img
                     src="https://www.hackerrank.com/wp-content/uploads/2022/10/atlassian_black.png" alt=""
