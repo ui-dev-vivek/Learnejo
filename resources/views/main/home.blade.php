@@ -10,7 +10,7 @@
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
-        <div id="hero" class="text-center justify-content-center align-items-center">
+        <div id="hero" class="text-center container-fluid justify-content-center align-items-center">
             {{-- <img data-aos="fade-up" width="300" src="https://learnejo.com/assets/image/logo-dark.png" alt=""> --}}
             {{-- <br> --}}
             <h1 class="text-center"
