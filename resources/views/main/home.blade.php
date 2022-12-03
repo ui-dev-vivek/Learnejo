@@ -10,7 +10,7 @@
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
-        <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div id="hero" class="text-center justify-content-center align-items-center">
             {{-- <img data-aos="fade-up" width="300" src="https://learnejo.com/assets/image/logo-dark.png" alt=""> --}}
             {{-- <br> --}}
             <h1 class="text-center"
@@ -20,11 +20,11 @@
                 Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
                 <br><span style="color:#32c552;">O</span>pportunity !
             </h1><br>
-            <h5 class="text-center text-dark">
+            <h2 class="text-center text-dark">
                 We Help Candidates Sharpen Their Technical Skills and Pursue Job
                 Opportunities. <br> All
                 Technical Skills are
-                Essential for a Company Placement.</h5><br>
+                Essential for a Company Placement.</h2><br>
             <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal"
                 href="#main">Get
                 Start

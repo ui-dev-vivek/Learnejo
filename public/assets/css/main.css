@@ -540,8 +540,8 @@ a:hover {
   width: 100%;
   height: 100vh;
   background: #fff;
-  flex-direction: column;
-  /* padding-top: 82px; */
+  /* flex-direction: column; */
+  padding-top: 92px;
   /* background-color: #34ADFF; */
   background-image: -webkit-linear-gradient(150deg, #32c552 28%, #ffffff 68%);
   background-repeat: no-repeat;
@@ -558,22 +558,25 @@ a:hover {
   color: #3e4450;
 }
 
-/* #hero h2 {
+#hero h2 {
   color: #0c36f3;
   margin: 10px 0 30px 0;
   font-size: 24px;
-} */
+}
 
 
 @media (max-width: 991px) {
   #hero {
     height: 100vh;
+    /* flex-direction: row; */
+    
   } 
 }
 
 @media (max-width: 768px) {
   #hero {
     height: auto;
+    /* flex-direction: row; */
   }
 
 
@@ -583,11 +586,11 @@ a:hover {
     line-height: 46px;
   }
 
-  /* #hero h2 {
+  #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
-  } */
+  }
 
 }
 
