@@ -28,7 +28,7 @@
             <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal"
                 href="#main">Get
                 Start
-                <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a> <br>
+                <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a> <br><br> <br>
             <small class="pb-2"><strong>Crack Top Companies</strong></small>
             <div class="client_logos border-top border-bottom">
                 <img src="https://www.hackerrank.com/wp-content/uploads/2022/10/peloton_black.png" alt=""
