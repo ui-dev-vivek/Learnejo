@@ -7,265 +7,50 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
-    <style>
-        .cardsx .outer {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            min-height: 350px;
-        }
-
-        .cardsx .cardx {
-            background: #ffffff;
-            width: 430px;
-            display: flex;
-            align-items: center;
-            /* padding-right: 70px; */
-            padding: 20px;
-            opacity: 0;
-            pointer-events: none;
-            position: absolute;
-            justify-content: space-between;
-            border-radius: 50px 20px 20px 50px;
-            animation: animate 15s linear infinite;
-            animation-delay: calc(3s * var(--delay));
-        }
-
-        .outer:hover .cardx {
-            animation-play-state: paused;
-        }
-
-        .cardsx .cardx:last-child {
-            animation-delay: calc(-3s * var(--delay));
-        }
-
-        @keyframes animate {
-            0% {
-                opacity: 0;
-                transform: translateY(100%) scale(0.5);
-            }
-
-            5%,
-            20% {
-                opacity: 0.4;
-                transform: translateY(100%) scale(0.7);
-            }
-
-            25%,
-            40% {
-                opacity: 1;
-                pointer-events: auto;
-                transform: translateY(0%) scale(1);
-            }
-
-            45%,
-            60% {
-                opacity: 0.4;
-                transform: translateY(-100%) scale(0.7);
-            }
-
-            65%,
-            100% {
-                opacity: 0;
-                transform: translateY(-100%) scale(0.5);
-            }
-        }
-
-        .cardx .content {
-            display: flex;
-            align-items: center;
-            /* margin: 30px; */
-
-        }
-
-        .cardsx .cardx .imgx {
-            height: 107px;
-            width: 107px;
-            position: absolute;
-            left: -5px;
-            background: #ffffff;
-            border-radius: 50%;
-            padding: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .cardx .imgx img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .cardx .details {
-            margin-left: 100px;
-            color: rgb(0, 0, 0);
-        }
-
-        .details span {
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .cardx a {
-            text-decoration: none;
-            /* padding: 7px 18px; */
-            /* border-radius: 25px; */
-            /* color: #fff; */
-            /* background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%); */
-            transition: all 0.3s ease;
-        }
-
-        .cardx a:hover {
-            transform: scale(0.94);
-        }
-    </style>
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
-        <section id="hero" class="d-flex align-items-center container-fluid">
+        <div id="hero" class="d-flex justify-content-center align-items-center">
+            {{-- <img data-aos="fade-up" width="300" src="https://learnejo.com/assets/image/logo-dark.png" alt=""> --}}
+            {{-- <br> --}}
+            <h1 class="text-center"
+                style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;"
+                data-aos="fade-up" data-aos-delay="400">
+                Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
+                <br><span style="color:#32c552;">O</span>pportunity !
+            </h1><br>
+            <h5 class="text-center text-dark">
+                We Help Candidates Sharpen Their Technical Skills and Pursue Job
+                Opportunities. <br> All
+                Technical Skills are
+                Essential for a Company Placement.</h5><br>
+            <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal"
+                href="#main">Get
+                Start
+                <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a> <br>
+            <small class="pb-2"><strong>Crack Top Companies</strong></small>
+            <div class="client_logos border-top border-bottom">
+                <img src="https://www.hackerrank.com/wp-content/uploads/2022/10/peloton_black.png" alt=""
+                    style="width:91px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/atlassian_black.png" alt=""
+                    style="width:139px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/bloomberg_black.png" alt=""
+                    style="width:91px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/vmware_black.png" alt=""
+                    style="width:91px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/stripe_black.png" alt=""
+                    style="width:90px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/goldmansachs_black.png" alt=""
+                    style="width:121px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/adobe_black.png" alt=""
+                    style="width:89px"> <img
+                    src="https://www.hackerrank.com/wp-content/uploads/2022/10/linkedin_black.png" alt=""
+                    style="width:115px">
+            </div>
 
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 pt-2 pt-lg-0  d-flex flex-column justify-content-center">
-                        <img data-aos="fade-up" width="300" src="{{ asset('assets/image/logo-dark.png') }}"
-                            alt="">
-                        <br>
-                        <h1 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;"
-                            data-aos="fade-up" data-aos-delay="400">
-                            Learn & <span style="color:#32c552;">E</span>nhance <span style="color:#32c552;">J</span>ob
-                            <span style="color:#32c552;">O</span>pportunity !
-                        </h1><br>
-                    </div>
-                    <div class="col-lg-4  ">
-                        <h4 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; font-weight:40px;"
-                            class="h4">
-                            Top Rankers</h4>
-                        <div class="cardsx">
-                            <div class="outer">
-                                @php
-                                    $count = -1;
-                                @endphp
-                                @foreach ($getUsers as $user)
-                                    <div class="cardx" style="--delay:{{ $count }};">
-                                        <div class="content text-center">
-                                            <div class="imgx"><img src="{{ $user->profile_pic }}">
-                                            </div>
-                                            <div class="details">
-                                                <span class="name">{{ $user->name }}</span>
-                                                <p><small>Placed in Infosys, Fynd</small></p>
-                                            </div>
-                                        </div>
-                                        <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                    </div>
-                                    @php
-                                        if ($count != 2) {
-                                            $count++;
-                                        }
-                                    @endphp
-                                @endforeach
-                                {{-- <div class="cardx" style="--delay:-1;">
-                                    <div class="content text-center">
-                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/suraj.jpeg') }}">
-                                        </div>
-                                        <div class="details">
-                                            <span class="name">Suraj Vishwakarma</span>
-                                            <p><small>Placed in Infosys, Fynd</small></p>
-                                        </div>
-                                    </div>
-                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div>
-                                <div class="cardx" style="--delay:0;">
-                                    <div class="content">
-                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/asg-ci.png') }}"
-                                                alt=""></div>
-                                        <div class="details">
-                                            <span class="name">Anshika Singh</span>
-                                            <p><small>Placed in Wipro, Infosys</small></p>
-                                        </div>
-                                    </div>
-                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div>
-                                <div class="cardx" style="--delay:1;">
-                                    <div class="content">
-                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/gaurav.jpeg') }}"
-                                                alt=""></div>
-                                        <div class="details">
-                                            <span class="name">Gaurav Singh</span>
-                                            <p><small>Placed in Wipro Velocity, TCS.</small></p>
-                                        </div>
-                                    </div>
-                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div>
-                                <div class="cardx" style="--delay:2;">
-                                    <div class="content">
-                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/abhinav.jpeg') }}"
-                                                alt=""></div>
-                                        <div class="details">
-                                            <span class="name">Abhinav Yadav</span>
-                                            <p><small>Placed in Deloitte,TCS.</small></p>
-                                        </div>
-                                    </div>
-                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div>
-                                <div class="cardx" style="--delay:2;">
-                                    <div class="content">
-                                        <div class="imgx"><img src="{{ asset('/assets/studentsimage/shivam.jpeg') }}"
-                                                alt=""></div>
-                                        <div class="details">
-                                            <span class="name">Shivam</span>
-                                            <p><small>Placed in American Express.</small></p>
-                                        </div>
-                                    </div>
-                                    <a class="text-center" href="#"><b>Points<br>870</b></a>
-                                </div> --}}
-                            </div>
-                        </div>
-
-
-                        {{-- <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4" data-aos="fade-right"
-                            data-aos-delay="100" data-tilt style="border-radius:10px;">
-                            <h3>Free M<i class="fa fa-eercast text-success" aria-hidden="true"></i>CK Test</h3>
-                            <small>Proper online Assessments to Prepare yourself for Placement.</small>
-                        </div>
-                        <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4 " data-aos="fade-right"
-                            data-aos-delay="200" data-tilt style="border-radius:10px;">
-                            <h3>Free C<i class="fa fa-eercast text-success" aria-hidden="true"></i>urses</h3>
-                            <small>Udemy and Coursera courses, To Improve Your Learning.</small>
-                        </div>
-                        <div class="shadow z-depth-4 p-2 border border-success px-5 mb-4 " data-aos="fade-right"
-                            data-aos-delay="300" data-tilt style="border-radius:10px;">
-                            <h3>Free S<i class="fa fa-eercast text-success" aria-hidden="true"></i>lutions</h3>
-                            <small>Get previous Year's Question paper solutions</small>
-                        </div> --}}
-                    </div>
-                </div>
-                {{-- Do Some Thing Heat --}}
-
-                {{-- <div class="ms-5 me-5"> <br>
-                    <h4 style="font-size-adjust: 60px; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-                        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; font-weight:40px;"
-                        class="h4 mb-3">
-                        Join Our Community:</h4>
-
-                    <a class="text-white p-2 rounded-8 bg-info ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
-                            class="fa fa-telegram"> </i> Telegram</a>&nbsp;&nbsp;
-                    <a class="text-white p-2 rounded-8 bg-success ps-3 pe-3 mb-3"
-                        href="https://learnejo.com/Join-Us-With-Whatsapp"> <i class="fa fa-whatsapp"></i>
-                        Whatsapp</a>&nbsp;&nbsp;
-                    <a class="text-white p-2 rounded-8 bg-primary ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
-                            class="fa fa-facebook"> </i> Facebook</a>&nbsp;&nbsp;
-                    <a class="text-white p-2 rounded-8 bg-danger ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
-                            class="fa fa-instagram"> </i> Instagram</a>&nbsp;&nbsp;
-                    <a class="text-white p-2 rounded-8 bg-info ps-3 pe-3 mb-3" href="https://telegram.me/learnejo"><i
-                            class="fa fa-twitter"> </i> Twitter</a>&nbsp;&nbsp;
-
-
-
-                </div> --}}
-        </section>
+        </div>
     </x-slot>
     <div>
         <div class="p-2">
