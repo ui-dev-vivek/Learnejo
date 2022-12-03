@@ -575,7 +575,7 @@ a:hover {
 
 @media (max-width: 768px) {
   #hero {
-    height: auto;
+    height: 100vh;
     /* flex-direction: row; */
   }
 
