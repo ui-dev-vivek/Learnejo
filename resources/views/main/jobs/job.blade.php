@@ -38,6 +38,7 @@
 
         <div class="col-md-12">
             <section class="p-3 ms-5 me-5 rounded-8 shadow z-depth-2  d-none d-lg-block">
+
                 <div class="row">
                     @forelse ($get8 as $job)
                         <div class="col-md-3 ">
@@ -66,7 +67,30 @@
     <div class="container-fluid">
         <h5 class="h3">Jobs & Internships</h5>
         <hr>
+        @php
+            $massage = 'whatsapp://send?text=*Jobs Internships Update*%0a';
+            $sr = 1;
+        @endphp
+        @foreach ($getCorpJobs as $course)
+            @php
+                if ($sr <= 7) {
+                    $massage = $massage . '*' . $sr . ':' . $course->title . '*%0a https://learnejo.com/Job-Internships/Card/' . $course->prama_link . '%0a%0a';
+                    $sr++;
+                }
+            @endphp
+        @endforeach
+        @php
+            $massage = str_replace('&', 'and', $massage);
+        @endphp
+        <a class="btn  btn-my-sm  m-3 btn-success" href="{{ $massage }}">
+            <i class="fa fa-share-alt" aria-hidden="true"></i> Share On Whatsapp
+            <i class="fa fa-whatsapp"></i>
+        </a>
+
+
         <div class="row">
+
+
             @forelse ($getCorpJobs as $job)
                 <div class="col-md-6">
                     <a href="{{ url('/Job-Internships') }}/{{ $job->prama_link }}">

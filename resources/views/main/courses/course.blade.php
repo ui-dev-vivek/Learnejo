@@ -23,6 +23,23 @@
         <div class="row">
             <div class="col-md-9">
                 <section class="trending-courses container">
+                    @php
+                        $massage = 'whatsapp://send?text=*Free Courses*%0a';
+                        $sr = 1;
+                    @endphp
+                    @foreach ($getCourses as $course)
+                        @php
+                            $massage = $massage . '*' . $sr . ':' . $course->title . '*%0a https://learnejo.com/Courses/Card/' . $course->prama_link . '%0a%0a';
+                            $sr++;
+                        @endphp
+                    @endforeach
+                    @php
+                        $massage = str_replace('&', 'and', $massage);
+                    @endphp
+                    <a class="btn m-3  btn-success" href="{{ $massage }}">
+                        <i class="fa fa-share-alt sid{{ $course->id }}" aria-hidden="true"></i> Share On Whatsapp
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
                     <div class="row">
                         <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
                             <div data-tiltx class="course-tile mb-4 border zoom ">
@@ -35,6 +52,7 @@
                                 </script>
                             </div>
                         </div>
+
                         @foreach ($getCourses as $course)
                             <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
                                 <div data-tiltx class="course-tile mb-4 border zoom ">

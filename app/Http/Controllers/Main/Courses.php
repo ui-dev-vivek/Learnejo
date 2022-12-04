@@ -100,4 +100,13 @@ class Courses extends Controller
             return 0;
         }
     }
+
+    function shareCoursesnow()
+    {
+        $massage = "";
+        $courses = DB::table('courses')->limit(10)->orderByDesc('id')->get();
+        foreach ($courses as $course) {
+            echo $course->title;
+        }
+    }
 }

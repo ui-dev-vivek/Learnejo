@@ -1,5 +1,5 @@
 import requests
-import random
+
 from bs4 import BeautifulSoup
 for i in range(2, 0, -1):
     url = "https://www.real.discount/filter/?category=All&subcategory=All&store=All&duration=All&price=0&rating=All&language=All&search=&submit=Filter&page=" + \
@@ -26,8 +26,6 @@ for i in range(2, 0, -1):
             for i in descx:
                 desc = desc+str(i)
             url = "https://offorbystudents.tech/Coursesx"
-            rmm = view = random.randrange(10, 50)
-            enroll = random.randrange(10, rmm)
             payload = {"title": title,
                        "pramaLink": pramaLink,
                        "desc": desc,
@@ -35,8 +33,6 @@ for i in range(2, 0, -1):
                        "link": courseLink,
                        "cat": cat,
                        "sortDesc": sortDesc,
-                       "enroll": enroll,
-                       "view": view
                        }
             response = requests.request("POST", url, data=payload)
             print(response.status_code, response.text)

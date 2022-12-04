@@ -37,6 +37,8 @@ Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
 Route::get('/Pages/{pramaLink}', [Pages::class, 'pages']);
+Route::get('/Share-Courses-whatsapp', [Courses::class, 'shareCoursesnow']);
+Route::post('/Share-Jobs-whatsapp', [Jobs::class, 'shareJobsnow']);
 
 
 //Main Courses
