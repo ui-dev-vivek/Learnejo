@@ -69,7 +69,7 @@
                                 <img class="img-fluid"
                                     src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
                                     alt="">
-                                <p class="text-start">
+                                <p class="text-center">
                                     <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
                                         href="/Courses">Check Courses
                                         <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
@@ -85,6 +85,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="bg-success p-3 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="h2">MCQ's</h2>
+                    <p>Try Our Quik MCQs to improve competitive assessments.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="w-100 d-flex container-fluid justify-content-center align-items-center">
+                        <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                            href="#">
+                            Try MCQs <i class="fa fa-arrow-right hvr-icon" aria-hidden="true">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
     <section class="inner-page">
@@ -106,9 +129,10 @@
                                 <img class="img-fluid"
                                     src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
                                     alt="">
-                                <p class="text-end">
+                                <p class="text-center">
                                     <a class="hvr-sweep-to-left   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
-                                        href="/Job-Internships"><i class="fa fa-arrow-left hvr-icon" aria-hidden="true">
+                                        href="/Job-Internships"><i class="fa fa-arrow-left hvr-icon"
+                                            aria-hidden="true">
                                         </i>
                                         Get Jobs Update
                                     </a>
@@ -119,6 +143,29 @@
 
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="bg-success p-3 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="h2">PDF's</h2>
+                    <p>Downloads Useful PDFs to enhance your knowledge.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="w-100 d-flex container-fluid justify-content-center align-items-center">
+                        <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                            href="/Job-Internships">
+                            Downloads PDF's <i class="fa fa-arrow-right hvr-icon" aria-hidden="true">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
     <section class="inner-page">
@@ -136,7 +183,7 @@
                                 <img class="img-fluid"
                                     src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
                                     alt="">
-                                <p class="text-start">
+                                <p class="text-center">
                                     <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
                                         href="/Mock-Test">Try AI Interview
                                         <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
@@ -152,6 +199,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="bg-success p-3 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="h2">Download Solutions</h2>
+                    <p>Downloads Prevuse year assessments solutions and crack pdfs.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="w-100 d-flex container-fluid justify-content-center align-items-center">
+                        <a class="hvr-sweep-to-right   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
+                            href="/Job-Internships">
+                            Downloads Solutions <i class="fa fa-arrow-right hvr-icon" aria-hidden="true">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
     <section class="inner-page">
@@ -173,7 +243,7 @@
                                 <img class="img-fluid"
                                     src="https://cdn-ddhbi.nitrocdn.com/oQUUkmjvDPdPLvhisuibbubwHakMrNcj/assets/static/optimized/rev-dfd9cc0/wp-content/uploads/2021/07/line.png"
                                     alt="">
-                                <p class="text-end">
+                                <p class="text-center">
                                     <a class="hvr-sweep-to-left   pt-2 pb-2 ps-3 pe-3  bg-white border border=success h6 rounded mt-2 hvr-icon-wobble-horizontal"
                                         href="/Mock-Test"><i class="fa fa-arrow-left hvr-icon" aria-hidden="true">
                                         </i>
@@ -188,6 +258,9 @@
             </div>
         </div>
     </section>
+
+
+
     {{-- <section class="inner-page">
         <div class="container">
             <div class="section-title">

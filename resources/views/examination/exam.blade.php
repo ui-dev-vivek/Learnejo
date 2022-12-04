@@ -1,4 +1,12 @@
-<x-layout.examination.base><br>
+@php
+    $title = 'Examination : Mock Test';
+    $image = asset('assets/image/icon.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+@endphp
+<x-layout.examination.base :title="$title" :image="$image" :description="$description">
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+    @stop
     <style>
         body {
             margin: 0 !important;

@@ -1,7 +1,7 @@
 @php
-$title = 'Start : Mock Test';
-$image = asset('assets/image/icon.jpg');
-$description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    $title = 'Start : Mock Test';
+    $image = asset('assets/image/icon.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 @endphp
 <x-layout.examination.base :title="$title" :image="$image" :description="$description">
 
@@ -24,8 +24,8 @@ $description = 'Learnejo is an E-learning platform, for every student interested
             <section class="bg-success p-4 " style="height:100vh; ">
                 <div class="v-c-center">
                     <div class="v-center text-white">
-                        <h2 class="h2 text-white">Welcome <br>{{ $student->Name }}</h2>
-                        <p><b>{{ $student->collage }}</b></p>
+                        <h2 class="h2 text-white">Welcome <br>{{ $student->name }}</h2>
+                        <p><b>{{ $student->institute }}</b></p>
                         <hr>
                         <h3 class="h4">Mock Test</h3>
                         <h2 class="h3">{{ $topic->name }} {{ $heading->name }}</h2>

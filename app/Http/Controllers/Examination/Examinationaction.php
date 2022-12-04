@@ -23,7 +23,7 @@ class Examinationaction extends Controller
     }
     function getStudent()
     {
-        return DB::table('student_profile')->where('students_id', session('StudentId'))->first();
+        return DB::table('users')->where('student_id', session('StudentId'))->first();
     }
 
     function getTopic($pramaLink)

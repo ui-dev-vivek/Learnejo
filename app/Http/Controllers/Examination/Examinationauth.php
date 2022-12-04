@@ -12,14 +12,14 @@ class Examinationauth extends Controller
     {
         $stuid = $req->input('email');
         $password = md5($req->input('password'));
-        $result = DB::table('students')->where('email', $stuid)->where('password', $password)->exists();
+        $result = DB::table("userd")->where('email', $stuid)->where('password', $password)->exists();
         if ($result) {
-            $student = DB::table('students')->where('email', $stuid)->first();
+            $student = DB::table("userd")->where('email', $stuid)->first();
             if ($student->status == 1) {
                 if (0) {
                     return "Student Dashboard Under Maintenance";
                 } else {
-                    $stu = DB::table('students')->where('email', $stuid)->where('status', 1)->first();
+                    $stu = DB::table('user')->where('email', $stuid)->first();
                     $req->session()->put('StudentId', $stu->stuid);
                     return session('fromLoginRequest');
                 }

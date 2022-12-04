@@ -4,15 +4,15 @@
     $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
 @endphp
 <x-layout.examination.base :title="$title" :image="$image" :description="$description">
-    {{-- @section('css')
+    @section('css')
         <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
-    @stop --}}
-    {{-- <section class="container">
+    @stop
+    <section class="container">
         <h1>{{ $topic->name }} {{ $heading->name }}</h1>
         <small>Date: {{ date('d-m-Y A') }} | Questions: {{ $heading->number_of_question }} | Time:
             {{ $heading->timing }}</small>
-        <hr> --}}
-    {{-- <div class="row">
+        <hr>
+        <div class="row">
             <div class="col-md p-3">
                 <p class="text-center h5">Examination Rules.</p>
                 <hr>
@@ -29,8 +29,8 @@
                         <li>No use of additional applications or internet.</li>
                     </ol>
                 </small>
-            </div> --}}
-    {{-- 
+            </div>
+
             <div class="col-md p-3">
                 <h2 class=" text-success pb-4">Compatibility</h2>
                 <h6 class=" p-1 bcc"><i class="fa fa-chrome" aria-hidden="true"> </i> <span id="bcc"><i
@@ -74,6 +74,6 @@
         @section('script')
             <script src="{{ asset('assets/js/compatibility-test.js') }}"></script>
         @stop
-    </section> --}}
+    </section>
 
 </x-layout.examination.base>

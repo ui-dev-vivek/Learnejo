@@ -16,10 +16,10 @@ class Navbar extends Component
     public $student;
     public function __construct()
     {
-        if (!Session::has('StudentId')) {
-            Session::put('StudentId', 'Guest-Students');
+        if (Session::has('StudentId')) {
+            $this->student = DB::table('users')->where('student_id', session('StudentId'))->first();
+            // $this->student = DB::table('users')->where('student_id', 'ASG2Ub9HFdIBBBk')->first();
         }
-        $this->student = DB::table('student_profile')->where('students_id', session('StudentId'))->first();
     }
 
     /**
@@ -29,6 +29,6 @@ class Navbar extends Component
      */
     public function render()
     {
-        return view('components.layout.examination.navbar')->compact('user');
+        return view('components.layout.examination.navbar');
     }
 }
