@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
 use App\Http\Controllers\Admin\Whatsapp;
+use App\Http\Controllers\Examination\Examination;
 use App\Http\Controllers\Examination\Examinationaction;
 use App\Http\Controllers\Examination\Examinationauth;
 use App\Http\Controllers\Examination\Login;
@@ -15,7 +16,9 @@ use App\Http\Controllers\Main\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
 use App\Http\Controllers\Main\Jobs;
+use App\Http\Controllers\Main\Mcqs;
 use App\Http\Controllers\Main\Pages;
+use App\Http\Controllers\main\Quiz;
 use App\Http\Controllers\Payment\Rozorpay;
 use App\Http\Controllers\Pdf\Pdf;
 use App\Http\Controllers\Social\GoogleController;
@@ -49,6 +52,13 @@ Route::get('/Courses/Category/{catg}', [Courses::class, 'byCatg']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
 Route::post('/send-data-to-offorbystudents', [Courses::class, 'sendData']);
 
+// Quiz
+Route::get('/Quiz/{pramaLink}', [Quiz::class, 'index']);
+
+// Mcqs
+Route::get('Mcqs', [Mcqs::class, 'index']);
+Route::get('Mcqs/{pramaLink}', [Mcqs::class, 'subView']);
+Route::get('Mcqs/{subPramaLink}/{pramaLink}', [Mcqs::class, 'view']);
 
 
 // Main Jobs
@@ -73,14 +83,16 @@ Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
 
 Route::group(['middleware' => ['StudentLogin']], function () {
     Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
-    Route::get('/PDF', [Pdf::class, 'index']);
-    Route::get('/PDF/Check-Out', [Pdf::class, 'checkOut']);
     Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
+
     // MockTest
     Route::get('Mock-Test/{pramaLink}', [MockTest::class, 'subView']);
     Route::get('Mock-Test/{subPramaLink}/{pramaLink}', [MockTest::class, 'view']);
 
     Route::get('Mock-Test/{subPramaLink}/{pramaLink}/{testId}', [MockTest::class, 'start']);
+    // pdf
+    Route::get('/PDF', [Pdf::class, 'index']);
+    Route::get('/PDF/Payment/{id}/{status}', [Pdf::class, 'view']);
 });
 
 
@@ -146,7 +158,7 @@ Route::post('/Examination-Login', [Examinationauth::class, 'login']);
 Route::group(['middleware' => ['StudentLogin']], function () {
     Route::get('/Examination-Rules/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'rules']);
     Route::get('/Start-Examination/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'start']);
-    Route::view('/Examination/{pramaLink}/{subPramaLink}', 'examination.exam');
+    Route::view('/Examination/{pramaLink}/{subPramaLink}', [Examination::class, 'index']);
 });
 
 

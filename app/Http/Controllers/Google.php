@@ -8,6 +8,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
@@ -36,6 +37,7 @@ class Google extends Controller
             $user = Socialite::driver('google')->user();
             $finduser = User::where('social_id', $user->id)->first();
             if ($finduser) {
+                DB::table('users')->where('social_id', $user->id)->increment('login_count', 1);
                 Session::put('StudentId', $finduser->student_id);
                 Auth::login($finduser);
                 if (Session::has('fromLoginRequest')) {
@@ -49,14 +51,17 @@ class Google extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'social_id' => $user->id,
+                    'login_count' => 1,
                     'profile_pic' => $user->avatar,
                     'password' => encrypt('my-google')
                 ]);
                 Auth::login($newUser);
                 $finduser = User::where('social_id', $user->id)->first();
                 if ($finduser) {
+                    DB::table('users')->where('social_id', $user->id)->increment('login_count', 1);
                     Session::put('StudentId', $finduser->student_id);
                     Auth::login($finduser);
+
                     if (Session::has('fromLoginRequest')) {
                         return redirect(session('fromLoginRequest'));
                     } else {

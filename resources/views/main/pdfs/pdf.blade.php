@@ -19,24 +19,37 @@
     <br><br>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
-                <div class="rounded shadow p-1 m-1">
-                    <div class="bg-warning text-white text-center rounded-top pt-2 pb-1">
-                        <h1 class="h3" c>Python Interview Question</h1>
+            @forelse ($getPDF as $pdf)
+                <div class="col-md-4">
+                    <div class="rounded shadow p-1 m-1">
+                        <div class="bg-warning text-white text-center rounded-top pt-2 pb-1">
+                            <h1 class="h3">{{ $pdf->title }}</h1>
+
+                        </div>
+                        @php
+                            echo $pdf->content;
+                        @endphp
+                    </div>
+                    <div class="bg-warning p-2 rounded-bottom">
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <i class="fa fa-inr"> </i> {{ $pdf->price }}
+                            </div>
+                            <div class="col-6 text-center">
+                                <a href="{{ $pdf->file_path }}">Download Now</a>
+                            </div>
+                        </div>
+
+
 
                     </div>
-                    <p class="p-2">Get 200 Python Interview Questions: <br>50 Basic Question <br>50 Advance Question
-                        <br>50 Triky
-                        Question <br>50 Coading Questions <br>With Solution and Answers.
-                    </p>
                 </div>
-                <div class="bg-warning p-2 rounded-bottom">
 
-                    <button id="rzp-button1" class="btn btn-info"> Download PDF</button>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            @empty
+            @endforelse
+
+
+
         </div>
     </div>
 </x-layout.main.base>

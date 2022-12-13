@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class Examination extends Controller
 {
-    //
+    function index($pramaLink, $subPramaLink)
+    {
+        return view('examination.exam');
+    }
 }

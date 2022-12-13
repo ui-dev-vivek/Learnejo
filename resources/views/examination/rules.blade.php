@@ -56,15 +56,12 @@
         <div class="text-center startBtn d-none ">
             <p>Please read all rules and <a href="javascript:void(0)"> Privacy Policy.</a></p>
             @if (date('H') >= '08' && date('H') <= '18')
-                <a onclick='launchFullScreen(document.documentElement)'
-                    class="csbtn hvr-sweep-to-right  p-2 ps-4 pe-4 border border-success " href="javascript:void(0)"> <i
+                <a class="csbtn hvr-sweep-to-right  p-2 ps-4 pe-4 border border-success " href="{{ $urlx }}"> <i
                         class="fa fa-camera"> </i>
                     Start With Camera <br> <small>AI proctored</small>
                 </a>
-                <a id="chanhe" href="{{ $urlx }}">{{ $urlx }} fg</a>
             @endif
-            <a onclick="launchFullScreen(document.documentElement)"
-                class=" hvr-sweep-to-right bg-info text-white ms-3 p-2 ps-4 pe-4 border border-info me-3"
+            <a class=" hvr-sweep-to-right bg-info text-white ms-3 p-2 ps-4 pe-4 border border-info me-3"
                 href="{{ url('/Examination') }}/{{ $topic->prama_link }}/{{ $heading->prama_link }}">Start
                 Test
                 <br><small>Without Camera</small></a>

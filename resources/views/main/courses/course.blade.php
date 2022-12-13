@@ -67,10 +67,10 @@
                                             </p>
                                             <img src="{{ $course->image }}" class="img-fluid blur-up lazyloaded">
                                         </div>
-                                        <article class="course-info border-success" style="">
+                                        <article class="course-info border-success" style="min-height:200px">
                                             <h2 class="color-4a m-0"><b>{{ $course->title }}</b></h2>
 
-                                            {{-- <div class="p-2">
+                                            <div class="p-2">
                                                 <div class="row">
                                                     <div class="col">
                                                         <i class="fa fa-eye"></i> {{ $course->view }}
@@ -79,9 +79,9 @@
                                                         <i class="fa fa-user-plus"></i> {{ $course->enroll }}
                                                     </div>
                                                 </div>
-                                            </div> --}}
-                                            {{-- <small class="text-justify"
-                                                style="font-size: 12px;">{{ $course->sort_desc }}</small> --}}
+                                            </div>
+                                            <small class="text-justify"
+                                                style="font-size: 12px;">{{ $course->sort_desc }}</small>
                                         </article>
                                     </a>
                                 </div>
@@ -104,8 +104,10 @@
             </div>
             <div class="col-md-3"><br><br>
                 <div class="ms-1">
-                    <h6 class="h5 text-center">Give Mock-Test for MNC's <br>
-                        <p class=""> <a href="{{ url('/Mock-Test') }}">Try Now</a></p>
+                    <h6 class="h5 text-center">Give Mock-Test for MNC's <br><br>
+                        <p> <a class="p-1 border border-success rounded-8" href="{{ url('/Mock-Test') }}">Try
+                                Now</a>
+                        </p>
                         </h4>
                         <hr>
                         <!-- Display-Vertical -->

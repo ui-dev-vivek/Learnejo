@@ -1,4 +1,14 @@
-<x-layout.main.base>
+@php
+    $title = 'Learnejo:MCQs';
+    $image = asset('assets/image/icon.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    
+@endphp
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+@stop
+<x-layout.main.base :title="$title" :image="$image" :description="$description">
+
     <x-slot name='hero'>
         <!-- ======= Intro Single ======= -->
         <section class="intro-single">
@@ -137,5 +147,5 @@
         @endforeach
 
     </div>
-    <x-mocktest.listing />
+
 </x-layout.main.base>

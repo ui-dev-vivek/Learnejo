@@ -41,3 +41,5 @@ $(document).ready(function () {
     }, 3000);
 
 });
+
+// armstrong numbers?

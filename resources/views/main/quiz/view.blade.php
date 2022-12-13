@@ -1,4 +1,13 @@
-<x-layout.main.base>
+@php
+    $title = 'Learnejo:Courses';
+    $image = asset('assets/image/icon.jpg');
+    $description = 'Learnejo is an E-learning platform, for every student interested and wishes to prepare for Tech and non-Tech. This platform contains all the important topics and articles related to Tech and Non-Tech. With the help of which you can enhance your skills and knowledge as well as enhance your career.';
+    
+@endphp
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+@stop
+<x-layout.main.base :title="$title" :image="$image" :description="$description">
     <style>
         ::selection {
             color: #fff;
@@ -412,8 +421,7 @@
                 <div class="info">5. You'll get points on the basis of your correct answers.</div>
             </div>
             <div class="buttons">
-                <a href="{{ url('/Mcqs') }}/{{ $getQuestion[0]->quiz_link }}"
-                    class="quit btn btn-danger btn-md">Exit
+                <a href="{{ url('/Mcqs') }}/{{ $getQuestion[0]->quiz_link }}" class="quit btn btn-danger btn-md">Exit
                     Quiz</a>
                 <button class="restart">CONTINUE</button>
             </div>
