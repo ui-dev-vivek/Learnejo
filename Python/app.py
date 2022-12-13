@@ -2,7 +2,7 @@ import requests
 import random
 from bs4 import BeautifulSoup
 for i in range(1, 0, -1):
-    url = "https://www.real.discount/filter/?category=All&subcategory=All&store=All&duration=All&price=0&rating=All&language=English&search=&submit=Filter&page=" + \
+    url = "https://www.real.discount/filter/?category=All&subcategory=All&store=All&duration=All&price=0&rating=All&language=All&search=&submit=Filter&page=" + \
         str(i)
     r = requests.get(url)
     # htmlContent = r.content
@@ -10,7 +10,6 @@ for i in range(1, 0, -1):
     elem = soup.select('.card-title')
     for i in range(len(elem)-1, -1, -1):
         title = soup.select('.card-title')[i].string
-        title = title+"  In English."
         cat = soup.select('.card-cat')[i].string
         sortDesc = soup.select('.card-text')[i].string
         rating = soup.select('.card-duration')[i]
