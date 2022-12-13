@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Admindashboard;
 use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
+use App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Admin\Whatsapp;
 use App\Http\Controllers\Examination\Examination;
 use App\Http\Controllers\Examination\Examinationaction;
@@ -108,7 +109,8 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     // DashBoard
     Route::get('/Admin', [Admindashboard::class, 'dashboard']);
     Route::post('Admin/Delete-Item', [Admindashboard::class, 'deleteItem']);
-
+    // Students:
+    Route::get('Admin/Users', [User::class, 'index']);
     // Courses
     Route::get('/Admin/Courses', [Admincourses::class, 'courses']);
     Route::post('/Admin/updateCourses', [Admincourses::class, 'updateCourses']);
