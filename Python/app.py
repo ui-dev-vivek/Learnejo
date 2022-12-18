@@ -47,13 +47,14 @@ for i in range(1, 0, -1):
                 massage = title + ":\n https://learnejo.com/Courses/Card/"+pramaLink + \
                     "\n\nHow to Enroll Courses:\nhttps://youtu.be/Q_q8hcTcSLU"
                 try:
-                    for i in ['-1001624994728', '-1001198759775']:
-                        url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
-                        querystring = {"chat_id": i, "text": massage}
-                        response = requests.request(
-                            "GET", url, params=querystring)
-                        print("Share On Telegram!", i, end=" > ")
-                    print()
+                    pass
+                    # for i in ['-1001624994728', '-1001198759775']:
+                    #     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
+                    #     querystring = {"chat_id": i, "text": massage}
+                    #     response = requests.request(
+                    #         "GET", url, params=querystring)
+                    #     print("Share On Telegram!", i, end=" > ")
+                    # print()
                 except:
                     print("Falied on Sharing.")
             else:

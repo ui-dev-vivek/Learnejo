@@ -48,13 +48,14 @@ for i in range(1, 0, -1):
                 massage = "Free Courses-100% Off\n **"+title + ":** \n Course Link: https://learnejo.com/Courses/Card/"+pramaLink + \
                     "\n \nCourses are Free For Limited Time Enroll Fast. \nHow to Enroll Courses:\nhttps://youtu.be/Q_q8hcTcSLU \n\n PLease Share This Group To Your Friends and College Groups.\nJoin Freshers Community: @Freshers_Community "
                 try:
-                    for i in ['-1001757886240', '-1001687470466']:
-                        url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
-                        querystring = {"chat_id": i, "text": massage}
-                        response = requests.request(
-                            "GET", url, params=querystring)
-                        print("Share On Telegram!", i, end=" > ")
-                    print()
+                    pass
+                    # for i in ['-1001757886240', '-1001687470466']:
+                    #     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
+                    #     querystring = {"chat_id": i, "text": massage}
+                    #     response = requests.request(
+                    #         "GET", url, params=querystring)
+                    #     print("Share On Telegram!", i, end=" > ")
+                    # print()
                 except:
                     print("Falied on Sharing.")
             else:

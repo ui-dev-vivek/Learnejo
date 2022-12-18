@@ -83,12 +83,13 @@ for i in range(1, 2):
                             massage = subSoup.title.string + \
                                 "\n Apply link: https://learnejo.com/Job-Internships/Card/"+pramaLink+"\n"
                             try:
-                                for i in ['-1001874716358']:
-                                    url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
-                                    querystring = {
-                                        "chat_id": i, "text": massage}
-                                    response = requests.request(
-                                        "GET", url, params=querystring)
+                                pass
+                                # for i in ['-1001874716358']:
+                                #     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
+                                #     querystring = {
+                                #         "chat_id": i, "text": massage}
+                                #     response = requests.request(
+                                #         "GET", url, params=querystring)
                             except:
                                 pass
                     except:
