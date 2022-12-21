@@ -6,20 +6,15 @@
 @endphp
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'>
-        <!-- ======= Intro Single ======= -->
-        <section class="breadcrumbs">
-            <div class="container">
-                <h1 class="text-center">Free Courses</h1>
-
-            </div>
-        </section><!-- End Intro Single-->
+        <br><br><br>
     </x-slot>
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
                 <section class="trending-courses container">
@@ -56,8 +51,8 @@
                         @foreach ($getCourses as $course)
                             <div class="item col-xl-4 col-lg-6 col-12 " data-aos="zoom-in" data-aos-delay="30">
                                 <div data-tiltx class="course-tile mb-4 border zoom ">
-                                    <a href="/Courses/{{ $course->prama_link }}" target="_blank"
-                                        class="trending-course-link" data-course-title="{{ $course->title }}">
+                                    <a href="/Courses/{{ $course->prama_link }}" class="trending-course-link"
+                                        data-course-title="{{ $course->title }}">
                                         <div data-tiltx class="course-featured-image img-div">
                                             <p class="top-right bg-primary p-1" style="font-size: 10px;">
                                                 {{ $course->type }}</p>
