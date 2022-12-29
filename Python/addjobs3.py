@@ -50,6 +50,11 @@ for i in range(1, 2):
                         link = z.get('href')
                     else:
                         link = "#"
+                    if "chat.whatsapp.com" in link:
+                        continue
+                    if "t.me" in link:
+                        continue
+
                     c = s.find_all(['p', 'h2', 'h3', 'h4', 'h6', 'ul'])
                     a = 0
                     for i in c:
@@ -88,14 +93,14 @@ for i in range(1, 2):
                                 "\n"
                             try:
                                 pass
-                                # for i in ['-1001874716358']:
-                                #     url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
-                                #     querystring = {
-                                #         "chat_id": i, "text": massage}
-                                # response = requests.request(
-                                #     "GET", url, params=querystring)
-                                # print("Share On Telegram!", i, end=" > ")
-                                # print()
+                                for i in ['-1001874716358']:
+                                    url = "https://api.telegram.org/bot5256121624:AAHjNKwypRSdp6NPxrXC0okO_TZvBHG8uTE/sendMessage"
+                                    querystring = {
+                                        "chat_id": i, "text": massage}
+                                response = requests.request(
+                                    "GET", url, params=querystring)
+                                print("Share On Telegram!", i, end=" > ")
+                                print()
                             except:
                                 print("Falied on Sharing.")
                         else:
