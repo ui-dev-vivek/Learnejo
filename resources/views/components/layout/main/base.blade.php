@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">1
+    <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}" />
@@ -91,6 +91,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
         crossorigin="anonymous"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 </head>
 
 <body>
@@ -100,8 +101,7 @@
     <main id="main" class="container-fluid">
         {{ $slot }}
     </main>
-    <div id="preloader">
-    </div>
+    <x-main.preloader />
     <x-layout.main.footer />
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

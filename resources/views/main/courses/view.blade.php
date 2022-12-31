@@ -1,5 +1,6 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+
 @stop
 <x-layout.main.base :title="$course->title" :image="$course->image" :description="$course->title">
 
@@ -8,6 +9,7 @@
 
     </x-slot>
     <div class="container-fluid">
+
         <div class="row">
             <div class="col-md-8">
 
@@ -76,7 +78,8 @@
                         </footer>
                     </blockquote>
                     <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
-                        <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment limit
+                        <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment
+                            limit
                             in
                             the courses. Please enroll as soon as possible.
                             If it has expired, it will be retrieved after some time. stay on the website</h6>

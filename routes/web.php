@@ -37,6 +37,7 @@ Route::view('/Term-and-Conditions', 'main.terms_conditions');
 Route::view('/Privacy-Policy', 'main.privacy_policy');
 Route::view('/Refund-Cancellations', 'main.refunds_cancellations');
 Route::view('/Contact-Us', 'main.contact');
+Route::view('/Login', 'main.login');
 Route::get('/Join-Us-With-Whatsapp', [Home::class, 'whatsappJoin']);
 Route::post('/Join-Whatsapp', [Home::class, 'joinWhatsapp']);
 Route::post('/Submit-Contact-Us', [Home::class, 'contactUs']);
