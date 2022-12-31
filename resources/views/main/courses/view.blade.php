@@ -21,12 +21,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-                    <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment limit
-                        in
-                        the courses. Please enroll as soon as possible.
-                        If it has expired, it will be retrieved after some time. stay on the website</h6>
-                </div>
+
                 <div class="shadow mt-3 p-3">
                     <p class="text-center text-primary">
                     <h1 class="h2">{{ $course->title }}</h1>
@@ -61,7 +56,15 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script> --}}
                     </p>
+                    <div class="mt-2 text-center">
+                        <a href="https://www.youtube.com/watch?v=Q_q8hcTcSLU" target="_blank">
+                            <img class="img-fluid w-50 btn rounded"
+                                src="{{ asset('assets/image/how-to-enroll-courses.webp') }}"
+                                alt="How To Enroll Udemy Courses For Free."></a>
+
+                    </div>
                     <p>
+
                         <?php
                         echo $course->content;
                         ?>
@@ -77,13 +80,7 @@
                             <cite title="Source Title"></cite>
                         </footer>
                     </blockquote>
-                    <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
-                        <h6><strong>Notice:</strong> The courses Expired in 30 minutes and there is an enrollment
-                            limit
-                            in
-                            the courses. Please enroll as soon as possible.
-                            If it has expired, it will be retrieved after some time. stay on the website</h6>
-                    </div>
+
                     <p class="text-center">
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
