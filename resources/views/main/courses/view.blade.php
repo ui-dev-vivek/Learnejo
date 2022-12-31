@@ -4,10 +4,34 @@
 @stop
 <x-layout.main.base :title="$course->title" :image="$course->image" :description="$course->title">
 
+    <style>
+    </style>
     <x-slot name='hero'>
-        <br><br><br>
+
+        <div class="bg-success p-3 hero-imgs">
+            <br><br><br>
+            <div class="container p-1 ">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <img src="{{ $course->image }}" class="img-fluid shadow  border border-info rounded-8"
+                            alt="">
+                    </div>
+                    <div class="col-md-8 pt-4">
+                        <h1 class="h1 text-white">{{ $course->title }}</h1>
+                        <small class="text-white"><strong><i class="fa fa-edit"></i> Team Learnejo, <i
+                                    class="fa fa-th-list"></i>
+                                {{ $course->catg }}, <i class="fa fa-eye"></i>
+                                {{ $course->view }},
+                                <i class="fa fa-user-plus""></i> {{ $course->enroll }}, <i class="fa fa-calendar"></i>
+                                {{ $course->created_at }}</strong></small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </x-slot>
+    <br>
     <div class="container-fluid">
 
         <div class="row">
@@ -24,51 +48,36 @@
 
                 <div class="shadow mt-3 p-3">
                     <p class="text-center text-primary">
-                    <h1 class="h2">{{ $course->title }}</h1>
-                    <div class="post-information">
-                        <ul class="list-inline text-center color-a">
-                            <li class="list-inline-item mr-2">
-                                <b>Author: </b>
-                                <span class="color-text-a">Team Learnejo</span>
-                            </li>
-                            <li class="list-inline-item mr-2">
-                                <b>Category: </b>
-                                <span class="color-text-a">{{ $course->catg }}</span>
-                            </li>
-                            <li class="list-inline-item mr-2">
-                                <b>Views: </b>
-                                <span class="color-text-a">{{ $course->view }}</span>
-                            </li>
-                            <li class="list-inline-item">
-                                <strong>Date: </strong>
-                                <span class="color-text-a">{{ $course->created_at }}</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <h1 class="h3">{{ $course->title }}</h1>
+
                     </p>
                     <p class="">
                         {{-- Horizontal Ads --}}
-                    <h2 class="h3">Category : {{ $course->catg }}</h2>
-                    <!-- Display-Horizontal -->
-                    {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
+                        <!-- Display-Horizontal -->
+                        {{-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script> --}}
                     </p>
-                    <div class="mt-2 text-center">
-                        <a href="https://www.youtube.com/watch?v=Q_q8hcTcSLU" target="_blank">
-                            <img class="img-fluid w-50 btn rounded"
-                                src="{{ asset('assets/image/how-to-enroll-courses.webp') }}"
-                                alt="How To Enroll Udemy Courses For Free."></a>
 
-                    </div>
                     <p>
 
                         <?php
                         echo $course->content;
                         ?>
                     </p>
+                    <div class="mt-2 text-center">
+                        <a href="https://www.youtube.com/watch?v=Q_q8hcTcSLU" target="_blank">
+                            <span class="h2"> <i class="fa fa-angle-double-right"></i><i
+                                    class="fa fa-angle-double-right"></i> </span> <img class=" w-50 btn rounded"
+                                src="{{ asset('assets/image/how-to-enroll-courses.webp') }}"
+                                alt="How To Enroll Udemy Courses For Free.">
+                            <span class="h2"> <i class="fa fa-angle-double-left"></i> <i
+                                    class="fa fa-angle-double-left"></i></span>
+                        </a>
+
+                    </div>
                     <blockquote class="blockquote">
                         <p class="mb-4">{{ $course->title }} <br>
                             <small>The above course description is taken from <a
