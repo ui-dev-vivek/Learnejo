@@ -7,6 +7,139 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+    <style>
+        #main-content {
+            height: 100%;
+            width: 100%;
+            /* margin: 3rem; */
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: #4c4e61;
+            /* background: #32c552; */
+        }
+
+        #main-content #header-1 {
+            font-size: 28px;
+            font-weight: 200;
+        }
+
+        #main-content #header-2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 15px 0 20px;
+
+            /* border-bottom: 4px solid #32c552; */
+        }
+
+        #main-content #body {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.4rem;
+            color: rgba(76, 78, 97, 0.5);
+            width: 30rem;
+            padding-bottom: 40px;
+        }
+
+        #main-content #card-body {
+            display: flex;
+            align-items: center;
+        }
+
+        #main-content #card-body #card-1 {
+            border-top: 3px solid #45d3d3;
+        }
+
+        #main-content #card-body #card-1:hover {
+            background: linear-gradient(to bottom, rgba(69, 211, 211, 0.5), transparent);
+            transform: scale(1.05);
+            box-shadow: 0px 15px 15px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-content #card-body #card-2 {
+            border-top: 3px solid #ea5353;
+        }
+
+        #main-content #card-body #card-2:hover {
+            background: linear-gradient(to bottom, rgba(234, 83, 83, 0.4) 5%, transparent 90%);
+            transform: scale(1.05);
+            box-shadow: 0px 15px 15px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-content #card-body #card-3 {
+            border-top: 3px solid #fcaf4a;
+        }
+
+        #main-content #card-body #card-3:hover {
+            background: linear-gradient(to bottom, rgba(252, 175, 74, 0.5), transparent 85%);
+            transform: scale(1.05);
+            box-shadow: 0px 15px 15px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-content #card-body #card-4 {
+            border-top: 3px solid #549ef2;
+        }
+
+        #main-content #card-body #card-4:hover {
+            background: linear-gradient(to bottom, rgba(84, 158, 242, 0.5), transparent);
+            transform: scale(1.05);
+            box-shadow: 0px 15px 15px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-content #card-body .card {
+            background: white;
+            margin: 1rem 0.8rem;
+            padding: 1rem;
+            width: 20rem;
+            border-radius: 8px;
+            box-shadow: 0px 9px 20px 1px rgba(0, 0, 0, 0.1);
+            transition: 0.5s all;
+        }
+
+        #main-content #card-body .card .card-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            color: #32c552;
+        }
+
+        #main-content #card-body .card .card-body {
+            font-size: 16px;
+            line-height: 1.2rem;
+            color: #000000;
+        }
+
+        #main-content #card-body .card #card-cont {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #main-content #card-body .card #card-cont .card-img {
+            padding-top: 10px;
+            width: 20%;
+        }
+
+        @media only screen and (max-width: 675px) {
+            #main-content #card-body {
+                display: inline-block;
+            }
+        }
+
+        @media only screen and (max-width: 375px) {
+            #main-content #header-2 {
+                text-align: center;
+                width: 22rem;
+            }
+
+            #main-content #body {
+                width: 18rem;
+            }
+
+            #main-content #card-body {
+                display: inline;
+            }
+        }
+    </style>
 @stop
 <x-layout.main.base :title="$title" :image="$image" :description="$description">
     <x-slot name='hero'> <br> <br>
@@ -26,7 +159,7 @@
                 Technical Skills are
                 Essential for a Company Placement.</h2><br>
             <a class="hvr-sweep-to-right   pt-2 pb-2 ps-5 pe-5  bg-white h5 hvr-icon-wobble-horizontal"
-                href="#main">Get
+                style="font-weight:500; font-size:1.5rem;" href="#get-start">Get
                 Start
                 <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a> <br><br> <br>
             <small class="pb-2"><strong>Crack Top Companies</strong></small>
@@ -56,7 +189,70 @@
         <div class="p-2">
         </div>
     </div>
-    <section class="inner-page">
+    <div id="get-start">
+        <div id="main-content">
+            <div id="header-1"></div>
+            <div id="header-2">Enhance Learning & Sharpen Skills </div>
+            {{-- <div id="body">Our Artificial Intelligence powered tools use millions of project data points to ensure
+                that your project is successful</div> --}}
+            <div id="card-body">
+                <div id="first-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card" id="card-1">
+                        <div class="card-title">MCQs/Quizs</div>
+                        <div class="card-body">Monitors activity to identify project roadblocks</div>
+                        <a class="  mt-2 hvr-icon-wobble-horizontal" href="#">View Mcqs/Quizs
+                            <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+
+                        <div id="card-cont">
+                            <img class="card-img"
+                                src="https://res.cloudinary.com/hardik-khandelwal/image/upload/v1585732999/icon-karma.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div id="second-item" data-aos="fade-down" data-aos-delay="100">
+                    <div class="card" id="card-2">
+                        <div class="card-title">Mock-Test</div>
+                        <div class="card-body">Scans our talent network to create the optimal team for your project
+                        </div>
+                        <a class="  mt-2 hvr-icon-wobble-horizontal" href="/Mock-Test">Try Mock-Test
+                            <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+
+                        <div id="card-cont"><img class="card-img"
+                                src="https://res.cloudinary.com/hardik-khandelwal/image/upload/v1585732999/icon-calculator.svg" />
+                        </div>
+                    </div>
+                    <div class="card" id="card-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-title">AI Interview</div>
+                        <div class="card-body">Regularly evaluates our talent to ensure quality</div>
+                        <a class="  mt-2 hvr-icon-wobble-horizontal" href="#">Give Interview
+                            <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+
+                        <div id="card-cont"><img class="card-img"
+                                src="https://res.cloudinary.com/hardik-khandelwal/image/upload/v1585732999/icon-supervisor.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div id="third-item">
+                    <div class="card" id="card-4" data-aos="fade-left" data-aos-delay="100">
+                        <div class="card-title">Courses/Solutions </div>
+                        <div class="card-body">Uses data from past projects to provide better delivery estimates</div>
+                        <a class="  mt-2 hvr-icon-wobble-horizontal" href="/Courses">Check Courses
+                            <i class="fa fa-arrow-right hvr-icon" aria-hidden="true"> </i> </a>
+
+                        <div id="card-cont"><img class="card-img"
+                                src="https://res.cloudinary.com/hardik-khandelwal/image/upload/v1585732999/icon-team-builder.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6"></div>
+    </div>
+
+    </div>
+    {{-- <section class="inner-page">
         <div class="container">
             <div class=" pb-3" style="border-left:10px solid #32c552" data-aos="fade-right" data-aos-delay="200">
                 <div class="row">
@@ -257,7 +453,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 

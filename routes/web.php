@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Home::class, 'Index']);
 Route::view('/About-Us', 'main.about');
 Route::view('/Pricing', 'main.pricing');
+Route::view('/Get-Start', 'main.getstart');
 Route::view('/Term-and-Conditions', 'main.terms_conditions');
 Route::view('/Privacy-Policy', 'main.privacy_policy');
 Route::view('/Refund-Cancellations', 'main.refunds_cancellations');

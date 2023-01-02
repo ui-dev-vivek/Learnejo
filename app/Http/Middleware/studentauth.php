@@ -20,7 +20,7 @@ class studentauth
         $request->session()->put('fromLoginRequest', URL::current());
 
         if (!$request->session()->has('StudentId')) {
-            return redirect('/auth/google');
+            return redirect('/Login');
         }
         return $next($request);
     }

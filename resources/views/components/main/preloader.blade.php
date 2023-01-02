@@ -188,5 +188,6 @@
                     transform="translate(20.41 533.85) rotate(-79.1)" />
             </g>
         </svg>
+        <h3 class="h4 text-success text-center">www.learnejo.com</h3>
     </div>
 </div>

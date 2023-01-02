@@ -13,7 +13,7 @@
             <div class="container p-1 ">
                 <div class="row">
                     <div class="col-md-4 ">
-                        <img src="{{ $course->image }}" class="img-fluid shadow  border border-info rounded-8"
+                        <img src="{{ $course->image }}" class="img-fluid shadowxx  border border-info rounded-8"
                             alt="">
                     </div>
                     <div class="col-md-8 pt-4">
@@ -35,9 +35,9 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
 
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     <!-- Display-Horizontal -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -46,7 +46,7 @@
                     </script>
                 </div>
 
-                <div class="shadow mt-3 p-3">
+                <div class="shadowxx mt-3 p-3">
                     <p class="text-center text-primary">
                     <h1 class="h3">{{ $course->title }}</h1>
 
@@ -98,6 +98,7 @@
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                         <a class="btn btn-md btn-success" href="{{ $course->link }}">Enroll Now</a>
+
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -113,13 +114,13 @@
 
 
             </div>
-            <div class="col-md-4 ps-2">
-                <div class="shadow p-2 text-center">
+            <div class="col-md-3 ps-2">
+                <div class="shadowxx p-2 text-center">
                     <h3 class="h3">To Get Paid Udemy Courses For <strong class="text-danger">Free</strong> </h3>
                     <a href="https://learnejo.com/Join-Us-With-Whatsapp" class="h4 mb-1"><i
                             class="fa fa-whatsapp text-success"></i> Join Group</a>
                 </div><br>
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     {{-- Squir Ads --}}
                     <!-- Display-Square -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -128,7 +129,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div><br>
-                {{-- <div class="shadow p-2 text-center">
+                {{-- <div class="shadowxx p-2 text-center">
                     
                 <!-- Display-Vertical -->
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -139,14 +140,14 @@
             </div> --}}
 
                 @forelse ($getCourses as $course)
-                    <div class="mb-2 p-2 shadow">
+                    <div class="mb-2 p-2 shadowxx">
                         <a href="{{ url('/Courses') }}/{{ $course->prama_link }}">
                             <div class="row">
                                 <div class="col-4">
                                     <img width="100" class="img-fluid" src="{{ $course->image }}" alt="">
 
                                 </div>
-                                <div class="col-8"><strong>{{ $course->title }}</strong></div>
+                                <div class="col-8">{{ $course->title }}</div>
                             </div>
                         </a>
                     </div>
@@ -154,7 +155,7 @@
                     <p>No Data Found!.</p>
                 @endforelse
                 <br>
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     <h3 class="h3">To Get Jobs Update <strong class="text-danger"></strong></h3>
                     <a href="https://telegram.me/job_learnejo" class="h4 mb-1"><i class="fa fa-telegram text-info"></i>
                         Join Group</a>
@@ -173,6 +174,7 @@
         </script>
     </p> --}}
     @section('script')
+
         <script src="{{ asset('assets/ajax/enroll-now.js') }}"></script>
     @stop
 </x-Layout.Main.Base>
