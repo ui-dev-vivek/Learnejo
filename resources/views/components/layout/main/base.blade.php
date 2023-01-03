@@ -123,8 +123,7 @@
                             <div class="col-3"></div>
                             <div class="col-6">
 
-                                <a class=" h3 border border-info mt-4  m-2 rounded-8 p-2 btn"
-                                    href="http://127.0.0.1:8000/auth/google">
+                                <a class=" h3 border border-info mt-4  m-2 rounded-8 p-2 btn" href="/auth/google">
                                     <img class="img-fluid" width="20"
                                         src="https://cdn.pixabay.com/photo/2015/10/31/12/56/google-1015752_960_720.png"
                                         alt=""> &nbsp;&nbsp;&nbsp;Sign With Google</a>

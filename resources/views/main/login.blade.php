@@ -21,7 +21,7 @@
                         <h3 class="h3">Welcome back!</h3>
                         <small class="text-success"><strong>Please Login With Google.</strong></small>
                         <br>
-                        <a class="border border-info h5 m-2 rounded-8 p-2 btn" href="http://127.0.0.1:8000/auth/google">
+                        <a class="border border-info h5 m-2 rounded-8 p-2 btn" href="/auth/google">
                             <img class="img-fluid" width="20"
                                 src="https://cdn.pixabay.com/photo/2015/10/31/12/56/google-1015752_960_720.png"
                                 alt=""> &nbsp;&nbsp;&nbsp;Sigh With Google</a>
