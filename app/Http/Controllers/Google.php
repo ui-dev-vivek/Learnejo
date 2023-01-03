@@ -80,4 +80,14 @@ class Google extends Controller
         Session::flush();
         return redirect('/');
     }
+
+    function isLogin(Request $request)
+    {
+        if (Session::has('StudentId')) {
+            return 1;
+        } else {
+            Session::put('fromLoginRequest', $request->post('backUrl'));
+            return 0;
+        }
+    }
 }

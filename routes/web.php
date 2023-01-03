@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
 use App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Admin\Whatsapp;
+use App\Http\Controllers\Examination\Exam;
 use App\Http\Controllers\Examination\Examination;
 use App\Http\Controllers\Examination\Examinationaction;
 use App\Http\Controllers\Examination\Examinationauth;
@@ -49,7 +50,7 @@ Route::post('/Share-Jobs-whatsapp', [Jobs::class, 'shareJobsnow']);
 
 //Main Courses
 Route::get('/Courses', [Courses::class, 'index']);
-// Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
+Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
 Route::get('Courses/Card/{pramaLink}', [Courses::class, 'card']);
 Route::get('/Courses/Category/{catg}', [Courses::class, 'byCatg']);
 Route::post('/Enroll', [Courses::class, 'enroll']);
@@ -66,7 +67,7 @@ Route::get('Mcqs/{subPramaLink}/{pramaLink}', [Mcqs::class, 'view']);
 
 // Main Jobs
 Route::get('/Job-Internships', [Jobs::class, 'index']);
-// Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
+Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 Route::post('/Apply', [Jobs::class, 'apply']);
 Route::get('Job-Internships/Card/{pramaLink}', [Jobs::class, 'card']);
 
@@ -84,9 +85,10 @@ Route::post('/Admin-Login', [Adminauth::class, 'postAdminLogin']);
 Route::get('/Student-Login', [Studentauth::class, 'studentLogin']);
 Route::post('/Student-Login', [Studentauth::class, 'postStudentLogin']);
 
+
 Route::group(['middleware' => ['StudentLogin']], function () {
-    Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
-    Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
+    // Route::get('/Courses/{pramaLink}', [Courses::class, 'view']);
+    // Route::get('/Job-Internships/{pramaLink}', [Jobs::class, 'view']);
 
     // MockTest
     Route::get('Mock-Test/{pramaLink}', [MockTest::class, 'subView']);
@@ -97,6 +99,7 @@ Route::group(['middleware' => ['StudentLogin']], function () {
     Route::get('/PDF', [Pdf::class, 'index']);
     Route::get('/PDF/Payment/{id}/{status}', [Pdf::class, 'view']);
 });
+
 
 
 // Cron Job Urls
@@ -152,6 +155,7 @@ Route::controller(GoogleController::class)->group(function () {
     Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
     Route::get('auth/google/callback', 'handleGoogleCallback');
 });
+Route::post('/Is-Login', [Google::class, 'isLogin']);
 
 Route::get('/Student-Side-Dashboard', [Stusidedashboard::class, 'index']);
 
@@ -162,7 +166,7 @@ Route::post('/Examination-Login', [Examinationauth::class, 'login']);
 Route::group(['middleware' => ['StudentLogin']], function () {
     Route::get('/Examination-Rules/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'rules']);
     Route::get('/Start-Examination/{pramaLink}/{subPramaLink}', [Examinationaction::class, 'start']);
-    Route::view('/Examination/{pramaLink}/{subPramaLink}', [Examination::class, 'index']);
+    Route::get('/Examination/{pramaLink}/{subPramaLink}/{isCamara}', [Examination::class, 'index']);
 });
 
 

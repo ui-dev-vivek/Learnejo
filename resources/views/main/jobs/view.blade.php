@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     <!-- Display-Horizontal -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -36,7 +36,7 @@
                     </script>
                 </div>
 
-                <div class="shadow mt-3 p-3">
+                <div class="shadowxx mt-3 p-3">
                     <p class="text-center text-primary">
                     <h1 class="h2">{{ $job->title }}</h1>
                     <div class="post-information">
@@ -62,7 +62,7 @@
                     <div class="p-2">
                         <div
                             style="position: relative; width: 100%; height: 0; padding-top: 33.3333%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ padding-bottom: 0; box-shadowxx: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
                             <iframe loading="lazy"
                                 style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
@@ -97,7 +97,9 @@
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <a class="btn btn-md btn-info" href="{{ $job->link }}">Click Here To Apply </a>
+                        <a class="btn btn-md btn-info" onclick="isLogin('{{ $job->link }}')"
+                            href="javascript:void(0)">Click
+                            Here To Apply </a>
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                             data-ad-slot="2511322819" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -108,12 +110,12 @@
                 </div>
             </div>
             <div class="col-md-4 ps-2">
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     <h3 class="h3">To Get Paid Udemy Courses For <strong class="text-danger">Free</strong> </h3>
                     <a href="https://learnejo.com/Join-Us-With-Whatsapp" class="h4 mb-1"><i
                             class="fa fa-whatsapp text-success"></i> Join Group</a>
                 </div><br>
-                <div class="shadow p-2 text-center">
+                <div class="shadowxx p-2 text-center">
                     {{-- Squir Ads --}}
                     <!-- Display-Square -->
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
@@ -122,7 +124,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div><br>
-                {{-- <div class="shadow p-2 text-center">
+                {{-- <div class="shadowxx p-2 text-center">
                     
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"
                         data-ad-slot="1712412310" data-ad-format="auto" data-full-width-responsive="true"></ins>

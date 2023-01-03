@@ -97,7 +97,9 @@
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-                        <a class="btn btn-md btn-success" href="{{ $course->link }}">Enroll Now</a>
+
+                        <a class="btn btn-md btn-success" href="javascript:void(0)"
+                            onclick="isLogin('{{ $course->link }}');">Enroll Now</a>
 
                         <!-- Display-Horizontal -->
                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7119514135532896"

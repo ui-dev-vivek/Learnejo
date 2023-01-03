@@ -1,3 +1,22 @@
+function alertxpro(type, massage) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: type,
+        title: massage
+    })
+}
+
 const video = document.getElementById('video');
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/faceapi/models'),
@@ -30,6 +49,7 @@ function startVideo() {
     }
 }
 var no = 0;
+var a = 0;
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video);
     $('.facex').append(canvas);
@@ -47,8 +67,8 @@ video.addEventListener('play', () => {
         const resizedDetections = faceapi.resizeResults(predictions, displaySize);
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
         // faceapi.draw.drawDetections(canvas, resizedDetections);
-        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        // faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+        // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+        // const ft = faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
         resizedDetections.forEach(result => {
             const { age, gender, genderProbability } = result;
             new faceapi.draw.DrawTextField(
@@ -60,27 +80,48 @@ video.addEventListener('play', () => {
             ).draw(canvas);
         });
         console.log(predictions.length)
-        // if (predictions.length > 1) {
-        //     $('#prediction').append("<small><span class='text-dabger'>Other Face Ditected." + new Date($.now()) + "</small><hr>");
+        console.log(ft)
+        if (predictions.length > 1) {
+            a += 1
+            if (a == 35 || a == 0) {
+                a = 1;
+                alertxpro('error', "Other Face Ditected!")
+
+            }
+
+        }
+
+        if (predictions.length == 0) {
+            no += 1;
+            if (no == 40) {
+                alertxpro('warning', " Face Not Ditected Focuse on Camara.");
+                no = 0;
+
+            }
+        }
+
+
+        // if (predictions.length == 1) {
+        //     $('#action').html("<span class='text-success h4'>Please Wait..</span>");
+        //     no++;
+        // } else if (predictions.length == 0) {
+        //     $('#action').html("<span class='text-warning h4'>Focuse On Camara..</span>");
+        //     no = 0;
+        // } else {
+        //     $('#action').html("<span class='text-danger h4'>Other Face Ditected..</span>");
+        //     error_massage += "Other Face Ditected at " + new Date($.now()) + ". \n";
+        //     no = 0;
+
         // }
+        // if (no == 5) {
+        //     video.pause();
+        //     clearInterval(refreshVideo);
+        //     $('#action').html("<span class='text-info h4'>Done!</span>");
+        // }
+        $('#prediction').html(error_massage);
 
-        if (predictions.length == 1) {
-            $('#action').html("<span class='text-success h4'>Please Wait..</span>");
-            no++;
-        } else if (predictions.length == 0) {
-            $('#action').html("<span class='text-warning h4'>Focuse On Camara..</span>");
-            no = 0;
-        } else {
-            $('#action').html("<span class='text-danger h4'>Other Face Ditected..</span>");
-            no = 0;
-        }
-
-        if (no == 12) {
-            video.pause();
-            clearInterval(refreshVideo);
-            $('#action').html("<span class='text-info h4'>Done!</span>");
-        }
-    }, 200);
+    }, 100);
 });
+
 
 

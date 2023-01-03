@@ -6,6 +6,7 @@
 @endphp
 
 @section('css')
+
     <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
     <style>
         #main-content {
@@ -628,5 +629,6 @@
             </section>
         </div>
     </div> --}}
+
 
 </x-layout.main.base>

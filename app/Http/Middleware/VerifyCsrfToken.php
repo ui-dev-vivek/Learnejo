@@ -18,5 +18,6 @@ class VerifyCsrfToken extends Middleware
         '/Whatsapp-set-token',
         '/Whatsapp-auth-token',
         '/Whatsapp-update-auth',
+        '/Is-Login',
     ];
 }

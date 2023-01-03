@@ -6,6 +6,9 @@
 <x-layout.examination.base :title="$title" :image="$image" :description="$description">
     @section('css')
         <link rel="stylesheet" href="{{ asset('assets/css/hover.css') }}">
+        <script src="{{ asset('assets/js/examination-page.js') }}"></script>
+
+
     @stop
     <style>
         body {
@@ -29,12 +32,13 @@
             top: 10vh;
             right: 0;
             width: 300px;
+
         }
 
         .fixedxx {
             position: fixed;
             width: 40vh;
-            bottom: 0;
+            bottom: 20px;
             margin-left: 5vh;
         }
 
@@ -136,160 +140,64 @@
             color: #32c552;
         }
     </style>
-    {{-- <section class="p-1 shadow border">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="scroll-v" style="font-size: 1.2rem;">
-                    <p>Sheela started a business in 2009 by investing Rs.50,000. She invested Rs. 20,000 as
-                        additional amount in 2010 and her friend Devi joined her with an amount of Rs.70,000. Sheela
-                        invested another Rs. 20,000 in 2011 and Anu joined them with Rs. 70,000. At the end of these 3
-                        years, they earned a profit of Rs. 3,00,000. Find Devi's share?<br>
-                    </p>
-                    <div class="m-2">
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            A: 1749
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            B: 1649
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            C: 1449
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            D: 1523
-                        </button>
-                    </div>
-                    <div class="m-2">
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            A: 1749
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            B: 1649
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            C: 1449
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            D: 1523
-                        </button>
-                    </div>
-                    <div class="m-2">
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            A: 1749
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            B: 1649
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            C: 1449
-                        </button><br>
-                        <button class="p-3 mb-2 btn-block rounded-8">
-                            D: 1523
-                        </button>
-                    </div>
-
-                </div>
-
-
-
-
-
-            </div>
-            <div class="col-md-3 border-start border-success" style="position: fixed">
-                <h3 class="text-center h3">TCS Ninja Aptitude Mock Test Set 1.</h3>
-                <hr>
-                <div class="row">
-                    <div class="col-6">Question: 15</div>
-                    <div class="col-6">Time : 20 min</div>
-                </div>
-                <div class="text-center">
-                    <div class="container p-4">
-                        <div class="progress ss" data-percentage="100">
-                            <span class="progress-left">
-                                <span class="progress-bar"></span>
-                            </span>
-                            <span class="progress-right">
-                                <span class="progress-bar"></span>
-                            </span>
-                            <div class="progress-value">
-                                <div class="h6">
-                                    <span class="timer"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="facex fixedx rounded-8">
-                    <video class="rounded-8" id="video" class="rounded-8" width="300" height="200" autoplay
-                        muted></video>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
 
 
     <div class=" mainx" style="height:90vh; ">
         <div class="ps-3 pt-1 border-bottom border-primary">
-            <h6 class="h6">Section: <a class="bg-primary text-white rounded p-1" href="javascript:void(0)">Aptitude <i
-                        class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;<a
+            <h6 class="h6">Section: <a class="bg-primary text-white rounded p-1" href="javascript:void(0)">Aptitude
+                    <i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;<a
                     class="bg-primary text-white rounded p-1" href="javascript:void(0)"
-                    onclick="alert('Not
-                    Allow!');">Coding <i class="fa fa-info-circle"
-                        aria-hidden="true"></i> </a> </h6>
+                    onclick="alert('Not Allow!');">Coding <i class="fa fa-info-circle" aria-hidden="true"></i> </a>
+            </h6>
         </div>
-        <div class="p-4 scroll-v">
-            <div class="row">
-                <div class="col-1">
-                    <p><b>Que 1: </b></p>
+
+
+        <div class="p-5 scroll-v ">
+
+            @forelse ($getQuestions as $question)
+                <div class="d-none">
+                    <div class="row">
+                        <div class="col-1">
+                            <p><b>Que {{ $loop->iteration }}: </b></p>
+                        </div>
+                        <div class="col-11 border-bottom text-primary">
+                            <p> <b>{{ $question->question }}</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="p-1 m-2 rounded-8 "> <input type="radio" id="f-option" name="selector">
+                                <label for="f-option"><b>{{ $question->option_i }}</b></label>
+                                <div class="check">
+                                </div>
+                            </li>
+                            <li class="p-1 m-2 rounded-8 "> <input type="radio" id="s-option" name="selector">
+                                <label for="s-option"><b>{{ $question->option_ii }}</b>
+                                </label>
+                                <div class="check">
+
+                                </div>
+                            </li>
+                            <li class="p-1 m-2 rounded-8 "> <input type="radio" id="t-option" name="selector">
+                                <label for="t-option"><b>{{ $question->option_iii }}</b></label>
+                                <div class="check">
+
+                                </div>
+                            </li>
+                            <li class="p-1 m-2 rounded-8 "> <input type="radio" id="l-option" name="selector">
+                                <label for="l-option"><b>{{ $question->option_iv }}</b></label>
+                                <div class="check">
+
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-11">
-                    <p>An exam was conducted and the following was analyzed. 4 men were able to check some exam papers
-                        in 8 days working 5 hours regularly. What is the total number of hours taken by 2 men in
-                        20 days
-                        to check double the number of exam papers?</p>
-                </div>
-            </div><br>
-            <ul>
-                <li class="p-1 m-2 rounded-8 "> <input type="radio" id="f-option" name="selector">
-                    <label for="f-option"><b>A. </b>An exam was conducted and the following was analyzed. 4 men
-                        were able to check some exam papers in 8 days working 5 hours regularly. What is
-                        the total number of hours taken by 2 men in 20 days to check double the number
-                        of exam papers?</label>
-                    <div class="check">
-
-                    </div>
-                </li>
-                <li class="p-1 m-2 rounded-8 "> <input type="radio" id="s-option" name="selector">
-                    <label for="s-option"><b>A. </b>An exam was conducted and the
-                    </label>
-                    <div class="check">
-
-                    </div>
-                </li>
-                <li class="p-1 m-2 rounded-8 "> <input type="radio" id="t-option" name="selector">
-                    <label for="t-option"><b>A. </b>An exam was conducted and the following was analyzed. 4 men
-                        were able to check some exam papers in 8 days working 5 hours regularly. What is
-                        the total number of hours taken by 2 men in 20 days to check double the number
-                        of exam papers?</label>
-                    <div class="check">
-
-                    </div>
-                </li>
-                <li class="p-1 m-2 rounded-8 "> <input type="radio" id="l-option" name="selector">
-                    <label for="l-option"><b>A. </b>An exam was conducted and the following was analyzed. 4 men
-                        were able to check some exam papers in 8 days working 5 hours regularly. What is
-                        the total number of hours taken by 2 men in 20 days to check double the number
-                        of exam papers?</label>
-                    <div class="check">
-
-                    </div>
-                </li>
-
-
-            </ul>
-
+            @empty
+                <h2>No Question !</h2>
+            @endforelse
         </div>
 
     </div>
@@ -334,15 +242,47 @@
         <div class="ps-3 m-1 p-2 border rounded border-danger">
             <h5>Warning Section:</h5>
             <div class="exam-alert text-center text-danger"></div>
+            <p id="prediction"></p>
+            <p class="exam-alert"></p>
 
         </div>
-
-        <div class="facex fixedxx rounded-8 ">
-            <video class="" id="video" class="rounded-8" width="300" height="200" autoplay muted></video>
-        </div>
+        @if ($isCamara == 'True')
+            <div class="facex fixedxx rounded-8 border bg-success shadow border-success p-1 ">
+                <video class="rounded-8 border border-light" id="video" width="300" height="200" autoplay
+                    muted></video>
+            </div>
+        @endif
     </div>
 
     <script>
         var time = '12:00';
+        (async () => {
+            openFullscreen();
+            // const {
+            //     value: accept
+            // } = await Swal.fire({
+            //     title: 'Terms and conditions',
+            //     input: 'checkbox',
+            //     inputValue: 1,
+            //     inputPlaceholder: 'I agree with the terms and conditions',
+            //     confirmButtonText: 'Start Test <i class="fa fa-arrow-right"></i>',
+            //     inputValidator: (result) => {
+            //         return !result && 'You need to agree with T&C'
+            //     }
+            // })
+
+            // if (accept) {
+            //     openFullscreen();
+            //     // Swal.fire('You agreed with T&C :)')
+            // }
+
+        })()
     </script>
+
+    @section('script')
+        @if ($isCamara == 'True')
+            <script src="{{ asset('faceapi/face-api.min.js') }}"></script>
+            <script src="{{ asset('assets/js/face-rec-init.js') }}"></script>
+        @endif
+    @stop
 </x-layout.examination.base>

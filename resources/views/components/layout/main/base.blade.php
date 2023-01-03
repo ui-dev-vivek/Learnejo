@@ -55,6 +55,7 @@
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/mycss.css') }}" rel="stylesheet">
     @yield('css')
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDB4MKYCQ8"></script>
     <script>
@@ -101,6 +102,42 @@
     <main id="main" class="container-fluid">
         {{ $slot }}
     </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> --}}
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+
+                        <small><strong>Welcome Back! </strong></small>
+                        <h4 class="h5 text-success">Please Continue With Google</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+
+                                <a class=" h3 border border-info mt-4  m-2 rounded-8 p-2 btn"
+                                    href="http://127.0.0.1:8000/auth/google">
+                                    <img class="img-fluid" width="20"
+                                        src="https://cdn.pixabay.com/photo/2015/10/31/12/56/google-1015752_960_720.png"
+                                        alt=""> &nbsp;&nbsp;&nbsp;Sign With Google</a>
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <br>
+                        <small>it's simple to Sign in.'</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <x-main.preloader />
     <x-layout.main.footer />
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -112,6 +149,7 @@
     <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('assets/ajax/islogin.js') }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
