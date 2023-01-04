@@ -223,18 +223,9 @@
         </div>
         <div class="text-center">
             <div class="container p-4">
-                <div class="progress ss" data-percentage="100">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">
-                        <div class="h6">
-                            <span class="timer"></span>
-                        </div>
-                    </div>
+                <div class="progress">
+                    <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 30%"
+                        aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
 
@@ -257,24 +248,23 @@
     <script>
         var time = '12:00';
         (async () => {
-            openFullscreen();
-            // const {
-            //     value: accept
-            // } = await Swal.fire({
-            //     title: 'Terms and conditions',
-            //     input: 'checkbox',
-            //     inputValue: 1,
-            //     inputPlaceholder: 'I agree with the terms and conditions',
-            //     confirmButtonText: 'Start Test <i class="fa fa-arrow-right"></i>',
-            //     inputValidator: (result) => {
-            //         return !result && 'You need to agree with T&C'
-            //     }
-            // })
+            const {
+                value: accept
+            } = await Swal.fire({
+                title: 'Terms and conditions',
+                input: 'checkbox',
+                inputValue: 1,
+                inputPlaceholder: 'I agree with the terms and conditions',
+                confirmButtonText: 'Start Test <i class="fa fa-arrow-right"></i>',
+                inputValidator: (result) => {
+                    return !result && 'You need to agree with T&C'
+                }
+            })
 
-            // if (accept) {
-            //     openFullscreen();
-            //     // Swal.fire('You agreed with T&C :)')
-            // }
+            if (accept) {
+                openFullscreen();
+                // Swal.fire('You agreed with T&C :)')
+            }
 
         })()
     </script>

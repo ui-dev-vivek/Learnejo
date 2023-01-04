@@ -89,9 +89,8 @@
             signalGooglefcPresent();
         })();
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
-        crossorigin="anonymous"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    {{-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> --}}
 
 </head>
 
@@ -154,6 +153,8 @@
     <script type="text/javascript" src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/ajax/whatsapp-login.js') }}"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7119514135532896"
+        crossorigin="anonymous"></script>
     @yield('script')
     <script>
         const settings = {
