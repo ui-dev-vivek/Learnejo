@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\Adminauth;
+use App\Http\Controllers\Admin\Adminblogs;
 use App\Http\Controllers\Admin\Admincourses;
 use App\Http\Controllers\Admin\Admindashboard;
+use App\Http\Controllers\Admin\Adminimage;
 use App\Http\Controllers\Admin\Adminjobs;
 use App\Http\Controllers\Admin\Adminmocktest;
 use App\Http\Controllers\Admin\Adminpages;
@@ -14,6 +16,8 @@ use App\Http\Controllers\Examination\Examinationaction;
 use App\Http\Controllers\Examination\Examinationauth;
 use App\Http\Controllers\Examination\Login;
 use App\Http\Controllers\Google;
+use App\Http\Controllers\Main\Blog;
+use App\Http\Controllers\Main\Blogs;
 use App\Http\Controllers\Main\Mocktest;
 use App\Http\Controllers\Main\Courses;
 use App\Http\Controllers\Main\Home;
@@ -141,12 +145,23 @@ Route::group(['middleware' => ['AdminLogin']], function () {
     Route::post('/Admin/Add-Pages', [Adminpages::class, 'postAddPages']);
     Route::get('/Admin/Edit-Pages/{pramaLink}', [Adminpages::class, 'editPages']);
 
+    //Blogs
+    Route::get('/Admin/Blog', [Adminblogs::class, 'index']);
+    Route::get('/Admin/Add-Blog', [Adminblogs::class, 'addBlog']);
+    Route::post('/Admin/Add-Blog', [Adminblogs::class, 'postAddBlog']);
+    Route::get('/Admin/Edit-Blog/{pramaLink}', [Adminblogs::class, 'editBlog']);
+
+
     //Whatsapp Groups
     Route::post('/Admin/changeGroupStatus/', [Whatsapp::class, 'changeGroupStatus']);
     Route::post('/Admin/updateMembers/',  [Whatsapp::class, 'updateMembers']);
     Route::get('/Admin/Whatsapp',  [Whatsapp::class, 'whatsapp']);
     Route::post('/Admin/Add-Whatsapp-Group', [Whatsapp::class, 'addWhatsappGroup']);
     Route::get('/Admin/Send-Courses', [Whatsapp::class, 'shareCourses']);
+    // Image
+
+    Route::get('/Admin/Image', [Adminimage::class, 'index']);
+    Route::post('image-upload', [Adminimage::class, 'store'])->name('image.store');
 });
 
 
@@ -187,3 +202,13 @@ Route::get("/Check-Out", [Rozorpay::class, 'checkOut']);
 Route::get('auth/google', [Google::class, 'redirectToGoogle']);
 Route::get('callback', [Google::class, 'handleCallback']);
 Route::get('Logout', [Google::class, 'logout']);
+
+
+
+
+
+
+
+// Blogs
+Route::get('/Blogs', [Blogs::class, 'index']);
+Route::get('/Blogs/{pramaLink}', [Blogs::class, 'view']);

@@ -38,6 +38,23 @@
                 </a>
             </li>
         </ul>
+        <div class="pcoded-navigation-label">Other</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="">
+                <a href="{{ url('/Admin/Courses') }}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
+                    <span class="pcoded-mtext">Courses</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ url('/Admin/Jobs') }}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
+                    <span class="pcoded-mtext">Jobs-Internships</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
         <div class="pcoded-navigation-label">Preparation</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="pcoded-hasmenu">
@@ -103,21 +120,30 @@
                 </ul>
             </li>
         </ul>
-        <div class="pcoded-navigation-label">Other</div>
+        <div class="pcoded-navigation-label">Blogs</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="">
-                <a href="{{ url('/Admin/Courses') }}" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
-                    <span class="pcoded-mtext">Courses</span>
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="fa fa-copy"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Blogs</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
-            </li>
-            <li class="">
-                <a href="{{ url('/Admin/Jobs') }}" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
-                    <span class="pcoded-mtext">Jobs-Internships</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="{{ url('Admin/Blog') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">All Blog</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="{{ url('Admin/Add-Blog') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Add Blog</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <ul class="pcoded-item pcoded-left-item">
@@ -145,6 +171,8 @@
                 </ul>
             </li>
         </ul>
+
+
 
     </div>
 </nav>

@@ -229,6 +229,24 @@ $('#addPages').on('submit', function (e) {
     });
 });
 
+$('#addBlog').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.ajax({
+        url: '/Admin/Add-Blog',
+        type: 'post',
+        data: $('#addBlog').serialize(),
+        success: function (result) {
+            if (result != '0') {
+                tostfire('success', "Blog: Every Things Updated!");
+            } else {
+                tostfire('error', " Error On Updating Blog.");
+            }
+        }
+
+    });
+});
+
 $('#addmockTestSubTopic').on('submit', function (e) {
     e.preventDefault();
     e.stopPropagation();
