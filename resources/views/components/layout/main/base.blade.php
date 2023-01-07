@@ -16,8 +16,8 @@
     <meta property="article:published_time" content="" />
     <meta property="article:modified_time" content="" />
     <meta property="og:image" content="{{ $image }}" />
-    <meta property="og:image:width" content="480" />
-    <meta property="og:image:height" content="270" />
+    <meta property="og:image:width" content="2180" />
+    <meta property="og:image:height" content="1270" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Team Learnejo">
