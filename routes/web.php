@@ -212,3 +212,4 @@ Route::get('Logout', [Google::class, 'logout']);
 // Blogs
 Route::get('/Blogs', [Blogs::class, 'index']);
 Route::get('/Blogs/{pramaLink}', [Blogs::class, 'view']);
+Route::post('Add-Blog-Comment', [Blogs::class, 'addBlogComment']);

@@ -50,27 +50,29 @@
                 <br>
                 <div class="p-2">
                     <h4 class="mb-2 h4">Leave Comment:</h4>
-                    <textarea class="border border-success form-control" name="comment" id="" cols="10" rows="3"></textarea>
-                    <p class="text-end pt-2">
-                        <button class="btn btn-md btn-success">Submit</button>
-                    </p>
+                    <form id="comment-form">
+                        @csrf
+                        <input type="hidden" name="pramaLink" value="{{ $blog->prama_link }}">
+                        <textarea id="comment-area" class="border border-success form-control" name="comment" id="" cols="10"
+                            rows="3" required></textarea>
+                        <p class="text-end pt-2">
+                            <button type="submit" class="btn btn-md btn-success"><span
+                                    class="comment-submit-btn">Submit</span>
+                                <span class="loading d-none"> <i
+                                        class="fa fa-spinner fa-spin fa-1x fa-fw"></i></span></button>
+                        </p>
+                    </form>
                     <h4 class="h4">Comments: </h4>
                     <hr>
-                    <img class="rounded-circled  border border-success" width="30"
-                        src="https://lh3.googleusercontent.com/a/ALm5wu3JMomrqKrQxSgnHfyg4-phfmxpqGJ78OXV9Vua-w=s96-c"
-                        alt=""> <strong> Vivek Yadav</strong>
-                    <p class="ps-4 m-2"><small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas numquam
-                            perspiciatis libero,
-                            illum tempore dolorem aperiam assumenda, nihil dicta iusto corporis? Unde dolorum quaerat,
-                            inventore expedita quam dolorem quisquam consequuntur!</small></p>
-                    <br>
-                    <img class="rounded-circled  border border-success" width="30"
-                        src="https://lh3.googleusercontent.com/a/ALm5wu3JMomrqKrQxSgnHfyg4-phfmxpqGJ78OXV9Vua-w=s96-c"
-                        alt=""> <strong> Vivek Yadav</strong>
-                    <p class="ps-4 m-2"><small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas numquam
-                            perspiciatis libero,
-                            illum tempore dolorem aperiam assumenda, nihil dicta iusto corporis? Unde dolorum quaerat,
-                            inventore expedita quam dolorem quisquam consequuntur!</small></p>
+                    <div class="comment-area"></div>
+                    @forelse ($getComments as $comment)
+                        <img class="rounded-circled  border border-success" width="30" src="{{ $comment->image }}"
+                            alt=""> <strong> {{ $comment->name }}</strong>
+                        <p class="ps-4 m-2"><small>{{ $comment->comment }}</small></p>
+                        <br>
+                    @empty
+                        <h5>No Any Comments!</h5>
+                    @endforelse
 
 
 
@@ -114,7 +116,7 @@
 
     </div>
     @section('script')
-        <script src="{{ asset('assets/ajax/apply-now.js') }}"></script>
+        <script src="{{ asset('assets/ajax/comment.js') }}"></script>
     @stop
 
 </x-layout.main.base>

@@ -2485,6 +2485,12 @@ section {
   font-size: 14px;
 }
 
+.language-python {
+  border-left: 7px solid #32c552;
+  background-color: rgb(216, 216, 214);
+  padding: 10px 15px 10px 10px;
+}
+
 
 
 
