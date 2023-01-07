@@ -21,10 +21,10 @@ class Adminimage extends Controller
 
         ]);
 
-        // $name = $request->file('image')->getClientOriginalName();
-
+        $name = $request->file('image')->getClientOriginalName();
+        $name = str_replace(' ', '-', $name);
         // $path = $request->file('image')->store('public/images');
-        $path = $request->image->move('images', 'hi.png');
+        $path = $request->image->move('images', $name);
         echo $data['name'] = $request->input('name');
         $path = str_replace('public', 'storage', $path);
         echo $data['url'] = $path;
