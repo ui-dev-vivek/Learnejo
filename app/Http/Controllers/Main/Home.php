@@ -93,8 +93,8 @@ class Home extends Controller
     function siteMap(Response $r)
     {
         $jobs = DB::table('jobs')->where('status', 1)->orderByDesc('id')->get();
-        $courses = DB::table('courses')->where('status', 1)->orderByDesc('id')->get();
-        return response()->view('main.sitemap', compact('courses', 'jobs'))
+        $blogs = DB::table('blog')->where('status', 1)->orderByDesc('created_at')->get();
+        return response()->view('main.sitemap', compact('blogs', 'jobs'))
             ->header('Content-Type', 'text/xml');;
     }
 }
